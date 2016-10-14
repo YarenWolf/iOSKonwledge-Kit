@@ -1,5 +1,6 @@
 
 ##Switch循环语句+元组
+     swith正常用法
 
 ```
 //: Playground - noun: a place where people can play
@@ -180,3 +181,33 @@ default:
 
 
 ```
+   ### 控制转移
+～～～
+switch语句的case使用了变量是无法使用fallthrough。
+
+let coordinate = (2,2)
+
+switch coordinate {
+
+case (0,0):
+
+ print("origin point")
+
+ fallthrough
+
+case (_,let y):
+
+ print("not an origin point")
+
+default:
+
+ print("wrong")
+
+}
+
+
+
+～～～
+
+
+    
