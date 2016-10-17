@@ -10,4 +10,7 @@
 * [swift 1.2新特性](swift.md)
 * [类和对象](类和对象.md)
 * [毛玻璃-UIBlurEffect](毛玻璃-uiblureffect.md)
+* [Swift开发App](swift开发app.md)
+* [Alamofire](alamofire.md)
+* 提高代码质量
 
