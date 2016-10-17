@@ -2,4 +2,4 @@
 
 ###命名规范：swift-style-guide:(git)
 
-###code review:Gerrit、GITLAB
+###code review:Gerrit、GITLAB工具
