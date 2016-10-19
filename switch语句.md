@@ -723,17 +723,10 @@ default:
 
 
 ```
-
-
-
  ### 控制转移：break、fallthrough、continue
 
-
-
 ```
-
 switch语句的case使用了变量是无法使用fallthrough。
-
 
 
 let coordinate = (2,2)
