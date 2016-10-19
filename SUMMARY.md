@@ -10,8 +10,10 @@
     * swift 1.2新特性
     * 类和对象
     * Swift开发App
-* [毛玻璃-UIBlurEffect](毛玻璃-uiblureffect.md)
-* [提高代码质量](提高代码质量.md)
-* [正则表达式](正则表达式.md)
 * 第二章 玩转儿swift1
+* [续：开发tips](开发tips.md)
+    * [正则表达式](正则表达式.md)
+    * 提高代码质量
+    * 毛玻璃-UIBlurEffect
+    * 单例
 
