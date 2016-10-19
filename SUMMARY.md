@@ -17,4 +17,5 @@
     * 提高代码质量
     * 毛玻璃-UIBlurEffect
     * 单例
+* [tips](tips.md)
 
