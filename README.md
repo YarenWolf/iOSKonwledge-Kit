@@ -1,3 +1,6 @@
-# My Awesome Book
+# 前言
 
-This file file serves as your book's preface, a great place to describe your book's content and ideas.
+# swift学习手册-20161015
+
+本手册为本人学习swift语言的点滴，为了日后查阅方便和他人参考，如有偏差，请指出。
+
