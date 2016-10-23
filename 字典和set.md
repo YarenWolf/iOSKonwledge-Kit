@@ -63,6 +63,7 @@ speciality.count
 speciality.isEmpty
 speciality.contains("oc")
 
+//遍历集合
 for index in speciality{
  index
 }
