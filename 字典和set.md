@@ -51,3 +51,69 @@ dic
 ```
 
 ###集合
+``` var speciality:Set<String> = ["swift","oc"] 
+var hoddy = Set(["it","pingpang","food"])
+var emptySet1 = Set<Int>()
+var emptySet2 = Set<String>()
+var set3:Set = [1,2,3]
+set3
+
+speciality.count
+speciality.isEmpty
+speciality.contains("oc")
+
+//set不会出现重复的元素
+speciality = ["swift","oc","oc","js"]
+speciality
+//集合是无序的:声明的第一个元素但是输出不一定是第一个
+speciality.first
+
+speciality.insert("js")
+speciality
+speciality.insert("js")
+speciality
+speciality.remove("js")
+speciality
+
+if let skill = speciality.remove("oc") {
+ print("又忘记了\(skill)")
+}
+
+speciality.removeAll()
+speciality
+
+var skillA = Set(["swift","oc"])
+var skillB = Set(["html","css","js"])
+var skillc = Set(["swift","hmml"])
+
+//并集
+skillA.union(skillB) //只并集不改变
+skillA
+//skillA.formUnion(skillB) //并集并改变
+//skillA
+skillB
+skillA
+//交集
+skillA.intersection(skillB)
+
+//set加元素
+skillA.insert("html")
+skillA
+skillB
+
+//集合的减法
+skillA.subtract(skillB) //计算出A独有的而B不具有的
+skillA
+
+skillA.symmetricDifference(skillB)
+skillA.intersection(["1","2"])
+skillA
+
+
+var skilld:Set<String> = ["oc"]
+skilld.isSubset(of: skillA) //子集
+skillA.isSuperset(of: skilld) //父集
+
+skilld.isStrictSubset(of: skillA
+skillA.isStrictSuperset(of: skilld)
+```
