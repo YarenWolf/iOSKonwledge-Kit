@@ -51,7 +51,8 @@ dic
 ```
 
 ###集合
-``` var speciality:Set<String> = ["swift","oc"] 
+``` 
+var speciality:Set<String> = ["swift","oc"] 
 var hoddy = Set(["it","pingpang","food"])
 var emptySet1 = Set<Int>()
 var emptySet2 = Set<String>()
@@ -62,6 +63,9 @@ speciality.count
 speciality.isEmpty
 speciality.contains("oc")
 
+for index in speciality{
+ index
+}
 //set不会出现重复的元素
 speciality = ["swift","oc","oc","js"]
 speciality
