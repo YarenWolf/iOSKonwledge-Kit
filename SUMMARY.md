@@ -30,4 +30,5 @@
 * [tips](tips.md)
 * [第三章 玩转儿swift2](第三章-玩转儿swift.md)
     * [swift为什么要有可选型](swift.md)
+    * [数组](数组.md)
 
