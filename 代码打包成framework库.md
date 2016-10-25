@@ -1,4 +1,4 @@
-###代码打包成.framework库
+[](http://www.jianshu.com/p/9f2d5cd546cc)###代码打包成.framework库
 
     1、打开xcode新建工程，选择如下Framework&Library下的Cocoa Touch Framework。
 ![](/assets/1.png)
@@ -40,4 +40,4 @@
             ```
 
 
-参考链接：
+参考链接：[](http://www.jianshu.com/p/9f2d5cd546cc)
