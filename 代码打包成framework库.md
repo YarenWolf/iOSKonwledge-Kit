@@ -24,4 +24,17 @@
 
     7、如果工程结构下的Products为红色则代表没成功，黑色为成功。
 ![](/assets/11.png)
+
+    8、如何使用？
     
+        （1）、将frameWork加入到项目中。
+    ![](/assets/12.png)
+        （2）、因为我们做的是动态库，在使用的时候需要额外加一个步骤,要把Framework同时添加到‘Embedded Binaries’中
+![](/assets/13.png)  
+        （3）、![](/assets/15.png)
+        （4）、代码中使用
+            ```
+#import <MyLibrary/MyLibrary.h>    //导入库头文件
+...
+ [MyPrinter show];    //使用
+            ```
