@@ -30,6 +30,7 @@
     * [命令行 plist-&gt;json json-&gt;plist](命令行-plist-json-json-plist.md)
     * [代码打包成.framework库](代码打包成framework库.md)
     * [PrefixHeader.pch文件](prefixheaderpch文件.md)
+    * [做一个 App 前需要考虑的几件事](做一个-app-前需要考虑的几件事.md)
 * [tips](tips.md)
 * [第三章 玩转儿swift2](第三章-玩转儿swift.md)
     * [swift为什么要有可选型](swift.md)
