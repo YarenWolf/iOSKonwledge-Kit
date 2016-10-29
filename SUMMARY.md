@@ -43,6 +43,6 @@
     * [教你搞定导航控制器全屏滑动返回效果](教你搞定导航控制器全屏滑动返回效果.md)
     * [常用宏](常用宏.md)
     * [MVC、MVVM、MVP](mvc、mvvm.md)
-    * 做一个 App 前需要考虑的几件事
+    * [做一个 App 前需要考虑的几件事](做一个-app-前需要考虑的几件事.md)
     * [UIViewController-Swizzled](uiviewcontroller-swizzled.md)
 
