@@ -8,7 +8,7 @@ enum Shape{
  case Circle(radius:Double)
  case Point
 
- func area() -> Double {
+     func area() -> Double {
      switch self {
          case let .Squre(side):
              return side*side
@@ -19,6 +19,7 @@ enum Shape{
          case .Point:
              return 0
          }
+    }
 }
 
 let square = Shape.Squre(side: 2).area()
