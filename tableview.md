@@ -7,3 +7,16 @@
  cell.preservesSuperviewLayoutMargins=NO;
 }
 ```
+    tableView滚动设置改变背景颜色
+ ```
+-(void)scrollViewDidScroll:(UIScrollView *)scrollView
+
+{
+ CGPoint translation = scrollView.contentOffset;
+ if (translation.y< 0) {
+ self.tableView.backgroundColor = NavigationBarColor;
+ }else if(translation.y> 0){
+ self.tableView.backgroundColor = MainViewBackgroundColor;
+ }
+}
+```
