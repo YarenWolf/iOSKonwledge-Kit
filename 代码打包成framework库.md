@@ -99,6 +99,8 @@
     接下来才是正式步骤，打开终端。输入“cd framework的目录下，”
 分别输入：
 lipo -create 【模拟器打包path】 【真机打包path】 -output 【导出兼容版本path】
+生成如图
+![](/assets/B08F28DE-9830-4277-AE3F-A16553F06061.png)
 
 
 
