@@ -100,6 +100,7 @@
 分别输入：
 lipo -create 【模拟器打包path】 【真机打包path】 -output 【导出兼容版本path】
 生成如图
+
 ![](/assets/B08F28DE-9830-4277-AE3F-A16553F06061.png)
 
 
