@@ -68,3 +68,42 @@ area(shape: circle)
 area(shape: rectangle)
 area(shape: point)
 ```
+
+
+###枚举的递归
+```
+enum ArithmeticExpression{
+
+ case Number(Int)
+
+ indirect case Addition(ArithmeticExpression,ArithmeticExpression)
+
+ indirect case Multiplication(ArithmeticExpression,ArithmeticExpression)
+
+}
+
+
+
+let five = ArithmeticExpression.Number(5)
+
+let four = ArithmeticExpression.Number(4)
+
+let sum = ArithmeticExpression.Addition(five, four)
+
+let two = ArithmeticExpression.Number(2)
+
+let product = ArithmeticExpression.Multiplication(sum, two)
+
+
+func evaluat(expression:ArithmeticExpression)->Int{
+ switch expression {
+ case let .Number(value):
+ return value
+ case let .Addition(left,right):
+ return evaluat(expression: left)+evaluat(expression: right)
+ case let .Multiplication(left,right):
+ return evaluat(expression: left)*evaluat(expression: right)
+ }
+}
+evaluat(expression: product)
+```
