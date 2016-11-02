@@ -94,14 +94,12 @@
 解决办法：这种情况一般是自己打包的动态库的模拟器和真机版本没有合并起来。另外需要注意自己打包动态库的时候需要选择是Release版本还是Debug版本。将工程中的Product-》scheme-》Edit scheme中的设置一致。在Release模式下将framework工程分别选择模拟器和真机编译一遍，这样会生成2个Release模式下的动态Framework包，同样在Debug模式下将工程分别在模拟器和真机编译一遍，生成2个Debug模式下的Framework包。
 
 
-
-
     接下来才是正式步骤，打开终端。输入“cd framework的目录下，”
 分别输入：
 lipo -create 【模拟器打包path】 【真机打包path】 -output 【导出兼容版本path】
-生成如图
 
-![](/assets/B08F28DE-9830-4277-AE3F-A16553F06061.png)
+
+
 
 
 
