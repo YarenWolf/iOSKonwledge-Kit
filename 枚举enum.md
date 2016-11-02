@@ -32,3 +32,39 @@ circle.area()
 rect.area()
 point.area()
 ```
+
+###枚举和类一样可以声明函数。
+```
+import UIKit
+enum Shape{
+ case Square(side:Double)
+ case Rectangle(width:Double,height:Double)
+ case Circle(centerX:Double,centerY:Double,radius:Double)
+ case Point
+}
+
+let square = Shape.Square(side: 2.0)
+let circle = Shape.Circle(centerX: 0, centerY: 0, radius: 4)
+let rectangle = Shape.Rectangle(width: 2.0, height: 3.0)
+let point = Shape.Point
+
+
+func area(shape:Shape)->Double{
+ switch shape {
+ case let .Circle(centerX: _, centerY: _, radius: radius):
+ return M_PI*radius*radius
+ case let .Rectangle(width,height):
+ return width*height
+
+ case let .Square(side):
+ return side*side
+ case .Point:
+ return 0
+ }
+}
+
+area(shape: square)
+area(shape: circle)
+area(shape: rectangle)
+area(shape: point)
+```
