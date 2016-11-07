@@ -99,8 +99,7 @@
 lipo -create 【模拟器打包path】 【真机打包path】 -output 【导出兼容版本path】
 
 
-
-
+11、在制作Framework的时候需要可能需要在项目中混编swift和oc。新建好swift文件后需要在swift文件导入一些oc写的头文件，但是Framework工程不允许使用pch文件的格式。所以解决办法：1、删除桥接头文件，如Xxx-Bridging.h，删到垃圾桶亦可；也把Build Settings中指定了桥接头文件路径配置清空。2、把需要导入的oc文件加入到Build Phases的Headers中。
 
 
 参考链接：
