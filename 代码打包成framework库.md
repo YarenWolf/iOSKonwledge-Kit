@@ -109,6 +109,7 @@ http://www.jianshu.com/p/9f2d5cd546cc
 http://www.cocoachina.com/ios/20141126/10322.html
 https://my.oschina.net/hantianyu/blog/481525
 http://www.cnblogs.com/yajunLi/p/6005077.html
+http://www.2cto.com/kf/201609/548413.html
 
 
 
