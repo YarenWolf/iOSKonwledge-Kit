@@ -40,3 +40,16 @@
 
 
 ###其他
+    1、让navigationController下面的某个VC禁止向左滑动返回上一界面。
+```
+-(void)viewDidAppear:(BOOL)animated
+{
+ [super viewDidAppear:animated];
+ self.navigationController.interactivePopGestureRecognizer.enabled = NO;
+}
+
+-(void)viewDidDisappear:(BOOL)animated{
+ [super viewDidDisappear:animated];
+ self.navigationController.interactivePopGestureRecognizer.enabled = YES;
+}
+```
