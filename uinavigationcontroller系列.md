@@ -53,3 +53,16 @@
  self.navigationController.interactivePopGestureRecognizer.enabled = YES;
 }
 ```
+    2、让某个VC隐藏顶部电量状态栏
+```
+-(void)viewWillAppear:(BOOL)animated{
+ [super viewWillAppear:animated];
+ [[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationFade];
+}
+
+
+-(void)viewWillDisappear:(BOOL)animated{
+ [super viewWillDisappear:animated];
+ [[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation:UIStatusBarAnimationFade];
+}
+```
