@@ -8,3 +8,10 @@
 
 必须写在viewdidload方法中。
 此外如果urlrequest为网址（http://www.baidu.com)就没有问题
+
+###2、UIWebView与H5交互
+    1、H5页面上有个按钮，当点击了网页上按钮需要调用原生端的方法去显示一个View。
+
+```
+
+```
