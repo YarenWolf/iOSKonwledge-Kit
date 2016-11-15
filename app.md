@@ -100,3 +100,18 @@
 @end
 
 ```
+
+    判断首次启动
+```
+#define FirstInstallationKey @"isFirstInstalled"
+
++(BOOL)isFirstInstalledWithKey{
+ BOOL firstInstalled = (BOOL)[[NSUserDefaults standardUserDefaults] objectForKey:FirstInstallationKey];
+ return firstInstalled;
+}
+
+
++(void)installed{
+ [[NSUserDefaults standardUserDefaults] setBool:YES forKey:FirstInstallationKey];
+}
+```
