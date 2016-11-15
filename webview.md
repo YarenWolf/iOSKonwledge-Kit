@@ -35,3 +35,29 @@ __weak typeof(self) WeakSelf = self;
  }];
 }
 ```
+
+```
+H5:
+$("#addHealthData").click(function () {
+ if (isiOS) {
+ console.log(1);
+ setupWebViewJavascriptBridge(function(bridge) {
+ bridge.callHandler("openEntrance",
+ function(response) {
+ $("#addHealthData").addClass("hide");
+ });
+ });
+ }
+
+ if (isiOS) {
+ setupWebViewJavascriptBridge(function(bridge) {
+ bridge.registerHandler("needHideButton",
+ function(data) {
+ if (data.status === "1") {
+ $("#addHealthData").removeClass("hide");
+ }
+ });
+ });
+ }
+
+```
