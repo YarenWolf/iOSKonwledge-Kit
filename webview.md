@@ -13,5 +13,25 @@
     1、H5页面上有个按钮，当点击了网页上按钮需要调用原生端的方法去显示一个View。
 
 ```
+原生端：
+__weak typeof(self) WeakSelf = self;
 
+ [self.bridge registerHandler:@"openEntrance" handler:^(id data, WVJBResponseCallback responseCallback) {
+ [WeakSelf chooseOperation];
+ responseCallback(nil);
+ }];
+
+
+-(void)chooseOperation{
+ self.webView.userInteractionEnabled = YES;
+ self.operationView.frame = CGRectMake(0, BoundHeight, BoundWidth, BoundHeight);
+ self.operationView.alpha = 0;
+ [self.view addSubview:self.operationView];
+ [UIView animateWithDuration:ShowOperationDuration animations:^{
+ self.operationView.frame = CGRectMake(0, 0, BoundWidth, BoundHeight);
+ self.operationView.alpha = 1;
+ self.webView.userInteractionEnabled = NO;
+ } completion:^(BOOL finished) {
+ }];
+}
 ```
