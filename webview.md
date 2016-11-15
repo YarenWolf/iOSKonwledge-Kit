@@ -61,3 +61,11 @@ $("#addHealthData").click(function () {
  }
 
 ```
+
+当弹出的View出来后网页上按钮需要隐藏，那么网页注册一个隐藏的方法，原生端需要callHandler一下。见上述代码。
+
+
+此外当点击原生端一个RightBarButton时需要弹出View，这个方式是原生做的，但是此时需要隐藏网页上的按钮，因此需要利用stringByEvaluatingJavaScriptFromString，找出网页的那个元素并隐藏掉。（Jquery写法： $("#addHealthData").addClass("hide");）
+```
+[self.webView stringByEvaluatingJavaScriptFromString:@"$(\"#addHealthData\").addClass(\"hide\");"]; //原生端利用stringByEvaluatingJavaScriptFromString执行js代码，隐藏webview的按钮
+```
