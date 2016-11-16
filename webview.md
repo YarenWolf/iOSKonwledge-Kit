@@ -20,6 +20,7 @@ NSString *alertJS=@"alert('test js OC')"; //准备执行的js代码
 }
 ```
 
+2、
 ###1、uiwebview在viewwillappear方法中加载本项目工程中的网页资源会出现一个奇怪bug。第一次打开该页面可以加载出网页，离开该页面后再次进入该页面网页看不到。
 
 必须写在viewdidload方法中。
