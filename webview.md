@@ -6,6 +6,20 @@
 http://blog.csdn.net/lwjok2007/article/details/47058101/
 http://blog.csdn.net/lwjok2007/article/details/47058795
 
+
+1、原生调用js
+```
+-(void)webViewDidFinishLoad:(UIWebView *)webView
+
+{
+//网页加载完成调用此方法
+//首先创建JSContext 对象（此处通过当前webView的键获取到jscontext）
+JSContext *context=[webView valueForKeyPath:@"documentView.webView.mainFrame.javaScriptContext"];
+NSString *alertJS=@"alert('test js OC')"; //准备执行的js代码
+ [context evaluateScript:alertJS];//通过oc方法调用js的alert
+}
+```
+
 ###1、uiwebview在viewwillappear方法中加载本项目工程中的网页资源会出现一个奇怪bug。第一次打开该页面可以加载出网页，离开该页面后再次进入该页面网页看不到。
 
 必须写在viewdidload方法中。
