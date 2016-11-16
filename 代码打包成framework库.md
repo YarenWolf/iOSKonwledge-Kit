@@ -104,6 +104,13 @@ lipo -create 【模拟器打包path】 【真机打包path】 -output 【导出�
 
 12、如果自己的Framework需要使用第三方的库，那么我们在使用的时候需要将第三方库也加入到项目中去。
 
+13、判断一个Framework支持哪些架构？使用命令：
+注意：YHPatientFramework是YHPatientFramework.framework里面的YHPatientFramework
+
+```
+lipo -info YHPatientFramework
+```
+
 参考链接：
 http://www.jianshu.com/p/9f2d5cd546cc
 http://www.cocoachina.com/ios/20141126/10322.html
