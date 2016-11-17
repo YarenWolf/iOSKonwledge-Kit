@@ -68,4 +68,5 @@
     * [环信](环信.md)
     * [UIbutton文字右对齐](uibutton文字右对齐.md)
     * [App引导页](app.md)
+    * [ios具体设备型号](ios具体设备型号.md)
 
