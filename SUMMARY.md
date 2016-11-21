@@ -35,12 +35,11 @@
     * [可选型](可选型.md)
     * [值类型、引用类型](值类型、引用类型.md)
 * [tips](tips.md)
-* 数组
 * [续：开发tips](开发tips.md)
     * [正则表达式](正则表达式.md)
     * [提高代码质量](提高代码质量.md)
     * [毛玻璃-UIBlurEffect](毛玻璃-uiblureffect.md)
-    * 单例
+    * [单例](单例.md)
     * [Webview](webview.md)
     * [ios10某些App无法获取数据权限](ios.md)
     * [UILabel自适应策略](uilabel自适应策略.md)
