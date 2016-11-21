@@ -1,6 +1,6 @@
 ###ios view的frame和bounds之区别（位置和大小）
 
-     一、首先列一下公认的资料： 
+一、首先列一下公认的资料： 
 
 先看到下面的代码你肯定就明白了一些：
 
@@ -18,3 +18,4 @@
 
 很明显，bounds的原点是(0,0)点（就是view本身的坐标系统，默认永远都是0，0点，除非认为setbounds），而frame的原点却是任意的（相对于父视图中的坐标位置）。
 
+url:http://blog.csdn.net/mad1989/article/details/8711697
