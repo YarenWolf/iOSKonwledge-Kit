@@ -73,5 +73,24 @@ for (ALAsset *image in _mutlImageArray) {
  [_dataArray addObject:imageData];
  }
 ```
+    还有一种就是一边拍照，一边将图片压缩一下。
+```
+- (void)imagePickerController:(UIImagePickerController *)picker
+ didFinishPickingImage:(UIImage *)image
+ editingInfo:(NSDictionary *)editingInfo{
+ if (self.imageDatas.count>9) {
+ [SVProgressHUD showInfoWithStatus:@"最多可以上传9张图片"];
+ [self dismissViewControllerAnimated:YES completion:^{
+ }];
+ return ;
+ }
+
+ [self.imageDatas addObject:[self imageWithImage:image scaledToSize:CGSizeMake(image.size.width , image.size.height)]];
+ NSIndexPath *path = [NSIndexPath indexPathForRow:0 inSection:0];
+ [self.tableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:path] withRowAnimation:UITableViewRowAnimationBottom]; //对tableview局部进行刷新
+ [self dismissViewControllerAnimated:YES completion:^{
+ }];
+}
+```
 
     
