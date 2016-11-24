@@ -93,4 +93,185 @@ for (ALAsset *image in _mutlImageArray) {
 }
 ```
 
+
+    最后贴出多图片上传代码
+```
+-(void)upLoadImages{
+
+ [self showHudInView:self.view hint:NSLocalizedString(@"正在上传", @"正在上传")];
+
+ if ([_nameTextfield.text isEqualToString:@""]) {
+
+ [self hideHud];
+
+ TTAlertNoTitle(@"请输入报告名称");
+
+ return;
+
+ }
+
+ else if ([_hospitalTextfield.text isEqualToString:@""])
+
+ {
+
+ [self hideHud];
+
+ TTAlertNoTitle(@"请输入医院");
+
+ return;
+
+ }
+
+ else if (self.timeLabel.text == nil||[self.timeLabel.text isEqualToString:@""])
+
+ {
+
+ [self hideHud];
+
+ TTAlertNoTitle(@"请选择检测时间");
+
+ return;
+
+ }
+
+ else if ([_descriptionTextfield.text isEqualToString:@""])
+
+ {
+
+ [self hideHud];
+
+ TTAlertNoTitle(@"请输入描述信息");
+
+ return;
+
+ }
+
+
+
+ for (ALAsset *image in _mutlImageArray) {
+
+ UIImage *tempImg = [UIImage imageWithCGImage:image.defaultRepresentation.fullScreenImage];
+
+ NSData *imageData = [self imageWithImage:tempImg scaledToSize:CGSizeMake(tempImg.size.width , tempImg.size.height)];
+
+ [_dataArray addObject:imageData];
+
+ }
+
+
+
+ if ([self.imageDatas count] > 0) {
+
+ for (NSData *imageData in self.imageDatas) {
+
+ [_dataArray addObject:imageData];
+
+ }
+
+ }
+
+
+
+ NSString *type = [[NSString alloc] init];
+
+ if ([self.titles isEqualToString:@"检验报告"]) {
+
+ type = @"检测";
+
+ }
+
+ else if ([self.titles isEqualToString:@"影像报告"])
+
+ {
+
+ type = @"影像";
+
+ }
+
+ else if ([self.titles isEqualToString:@"处方"])
+
+ {
+
+ type = @"处方";
+
+ }
+
+ NSMutableDictionary *par = [NSMutableDictionary dictionary];
+
+ par[@"heleNum"] = [LoginHuanxinId substringFromIndex:2];
+
+ par[@"title"] = _nameTextfield.text;
+
+ par[@"desc"] = _descriptionTextfield.text;
+
+ par[@"checkHospital"] = _hospitalTextfield.text;
+
+ par[@"checkTime"] = _timeLabel.text;
+
+
+
+
+
+ AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+
+ AFHTTPResponseSerializer *responseSer = [AFHTTPResponseSerializer serializer];
+
+ responseSer.acceptableContentTypes = [NSSet setWithObjects:@"text/html",@"application/json", nil];
+
+ [manager POST:[NSString stringWithFormat:@"%@%@",Base_Url,@"api/image/create"] parameters:par constructingBodyWithBlock:^(id<AFMultipartFormData> _Nonnull formData) {
+
+ for (int i=1; i<= _dataArray.count; i++) {
+
+ NSString *fileName = [NSString stringWithFormat:@"%@%d",@"file",i];
+
+ NSDate *date = [NSDate date];
+
+ NSString *fileString = [NSString stringWithFormat:@"%@%d.jpg",date,i];
+
+ [formData appendPartWithFileData:_dataArray[i-1]
+
+ name:fileName
+
+ fileName:fileString
+
+ mimeType:@"image/*"];
+
+ }
+
+
+
+ } success:^(NSURLSessionDataTask * _Nonnull task, id _Nonnull responseObject) {
+
+ if (![responseObject[@"msg"] isEqualToString:@"操作成功"]) {
+
+ return ;
+
+ }
+
+
+
+ if ([responseObject[@"status"] integerValue] == 200 ) {
+
+ if ([self.delegate respondsToSelector:@selector(healthManagementVC:didFinshWithResult:)]) {
+
+ [self.delegate healthManagementVC:self didFinshWithResult:@"success"];
+
+ }
+
+ [SVProgressHUD showInfoWithStatus:@"上传成功"];
+
+ [self.navigationController popViewControllerAnimated:YES];
+
+ }
+
+ } failure:^(NSURLSessionDataTask * _Nonnull task, NSError * _Nonnull error) {
+
+ NSLog(@"%@",error.description);
+
+ }];
+
+}
+
+```
+
     
