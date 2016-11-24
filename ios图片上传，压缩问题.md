@@ -50,4 +50,28 @@ Nginx 400错误：HTTP头/Cookie过大
 nginx接受最长的HTTP头部大小必须比其中一个buffer大，否则就会报400的HTTP错误(Bad Request)。
 
 
-        
+
+    ios图片压缩一般用UIImageJPEGRepresentation(newImage, 0.1)。但是此方法只能压缩到一定的大小，第二个参数不是压缩倍数。但是服务器如果给出最大限制的话我们需要自定义压缩方法。
+
+```
+ - (NSData *)imageWithImage:(UIImage*)image 
+ scaledToSize:(CGSize)newSize{
+ UIGraphicsBeginImageContext(newSize);
+ [image drawInRect:CGRectMake(0,0,newSize.width,newSize.height)];
+ UIImage* newImage = UIGraphicsGetImageFromCurrentImageContext();
+ UIGraphicsEndImageContext();
+ return UIImageJPEGRepresentation(newImage, 0.1);
+}
+
+```
+
+    用法：例如我们从相册中选择了照片。点击上传的时候我们可以for循环给图片压缩，贴出代码
+```
+for (ALAsset *image in _mutlImageArray) {
+ UIImage *tempImg = [UIImage imageWithCGImage:image.defaultRepresentation.fullScreenImage];
+ NSData *imageData = [self imageWithImage:tempImg scaledToSize:CGSizeMake(tempImg.size.width , tempImg.size.height)];
+ [_dataArray addObject:imageData];
+ }
+```
+
+    
