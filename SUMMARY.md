@@ -72,4 +72,5 @@
     * [数组](数组.md)
     * [Frmae和Bounds的区别](frmae和bounds的区别.md)
     * [NavigationController管理VC](navigationcontroller管理vi-e-w-c-o-n-t-ro-l-le-r.md)
+    * [ios图片上传，压缩问题](ios图片上传，压缩问题.md)
 
