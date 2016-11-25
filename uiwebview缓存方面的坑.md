@@ -4,6 +4,4 @@
     最后很简单，网页加一个新方法，客户端这个页面消失再次进入的时候call 一下就好。
 ```
 window.localStorage.clear();
-
-
 ```
