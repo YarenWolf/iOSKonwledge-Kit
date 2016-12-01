@@ -13,151 +13,76 @@
 
 ```
 #import "WeightAndHeightPickerView.h"
-
-
-
 @interface WeightAndHeightPickerView ()<UIPickerViewDelegate,UIPickerViewDataSource>
-
 @property (nonatomic ,strong) UIPickerView * weightAndHeightPickerView;/*< 选择器*/
-
 @property (nonatomic ,strong) NSMutableArray * heights;
-
 @property (nonatomic ,strong) NSMutableArray * weights;
-
 @property (nonatomic, strong) NSString *selectHeight;
-
 @property (nonatomic, strong) NSString *selectWeight;
-
 @end
 
-
-
 @implementation WeightAndHeightPickerView
-
-
-
 - (instancetype)initWithFrame:(CGRect)frame{
-
  self = [super initWithFrame:frame];
-
  if (self) {
-
  [self loadData];
-
  [self loadPickerView];
-
  }
-
  return self;
-
 }
-
-
 
 #pragma mark 加载PickerView
-
 - (void)loadPickerView{
-
  [self addSubview:self.weightAndHeightPickerView];
-
  [self.weightAndHeightPickerView selectRow:165 inComponent:1 animated:YES];
-
  [self.weightAndHeightPickerView selectRow:58 inComponent:4 animated:YES];
-
 }
-
-
 
 #pragma mark - 加载数据
-
 - (void)loadData{
-
  for (int i = 0; i<=250;i++) {
-
  [self.heights addObject:@(i)];
-
  }
-
  for (int i = 0; i<=200;i++) {
-
  [self.weights addObject:@(i)];
-
  }
-
  self.selectWeight = @"58.0";
-
  self.selectHeight = @"165.0";
-
  [self.weightAndHeightPickerView reloadAllComponents];
-
 }
-
-
 
 #pragma mark - UIPickerDatasource
-
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView{
-
  return 6;
-
 }
-
-
 
 - (NSInteger)pickerView:(UIPickerView *)pickerView
-
 numberOfRowsInComponent:(NSInteger)component{
-
  if (1 == component) {
-
  return self.heights.count;
-
  }else if(4 == component){
-
  return self.weights.count;
-
  }else{
-
  return 1;
-
  }
-
 }
-
-
 
 - (CGFloat)pickerView:(UIPickerView *)pickerView rowHeightForComponent:(NSInteger)component{
-
  return 60;
-
 }
 
-
-
 #pragma mark - UIPickerViewDelegate
-
 #pragma mark 填充文字
-
 - (NSString *)pickerView:(UIPickerView *)pickerView
-
  titleForRow:(NSInteger)row
-
  forComponent:(NSInteger)component{
-
  if (1 == component) {
-
  return self.heights[row];
-
  }else if(4 == component){
-
  return self.weights[row];
-
  }else{
-
  return @"";
-
  }
-
 }
 
 
