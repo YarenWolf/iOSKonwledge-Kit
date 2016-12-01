@@ -38,7 +38,6 @@
     * [属性观察器](属性观察器.md)
     * [延迟属性](延迟属性.md)
     * [访问控制](访问控制.md)
-* [tips](tips.md)
 * [续：开发tips](开发tips.md)
     * [正则表达式](正则表达式.md)
     * [提高代码质量](提高代码质量.md)
@@ -81,4 +80,5 @@
     * [StoryBoard](storyboard.md)
     * [常见Error](常见error.md)
     * [UIDatePicker的使用](uidatepicker的使用.md)
+    * [自定义Picker](自定义picker.md)
 
