@@ -1,13 +1,6 @@
 # Summary
 
 * [Introduction](README.md)
-    * 第四章 玩转儿swift
-    * 第四章 玩转儿swift
-    * 第四章 玩转儿swift
-    * 第四章 玩转儿swift
-    * 第四章 玩转儿swift
-    * 第四章 玩转儿swift2.0（第三季）
-    * 等等等等
 * [第一章 初识swift](chapter1.md)
     * [Switch语句](switch语句.md)
     * [函数](函数.md)
