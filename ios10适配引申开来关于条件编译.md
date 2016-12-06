@@ -24,7 +24,7 @@
 @interface ViewController ()
 #endif
 ```
-
+但是在X-code7运行依旧报错，原因是因为__IPHONE_10_0在以前版本的X-code中根本不存在。#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_10_0这句在xcode8之前的版本上运行，是个恒成立的条件。。。条件编译的限制也就失去了本来的意义。__IPHONE_10_0这个宏也就是一个数字：100000。所以把__IPHONE_10_0用100000代替酒可以解决适配Ios10之前的条件编译了。但是这样也有可能有问题，万一每次升级需要检查这个宏的值有没有变化。
 
 
 
