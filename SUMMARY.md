@@ -80,4 +80,5 @@
     * [ios10适配引申开来关于条件编译](ios10适配引申开来关于条件编译.md)
     * [X-code工作规范](x-code工作规范.md)
     * [注释规范](注释规范.md)
+    * [UISegmentedControl的使用](uisegmentedcontrol的使用.md)
 
