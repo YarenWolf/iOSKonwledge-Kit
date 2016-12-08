@@ -87,3 +87,6 @@ $("#addHealthData").click(function () {
 ```
 [self.webView stringByEvaluatingJavaScriptFromString:@"$(\"#addHealthData\").addClass(\"hide\");"]; //原生端利用stringByEvaluatingJavaScriptFromString执行js代码，隐藏webview的按钮
 ```
+
+
+
