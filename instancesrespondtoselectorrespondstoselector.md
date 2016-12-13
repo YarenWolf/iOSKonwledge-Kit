@@ -18,7 +18,6 @@ BOOL flag1 = [Test1 instancesRespondToSelector:@selector(objectFun)];   //YES
          *  [类 respondsToSelector:@selector(methodName)] 用于检测是否实现了类方法
          */
         
-        
         /**
          * 判断对象类型
          * -(BOOL)isKindOfClass:classObj:是否是这个类或者是这个类子类的对象
