@@ -85,4 +85,5 @@
     * [使用safari对webview进行调试](使用safari对webview进行调试.md)
     * [NSTimer](nstimer.md)
     * [Bool值](bool值.md)
+    * [instancesRespondToSelector&respondsToSelector](instancesrespondtoselectorrespondstoselector.md)
 
