@@ -89,5 +89,4 @@
     * [instancesRespondToSelector&respondsToSelector](instancesrespondtoselectorrespondstoselector.md)
     * [URL常见问题](url常见问题.md)
     * [工程管理](工程管理.md)
-    * Git
 
