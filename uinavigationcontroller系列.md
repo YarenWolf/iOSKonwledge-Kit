@@ -92,6 +92,24 @@
 
 注意：
 
+在info.plist中，将View controller-based status bar appearance设为YES，或者没有设置。
+View controller-based status bar appearance的默认值就是YES。如果View controller-based status bar appearance为YES。
+则[UIApplication sharedApplication].statusBarStyle 无效。
+
+
+解决办法：
+1、在vc中重写
+-(UIStatusBarStyle)preferredStatusBarStyle{
+   return UIStatusBarStyleDefault;
+}
+
+2、在viewDidLoad中调用[self setNeedsStatusBarAppearanceUpdate]
+但当vc在navi中时vc中的preferredStatusBarStyle方法根本不用被调用。
+
+原因是，[self setNeedsStatusBarAppearanceUpdate]发出后，
+只会调用navigation controller中的preferredStatusBarStyle方法，vc中的preferredStatusBarStyle不会被调用。
+
+
 
 
 
