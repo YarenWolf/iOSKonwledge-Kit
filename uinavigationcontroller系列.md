@@ -98,18 +98,37 @@ View controller-based status bar appearance的默认值就是YES。如果View co
 
 
 解决办法：
-1、在vc中重写
+步骤1、在vc中重写
 -(UIStatusBarStyle)preferredStatusBarStyle{
    return UIStatusBarStyleDefault;
 }
 
-2、在viewDidLoad中调用[self setNeedsStatusBarAppearanceUpdate]
+步骤2、在viewDidLoad中调用[self setNeedsStatusBarAppearanceUpdate]
 但当vc在navi中时vc中的preferredStatusBarStyle方法根本不用被调用。
 
 原因是，[self setNeedsStatusBarAppearanceUpdate]发出后，
-只会调用navigation controller中的preferredStatusBarStyle方法，vc中的preferredStatusBarStyle不会被调用。
+只会调用navigation controller中的preferredStatusBarStyle方法，vc中的preferredStatusBarStyle不会被调用。有2中办法：
+1）、
 
+设置navbar的barStyle 属性会影响status bar 的字体和背景色。如下。
+status bar的字体为白色导航栏的背景色是黑色。
 
+```
+self.navigationController.navigationBar.barStyle = UIBarStyleBlack;
+```
+status bar的字体为黑色导航栏的背景色是白色，状态栏的背景色也是白色。
+
+```
+self.navigationController.navigationBar.barStyle = UIBarStyleDefault;
+```
+
+2）、自定义一个Navi类，在里写
+
+```
+- (UIViewController *)childViewControllerForStatusBarStyle{
+    return self.topViewController;
+}
+```
 
 
 
