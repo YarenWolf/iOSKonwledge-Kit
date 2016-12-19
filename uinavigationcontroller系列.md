@@ -131,7 +131,24 @@ self.navigationController.navigationBar.barStyle = UIBarStyleDefault;
 ```
 
 
+简便写法：
+（1）、在info.plist中，将View controller-based status bar appearance设为NO
+(2)、UIStatusBarStyle设置为UIStatusBarStyleDefault
+（3）、登录VC不管
+（4）、进入主界面。
 
+```
+[self setNeedsStatusBarAppearanceUpdate];
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent animated:YES];
+    self.navigationController.navigationBar.barStyle = UIBarStyleBlack;
+```
+同时在自定义navi中写
+
+```
+-(UIStatusBarStyle)preferredStatusBarStyle{
+    return UIStatusBarStyleLightContent;
+}
+```
 
 
 
