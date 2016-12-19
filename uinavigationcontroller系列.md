@@ -67,7 +67,41 @@
 }
 ```
 
-    3、让某个vc的电量等颜色为黑色
-```
+    3、电池电量状态栏改变颜色
 
 ```
+状态栏的字体为黑色：UIStatusBarStyleDefault
+状态栏的字体为白色：UIStatusBarStyleLightContent
+
+1、全局设置颜色为白色，只有启动页和登录页为黑色
+步骤：1）、在info.plist中添加“View controller-based status bar apperance”，类型为Bool，值为NO
+2）、在Appdelegate中写
+[[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent animated:YES];
+3）、在登录的VC中
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault animated:YES];
+}
+
+-(void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent animated:YES];
+}
+
+```
+
+注意：
+
+
+
+
+
+
+
+
+
+
+
+
+
+
