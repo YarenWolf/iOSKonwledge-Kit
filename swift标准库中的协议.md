@@ -100,6 +100,7 @@ scorers.sorted()
 
 
 recordA.description
+print(recordA)
 
 
 
