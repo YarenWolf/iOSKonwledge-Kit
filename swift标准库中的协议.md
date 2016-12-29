@@ -1,8 +1,9 @@
 ###标准库中的协议
 
-Equatable --必须重载 “== “运算符 
-Comparable-- 必须重载 “< “运算符 
-CustomStringConvertible  -- 必须重载 “description “
+    Equatable --必须重载 “== “运算符 
+    Comparable-- 必须重载 “< “运算符 
+    CustomStringConvertible  -- 必须重载 “description “。之后利用print(对象)就可以打印出该对象。
+
 var description: String{
         return "Wins \(wins), Losses \(losses)"
     }
