@@ -13,8 +13,6 @@ scrollView属性的。代码如下：（self.navBar是自定义的导航栏View�
 
 
 
-
-
 ```
 -(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<<span style="font-variant-ligatures: no-common-ligatures; color: #703daa">NSString *,id> *)change context:(void *)context
 {
