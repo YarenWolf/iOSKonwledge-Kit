@@ -48,6 +48,7 @@
 * [第四章 玩转儿swift3.0](第四章-玩转儿swift30.md)
     * [错误处理](错误处理.md)
     * 内存管理
+    * [ErrorType](errortype.md)
 * [续：开发tips](开发tips.md)
     * [正则表达式](正则表达式.md)
     * [提高代码质量](提高代码质量.md)
