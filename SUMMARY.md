@@ -53,6 +53,7 @@
     * [Swift检查协议遵守](swift检查协议遵守.md)
     * [NSObject 、AnyObject、Any](nsobject-、anyobject、any.md)
     * [Swift学习路线](swift学习路线.md)
+    * [强引用循环](强引用循环.md)
 * [续：开发tips](开发tips.md)
     * [正则表达式](正则表达式.md)
     * [提高代码质量](提高代码质量.md)
