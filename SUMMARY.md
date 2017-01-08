@@ -10,12 +10,12 @@
     * swift 1.2新特性
     * 类和对象
     * Swift开发App
-* [第二章 玩转儿swift1](第二章-玩转儿swift1.md)
+* [第二章 玩转儿swift 第一回合](第二章-玩转儿swift1.md)
     * [变量](变量.md)
     * [循环](循环.md)
     * [字符串](字符串.md)
     * [set](set.md)
-* [第三章 玩转儿swift2.0](第三章-玩转儿swift.md)
+* [第三章 玩转儿swift 第二回合](第三章-玩转儿swift.md)
     * [swift为什么要有可选型](swift.md)
     * [数组](数组.md)
     * [字典和set](字典和set.md)
@@ -45,7 +45,7 @@
     * [范型约束](范型约束.md)
     * [Swift是面向协议的编程](swift是面向协议的编程.md)
     * [委托](委托.md)
-* [第四章 玩转儿swift3.0](第四章-玩转儿swift30.md)
+* [第四章 玩转儿swift 第三回合](第四章-玩转儿swift30.md)
     * [错误处理](错误处理.md)
     * [内存管理](内存管理.md)
     * [ErrorType](errortype.md)
@@ -54,6 +54,7 @@
     * [NSObject 、AnyObject、Any](nsobject-、anyobject、any.md)
     * [Swift学习路线](swift学习路线.md)
     * [强引用循环](强引用循环.md)
+    * [闭包中的强引用循环](闭包中的强引用循环.md)
 * [续：开发tips](开发tips.md)
     * [正则表达式](正则表达式.md)
     * [提高代码质量](提高代码质量.md)
