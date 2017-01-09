@@ -1,6 +1,6 @@
 # Summary
 
-* [Introduction](README.md)
+* [介绍](README.md)
 * [第一章 初识swift](chapter1.md)
     * [Switch语句](switch语句.md)
     * [函数](函数.md)
