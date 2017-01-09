@@ -1,6 +1,11 @@
 # Summary
 
 * [Introduction](README.md)
+* [第二章 玩转儿swift 第一回合](第二章-玩转儿swift1.md)
+    * [变量](变量.md)
+    * [循环](循环.md)
+    * [字符串](字符串.md)
+    * [set](set.md)
 * [第一章 初识swift](chapter1.md)
     * [Switch语句](switch语句.md)
     * [函数](函数.md)
@@ -10,11 +15,6 @@
     * swift 1.2新特性
     * 类和对象
     * Swift开发App
-* [第二章 玩转儿swift 第一回合](第二章-玩转儿swift1.md)
-    * [变量](变量.md)
-    * [循环](循环.md)
-    * [字符串](字符串.md)
-    * [set](set.md)
 * [第三章 玩转儿swift 第二回合](第三章-玩转儿swift.md)
     * [swift为什么要有可选型](swift.md)
     * [数组](数组.md)
