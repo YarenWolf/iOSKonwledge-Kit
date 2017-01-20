@@ -101,7 +101,7 @@
     * [常见Error](常见error.md)
     * [UIDatePicker的使用](uidatepicker的使用.md)
     * [自定义Picker](自定义picker.md)
-    * [UIAlertController改变颜色](uia-le-r-t-c-o-n-t-ro-l-le-r.md)
+    * [UIAlertController带输入框](uia-le-r-t-c-o-n-t-ro-l-le-r.md)
     * [伸缩式header bar--BLKFlexibleHeightBar](伸缩式header-bar--blkflexibleheightbar.md)
     * [UIImageView](uiimageview.md)
     * [ios10适配引申开来关于条件编译](ios10适配引申开来关于条件编译.md)
