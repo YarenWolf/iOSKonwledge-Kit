@@ -12,7 +12,6 @@
 ```
 
 
-
 这里的状态显示的是白色。
 这里我们要清楚 ：
 状态栏的字体为黑色： UIStatusBarStyleDefault
