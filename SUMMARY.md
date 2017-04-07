@@ -126,4 +126,6 @@
   * [UISteper渐进控件](uisteper.md)
 * iOS素养
   * [1、xcode6和xcode5区别](1、xcode6和xcode5区别.md)
+* Runtime篇
+  * [1、利用runtime解决UIButton重复点击问题](1runtimeuibutton.md)
 
