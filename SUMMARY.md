@@ -1,7 +1,6 @@
 # Summary
 
 * [介绍](README.md)
-  * 开发tips-Swift版
 * [第一章 初识swift](chapter1.md)
   * [Switch语句](switch语句.md)
   * [函数](函数.md)
@@ -124,10 +123,12 @@
   * [ios10之后App无法请求网络权限问题](ios10之后app无法请求网络权限问题.md)
   * [地图](地图.md)
   * [相册选取照片、拍照](相册选取照片、拍照.md)
-  * [UISteper渐进控件](uisteper.md)
 * iOS素养
   * [1、xcode6和xcode5区别](1、xcode6和xcode5区别.md)
 * Runtime篇
 * [开发tips-OC版](tips-oc.md)
   * [简短代码实现原生定位](tips-oc/1.md)
+* [开发tips-Swift版](tips-swift.md)
+  * [UISteper渐进控件](tips-swift/ui.md)
+* [UISteper渐进控件](uisteper.md)
 
