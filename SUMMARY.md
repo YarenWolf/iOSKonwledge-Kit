@@ -127,7 +127,6 @@
 * iOS素养
   * [1、xcode6和xcode5区别](1、xcode6和xcode5区别.md)
 * Runtime篇
-  * [1、利用runtime解决UIButton重复点击问题](1runtimeuibutton.md)
 * [开发tips-OC版](tips-oc.md)
-  * [简短代码实现原生定位](tips-oc/d.md)
+  * [简短代码实现原生定位](tips-oc/1.md)
 
