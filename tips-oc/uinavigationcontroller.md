@@ -1,0 +1,3 @@
+1、如何隐藏navi下面的一条线
+
+2、控制cell的indicatior左边的文字距离

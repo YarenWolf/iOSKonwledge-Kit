@@ -128,6 +128,7 @@
 * Runtime篇
 * [开发tips-OC版](tips-oc.md)
   * [简短代码实现原生定位](tips-oc/1.md)
+  * [隐藏UINavigationController下面的一条线](tips-oc/uinavigationcontroller.md)
 * [开发tips-Swift版](tips-swift.md)
   * [UISteper渐进控件](tips-swift/ui.md)
 * [UISteper渐进控件](uisteper.md)
