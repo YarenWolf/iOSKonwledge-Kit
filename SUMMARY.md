@@ -124,6 +124,7 @@
   * [地图](地图.md)
   * [相册选取照片、拍照](相册选取照片、拍照.md)
   * [UISteper渐进控件](uisteper.md)
+  * [原生定位](.md)
 * iOS素养
   * [1、xcode6和xcode5区别](1、xcode6和xcode5区别.md)
 * Runtime篇
