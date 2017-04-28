@@ -132,6 +132,7 @@
   * [UITableView问题杂谈](tips-oc/22.md)
   * [JSBind&& WebViewJavascriptBridge](tips-oc/jsbindandand-webviewjavascriptbridge.md)
   * [内存管理](tips-oc/2.md)
+  * [玩转UILabel-富文本](tips-oc/wan-zhuan-uilabel-fu-wen-ben.md)
 * [开发tips-Swift版](tips-swift.md)
   * [UISteper渐进控件](tips-swift/ui.md)
 * [UISteper渐进控件](uisteper.md)
