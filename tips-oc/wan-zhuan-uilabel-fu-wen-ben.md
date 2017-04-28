@@ -41,3 +41,11 @@
 
  12  NSVerticalGlyphFormAttributeName(横竖排版)
  该属性所对应的值是一个 NSNumber 对象(整数)。0 表示横排文本。1 表示竖排文本。在 iOS 中，总是使用横排文本，0 以外的值都未定义。
+ 
+ 
+直接上代码
+
+`
+嗡嗡嗡
+` 
+ 
