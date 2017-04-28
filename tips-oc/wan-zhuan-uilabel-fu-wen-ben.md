@@ -45,7 +45,44 @@
  
 直接上代码
 
-`
-嗡嗡嗡
-` 
+```
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    [self.view addSubview:self.label];
+}
+
+
+#pragma mark - lazy load
+-(UILabel *)label{
+    if (!_label) {
+        _label = [[UILabel alloc] initWithFrame:CGRectMake(0, 100,[UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height - 100)];
+        _label.backgroundColor = [UIColor grayColor];
+        NSMutableAttributedString *attrbuitedStr = [[NSMutableAttributedString alloc] initWithString:@"人生若只如初见，何事秋风悲画扇。\n等闲变却故人心，却道故人心易变。\n骊山语罢清宵半，泪雨霖铃终不怨。\n何如薄幸锦衣郎，比翼连枝当日愿。"];
+        
+        //前7个字为红色
+        [attrbuitedStr addAttribute:NSForegroundColorAttributeName value:[UIColor redColor] range:NSMakeRange(0, 7)];
+        //前7个字加下划线
+        [attrbuitedStr addAttribute:NSUnderlineStyleAttributeName value:[NSNumber numberWithInt:NSUnderlineStyleSingle] range:NSMakeRange(0, 7)];
+        //前7个字字体大小为30px
+        [attrbuitedStr addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:30] range:NSMakeRange(0, 7)];
+        
+        
+        //设置第二行前半句文本背景颜色为黄色
+        [attrbuitedStr addAttribute:NSBackgroundColorAttributeName value:[UIColor yellowColor] range:NSMakeRange(16, 8)];
+        //设置第二行前半句文本间距为10
+        [attrbuitedStr addAttribute:NSKernAttributeName value:@10  range:NSMakeRange(16, 8)];
+        //设置边框颜色
+        [attrbuitedStr addAttribute:NSStrokeColorAttributeName value:[UIColor greenColor] range:NSMakeRange(16, 8)];
+        //设置边框宽度
+        [attrbuitedStr addAttribute:NSStrokeWidthAttributeName value:[NSNumber numberWithInt:1] range:NSMakeRange(16, 8)];
+        
+        _label.attributedText = attrbuitedStr;
+        _label.textAlignment = NSTextAlignmentCenter;
+        _label.numberOfLines = 0;
+        [_label sizeToFit];
+    }
+    return _label;
+}
+```
+
  
