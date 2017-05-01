@@ -142,5 +142,6 @@
   * [UISteper渐进控件](tips-swift/ui.md)
 * [UISteper渐进控件](uisteper.md)
 * [URL Scheme](url-scheme.md)
-  * [iOS系统下检查第三方APP是否安装及跳转启动](url-scheme/iosxi-tong-xia-jian-cha-di-san-fang-app-shi-fou-an-zhuang-ji-tiao-zhuan-qi-dong.md)
+  * [URL Scheme入门](url-scheme/iosxi-tong-xia-jian-cha-di-san-fang-app-shi-fou-an-zhuang-ji-tiao-zhuan-qi-dong.md)
+  * [URL Scheme进阶](url-scheme/url-schemejin-jie.md)
 
