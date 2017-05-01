@@ -28,6 +28,12 @@
     引入所需的系统库。CoreLocation.framework和QuartzCore.framework、OpenGLES.framework、SystemConfiguration.framework、CoreGraphics.framework、Security.framework、libsqlite3.0.tbd（xcode7以前为 libsqlite3.0.dylib）、CoreTelephony.framework 、libstdc++.6.0.9.tbd（xcode7以前为libstdc++.6.0.9.dylib）。在Xcode的Project -> Active Target ->Build Phases ->Link Binary With Libraries，添加这几个系统库即可。
     如果项目需要基础地图功能则需引入mapapi.bundle资源文件。
     
+    4）在info.plist中加入
+    <key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>baidumap</string>
+		<string>iosamap</string>
+	</array>
     
 2、在所需要的控制器里面加入地图显示用户当前定位、显示目标地址（用大头针标示出来）、路径规划导航（百度地图、高德地图、系统地图），详细说明见代码注释
 
