@@ -114,6 +114,24 @@ Custom URL scheme 的好处就是，你可以在其它程序中通过这个url�
 5、如何判断是指定App打开，或者某些App不让打开我们的App？
 做了实验。
 
+A：在需要打开第三方App的工程中将Bundle identifier改为“com.geek.test2”,其余不变
+
+B：在被打开的App的AppDelegate.m中
+
+
+```
+-(BOOL)application:(UIApplication *)application openURL:(nonnull NSURL *)url sourceApplication:(nullable NSString *)sourceApplication annotation:(nonnull id)annotation{
+    NSLog(@"calling application bundle id: %@",sourceApplication);
+    NSLog(@"url shceme:%@",[url scheme]);
+    NSLog(@"参数:%@",[url query]);
+    if ([sourceApplication isEqualToString:@"com.geek.test1"]) {
+        return YES;
+    }
+    return NO;
+}
+```
+
+
 
 
 

@@ -140,7 +140,7 @@
   * [各种编码单位](di-tu/ge-zhong-bian-ma-dan-wei.md)
 * [开发tips-Swift版](tips-swift.md)
   * [UISteper渐进控件](tips-swift/ui.md)
+* [UISteper渐进控件](uisteper.md)
 * [url scheme](url-scheme.md)
   * [iOS系统下检查第三方APP是否安装及跳转启动](url-scheme/iosxi-tong-xia-jian-cha-di-san-fang-app-shi-fou-an-zhuang-ji-tiao-zhuan-qi-dong.md)
-* [UISteper渐进控件](uisteper.md)
 
