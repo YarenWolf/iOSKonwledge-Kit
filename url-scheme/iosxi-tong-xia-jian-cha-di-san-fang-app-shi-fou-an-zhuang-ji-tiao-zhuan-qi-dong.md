@@ -33,7 +33,7 @@ Custom URL scheme 的好处就是，你可以在其它程序中通过这个url�
  
 ###注意###
 
-1、所有的网页都有url；但未必所有的应用都有自己的 URL Schemes
+1、所有的网页都有url；但未必所有的应用都有自己的 URL Schemes，更不是每个应用的每个功能都有相应的 URL Schemes
 
 2、一个网址只对应一个网页，但并非每个 URL Schemes 都只对应一款应用。这点是因为苹果没有对 URL Schemes 有不允许重复的硬性要求
 
