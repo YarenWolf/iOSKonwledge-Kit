@@ -339,7 +339,7 @@ $hotel->getHotel();
 ?>
 ```
 
-想看完整项目献上传送门：[住哪儿客户端](https://github.com/FantasticLBP/Hotels)、：[住哪儿服务端](https://github.com/FantasticLBP/Hotels_Server)
+想看完整项目献上传送门：[住哪儿客户端](https://github.com/FantasticLBP/Hotels)、[住哪儿服务端](https://github.com/FantasticLBP/Hotels_Server)
 
 
 
