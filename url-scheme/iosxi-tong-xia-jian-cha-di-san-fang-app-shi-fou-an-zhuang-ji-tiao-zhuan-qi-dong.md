@@ -28,4 +28,93 @@ URL Schemes 应用在 iOS 上已经很久了。对于使用者来说，在沙盒
 Custom URL scheme 的好处就是，你可以在其它程序中通过这个url打开应用程序。如Ａ应用程序注册了一个url scheme:myApp, 那么就在mobile浏览器中就可以通过<href=’myApp://’>打开你的应用程序Ａ。
 
 对比网页url就比较好理解url scheme，。给出一个url “http://bxu2359670321.my3w.com/view/login.php”，它的格式：protocol :// hostname[:port] / path / [;parameters][?query]#fragment。
+因此这个url的protocol就是http。对比URL Scheme，给出例子“weixin://dl/moments“，前面的weixin://就代表微信的scheme。你可以完全按照理解一个网页的 URL ——也就是它的网址——的方式来理解一个 iOS 应用的 URL。
+
+ 
+###注意###
+
+1、所有的网页都有url；但未必所有的应用都有自己的 URL Schemes
+
+2、一个网址只对应一个网页，但并非每个 URL Schemes 都只对应一款应用。这点是因为苹果没有对 URL Schemes 有不允许重复的硬性要求
+
+3、一般网页的 URL 比较好预测，而 iOS 上的 URL Schemes 因为没有统一标准，所以非常难猜，通过猜来获取 iOS 应用的 URL Schemes 是不现实的。（我推荐将Bundle identifier反转） 
+
+
+###上干货###
+
+1、注册自定义 URL Scheme
+
+
+1）注册自定义 URL Scheme 的第一步是创建 URL Scheme — 在 Xcode Project Navigator 中找到并点击工程 info.plist 文件。当该文件显示在右边窗口，在列表上点击鼠标右键，选择 Add Row:
+![](/assets/url scheme1.png)
+
+2）点击左边剪头打开列表，可以看到 Item 0，一个字典实体。展开 Item 0，可以看到 URL Identifier，一个字符串对象。该字符串是你自定义的 URL scheme 的名字。建议采用反转Bundle idenmtifier的方法保证该名字的唯一性
+![](/assets/url scheme2.png)
+
+3）点击 Item 0 新增一行，从下拉列表中选择 URL Schemes，敲击键盘回车键完成插入。（注意 URL Schemes 是一个数组，允许应用定义多个 URL schemes。）展开该数据并点击 Item 0。你将在这里定义自定义 URL scheme 的名字。只需要名字，不要在后面追加 ://
+
+
+![](/assets/url scheme3.png)
+
+2、拿浏览器坐简单验证
+
+在地址栏中熟入自定的url scheme。此时必须保证该浏览器所在设备上已经安装了具有自定义url scheme的App。
+![](/assets/IMG_5739.PNG)
+
+3、新建Xcode工程，做个App试试看，这里我就放一个Button，点击打开url
+代码。
+
+
+```
+- (IBAction)open:(id)sender {
+    NSString *url = @"zhunaer://?name=lbp&age=22";
+    if ([[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:url]]) {
+           [[UIApplication sharedApplication] openURL:[NSURL URLWithString:url]];
+    }else{
+        NSLog(@"打不开");
+    }
+}
+```
+结果打不开，为什么？
+因为在新建App的plist中没加query schemes
+
+
+```
+<key>LSApplicationQueriesSchemes</key>
+<array>
+<string>zhunaer</string>
+</array>
+```
+
+4、如果需要在2个App之间传值，怎么办？可以用URL Scheme解决。
+
+在被打开的App的Appdelegate.m中实现-(BOOL)application:(UIApplication *)application openURL:(nonnull NSURL *)url sourceApplication:(nullable NSString *)sourceApplication annotation:(nonnull id)annotation；
+
+
+
+```
+-(BOOL)application:(UIApplication *)application openURL:(nonnull NSURL *)url sourceApplication:(nullable NSString *)sourceApplication annotation:(nonnull id)annotation{
+    NSLog(@"calling application bundle id: %@",sourceApplication);
+    NSLog(@"url shceme:%@",[url scheme]);
+    NSLog(@"参数:%@",[url query]);
+    if ([sourceApplication isEqualToString:@"com.geek.test1"]) {
+        return YES;
+    }
+    return NO;
+    
+}
+
+```
+
+
+在需要打开第三方App的点击事件处的url处后面加上参数，类似NSString *url = @"zhunaer://?name=lbp&age=22";
+
+注意：在URL Scheme后加?然后跟网页的url的参数一样写法。
+
+5、如何判断是指定App打开，或者某些App不让打开我们的App？
+做了实验。
+
+
+
+
 
