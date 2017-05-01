@@ -27,8 +27,8 @@ URL Schemes 应用在 iOS 上已经很久了。对于使用者来说，在沙盒
 
 Custom URL scheme 的好处就是，你可以在其它程序中通过这个url打开应用程序。如Ａ应用程序注册了一个url scheme:myApp, 那么就在mobile浏览器中就可以通过<href=’myApp://’>打开你的应用程序Ａ。
 
-对比网页url就比较好理解url scheme，。给出一个url “http://bxu2359670321.my3w.com/view/login.php”，它的格式：protocol :// hostname[:port] / path / [;parameters][?query]#fragment。
-因此这个url的protocol就是http。对比URL Scheme，给出例子“weixin://dl/moments“，前面的weixin://就代表微信的scheme。你可以完全按照理解一个网页的 URL ——也就是它的网址——的方式来理解一个 iOS 应用的 URL。
+对比网页url就比较好理解url scheme。给出一个url “http://bxu2359670321.my3w.com/view/login.php”，它的格式：protocol :// hostname[:port] / path / [;parameters][?query]#fragment。
+因此这个url的protocol就是http。对比URL Scheme，给出例子“weixin://dl/moments“，前面的weixin就代表微信的scheme。你可以完全按照理解一个网页的 URL ——也就是它的网址——的方式来理解一个 iOS 应用的 URL。
 
  
 ###注意###
