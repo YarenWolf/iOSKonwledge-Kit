@@ -131,6 +131,8 @@ B：在被打开的App的AppDelegate.m中
 }
 ```
 
+![](/assets/Simulator Screen Shot 2017年5月1日 下午2.48.21.png)
+
 ###实验结果###
 
 依旧可以打开App，即使断点走入Return NO
