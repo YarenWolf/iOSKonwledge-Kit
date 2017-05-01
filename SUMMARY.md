@@ -133,6 +133,7 @@
   * [JSBind&& WebViewJavascriptBridge](tips-oc/jsbindandand-webviewjavascriptbridge.md)
   * [内存管理](tips-oc/2.md)
   * [玩转UILabel-富文本](tips-oc/wan-zhuan-uilabel-fu-wen-ben.md)
+  * [摇一摇根据城市位置推荐酒店](tips-oc/yao-yi-yao-gen-ju-cheng-shi-wei-zhi-tui-jian-jiu-dian.md)
 * [地图](di-tu.md)
   * [地图显示、路径规划导航](di-tu/di-tu-xian-shi-3001-lu-jing-gui-hua-dao-hang.md)
 * [开发tips-Swift版](tips-swift.md)
