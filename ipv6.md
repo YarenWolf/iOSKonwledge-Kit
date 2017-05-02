@@ -25,4 +25,4 @@
     那么 ipv6 就是 http://[64:FF9B::0A00:0001]:8100/xxx.html
     
     
-2、
+2、http://ios.jobbole.com/86580/
