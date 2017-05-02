@@ -23,3 +23,6 @@
     ipv6 的 http url 格式跟 ipv4 的 http url格式有所不同需要注意
     假如 ipv4 的 http url 是 http://10.0.0.1:8100/xxx.html
     那么 ipv6 就是 http://[64:FF9B::0A00:0001]:8100/xxx.html
+    
+    
+2、
