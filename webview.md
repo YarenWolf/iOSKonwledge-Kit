@@ -88,5 +88,5 @@ $("#addHealthData").click(function () {
 [self.webView stringByEvaluatingJavaScriptFromString:@"$(\"#addHealthData\").addClass(\"hide\");"]; //原生端利用stringByEvaluatingJavaScriptFromString执行js代码，隐藏webview的按钮
 ```
 
-
+3、禁止网页检测任何url。某些网页加载好后会莫名其妙的显示某些文字为蓝色，这里需要设置UIWebView.webView.dataDetectorTypes = UIDataDetectorTypeNone;
 
