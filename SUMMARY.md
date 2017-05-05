@@ -135,6 +135,7 @@
   * [玩转UILabel-富文本](tips-oc/wan-zhuan-uilabel-fu-wen-ben.md)
   * [摇一摇根据城市位置推荐酒店](tips-oc/yao-yi-yao-gen-ju-cheng-shi-wei-zhi-tui-jian-jiu-dian.md)
   * [iOS系统下检查第三方APP是否安装及跳转启动](tips-oc/iosxi-tong-xia-jian-cha-di-san-fang-app-shi-fou-an-zhuang-ji-tiao-zhuan-qi-dong.md)
+  * [App与后台通信如何校验请求合法](tips-oc/appyu-hou-tai-tong-xin-ru-he-xiao-yan-qing-qiu-he-fa.md)
 * [地图](di-tu.md)
   * [地图显示、路径规划导航](di-tu/di-tu-xian-shi-3001-lu-jing-gui-hua-dao-hang.md)
   * [各种编码单位](di-tu/ge-zhong-bian-ma-dan-wei.md)
