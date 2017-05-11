@@ -152,7 +152,7 @@ self.navigationController.navigationBar.barStyle = UIBarStyleDefault;
 
 
 
-
+设置颜色：http://www.jianshu.com/p/25e9c1a864be
 
 
 
