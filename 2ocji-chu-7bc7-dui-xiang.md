@@ -94,14 +94,14 @@ int main(int argc, const char * argv[]) {
 
 Person  \*p1 = \[Person new\];这句代码在内存分配原理如下图所示
 
-![p1](https://raw.githubusercontent.com/FantasticLBP/iOSKonwledge-Kit/master/assets/Untitled Diagram-2.png "p1")
+![p1](https://raw.githubusercontent.com/FantasticLBP/iOSKonwledge-Kit/master/assets/Untitled%20Diagram-2.png "p1")
 
 
 结论
 
-![p1](https://raw.githubusercontent.com/FantasticLBP/iOSKonwledge-Kit/master/assets/屏幕快照 2017-05-15 下午5.35.17.png "p1")
+![p1](https://raw.githubusercontent.com/FantasticLBP/iOSKonwledge-Kit/master/assets/屏幕快照%202017-05-15%20下午5.35.17.png "p1")
 
-![p3](https://raw.githubusercontent.com/FantasticLBP/iOSKonwledge-Kit/master/assets/屏幕快照 2017-05-15 下午5.35.34.png "p3")
+![p3](https://raw.githubusercontent.com/FantasticLBP/iOSKonwledge-Kit/master/assets/屏幕快照%202017-05-15%20下午5.35.34.png "p3")
 
 可以 看到Person类的3个对象p1、p2、p3的isa的值相同。
 
