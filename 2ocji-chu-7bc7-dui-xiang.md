@@ -58,6 +58,7 @@ Person *p1 = [Person new]
     @public
     int _age;
     NSString *_name;
+    int *p;
 }
 
 - (void)sayHi;
@@ -88,6 +89,14 @@ int main(int argc, const char * argv[]) {
     return 0;
 }
 ```
+
+
+
+Person  \*p1 = \[Person new\];这句代码在内存分配原理如下图所示
+
+![](/assets/Untitled Diagram-2.png)
+
+
 
 结论
 
