@@ -91,9 +91,12 @@ int main(int argc, const char * argv[]) {
 
 结论
 
-![](/assets/屏幕快照 2017-05-15 下午5.35.17.png)
 
-![](/assets/屏幕快照 2017-05-15 下午5.35.34.png)
+
+![p1](https://raw.githubusercontent.com/FantasticLBP/iOSKonwledge-Kit/master/assets/屏幕快照%202017-05-15%20下午5.35.17.png "p1")
+
+![p3](https://raw.githubusercontent.com/FantasticLBP/iOSKonwledge-Kit/master/assets/屏幕快照%202017-05-15%20下午5.35.34.png "p3")
+
 
 
 
