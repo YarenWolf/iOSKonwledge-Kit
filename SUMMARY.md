@@ -128,6 +128,7 @@
   * [2、oc内存管理-对象](2ocji-chu-7bc7-dui-xiang.md)
   * [3、nil && NULL](3nil-andand-null.md)
   * [4、iOS开发工程规范](4ocji-chu-zhi-shi.md)
+  * [5、方法 && 函数](53001-fang-fa-andand-han-shu.md)
 * Runtime篇
 * [开发tips-OC版](tips-oc.md)
   * [简短代码实现原生定位](tips-oc/1.md)
