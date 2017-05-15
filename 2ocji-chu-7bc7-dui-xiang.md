@@ -16,7 +16,9 @@
 
 * 代码段（code segment）：通常是指用来存储程序可执行代码的一块内存区域。这部分区域的大小在程序运行前就已经确定，并且内存区域通常属于只读，某些架构也允许代码段为可写，即允许修改程序。在代码段中，也有可能包含一些只读的常数变量，例如字符串常量。
 
-![](/assets/内存.png)
+![内存](https://raw.githubusercontent.com/FantasticLBP/iOSKonwledge-Kit/master/assets/内存.png "内存")
+
+
 
 ---
 
