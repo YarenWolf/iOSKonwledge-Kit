@@ -41,6 +41,7 @@ Person *p1 = [Person new]
 7. 对象只有属性，没有方法。包括类本身的属性和一个指向代码段中的类isa指针
 
 8. 如何访问对象的属性？指针名-&gt;属性名；本质：根据指针名找到指针指向的对象，再根据属性名查找来访问对象的属性值
+
 9. 如何调用方法？\[指针名 方法\];本质：根据指针名找到指针指向的对象，再发现对象需要调用方法，再通过对象的isa指针找到代码段中的类，再调用类里面方法
 
 10. 为什么不把方法存储在对象中？
@@ -57,7 +58,6 @@ Person *p1 = [Person new]
     @public
     int _age;
     NSString *_name;
-    int *p;
 }
 
 - (void)sayHi;
@@ -91,14 +91,9 @@ int main(int argc, const char * argv[]) {
 
 结论
 
+![p1](https://raw.githubusercontent.com/FantasticLBP/iOSKonwledge-Kit/master/assets/屏幕快照 2017-05-15 下午5.35.17.png "p1")
 
-
-![p1](https://raw.githubusercontent.com/FantasticLBP/iOSKonwledge-Kit/master/assets/屏幕快照%202017-05-15%20下午5.35.17.png "p1")
-
-![p3](https://raw.githubusercontent.com/FantasticLBP/iOSKonwledge-Kit/master/assets/屏幕快照%202017-05-15%20下午5.35.34.png "p3")
-
-
-
+![p3](https://raw.githubusercontent.com/FantasticLBP/iOSKonwledge-Kit/master/assets/屏幕快照 2017-05-15 下午5.35.34.png "p3")
 
 可以 看到Person类的3个对象p1、p2、p3的isa的值相同。
 
