@@ -84,6 +84,8 @@
   * [6、UIWebView](uikit/6uiwebview.md)
     * [1、常用技巧](uikit/6uiwebview/13001-chang-yong-ji-qiao.md)
     * [2、UIWebView缓存方面的坑](uikit/6uiwebview/2uiwebviewhuan-cun-fang-mian-de-keng.md)
+    * [3、使用safari对webview进行调试](uikit/6uiwebview/33001-shi-yong-safari-dui-webview-jin-xing-diao-shi.md)
+    * [4、UIWebVIew滚动监听](uikit/6uiwebview/4uiwebviewgun-dong-jian-ting.md)
   * [7、UILabel](uikit/uilabel.md)
     * [1、自适应](uikit/uilabel/13001-zi-shi-ying.md)
   * 8、GCD
@@ -99,6 +101,8 @@
     * [1、UIbutton文字右对齐](uikit/1uibuttonwen-zi-you-dui-qi.md)
   * 14、UISegmentedControl
     * [1、UISegmentedControl的使用](uikit/1uisegmentedcontrolde-shi-yong.md)
+  * [15、UIImagePickerController](uikit/15uiimagepickercontroller.md)
+    * [1、相册选取照片、拍照](uikit/15uiimagepickercontroller/13001-xiang-ce-xuan-qu-zhao-pian-3001-pai-zhao.md)
 * 杂谈
   * 1、正则表达式
   * [2、提高代码质量](23001-ti-gao-dai-ma-zhi-liang.md)
