@@ -92,6 +92,8 @@
     * [2、常用设置](uikit/11uinavigationcontroller/23001-chang-yong-she-zhi.md)
   * 12、UIImageView
     * [1、根据图片url计算图片尺寸](uikit/13001-gen-ju-tu-pian-url-ji-suan-tu-pian-chi-cun.md)
+  * 13、UIButton
+    * [1、UIbutton文字右对齐](uikit/1uibuttonwen-zi-you-dui-qi.md)
 * 杂谈
   * 1、正则表达式
   * [2、提高代码质量](23001-ti-gao-dai-ma-zhi-liang.md)
@@ -101,4 +103,6 @@
 * Framework
   * [1、代码打包成.framework库\(上\)](13001-dai-ma-da-bao-6210-framework-5e9328-4e0a29.md)
   * [2、代码打包成.framework库\(下\)](23001-dai-ma-da-bao-6210-framework-5e9328-4e0b29.md)
+* 版本控制管理
+  * [1、git常见使用](1gitchang-jian-shi-yong.md)
 
