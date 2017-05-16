@@ -82,6 +82,8 @@
     * [3、简短代码实现原生定位](33001-jian-duan-dai-ma-shi-xian-yuan-sheng-ding-wei.md)
   * [5、毛玻璃效果](uikit/53001-mao-bo-li-xiao-guo.md)
   * [6、UIWebView](uikit/6uiwebview.md)
+    * [1、常用技巧](uikit/6uiwebview/13001-chang-yong-ji-qiao.md)
+    * [2、UIWebView缓存方面的坑](uikit/6uiwebview/2uiwebviewhuan-cun-fang-mian-de-keng.md)
   * [7、UILabel](uikit/uilabel.md)
     * [1、自适应](uikit/uilabel/13001-zi-shi-ying.md)
   * 8、GCD
@@ -95,6 +97,8 @@
     * [1、根据图片url计算图片尺寸](uikit/13001-gen-ju-tu-pian-url-ji-suan-tu-pian-chi-cun.md)
   * 13、UIButton
     * [1、UIbutton文字右对齐](uikit/1uibuttonwen-zi-you-dui-qi.md)
+  * 14、UISegmentedControl
+    * [1、UISegmentedControl的使用](uikit/1uisegmentedcontrolde-shi-yong.md)
 * 杂谈
   * 1、正则表达式
   * [2、提高代码质量](23001-ti-gao-dai-ma-zhi-liang.md)
