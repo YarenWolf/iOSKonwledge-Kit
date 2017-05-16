@@ -1,7 +1,7 @@
 # Summary
 
 * [Introducation](README.md)
-* [Objective-C](chapter1.md)
+* [Objective-C](Objective-C.md)
   * [1、OC内存对象管理](chapter1/1、OC对象内存管理.md)
   * [2、nil && NULL](chapter1/2、nil && null.md)
   * [3、iOS开发工程规范](chapter1/3、iOS工程开发规范.md)
