@@ -2,7 +2,7 @@
 
 * [Introducation](README.md)
 * [Objective-C](chapter1.md)
-  * [1、OC内存对象管理](chapter1/1ocnei-cun-dui-xiang-guan-li.md)
+  * [1、OC内存对象管理](chapter1/1、OC对象内存管理.md)
   * [2、nil && NULL](chapter1/2nil-andand-null.md)
   * [3、iOS开发工程规范](chapter1/3ioskai-fa-gong-cheng-gui-fan.md)
   * [4、方法 && 函数](chapter1/43001-fang-fa-andand-han-shu.md)
