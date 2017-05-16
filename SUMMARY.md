@@ -90,6 +90,7 @@
   * [11、UINavigationController](uikit/11uinavigationcontroller.md)
     * [1、全屏滑动返回](uikit/11uinavigationcontroller/13001-quan-ping-hua-dong-fan-hui.md)
     * [2、常用设置](uikit/11uinavigationcontroller/23001-chang-yong-she-zhi.md)
+    * [3、NavigationController管理VC](uikit/11uinavigationcontroller/3navigationcontrollerguan-li-vc.md)
   * 12、UIImageView
     * [1、根据图片url计算图片尺寸](uikit/13001-gen-ju-tu-pian-url-ji-suan-tu-pian-chi-cun.md)
   * 13、UIButton
