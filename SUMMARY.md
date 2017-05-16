@@ -2,10 +2,10 @@
 
 * [Introducation](README.md)
 * [Objective-C](chapter1.md)
-  * [1、oc内存管理-对象](chapter1/1ocnei-cun-guan-7406-dui-xiang.md)
   * [2、nil && NULL](chapter1/2nil-andand-null.md)
   * [3、iOS开发工程规范](chapter1/3ioskai-fa-gong-cheng-gui-fan.md)
   * [4、方法 && 函数](chapter1/43001-fang-fa-andand-han-shu.md)
+  * [1、OC内存对象管理](chapter1/1ocnei-cun-dui-xiang-guan-li.md)
 * [Swift](swift.md)
   * [第二章 玩转儿swift 第一回合](swift/di-er-zhang-wan-zhuan-er-swift-di-yi-hui-he.md)
     * [1、变量](swift/di-er-zhang-wan-zhuan-er-swift-di-yi-hui-he/13001-bian-liang.md)
