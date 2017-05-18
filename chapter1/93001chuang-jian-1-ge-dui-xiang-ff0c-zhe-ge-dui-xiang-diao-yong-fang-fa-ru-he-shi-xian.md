@@ -89,7 +89,7 @@ Chaoren *sp = [Chaoren new];
 * 整个过程用1张图表示如下
 
 
-![对象函数调用过程](https://raw.githubusercontent.com/FantasticLBP/iOSKonwledge-Kit/master/assets/Untitled Diagram.png "对象函数调用过程")
+![对象函数调用过程](https://raw.githubusercontent.com/FantasticLBP/iOSKonwledge-Kit/master/assets/Untitled%20Diagram.png "对象函数调用过程")
 
 
 
