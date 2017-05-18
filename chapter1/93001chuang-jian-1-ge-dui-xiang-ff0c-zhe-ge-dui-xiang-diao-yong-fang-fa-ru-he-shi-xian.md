@@ -88,7 +88,9 @@ Chaoren *sp = [Chaoren new];
 * 先根据sp指针找到sp指针所指向的对象，然后根据指向对象的isa指针找到Chaoren类，然后查看Chaoren类中是否有sleep方法，如果有就执行，如果没有就不执行且根据在代码段中的isa指针继续向上找父类，然后在父类中判断是否有sleep方法，有就执行，没有则继续向上找，直到找到NSObject类为止，如果NSObject类也没有实现这个方法则报错。
 * 整个过程用1张图表示如下
 
-![](/assets/Untitled Diagram.png)
+
+![对象函数调用过程](https://raw.githubusercontent.com/FantasticLBP/iOSKonwledge-Kit/master/assets/Untitled Diagram.png "对象函数调用过程")
+
 
 
 
