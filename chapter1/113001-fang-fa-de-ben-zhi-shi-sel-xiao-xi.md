@@ -63,3 +63,17 @@
 
 
 
+```
+   
+    Person *p1 = [Person new];
+    [p1 sleep];
+    
+    //底层实现原理就是下面的代码
+    
+    Person *p1 = [Person new];
+    SEL s1 = @selector(sleep);
+    [p1 performSelector:s1];
+```
+
+
+
