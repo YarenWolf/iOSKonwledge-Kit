@@ -89,11 +89,9 @@ Person  *p1 = [Person new];
 
 **这句代码在内存分配原理如下图所示**
 
+![](/assets/Untitled Diagram-2.png)
 
 
-
-
-!\[p1\]\([https://raw.githubusercontent.com/FantasticLBP/iOSKonwledge-Kit/master/assets/Untitled Diagram-2.png](https://raw.githubusercontent.com/FantasticLBP/iOSKonwledge-Kit/master/assets/Untitled Diagram-2.png) "p1"\)
 
 结论
 
