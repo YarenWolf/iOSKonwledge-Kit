@@ -74,16 +74,20 @@ int main(int argc, const char * argv[]) {
     Person *p3 = [Person new];
     p1->_age = 20;
     p2->_age = 20;
-    
+
     [p1 sayHi];
     [p2 sayHi];
     [p3 sayHi];
-    
+
     return 0;
 }
 ```
 
-Person  \\*p1 = \\[Person new\\];这句代码在内存分配原理如下图所示
+```
+Person  *p1 = [Person new];
+```
+
+这句代码在内存分配原理如下图所示
 
 !\[p1\]\([https://raw.githubusercontent.com/FantasticLBP/iOSKonwledge-Kit/master/assets/Untitled Diagram-2.png](https://raw.githubusercontent.com/FantasticLBP/iOSKonwledge-Kit/master/assets/Untitled Diagram-2.png) "p1"\)
 
