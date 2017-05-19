@@ -27,11 +27,11 @@
 
 * 拿到Class对象有什么用？
 
-* 拿到存储类的类对象以后，Class c1 = \[Person class\];c1对象就是Person类，c1完全等价于Person
+  * 拿到存储类的类对象以后，Class c1 = \[Person class\];c1对象就是Person类，c1完全等价于Person
 
-* 使用类对象调用类的类方法\(类对象就代表存储在这个类对象中的类）。\[Person sayHi\]等价于\[c1 sayHi\];
+  * 使用类对象调用类的类方法\(类对象就代表存储在这个类对象中的类）。\[Person sayHi\]等价于\[c1 sayHi\];
 
-* 使用类对象来调用new方法，用来创建存储在类对象当中类的对象
+  * 使用类对象来调用new方法，用来创建存储在类对象当中类的对象
 
 
 
