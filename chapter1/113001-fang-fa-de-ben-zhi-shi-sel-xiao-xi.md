@@ -61,19 +61,35 @@
 7. 然后堆中的对象利用isa指针在代码段中查找类信息（图上的3）
 8. 再在代码段中的类中查找是否有方法实现，如果有则实现，没有则继续在代码段中的类的isa指针继续向父类查找继续找方法实现直到找到NSObject类，如果还没找到方法实现则报错
 
-
-
 ```
-   
     Person *p1 = [Person new];
     [p1 sleep];
-    
+
     //底层实现原理就是下面的代码
-    
+
     Person *p1 = [Person new];
     SEL s1 = @selector(sleep);
     [p1 performSelector:s1];
 ```
+
+
+
+
+
+  
+p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px 'PingFang SC'; color: \#4dbf56}  
+p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: \#4dbf56}  
+span.s1 {font: 18.0px Menlo; font-variant-ligatures: no-common-ligatures}  
+span.s2 {font-variant-ligatures: no-common-ligatures}  
+span.s3 {font: 18.0px 'PingFang SC'; font-variant-ligatures: no-common-ligatures}  
+
+
+调用方法有2种实现：
+
+* \[对象名方法名\];
+* SEL s1 = @selector\(方法名\);\[对象名performSelector:s1\];
+
+
 
 
 
