@@ -11,6 +11,8 @@
   * [7、面向对象（一）](chapter1/73001-mian-xiang-dui-xiang.md)
   * [8、面向对象（二）](chapter1/83001-mian-xiang-dui-xiang-ff08-er-ff09.md)
   * [9、创建1个对象，这个对象调用方法如何实现](chapter1/93001chuang-jian-1-ge-dui-xiang-ff0c-zhe-ge-dui-xiang-diao-yong-fang-fa-ru-he-shi-xian.md)
+  * [10、类是以Class对象存储在代码段](chapter1/103001-lei-shi-yi-class-dui-xiang-cun-chu-zai-dai-ma-duan.md)
+  * [11、方法的本质是SEL消息](chapter1/113001-fang-fa-de-ben-zhi-shi-sel-xiao-xi.md)
 * [Swift](swift.md)
   * [第二章 玩转儿swift 第一回合](swift/di-er-zhang-wan-zhuan-er-swift-di-yi-hui-he.md)
     * [1、变量](swift/di-er-zhang-wan-zhuan-er-swift-di-yi-hui-he/13001-bian-liang.md)
