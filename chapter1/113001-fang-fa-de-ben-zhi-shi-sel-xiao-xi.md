@@ -83,7 +83,6 @@ span.s3 {font: 18.0px 'PingFang SC'; font-variant-ligatures: no-common-ligatures
 * \[对象名方法名\];
 * SEL s1 = @selector\(方法名\);\[对象名performSelector:s1\];
 
-  
 
 
 **使用第二种方法需要注意：**
