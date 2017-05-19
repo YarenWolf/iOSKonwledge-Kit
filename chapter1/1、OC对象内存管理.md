@@ -91,9 +91,7 @@ Person  *p1 = [Person new];
 
 ![](/assets/Untitled Diagram-2.png)
 
-
-
-结论
+**结论**
 
 !\[p1\]\([https://raw.githubusercontent.com/FantasticLBP/iOSKonwledge-Kit/master/assets/屏幕快照 2017-05-15 下午5.35.17.png](https://raw.githubusercontent.com/FantasticLBP/iOSKonwledge-Kit/master/assets/屏幕快照 2017-05-15 下午5.35.17.png) "p1"\)
 
