@@ -93,9 +93,11 @@ Person  *p1 = [Person new];
 
 **结论**
 
-!\[p1\]\([https://raw.githubusercontent.com/FantasticLBP/iOSKonwledge-Kit/master/assets/屏幕快照 2017-05-15 下午5.35.17.png](https://raw.githubusercontent.com/FantasticLBP/iOSKonwledge-Kit/master/assets/屏幕快照 2017-05-15 下午5.35.17.png) "p1"\)
+![](/assets/屏幕快照 2017-05-15 下午5.35.17.png)
 
-!\[p3\]\([https://raw.githubusercontent.com/FantasticLBP/iOSKonwledge-Kit/master/assets/屏幕快照 2017-05-15 下午5.35.34.png](https://raw.githubusercontent.com/FantasticLBP/iOSKonwledge-Kit/master/assets/屏幕快照 2017-05-15 下午5.35.34.png) "p3"\)
+![](/assets/屏幕快照 2017-05-15 下午5.35.34.png)
+
+
 
 **可以 看到Person类的3个对象p1、p2、p3的isa的值相同。**
 
