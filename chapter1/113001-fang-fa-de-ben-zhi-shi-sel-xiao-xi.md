@@ -72,24 +72,25 @@
     [p1 performSelector:s1];
 ```
 
-
-
-
-
-  
 p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px 'PingFang SC'; color: \#4dbf56}  
 p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: \#4dbf56}  
 span.s1 {font: 18.0px Menlo; font-variant-ligatures: no-common-ligatures}  
 span.s2 {font-variant-ligatures: no-common-ligatures}  
-span.s3 {font: 18.0px 'PingFang SC'; font-variant-ligatures: no-common-ligatures}  
-
+span.s3 {font: 18.0px 'PingFang SC'; font-variant-ligatures: no-common-ligatures}
 
 调用方法有2种实现：
 
 * \[对象名方法名\];
 * SEL s1 = @selector\(方法名\);\[对象名performSelector:s1\];
 
+  
 
+
+**使用第二种方法需要注意：**
+
+* 方法如果带有参数，那么注意方法名后面需要带:
+
+* 如果方法有多个参数，那么将方法的参数封装成对象传递进去
 
 
 
