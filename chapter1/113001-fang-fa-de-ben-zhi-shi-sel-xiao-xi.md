@@ -30,7 +30,7 @@
 
     * SEL s1 = @selector\(sayHi\);
 
-4、调用方法的本质
+* 调用方法的本质
 
 \[p1 sayHi\];
 
