@@ -106,9 +106,9 @@
 
   * @peoperty生成的getter和setter是直接返回的，没有做任何逻辑处理
 
-* 我们可以重写setter来自定义验证逻辑，如果重写了setter会自动生成getter
+  * 我们可以重写setter来自定义验证逻辑，如果重写了setter会自动生成getter
 
-* 如果重写了getter会自动生成setter。如果重写setter和getter会出问题
+  * 如果重写了getter会自动生成setter。如果重写setter和getter会出问题
 
 6、如果想为类写一个属性，并且为属性封装setter和getter
 
