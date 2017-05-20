@@ -10,7 +10,7 @@
 
 ##### @property只能生成getter和setter的声明，实现还要靠我们自己来，而实现也没什么技术含量，方法的实现代码能不能自动生成？
 
-# @synthesize
+### @synthesize
 
 * 作用：自动生成getter和setter的实现，必须写在类的实现中
 * 语法：@synthesize property名称
@@ -62,7 +62,11 @@
 
 * 实现的方式：将生成的私有属性返回
 
-4、希望@synthesize不去自动生成新的私有属性
+
+
+
+
+### **希望@synthesize不去自动生成新的私有属性?**
 
 直接在getter和setter方法中去操作我们已经写好的属性就可以了
 
