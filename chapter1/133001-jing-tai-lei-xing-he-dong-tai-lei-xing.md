@@ -20,65 +20,47 @@
 
 * 注意：编译时期能否通过关键看指针的类型
 
-
-
 # 运行检查
 
+* 编译检查只是骗过了编译起，但是这个方法能不能真正执行会在运行的时候去对象中是否真的有这个方法，有就执行，没有就报错
 
 
-编译检查只是骗过了编译起，但是这个方法能不能真正执行会在运行的时候去对象中是否真的有这个方法，有就执行，没有就报错
 
-5、LSP
 
-父类指针指向子类对象
 
-实际上任意指针可以指向任意对象，编译器不会报错
 
-\#import &lt;Foundation/Foundation.h&gt;
 
+# LSP
+
+* 父类指针指向子类对象
+
+* 实际上任意指针可以指向任意对象，编译器不会报错
+
+```
+#import <Foundation/Foundation.h>
 @interface Animal : NSObject
-
-@property NSString \*name;
-
--\(void\)run;
-
+@property NSString *name;
+-(void)run;
 @end
-
-\#import "Animal.h"
-
+#import "Animal.h"
 @implementation Animal
-
--\(void\)run{
-
-NSLog\(@"run"\);
-
+-(void)run{
+NSLog(@"run");
 }
-
 @end
-
-\#import "Animal.h"
-
+#import "Animal.h"
 @interface Pig : Animal
-
--\(void\)eat;
-
+-(void)eat;
 @end
-
-\#import "Pig.h"
-
+#import "Pig.h"
 @implementation Pig
-
--\(void\)eat{
-
-NSLog\(@"吃完就死"\);
-
+-(void)eat{
+NSLog(@"吃完就死");
 }
-
 @end
+Pig *pig = [Animal new];
+[pig eat];
+```
 
-Pig \*pig = \[Animal new\];
-
-\[pig eat\];
-
-当1个子类指针指向父类对象的时候，编译器运行子类指针调用子类独有的方法，但是在运行的时候就会报错
+* 当1个子类指针指向父类对象的时候，编译器运行子类指针调用子类独有的方法，但是在运行的时候就会报错
 
