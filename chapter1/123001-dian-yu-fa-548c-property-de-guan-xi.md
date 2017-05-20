@@ -88,29 +88,21 @@
 
     * @synthesize name = \_name,age = \_age;
 
-
-
-
-
-
-
 ---
 
 ### 以上都是很早的Xcode版本实现
 
+### @property类型属性名
 
+* 1、自动生成1个私有属性
 
-@property类型属性名
+* 2、自动生成getter和setter的声明
 
-1、自动生成1个私有属性
+* 3、自动生成getter和setter的实现
 
-2、自动生成getter和setter的声明
+* 4、可以批量声明相同类的peoperty
 
-3、自动生成getter和setter的实现
-
-4、可以批量声明相同类的peoperty
-
-5、@peoperty生成的getter和setter是直接返回的，没有做任何逻辑处理
+* 5、@peoperty生成的getter和setter是直接返回的，没有做任何逻辑处理
 
 我们可以重写setter来自定义验证逻辑，如果重写了setter会自动生成getter
 
