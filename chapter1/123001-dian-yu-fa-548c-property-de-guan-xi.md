@@ -100,7 +100,7 @@
 
 * 自动生成getter和setter的实现
 
-* 可以批量声明相同类的peoperty
+* 注意；可以批量声明相同类的peoperty
 
 * 5、@peoperty生成的getter和setter是直接返回的，没有做任何逻辑处理
 
