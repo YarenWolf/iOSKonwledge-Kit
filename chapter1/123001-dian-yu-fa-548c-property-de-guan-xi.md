@@ -55,8 +55,6 @@
 * a、生成1个真私有的属性，属性的类型和@synthesize对应的@property类型一致。属性的名字和@synthesize对应的@property名字一致
 * b、自动生成setter方法的实现
 
-
-
 ### 实现的方式：将参数直接赋值给自动生成的私有属性
 
 * 自动生成getter方法的实现
@@ -67,11 +65,9 @@
 
 直接在getter和setter方法中去操作我们已经写好的属性就可以了
 
+语法：
 
-
-* 语法：
-
-* @synthesize @property名称=已经存在的属性名；
+@synthesize @property名称=已经存在的属性名；
 
 * @synthesize age = \_age;
 
