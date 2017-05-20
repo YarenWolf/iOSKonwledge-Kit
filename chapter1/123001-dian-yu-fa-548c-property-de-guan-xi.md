@@ -110,7 +110,7 @@
 
   * 如果重写了getter会自动生成setter。如果重写setter和getter会出问题
 
-6、如果想为类写一个属性，并且为属性封装setter和getter
+* 如果想为类写一个属性，并且为属性封装setter和getter
 
 1个@property属性搞定
 
