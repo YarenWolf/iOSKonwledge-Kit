@@ -72,9 +72,9 @@
 
 * @synthesize age = \_age;
 
-* 1）、不会再去生成私有属性
+  * 1）、不会再去生成私有属性
 
-* 2）、直接生成getter setter的实现
+  * 2）、直接生成getter setter的实现
 
 setter的实现：把参数值直接赋值给指定的属性
 
