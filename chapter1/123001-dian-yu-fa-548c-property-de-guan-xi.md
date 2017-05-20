@@ -118,9 +118,9 @@
 
 #### 继承
 
-父类的@property一样可以被继承
+* 父类的@property一样可以被继承
 
-@property生成的属性是私有的，在子类的内部是无法直接访问生成的私有属性（什么叫无法直接访问生成的私有属性，就是self-&gt;name）
+* @property生成的属性是私有的，在子类的内部是无法直接访问生成的私有属性（什么叫无法直接访问生成的私有属性，就是self-&gt;name）
 
-但是可以通过setter和getter来访问（self.name）
+* 但是可以通过setter和getter来访问（self.name）
 
