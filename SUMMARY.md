@@ -16,6 +16,7 @@
   * [12、点语法和@property的关系](chapter1/123001-dian-yu-fa-548c-property-de-guan-xi.md)
   * [13、静态类型和动态类型](chapter1/133001-jing-tai-lei-xing-he-dong-tai-lei-xing.md)
   * [14、NSObject指针和id指针](chapter1/14nsobjectzhi-zhen-he-id-zhi-zhen.md)
+  * [15、instancetype](chapter1/15instancetype.md)
 * [Swift](swift.md)
   * [第二章 玩转儿swift 第一回合](swift/di-er-zhang-wan-zhuan-er-swift-di-yi-hui-he.md)
     * [1、变量](swift/di-er-zhang-wan-zhuan-er-swift-di-yi-hui-he/13001-bian-liang.md)
