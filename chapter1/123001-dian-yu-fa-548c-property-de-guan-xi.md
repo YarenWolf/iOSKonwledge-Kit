@@ -84,9 +84,9 @@
 
     * @property float height,weight;
 
-* @synthesize的也可以批量声明
+  * @synthesize的也可以批量声明
 
-@synthesize name = \_name,age = \_age;
+* @synthesize name = \_name,age = \_age;
 
 以上都是很早的Xcode版本实现
 
