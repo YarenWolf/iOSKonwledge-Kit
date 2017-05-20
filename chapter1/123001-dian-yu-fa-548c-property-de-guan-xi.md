@@ -80,9 +80,9 @@
 
 * 批量声明
 
-* 如果多个@property的类型一致，可以批量声明
+  * 如果多个@property的类型一致，可以批量声明
 
-* @property float height,weight;
+    * @property float height,weight;
 
 2、@synthesize的也可以批量声明
 
