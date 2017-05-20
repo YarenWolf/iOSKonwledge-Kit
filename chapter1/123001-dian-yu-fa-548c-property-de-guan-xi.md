@@ -112,7 +112,7 @@
 
 * 如果想为类写一个属性，并且为属性封装setter和getter
 
-1个@property属性搞定
+* 1个@property属性搞定
 
 7、继承
 
