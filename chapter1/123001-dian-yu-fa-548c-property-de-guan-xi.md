@@ -84,7 +84,7 @@
 
     * @property float height,weight;
 
-2、@synthesize的也可以批量声明
+* @synthesize的也可以批量声明
 
 @synthesize name = \_name,age = \_age;
 
