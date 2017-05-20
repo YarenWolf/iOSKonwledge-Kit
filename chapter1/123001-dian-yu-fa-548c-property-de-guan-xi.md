@@ -88,7 +88,9 @@
 
     * @synthesize name = \_name,age = \_age;
 
-以上都是很早的Xcode版本实现
+
+
+### 以上都是很早的Xcode版本实现
 
 @property类型属性名
 
