@@ -100,9 +100,11 @@
 
 * 自动生成getter和setter的实现
 
-* 注意：可以批量声明相同类的peoperty
+* 注意：
 
-* 5、@peoperty生成的getter和setter是直接返回的，没有做任何逻辑处理
+  * 可以批量声明相同类的peoperty
+
+  * @peoperty生成的getter和setter是直接返回的，没有做任何逻辑处理
 
 我们可以重写setter来自定义验证逻辑，如果重写了setter会自动生成getter
 
