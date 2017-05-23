@@ -1,6 +1,6 @@
 # 动态类型检查
 
-#### 前言 
+#### 前言
 
 1. 苹果Xcode的编译器叫做LLVM，可以编译C、C++、OC、Swift代码为二进制代码
 2. 编译器在编译的时候可以判断指针是否可以调用指针指向对象的方法。编译的时候判断准则就是指针类型
@@ -9,46 +9,29 @@
 
 ---
 
-动态类型监测：
-
-1、判断指定对象能否响应指定的方法
-
-BOOL result = \[p1 respondsToSelector:@selector\(sayHi\)\];
-
-  
 
 
-2、判断指定的对象是否为指定类的对象或者指定类的子类对象
-
-BOOL b2 = \[p1 isKindOfClass:\[Person class\]\];
-
-
-
-3、判断对象是否指定类的对象，不包括子类
-
-BOOL b4 = \[st isMemberOfClass:\[Person class\]\];
+* 判断指定对象能否响应指定的方法
+  * BOOL result = \[p1 respondsToSelector:@selector\(sayHi\)\];
+* 判断指定的对象是否为指定类的对象或者指定类的子类对象
+  * BOOL b2 = \[p1 isKindOfClass:\[Person class\]\];
+* 判断对象是否指定类的对象，不包括子类
+  * BOOL b4 = \[st isMemberOfClass:\[Person class\]\];
+* 判断类是否为另一个类的子类
+  * BOOL b5 = \[Student isSubclassOfClass:\[Person class\]\];
+* isSubclassOfClass加上isMememberOfClass等于isKindOfClass
 
 
 
-4、判断类是否为另一个类的子类
-
-BOOL b5 = \[Student isSubclassOfClass:\[Person class\]\];
 
 
+**总结：**
 
-5、isSubclassOfClass加上isMememberOfClass等于isKindOfClass
+\[指针respondsToSelector：@selector\(方法名\)\]
 
-
-
-6、总结：
-
- \[指针respondsToSelector：@selector\(方法名\)\]
-
- \[对象名respondsToSelector：@selector\(方法名\)\]
+\[对象名respondsToSelector：@selector\(方法名\)\]
 
 用来判断对象能否调用对象方法或者类能否调用类方法。
-
-
 
 respondsToSelector：可以跟在对象或者类名后面，分别判断的是对象能否调用该对象方法和该类能否调用该类方法。
 
