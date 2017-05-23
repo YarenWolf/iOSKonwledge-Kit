@@ -79,9 +79,7 @@
 
  Person *p1 = [[Person alloc] init];    //p1.name = "杭城小刘"，p1.age =22;
  Person *p2 = [Person new];             //p2.name = "杭城小刘"，p2.age =22;
-
-
 ```
 
-
+如果2个类的关系为
 
