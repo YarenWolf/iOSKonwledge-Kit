@@ -44,5 +44,44 @@
 }
 ```
 
+```
+//Person
+
+#import <Foundation/Foundation.h>
+
+@interface Person : NSObject
+@property NSString* name;
+@property int age;
+
+-(void)sayHi;
+
+@end
+
+#import "Person.h"
+@implementation Person
+
+-(void)sayHi{
+    NSLog(@"Hi");
+}
+
+-(instancetype)init{
+    self = [super init];
+    if (self) {
+        self.name = @"杭城小刘";
+        self.age = 22;
+    }
+    return self;
+}
+@end
+
+
+//测试
+
+ Person *p1 = [[Person alloc] init];    //p1.name = "杭城小刘"，p1.age =22;
+ Person *p2 = [Person new];             //p2.name = "杭城小刘"，p2.age =22;
+
+
+```
+
 
 
