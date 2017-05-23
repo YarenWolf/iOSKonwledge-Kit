@@ -116,3 +116,70 @@
 
 **注意：此时不能使用new来调用。（因为new的实现是先alloc再init，默认init的实现是给属性赋默认值）**
 
+```
+-(instancetype)initWithName:(NSString *)name andAge:(int)age{
+    if (self = [super init]) {
+        self.name = name;
+        self.age = age;
+    }
+    return self;
+}
+```
+
+
+
+```
+//Person
+#import <Foundation/Foundation.h>
+@interface Person : NSObject
+@property NSString* name;
+@property int age;
+
+-(instancetype)initWithName:(NSString *)name andAge:(int)age;
+@end
+
+#import "Person.h"
+@implementation Person
+
+-(instancetype)init{
+    self = [super init];
+    if (self) {
+        self.name = @"lbp";
+        self.age = 22;
+    }
+    return self;
+}
+
+//不能在构造方法之外给self赋值
+//编译器认为只有以initWith开头的方法是构造方法
+
+-(instancetype)initWithName:(NSString *)name andAge:(int)age{
+    if (self = [super init]) {
+        self.name = name;
+        self.age = age;
+    }
+    return self;
+}
+
+@end
+
+
+//测试
+
+Person *p1 = [[Person alloc] init];
+Person *p2 = [Person new];    
+Person *p3 = [[Person alloc] initWithName:@"杭城小刘2号" andAge:23];
+```
+
+![](/assets/屏幕快照 2017-05-23 下午5.56.53.png)
+
+![](/assets/屏幕快照 2017-05-23 下午5.57.08.png)
+
+
+
+关于“自定义构造方法必须以initWith开头”做个实验
+
+![](/assets/屏幕快照 2017-05-23 下午6.01.29.png)报错信息很明显：不能在构造方法之外给self赋值
+
+因为，编译器认为只有以initWith开头的方法是构造方法
+
