@@ -1,31 +1,13 @@
-  
-动态类型检查  
+# 动态类型检查
 
+#### 前言 
 
-  
-p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px 'PingFang SC'; color: \#4dbf56}  
-p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: \#4dbf56; min-height: 21.0px}  
-p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: \#4dbf56}  
-span.s1 {font: 18.0px Menlo; font-variant-ligatures: no-common-ligatures}  
-span.s2 {font-variant-ligatures: no-common-ligatures}  
-span.s3 {font: 18.0px 'PingFang SC'; font-variant-ligatures: no-common-ligatures}  
+1. 苹果Xcode的编译器叫做LLVM，可以编译C、C++、OC、Swift代码为二进制代码
+2. 编译器在编译的时候可以判断指针是否可以调用指针指向对象的方法。编译的时候判断准则就是指针类型
+3. 为了骗过编译器，程序在运行的时候还会做运行检查。运行的时候的判断准则：通过指针所指向的对象里面的isa找到代码段中的类，判断是否有这个方法可以执行
+4. 可以写代码先判断一下对象中是否有这个方法再去执行
 
-
-1、苹果Xcode的编译器叫做LLVM，可以编译C、C++、OC、Swift代码为二进制代码
-
-2、编译器在编译的时候可以判断指针是否可以调用指针指向对象的方法
-
-编译的时候判断准则就是指针类型
-
-3、为了骗过编译器，程序在运行的时候还会做运行检查。
-
-运行的时候的判断准则：通过指针所指向的对象里面的isa找到代码段中的类，判断是否有这个方法可以执行
-
-
-
-可以写代码先判断一下对象中是否有这个方法再去执行
-
-
+---
 
 动态类型监测：
 
