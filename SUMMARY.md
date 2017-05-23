@@ -18,6 +18,7 @@
   * [15、instancetype](chapter1/15instancetype.md)
   * [16、动态类型检查](chapter1/163001-dong-tai-lei-xing-jian-cha.md)
   * [17、看透构造方法](chapter1/173001-kan-tou-gou-zao-fang-fa.md)
+  * [18、内存管理](chapter1/183001-nei-cun-guan-li.md)
 * [Swift](swift.md)
   * [第二章 玩转儿swift 第一回合](swift/di-er-zhang-wan-zhuan-er-swift-di-yi-hui-he.md)
     * [1、变量](swift/di-er-zhang-wan-zhuan-er-swift-di-yi-hui-he/13001-bian-liang.md)
