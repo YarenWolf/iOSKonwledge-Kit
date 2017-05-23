@@ -126,8 +126,6 @@
 }
 ```
 
-
-
 ```
 //Person
 #import <Foundation/Foundation.h>
@@ -171,15 +169,15 @@ Person *p2 = [Person new];
 Person *p3 = [[Person alloc] initWithName:@"杭城小刘2号" andAge:23];
 ```
 
-![](/assets/屏幕快照 2017-05-23 下午5.56.53.png)
+![](/assets/屏幕快照 2017-05-23-5-56-53.png)
 
-![](/assets/屏幕快照 2017-05-23 下午5.57.08.png)
-
-
+![](/assets/屏幕快照 2017-05-23-5-57-08.png)
 
 关于“自定义构造方法必须以initWith开头”做个实验
 
-![](/assets/屏幕快照 2017-05-23 下午6.01.29.png)报错信息很明显：不能在构造方法之外给self赋值
+![](/assets/屏幕快照 2017-05-23-6-01-29.png)
+
+报错信息很明显：不能在构造方法之外给self赋值
 
 因为，编译器认为只有以initWith开头的方法是构造方法
 
