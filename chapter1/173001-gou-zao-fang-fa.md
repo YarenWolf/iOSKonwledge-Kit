@@ -35,15 +35,14 @@
    2. 需要保证当前对象的父类属性同时被初始化
 2. 重写init方法的规范：
 
--\(instancetype\)init{
-
-if \(self = \[super init\]\) {
-
-//todo：自定义属性的初始化
-
+```
+-(instancetype)init{
+    if (self = [super init]) {
+        //todo：自定义属性的初始化
+    }
+    return self;
 }
+```
 
-return self;
 
-}
 
