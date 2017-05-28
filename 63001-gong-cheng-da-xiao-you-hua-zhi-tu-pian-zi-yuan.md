@@ -70,5 +70,15 @@ pragma mark - getter and setter
 3. LBPIconFont向系统中注册IconFont字体库，并使用
 4. UIImage+LBPIconFont封装一个使用IconFont的Image分类
 
+# 效果图
 
+![](/assets/Simulator Screen Shot 2017年5月28日 下午3.19.44.png)
+
+
+
+
+
+# Demo地址
+
+[https://github.com/FantasticLBP/IconFont\_Demo](https://github.com/FantasticLBP/IconFont_Demo)
 
