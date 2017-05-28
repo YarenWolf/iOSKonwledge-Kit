@@ -1,6 +1,6 @@
-### \#\#\# 工程大小优化之图片资源
+### 工程大小优化之图片资源
 
-> _摘要：_点点iOS项目本身功能较多，导致应用体积也比较大。一个Xcode工程下图片资源占用了很大的空间，且如果有些App需要一键换肤功能，呵呵，不知道得做多少图片。每套图片还需要设置1x@,2x@,3x@等
+> \_摘要：\_点点iOS项目本身功能较多，导致应用体积也比较大。一个Xcode工程下图片资源占用了很大的空间，且如果有些App需要一键换肤功能，呵呵，不知道得做多少图片。每套图片还需要设置1x@,2x@,3x@等
 
 ## 简介
 
@@ -27,12 +27,15 @@ Web领域使用IconFont类似的技术已经多年，当我在15年接触BootStr
 
 ## 我们说说怎么用
 
-1. 首先选取一些有丰富资源的网站，我使用阿里的IconFont多年，其他的没去研究，所以此处直接使用阿里的产品。地址：[http://www.iconfont.cn/plus](http://www.iconfont.cn/plus)
-2. 打开网站在线挑选好合适的图标加入购物车，如图![阿里IconFont](https://raw.githubusercontent.com/FantasticLBP/iOSKonwledge-Kit/master/assets/屏幕快照%202017-05-28%20下午2.43.33.png "阿里IconFont")
-3. 选择好之后在购物车查看，然后点击下载代码![下载IconFont](https://raw.githubusercontent.com/FantasticLBP/iOSKonwledge-Kit/master/assets/屏幕快照%202017-05-28%20下午2.43.48.png "下载IconFont")
+1. 首先选取一些有丰富资源的网站，我使用阿里的IconFont多年，其他的没去研究，所以此处直接使用阿里的产品。地址：
+   [http://www.iconfont.cn/plus](http://www.iconfont.cn/plus)
+2. 打开网站在线挑选好合适的图标加入购物车，如图
+   [![](https://raw.githubusercontent.com/FantasticLBP/iOSKonwledge-Kit/master/assets/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202017-05-28%20%E4%B8%8B%E5%8D%882.43.33.png "阿里IconFont")](https://raw.githubusercontent.com/FantasticLBP/iOSKonwledge-Kit/master/assets/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202017-05-28%20%E4%B8%8B%E5%8D%882.43.33.png)
+3. 选择好之后在购物车查看，然后点击下载代码
+   [![](https://raw.githubusercontent.com/FantasticLBP/iOSKonwledge-Kit/master/assets/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202017-05-28%20%E4%B8%8B%E5%8D%882.43.48.png "下载IconFont")](https://raw.githubusercontent.com/FantasticLBP/iOSKonwledge-Kit/master/assets/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202017-05-28%20%E4%B8%8B%E5%8D%882.43.48.png)
 4. 打开下载好的文件，其机构如下，我们在iOS项目开发过程中使用unicode的形式使用IconFont,所以打开demo\_unicode.html
-![下载文件目录结构](https://raw.githubusercontent.com/FantasticLBP/iOSKonwledge-Kit/master/assets/屏幕快照%202017-05-28%20下午2.44.09.png "下载文件目录结构")
-![unicode形式使用IconFont](https://raw.githubusercontent.com/FantasticLBP/iOSKonwledge-Kit/master/assets/屏幕快照%202017-05-28%20下午2.44.22.png "unicode形式使用IconFont")
+   [![](https://raw.githubusercontent.com/FantasticLBP/iOSKonwledge-Kit/master/assets/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202017-05-28%20%E4%B8%8B%E5%8D%882.44.09.png "下载文件目录结构")](https://raw.githubusercontent.com/FantasticLBP/iOSKonwledge-Kit/master/assets/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202017-05-28%20%E4%B8%8B%E5%8D%882.44.09.png)
+   [![](https://raw.githubusercontent.com/FantasticLBP/iOSKonwledge-Kit/master/assets/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202017-05-28%20%E4%B8%8B%E5%8D%882.44.22.png "unicode形式使用IconFont")](https://raw.githubusercontent.com/FantasticLBP/iOSKonwledge-Kit/master/assets/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202017-05-28%20%E4%B8%8B%E5%8D%882.44.22.png)
 5. 注意：创建 UIFont 使用的是字体名，而不是文件名；文本值为 8 位的 Unicode 字符，我们可以打开 demo.html 查找每个图标所对应的 HTML 实体 Unicode 码，比如： "店" 对应的 HTML 实体 Unicode 码为：0x3439 转换后为：\U00003439 就是将 0x 替换为 \U 中间用 0 填补满长度为 8 个字符
 
 # Xcode中使用IconFont
@@ -40,7 +43,10 @@ Web领域使用IconFont类似的技术已经多年，当我在15年接触BootStr
 初步尝试使用
 
 1. 首先看看如何简单实用IconFont
-2. 首先将下载好的文件夹中的**iconfont.ttf**加入到Xcode工程中，确保加入成功在Build检查![Xcode检查引入结果](https://raw.githubusercontent.com/FantasticLBP/iOSKonwledge-Kit/master/assets/屏幕快照%202017-05-28%20下午2.51.36.png "Xcode检查引入结果")
+2. 首先将下载好的文件夹中的
+   **iconfont.ttf**
+   加入到Xcode工程中，确保加入成功在Build检查
+   [![](https://raw.githubusercontent.com/FantasticLBP/iOSKonwledge-Kit/master/assets/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202017-05-28%20%E4%B8%8B%E5%8D%882.51.36.png "Xcode检查引入结果")](https://raw.githubusercontent.com/FantasticLBP/iOSKonwledge-Kit/master/assets/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202017-05-28%20%E4%B8%8B%E5%8D%882.51.36.png)
 3. 怎么用？
 
 ```
@@ -61,11 +67,12 @@ pragma mark - getter and setter
        }
        return _label;
    }
+
 ```
 
 #### 做进一步封装，实用更加方便
 
-![封装后的工程目录结构](https://github.com/FantasticLBP/iOSKonwledge-Kit/raw/master/assets/屏幕快照%202017-05-28%20下午2.56.00.png "封装后的工程目录结构")
+[![](https://github.com/FantasticLBP/iOSKonwledge-Kit/raw/master/assets/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202017-05-28%20%E4%B8%8B%E5%8D%882.56.00.png "封装后的工程目录结构")](https://github.com/FantasticLBP/iOSKonwledge-Kit/raw/master/assets/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202017-05-28%20%E4%B8%8B%E5%8D%882.56.00.png)
 
 1. LBPFontInfo来封装字体信息
 2. UIColor+picker根据十六进制字符串来设置颜色
@@ -74,13 +81,11 @@ pragma mark - getter and setter
 
 # 效果图
 
-![](/assets/Simulator Screen Shot 2017年5月28日 下午3.19.44.png)
-
-
-
-
+[![](https://raw.githubusercontent.com/FantasticLBP/iOSKonwledge-Kit/master/assets/Simulator%20Screen%20Shot%202017%E5%B9%B45%E6%9C%8828%E6%97%A5%20%E4%B8%8B%E5%8D%883.19.44.png "效果图")](https://raw.githubusercontent.com/FantasticLBP/iOSKonwledge-Kit/master/assets/Simulator%20Screen%20Shot%202017%E5%B9%B45%E6%9C%8828%E6%97%A5%20%E4%B8%8B%E5%8D%883.19.44.png)
 
 # Demo地址
 
 [https://github.com/FantasticLBP/IconFont\_Demo](https://github.com/FantasticLBP/IconFont_Demo)
+
+
 
