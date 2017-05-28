@@ -40,30 +40,28 @@ Web领域使用IconFont类似的技术已经多年，当我在15年接触BootStr
 1. 首先看看如何简单实用IconFont
 2. 首先将下载好的文件夹中的**iconfont.ttf**加入到Xcode工程中，确保加入成功在Build检查![](/assets/屏幕快照 2017-05-28 下午2.51.36.png)
 3. 怎么用？
-4. \`\`\`
 
-   NSMutableAttributedString \*attributedStr = \[\[NSMutableAttributedString alloc\] initWithString:@"\U0000e696  \U0000e6ab  \U0000e6ac  \U0000e6ae"\];  
-       \[attributedStr addAttribute:NSForegroundColorAttributeName value:\[UIColor redColor\] range:NSMakeRange\(0, 1\)\];  
-       \[attributedStr addAttribute:NSForegroundColorAttributeName value:\[UIColor orangeColor\] range:NSMakeRange\(3, 1\)\];  
-       \[attributedStr addAttribute:NSForegroundColorAttributeName value:\[UIColor blackColor\] range:NSMakeRange\(9, 1\)\];  
-       self.label.attributedText = attributedStr;
+```
+NSMutableAttributedString *attributedStr = [[NSMutableAttributedString alloc] initWithString:@"\U0000e696  \U0000e6ab  \U0000e6ac  \U0000e6ae"];
+    [attributedStr addAttribute:NSForegroundColorAttributeName value:[UIColor redColor] range:NSMakeRange(0, 1)];
+    [attributedStr addAttribute:NSForegroundColorAttributeName value:[UIColor orangeColor] range:NSMakeRange(3, 1)];
+    [attributedStr addAttribute:NSForegroundColorAttributeName value:[UIColor blackColor] range:NSMakeRange(9, 1)];
+    self.label.attributedText = attributedStr;
 
-   ```
-   [self.view addSubview:self.label];
-   ```
+[self.view addSubview:self.label];
 
-# pragma mark - getter and setter
-
--\(UILabel \*\)label{  
-       if \(!\_label\) {  
-           \_label = \[\[UILabel alloc\] initWithFrame:CGRectMake\(100, 100, BoundWidth-200, 40\)\];  
-           \_label.font = \[UIFont fontWithName:@"iconfont" size:24\];  
-           \_label.textColor = \[UIColor purpleColor\];  
-       }  
-       return \_label;  
+pragma mark - getter and setter
+-(UILabel *)label{
+       if (!_label) {
+           _label = [[UILabel alloc] initWithFrame:CGRectMake(100, 100, BoundWidth-200, 40)];
+           _label.font = [UIFont fontWithName:@"iconfont" size:24];
+           _label.textColor = [UIColor purpleColor];
+       }
+       return _label;
    }
+```
 
-\`\`\`
+
 
 做进一步封装，实用更加方便
 
