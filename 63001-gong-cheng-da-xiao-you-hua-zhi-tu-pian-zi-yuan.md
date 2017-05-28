@@ -73,8 +73,8 @@ pragma mark - getter and setter
 4. UIImage+LBPIconFont封装一个使用IconFont的Image分类
 
 # 效果图
+![效果图](https://raw.githubusercontent.com/FantasticLBP/iOSKonwledge-Kit/master/assets/Simulator%20Screen%20Shot%202017年5月28日%20下午3.19.44.png "效果图")
 
-![](/assets/Simulator Screen Shot 2017年5月28日 下午3.19.44.png)
 
 
 
