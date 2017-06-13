@@ -11,10 +11,11 @@
    3. 与生成只读、读写相关的参数
       1. readonly
       2. readwrite
+   4. 与生成getter、setter方法名字相关的参数
 
+      1. getter
 
-
-
+      2. setter
 
 
 
