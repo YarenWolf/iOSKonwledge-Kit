@@ -1,4 +1,12 @@
-MRC模式下的Setter方法
+# MRC模式下的Setter方法
+
+完美setter方法：判断新旧对象是否是同一个对象，如果是同一个则什么都不做。
+
+      只有新旧对象不是同一个对象的时候，才release旧对象retain新对象
+
+
+
+
 
 ```
 -(void)setAAA:(AAA *)aaa{
