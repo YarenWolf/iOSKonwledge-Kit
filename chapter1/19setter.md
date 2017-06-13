@@ -1,7 +1,5 @@
 MRC模式下的Setter方法
 
-
-
 ```
 -(void)setAAA:(AAA *)aaa{
     if(aaa != _aaa){
@@ -9,11 +7,8 @@ MRC模式下的Setter方法
         [aaa retain];
         _aaa = aaa;
     }
-
 }
 ```
-
-
 
 
 
