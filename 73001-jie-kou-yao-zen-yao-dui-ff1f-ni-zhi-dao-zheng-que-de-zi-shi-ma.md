@@ -1,4 +1,4 @@
-今天后台同事去温州出差，自己又多了一次远程协作办公的经历-对接口
+> 今天后台同事去温州出差，自己又多了一次远程协作办公的经历-对接口
 
 # 1、背景
 
@@ -19,9 +19,15 @@
 
 # 3、附图
 
-![](/assets/屏幕快照 2017-06-07 下午3.21.18.png)![](/assets/屏幕快照 2017-06-07 下午3.21.182.png)
 
-![](/assets/屏幕快照 2017-06-07 下午3.21.183.png)
+
+
+![接口1](https://raw.githubusercontent.com/FantasticLBP/iOSKonwledge-Kit/master/assets/屏幕快照%202017-06-07%20下午3.21.18.png "接口1")
+
+
+![接口2](https://github.com/FantasticLBP/iOSKonwledge-Kit/blob/master/assets/屏幕快照%202017-06-07%20下午3.21.182.png?raw=true "接口2")
+![接口3](https://github.com/FantasticLBP/iOSKonwledge-Kit/blob/master/assets/屏幕快照%202017-06-07%20下午3.21.183.png?raw=true "接口3")
+
 
 
 
