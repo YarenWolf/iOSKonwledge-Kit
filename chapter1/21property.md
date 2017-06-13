@@ -12,12 +12,12 @@
       2. retain  ：生成的setter方法是标准的MRC模式下内存管理代码。（先判断新旧对象是否是同一个值，如果是同一个值不做处理，如果不是同一个值则release旧的值，retain新的值）
    4. 与生成只读、读写相关的参数  
       1. readonly  ：只会生成getter方法
-      2. readwrite  ：会生成getter和setter方法
-   5. 与生成getter、setter方法名字相关的参数
+      2. readwrite  ：默认属性值。会生成getter和setter方法
+   5. 与生成getter、setter方法名字相关的参数。默认情况下@property生成的getter、setter方法的名字都是最标准的名字。其实我们可以通过参数来指定@property生成的方法的名字
 
-      1. getter
+      1. getter：
 
-      2. setter
+      2. setter：
 
 
 
