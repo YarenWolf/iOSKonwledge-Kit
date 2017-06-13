@@ -15,9 +15,13 @@
       2. readwrite  ：默认属性值。会生成getter和setter方法
    5. 与生成getter、setter方法名字相关的参数。默认情况下@property生成的getter、setter方法的名字都是最标准的名字。其实我们可以通过参数来指定@property生成的方法的名字
 
-      1. getter：
+      1. getter：getter=getter方法的名字，用来指定@property生成getter方法的名字
 
-      2. setter：
+      2. setter：setter=setter方法的名字，用来指定@property生成的setter方法的名字
+
+      注意：（1）、无论什么时候都不要修改setter方法的名字，因为默认情况下生成的setter方法名字都是标准的。
+
+                 （2）、什么时候修改getter方法的名字，当属性的类型是1个Bool值的时候可以修改这个getter方法的名字，并以“is”开头，提高代码的阅读性。
 
 
 
