@@ -11,8 +11,8 @@
    3. 1. assign  ：生成的setter方法直接赋值
       2. retain  ：生成的setter方法是标准的MRC模式下内存管理代码。（先判断新旧对象是否是同一个值，如果是同一个值不做处理，如果不是同一个值则release旧的值，retain新的值）
    4. 与生成只读、读写相关的参数  
-      1. readonly  
-      2. readwrite  
+      1. readonly  ：只会生成getter方法
+      2. readwrite  ：会生成getter和setter方法
    5. 与生成getter、setter方法名字相关的参数
 
       1. getter
