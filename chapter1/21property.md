@@ -62,7 +62,7 @@
 
   * MRC、ARC下都可以使用，用来修改getter和setter方法的名字
 
-    * setter不推荐修改；getter：当属性是布尔时候getter = isShow；
+  * setter不推荐修改；getter：当属性是布尔时候getter = isShow；
 
 ---
 
