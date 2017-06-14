@@ -23,11 +23,11 @@
 
 注意：同一组属性值只可以出现1次，但是setter和getter可以同时存在，；参数的顺序可以任意
 
+  
+  
 
 
-
-
-property参数总结
+# property参数总结
 
 1、程序开发分为：ARC、MRC
 
@@ -63,15 +63,15 @@ property参数总结
 
 7、readonly、readwrite
 
-ARC、MRC模式下都可以使用
+ ARC、MRC模式下都可以使用
 
 8、getter、setter
 
-MRC、ARC下都可以使用，用来修改getter和setter方法的名字
+ MRC、ARC下都可以使用，用来修改getter和setter方法的名字
 
-setter不推荐修改；getter：当属性是布尔时候getter = isShow；
+ setter不推荐修改；getter：当属性是布尔时候getter = isShow；
 
----
+----
 
 在ARC机制下，（MRC：retain）-&gt;strong
 
