@@ -30,19 +30,12 @@
 
   * 不管MRC或者ARC，属性都用nonmatic
 
-
-
-3、retain
-
-只能用在MRC模式下，代表生成的setter方法是标准的MRC内存管理代码
-
-当属性是OC对象的时候用retain，只有出现了循环引用的情况时1边使用assign
-
-4、assign
-
-在ARC和MRC模式下都可以使用
-
-在属性不是OC对象的时候使用assign
+* retain
+  * 只能用在MRC模式下，代表生成的setter方法是标准的MRC内存管理代码
+  * 当属性是OC对象的时候用retain，只有出现了循环引用的情况时1边使用assign
+* assign
+  * 在ARC和MRC模式下都可以使用
+  * 在属性不是OC对象的时候使用assign
 
 5、strong
 
