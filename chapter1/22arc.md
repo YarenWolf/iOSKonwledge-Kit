@@ -35,3 +35,107 @@
 
 
 
+# ARC可能遇到的问题 
+
+* 现状：你在ARC机制下写工程项目，但是你需要用到一个类（前人大牛留下的），但是这个类是一个MRC模式的类
+
+* 解决办法：在Xcode中找到项目对应的“TARGETS”，选择“Build Phases”下的“Compiles Sources”，找到需要将文件设置为支持“ARC”做法为，在文件后面点击添加“-fobjc-arc”
+* 将文件设置为不支持ARC，在文件后面点击添加“-fno-objc-arc”
+
+```
+
+//Dog类
+#import <Foundation/Foundation.h>
+
+@interface Dog : NSObject{
+    NSString *_name;
+}
+
+-(void)setName:(NSString *)name;
+
+-(NSString *)name;
+
+-(void)bark;
+@end
+
+#import "Dog.h"
+
+@implementation Dog
+
+-(void)dealloc{
+    NSLog(@"啊，我这条狗死掉了...");
+    [_name release];
+    [super dealloc];
+}
+
+-(void)setName:(NSString *)name{
+    if (_name != name) {
+        [_name release];
+        _name = [name retain];
+    }
+    _name = name;
+}
+
+-(NSString *)name{
+    return _name;
+}
+
+-(void)bark{
+    NSLog(@"嗨，大家好，我是明星狗狗%@",_name);
+}
+
+@end
+
+
+//Person类
+#import <Foundation/Foundation.h>
+#import "Dog.h"
+
+
+
+@interface Person : NSObject
+
+@property (nonatomic, strong) Dog *dog;
+
+-(void)sayHi;
+
+-(void)playWithDog;
+@end
+#import "Person.h"
+
+@implementation Person
+
+-(void)sayHi{
+    NSLog(@"大家好");
+}
+
+
+-(void)playWithDog{
+    [_dog bark];
+    NSLog(@"狗狗，我们走");
+}
+
+-(void)dealloc{
+    NSLog(@"啊， 我死了");
+    [super dealloc];
+}
+
+@end
+
+//test
+
+    Person *p = [[Person alloc] init];
+    
+    Dog *d = [[Dog alloc] init];
+    d.name = @"啸天犬";
+    p.dog = d;
+    
+    [p playWithDog];
+    
+    [d release];
+    [d release];
+    [p release];
+```
+
+
+
