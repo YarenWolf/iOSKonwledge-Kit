@@ -66,7 +66,8 @@
 
 ---
 
-在ARC机制下，（MRC：retain）-&gt;strong
+1. 在ARC机制下，（MRC：retain）-&gt;strong
+2. 在ARC机制下，（MRC：一边retain，一边assign）-&gt;一边strong，一边weak
 
-在ARC机制下，（MRC：一边retain，一边assign）-&gt;一边strong，一边weak
+
 
