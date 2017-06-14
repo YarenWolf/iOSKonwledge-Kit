@@ -139,3 +139,24 @@
 
 ![](/assets/87DE3599-15E4-4EB0-AA84-35559E41AB7B.png)
 
+
+
+
+
+将整个旧的MRC项目转换成ARC项目
+
+步骤
+
+* 第一步![](/assets/MRCTOARC1.png)
+* 第二步
+
+![](/assets/MRCTOARC2.png)
+
+* 第三步
+
+![](/assets/MRCTOARC3.png)
+
+* 第四步
+
+![](/assets/MRCTOARC4.png)
+
