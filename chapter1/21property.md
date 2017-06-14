@@ -36,9 +36,10 @@
   * 当属性是OC对象的时候用retain，只有出现了循环引用的情况时1边使用assign
 
 * assign
+
   * 在ARC和MRC模式下都可以使用
   * 在属性不是OC对象的时候使用assign
-  * 
+
 * strong
 
   * 只能使用在ARC机制下
@@ -47,11 +48,11 @@
 
   * 当出现循环引用的时候，一端使用weak，一端使用strong
 
-6、weak
+* weak
 
-在存在于ARC机制下，当属性的类型是OC对象的时候使用weak
+  * 在存在于ARC机制下，当属性的类型是OC对象的时候使用weak
 
-当出现循环引用的情况下一端使用weak，另一端使用strong
+  * 当出现循环引用的情况下一端使用weak，另一端使用strong
 
 7、readonly、readwrite
 
