@@ -23,3 +23,55 @@
 
 注意：同一组属性值只可以出现1次，但是setter和getter可以同时存在，；参数的顺序可以任意
 
+
+
+property参数总结
+
+1、程序开发分为：ARC、MRC
+
+2、与多线程相关参数：atomic：安全，但效率低。nonatomic：不安全，但效率高
+
+不管MRC或者ARC，属性都用nonmatic
+
+3、retain
+
+只能用在MRC模式下，代表生成的setter方法是标准的MRC内存管理代码
+
+当属性是OC对象的时候用retain，只有出现了循环引用的情况时1边使用assign
+
+4、assign
+
+在ARC和MRC模式下都可以使用
+
+在属性不是OC对象的时候使用assign
+
+5、strong
+
+只能使用在ARC机制下
+
+当属性的类型为OC对象，绝大多数情况使用strong
+
+当出现循环引用的时候，一端使用weak，一端使用strong
+
+6、weak
+
+在存在于ARC机制下，当属性的类型是OC对象的时候使用weak
+
+当出现循环引用的情况下一端使用weak，另一端使用strong
+
+7、readonly、readwrite
+
+ ARC、MRC模式下都可以使用
+
+8、getter、setter
+
+ MRC、ARC下都可以使用，用来修改getter和setter方法的名字
+
+ setter不推荐修改；getter：当属性是布尔时候getter = isShow；
+
+----
+
+在ARC机制下，（MRC：retain）-&gt;strong
+
+在ARC机制下，（MRC：一边retain，一边assign）-&gt;一边strong，一边weak
+
