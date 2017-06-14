@@ -33,17 +33,15 @@
 
 12. 弱指针：使用\_\_weak修饰的指针
 
-
-
-# ARC可能遇到的问题 
+# ARC可能遇到的问题
 
 * 现状：你在ARC机制下写工程项目，但是你需要用到一个类（前人大牛留下的），但是这个类是一个MRC模式的类
 
 * 解决办法：在Xcode中找到项目对应的“TARGETS”，选择“Build Phases”下的“Compiles Sources”，找到需要将文件设置为支持“ARC”做法为，在文件后面点击添加“-fobjc-arc”
+
 * 将文件设置为不支持ARC，在文件后面点击添加“-fno-objc-arc”
 
 ```
-
 //Dog类
 #import <Foundation/Foundation.h>
 
@@ -125,17 +123,19 @@
 //test
 
     Person *p = [[Person alloc] init];
-    
+
     Dog *d = [[Dog alloc] init];
     d.name = @"啸天犬";
     p.dog = d;
-    
+
     [p playWithDog];
-    
+
     [d release];
     [d release];
     [p release];
 ```
 
+处理办法
 
+![](/assets/87DE3599-15E4-4EB0-AA84-35559E41AB7B.png)
 
