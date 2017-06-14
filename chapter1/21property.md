@@ -54,9 +54,9 @@
 
   * 当出现循环引用的情况下一端使用weak，另一端使用strong
 
-7、readonly、readwrite
+* readonly、readwrite
 
-ARC、MRC模式下都可以使用
+  * ARC、MRC模式下都可以使用
 
 8、getter、setter
 
