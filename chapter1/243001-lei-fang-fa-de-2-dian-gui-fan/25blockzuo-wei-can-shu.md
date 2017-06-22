@@ -2,10 +2,6 @@
 
 被作为参数传入的函数就叫做回调函数
 
-
-
-
-
 ```
 #import <Foundation/Foundation.h>
 
