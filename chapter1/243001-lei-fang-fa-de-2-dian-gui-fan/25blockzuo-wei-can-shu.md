@@ -1,4 +1,4 @@
-# Block 作为参数
+# Block 作为函数参数---高阶函数？
 
 ```
 #import <Foundation/Foundation.h>
@@ -31,8 +31,6 @@ int main(int argc, const char * argv[]) {
 
 如何为一个函数指定不同的处理逻辑，鉴于Block的特点，可以用Block作为函数参数传递到函数内部去执行，因此该函数在调用的过程中调用者可以传递Block代码去在函数内部调用。
 
-
-
 举例
 
 ```
@@ -46,7 +44,7 @@ int testWithBlock(NewType block){
     globalA++;
     int ele = globalA;
     int sum = block(ele,globalA);
-    
+
     return sum + ele + globalA;
 }
 
@@ -58,25 +56,25 @@ int testTheBlock(int(^myBlock)(int a,int b)){
 }
 
 int main(int argc, const char * argv[]) {
-    
+
     int sum = testTheBlock(^int(int a, int b) {
         return a + b;
     });
-    
+
     int minus = testTheBlock(^int(int a, int b) {
         return a - b;
     });
-    
+
     int multiple = testTheBlock(^int(int a, int b) {
         return a * b;
     });
-    
+
     int divide = testTheBlock(^int(int a, int b) {
         return a/b;
     });
 
     NSLog(@"sum->%d, minus->%d, multiple->%d, divide->%d",sum,minus,multiple,divide);
-    
+
     return 0;
 }
 ```
