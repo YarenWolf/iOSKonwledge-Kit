@@ -24,6 +24,7 @@
   * [21、@property](chapter1/21property.md)
   * [22、ARC](chapter1/22arc.md)
   * [23、autoreleasepool-自动释放池](chapter1/23autoreleasepoolzi-dong-shi-fang-chi.md)
+  * [24、类方法的2点规范](chapter1/243001-lei-fang-fa-de-2-dian-gui-fan.md)
 * [Swift](swift.md)
   * [第二章 玩转儿swift 第一回合](swift/di-er-zhang-wan-zhuan-er-swift-di-yi-hui-he.md)
     * [1、变量](swift/di-er-zhang-wan-zhuan-er-swift-di-yi-hui-he/13001-bian-liang.md)
