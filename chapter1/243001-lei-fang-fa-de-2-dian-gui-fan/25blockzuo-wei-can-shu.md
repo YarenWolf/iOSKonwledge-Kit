@@ -1,5 +1,11 @@
 # Block 作为函数参数---高阶函数？
 
+被作为参数传入的函数就叫做回调函数
+
+
+
+
+
 ```
 #import <Foundation/Foundation.h>
 
