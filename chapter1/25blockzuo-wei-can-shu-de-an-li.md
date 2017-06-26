@@ -54,7 +54,6 @@ char *countries[] = {"Nepl",
     for(int i= 0;i<length;i++){
         NSLog(@"%s",countries[i]);
     }
-
 ```
 
 ```
@@ -124,10 +123,29 @@ char *countries[] = {"Nepl",
         int res = (int)strlen(country1)- (int)strlen(country2);
         return res > 0 ;
     }];
-
 ```
 
 ```
+//(3)
+//LBPArray.h
+#import <Foundation/Foundation.h>
+typedef BOOL (^NewType)(char *country1,char *country2);
+@interface LBPArray : NSObject
+
+@property (nonatomic, assign) int length;
+//排序规则是字典顺序
+-(void)sortWithCountries:(char *[])countries andLength:(int)len;
+//排序规则由调用者决定。
+//那么如何实现？排序需要知道2个元素的比较结果，返回一个BooL值，也就是排序规则由调用者传递进来，该代码在函数内部执行
+-(void)sortWithCountries:(char *[])countries andLength:(int)len andComareBlock:(NewType)compareBlock;
+
+//遍历数组并返回
+-(void)bianliCountry:(char *[])countries WithBlock:( void(^)(char * country))processBlock;
+
+@end
+
+
+//LBPArray.m
 
 ```
 
