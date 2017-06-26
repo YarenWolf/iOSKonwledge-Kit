@@ -146,7 +146,59 @@ typedef BOOL (^NewType)(char *country1,char *country2);
 
 
 //LBPArray.m
+#import "LBPArray.h"
 
+@implementation LBPArray
+
+-(void)sortWithCountries:(char *[])countries andLength:(int)len andComareBlock:(NewType)compareBlock{
+    self.length = len;
+    for(int i = 0; i<len; i++){
+        for (int j = 0; j<i-1; j++) {
+            BOOL res = compareBlock(countries[j+1],countries[j]);
+            if (res == YES) {
+                char *temp = countries[j+1];
+                countries[j+1] = countries[j];
+                countries[j] = temp;
+            }
+        }
+    }
+}
+
+-(void)sortWithCountries:(char *[])countries andLength:(int)len{
+    for(int i = 0; i<len; i++){
+        for (int j = 0; j<i-1; j++) {
+             //排序规则写死
+            int res = strcmp(countries[j], countries[j+1]);
+            if (res > 0) {
+                char *temp = countries[j];
+                countries[j] = countries[j+1];
+                countries[j+1] = temp;
+            }
+        }
+    }
+}
+
+-(void)bianliCountry:(char *[])countries WithBlock:(void (^)(char *country))processBlock{
+    for(int i=0;i<self.length;i++){
+        processBlock(countries[i]);
+    }
+}
+
+
+@end
+
+//test
+    char *countries[] = {"Nepl",
+                        "Cambodia",
+                        "Afghanistan",
+                        "India",
+                        "South Korea",
+                        "Yuenan"};
+    int length = sizeof(countries)/8;
+    LBPArray *sorter = [LBPArray  new];
+ [sorter bianliCountry:countries WithBlock:^(char *country) {
+        NSLog(@"元素->%s",country);
+    }];
 ```
 
 * 什么时候Block可以作为方法的参数？
