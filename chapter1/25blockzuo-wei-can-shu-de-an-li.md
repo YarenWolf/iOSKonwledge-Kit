@@ -204,6 +204,17 @@ typedef BOOL (^NewType)(char *country1,char *country2);
 * 什么时候Block可以作为方法的参数？
 
   * 当方法的内部需要执行一个功能，但是这个功能的具体实现在函数的内部不确定，这个时候调用者就用Block将方法实现的代码传进来
+  * 
+
+```
+typedef void(^OurBlock)();
+OurBlock test(){
+    OurBlock block = ^{
+        NSLog(@"你好");
+    };
+    return block;
+}
+```
 
 
 
