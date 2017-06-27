@@ -118,20 +118,22 @@
 
 //test
     Person *person = [Person new];
-    
+
     person.age = 20;
     person.name = @"杭城小刘";
     NSLog(@"我叫%@，我今年%zd了",person.name,person.age);
     [person scan];
-    
+
     [person read];
-    
+
     if ([person respondsToSelector:@selector(see)]) {
         [person see];
     }
 ```
 
+测试结果
 
+![](/assets/屏幕快照 2017-06-27 下午2.43.43.png)
 
 
 
