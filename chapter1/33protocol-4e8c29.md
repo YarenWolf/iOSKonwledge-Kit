@@ -120,5 +120,15 @@
 @end
 ```
 
+#### 注意
+
+* 在声明StudyProtocol协议中，再协议的后面&lt;NSObject&gt;,那么这个代表什么？
+* 在Foundation框架中，有1个类叫做NSObject，是所有类的基类
+* 在Foundation框架中，有1个协议叫做NSObject
+* NSObject协议被NSObject类所遵守，所以NSObject协议中的所有方法被全部的OC类所拥有
+* 这么说，所有的OC类都遵循了NSObject协议，NSObject协议叫做基协议
+* 类的名称可以和协议的名称一致
+* 写协议的规范，所欧的协议必须直接或者间接地遵循NSObject基协议中继承
+
 
 
