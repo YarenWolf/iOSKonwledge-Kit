@@ -60,6 +60,78 @@
 #### 结论：
 
 * 虽然在协议上声明了一个@property，但是不会生成私有属性,所以看不到在协议中的age和name的私有属性
-* 
+* 在协议中声明的方法，意味着遵循该协议的类中需要实现相应的方法，如果不实现也不会报错。如果该方法用@required声明，那么编译只会报警告，如果用@optional声明的方法，在该类中不实现也不会报警告
+
+#### 怎么办呢：
+
+* 虽然协议中声明了property，声明了setter和getter，如果在遵循该协议的类中要去使用，我们必须在该类中声明私有属性，自己去实现setter getter方法
+* 虽然协议中约定了方法，如果遵循本协议的类不实现该方法是不会报错，但是当调用这个方法且这个方法没有实现就会报错。为此我们可以加个判断，判断当前的类是否实现了该方法
+
+#### 改进代码：
+
+```
+//Person.m
+#import "Person.h"
+
+
+@interface Person (){
+    NSString *_name;
+    NSInteger _age;
+}
+
+@property (nonatomic, strong) NSString *sports;
+@end
+
+@implementation Person
+-(void)setName:(NSString *)name{
+    if (_name != name) {
+        _name = name;
+    }
+}
+
+-(NSString *)name{
+    return _name;
+}
+
+-(void)setAge:(NSInteger)age{
+    if (_age != age) {
+        _age = age;
+    }
+}
+
+-(NSInteger)age{
+    return _age;
+}
+
+
+-(void)scan{
+    NSLog(@"我在阅读");
+}
+
+-(void)read{
+   NSLog(@"我在读书");
+}
+
+
+@end
+
+
+//test
+    Person *person = [Person new];
+    
+    person.age = 20;
+    person.name = @"杭城小刘";
+    NSLog(@"我叫%@，我今年%zd了",person.name,person.age);
+    [person scan];
+    
+    [person read];
+    
+    if ([person respondsToSelector:@selector(see)]) {
+        [person see];
+    }
+```
+
+
+
 
 
