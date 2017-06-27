@@ -21,9 +21,38 @@
 -(void)scan;
 
 @end
+
+
+//Person.h
+#import <Foundation/Foundation.h>
+#import "StudyProtocol.h"
+
+@interface Person : NSObject<StudyProtocol>
+
+
+@end
+
+#import "Person.h"
+
+
+@interface Person ()
+
+@property (nonatomic, strong) NSString *sports;
+@end
+
+@implementation Person
+
+-(void)scan{
+    NSLog(@"我在阅读");
+}
+
+-(void)read{
+   NSLog(@"我在读书");
+}
+
+
+@end
 ```
-
-
 
 
 
