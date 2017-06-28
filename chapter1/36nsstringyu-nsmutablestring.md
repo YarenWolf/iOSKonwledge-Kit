@@ -1,4 +1,4 @@
-# NSString 
+# NSString
 
 ```
 NSString *str = @"杭城小刘";
@@ -9,10 +9,6 @@ NSString *str2 = @"杭城小刘";
 * 因为NSString创建对象都是根据数据段中的对象地址去创建，所以当2个字符串的值一样的时候NSString的地址是一样的，所以str和str2的地址是一样的
 
 ![](/assets/A17E097F-4C3A-4461-A7CA-EDF75BA24780.png)
-
-
-
-
 
 # NSMutableString
 
