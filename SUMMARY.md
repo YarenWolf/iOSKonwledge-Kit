@@ -33,7 +33,7 @@
   * [34、Protocol（三）](chapter1/34protocol.md)
   * [35、NSRange](chapter1/35nsrange.md)
   * [36、NSString与NSMutableString](chapter1/36nsstringyu-nsmutablestring.md)
-  * [37](chapter1/37.md)
+  * [37、NSDictionary与NSMutableDictionary](chapter1/37.md)
 * [Swift](swift.md)
   * [第二章 玩转儿swift 第一回合](swift/di-er-zhang-wan-zhuan-er-swift-di-yi-hui-he.md)
     * [1、变量](swift/di-er-zhang-wan-zhuan-er-swift-di-yi-hui-he/13001-bian-liang.md)
