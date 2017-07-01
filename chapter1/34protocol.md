@@ -139,7 +139,9 @@ id<DevelopProtocol, PlayProtocol> p4 = [Person new];
 #import "Student.h"
 
 @implementation Student
-
+-(void)see{
+    NSLog(@"我在看书");
+}
 @end
 
 //Developer
@@ -163,8 +165,7 @@ NSObject<StudyProtocol> *st = [Student new];
 id<StudyProtocol> *st1 = [Student new];
 
 NSObject<StudyProtocol> *st2 = [Developer new];
-
-
+[st2 see];
 ```
 
 结论
@@ -177,4 +178,6 @@ NSObject<StudyProtocol> *st2 = [Developer new];
 * 遵循了某个协议的类，相当于这个类拥有了这个协议所定义的行为
 
 * 因为我们要调用这个对象的协议方法，只有遵循了协议。，这个类一定会有协议方法
+
+
 
