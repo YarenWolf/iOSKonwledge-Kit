@@ -124,11 +124,57 @@ id<DevelopProtocol, PlayProtocol> p4 = [Person new];
   * 当然了，可以指针类型使用id
 * id&lt;协议名称&gt;指针名称;
 
-
-
-
-
 > //声明一个指针，该指针指向遵循学习协议的学生对象
 
+```
+//Student
+#import <Foundation/Foundation.h>
+#import "StudyProtocol.h"
 
+@interface Student : NSObject<StudyProtocol>
+
+
+@end
+
+#import "Student.h"
+
+@implementation Student
+
+@end
+
+//Developer
+#import "Student.h"
+
+@interface Developer : Student
+
+@end
+
+
+#import "Developer.h"
+
+@implementation Developer
+
+@end
+
+
+//test
+NSObject<StudyProtocol> *st = [Student new];
+
+id<StudyProtocol> *st1 = [Student new];
+
+NSObject<StudyProtocol> *st2 = [Developer new];
+
+
+```
+
+结论
+
+* 声明一个指针，该指针指向遵循学习协议的学生对象**Student&lt;StudyProtocol&gt; \*st2 = \[Student new\];**
+* 当然，也可以指向这个学生的子类的对象**Student&lt;StudyProtocol&gt; \*st3 = \[Developer new\];**
+
+思考：为什么？
+
+* 遵循了某个协议的类，相当于这个类拥有了这个协议所定义的行为
+
+* 因为我们要调用这个对象的协议方法，只有遵循了协议。，这个类一定会有协议方法
 
