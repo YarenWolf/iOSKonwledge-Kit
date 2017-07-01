@@ -1,7 +1,5 @@
 # 协议的类型限制、
 
-
-
 > 需求：请声明一个指针，这个指针可以指向任何对象，但是这个对象必须遵循DevelopProtocol协议，如果不遵循起码给出警告
 
 ```
@@ -104,16 +102,16 @@
 @end
 
 
-  
-    
+
+
    //test   
 NSObject<DevelopProtocol>  *p = [Person new];
 
 id<DevelopProtocol> p1 = [Person new];
 
-    
+
 id<DevelopProtocol, StudyProtocol> p3 = [Person new];
-    
+
 id<DevelopProtocol, PlayProtocol> p4 = [Person new];
 ```
 
@@ -127,6 +125,10 @@ id<DevelopProtocol, PlayProtocol> p4 = [Person new];
 * id&lt;协议名称&gt;指针名称;
 
 
+
+
+
+> //声明一个指针，该指针指向遵循学习协议的学生对象
 
 
 
