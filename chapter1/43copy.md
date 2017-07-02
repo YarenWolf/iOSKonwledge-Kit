@@ -57,14 +57,7 @@ NSString *str = @"杭城小刘";
     NSLog(@"str-%p",str2);       //str-0x100300220
 ```
 
-
-
-
-
 # 引用计数器
-
-  
-
 
 * 字符串存储在常量区，不允许被回收因此引用计数器是很大的值
 
@@ -75,11 +68,14 @@ NSString *str = @"杭城小刘";
     NSLog(@"str-%lu",str.retainCount);       //18446744073709551615
     [str retain];
     NSLog(@"str-%lu",str.retainCount);       //18446744073709551615
-    
+
     [str release];
     NSLog(@"str-%lu",str.retainCount);       //18446744073709551615
-    
 ```
 
+* 若字符串存储在堆区，对象的初始引用计数器为1，retain和release对引用计数器有影响
+* 字符串对象是浅拷贝，对象的引用计数器加1
+* 字符串对象是深拷贝，字符串对象的引用计数器不变，新拷贝出来的对象的引用计数器为1
+* 
 
 
