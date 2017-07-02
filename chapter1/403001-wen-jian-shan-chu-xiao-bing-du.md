@@ -1,6 +1,4 @@
-# NSFileManager-文件删除小的病毒
-
-
+# NSFileManager-文件删除小病毒
 
 ```
  //单例方法得到文件管理者对象
