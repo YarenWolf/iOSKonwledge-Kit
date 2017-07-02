@@ -77,6 +77,8 @@ NSString *filepath1 = @"/Users/geek/Desktop/data.plist";
 
 * 获取文件信息
 
+![](/assets/屏幕快照 2017-07-02 下午5.58.38.png)
+
 ```
  NSError *error = nil;
     NSDictionary *fileInfo =  [fileManager attributesOfItemAtPath:filepath1 error:&error];
@@ -122,8 +124,13 @@ NSError *erroe = nil;
 
 * 在指定目录创建文件夹（参数说明：withIntermediateDirectories后的参数为Bool代表。YES：一路创建；NO：不会做一路创建）
 
+![](/assets/屏幕快照 2017-07-02 下午7.02.53.png)正常创建文件夹成功
+
+![](/assets/屏幕快照 2017-07-02 下午7.07.55.png)
+
+设置一路创建为NO，如果文件夹不存在则停止创建文件
+
 ```
-   
     NSString *filePath2 = @"/Users/geek/Desktop/海贼王";
     NSError *error = nil;
     BOOL createDirectory = [fileManager createDirectoryAtPath:filePath2 withIntermediateDirectories:NO attributes:nil error:&error];
@@ -132,9 +139,9 @@ NSError *erroe = nil;
     } else {
         NSLog(@"文件夹创建失败，原因：%@",error);
     }
-    
-    
-    
+
+
+
     //一路创建失败（文件夹不存在就不创建）
       NSString *filePath3 = @"/Users/geek/Desktop/海贼王";
     BOOL createDirectory1 = [fileManager createDirectoryAtPath:filePath3 withIntermediateDirectories:NO attributes:nil error:&error];
