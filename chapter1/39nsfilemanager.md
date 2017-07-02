@@ -2,11 +2,7 @@
 
 > 想操作文件，该去了解下NSFileManager
 
-
-
 注意：//小窍门：打印数组或者字典，里面包含中文，直接用%@打印会看不到中文，可用for遍历访问
-
-
 
 * 单例方法得到文件管理者对象
 
@@ -108,6 +104,88 @@ NSError *erroe = nil;
     NSLog(@"Desktop目录下的文件和文件夹");
     for (NSString *item in children) {
         NSLog(@"%@",item);
+    }
+```
+
+* 在指定目录创建文件
+
+```
+    NSString *filePath1 = @"/Users/geek/Desktop/data.text";
+    NSData *data = [@"我要学好OC" dataUsingEncoding:NSUTF8StringEncoding];
+    BOOL createFile =  [fileManager createFileAtPath:filePath1 contents:data attributes:nil];
+    if (createFile) {
+        NSLog(@"文件创建成功");
+    } else {
+        NSLog(@"文件创建失败");
+    }
+```
+
+* 在指定目录创建文件夹（参数说明：withIntermediateDirectories后的参数为Bool代表。YES：一路创建；NO：不会做一路创建）
+
+```
+   
+    NSString *filePath2 = @"/Users/geek/Desktop/海贼王";
+    NSError *error = nil;
+    BOOL createDirectory = [fileManager createDirectoryAtPath:filePath2 withIntermediateDirectories:NO attributes:nil error:&error];
+    if (createDirectory) {
+        NSLog(@"文件夹创建成功");
+    } else {
+        NSLog(@"文件夹创建失败，原因：%@",error);
+    }
+    
+    
+    
+    //一路创建失败（文件夹不存在就不创建）
+      NSString *filePath3 = @"/Users/geek/Desktop/海贼王";
+    BOOL createDirectory1 = [fileManager createDirectoryAtPath:filePath3 withIntermediateDirectories:NO attributes:nil error:&error];
+    if (createDirectory1) {
+        NSLog(@"文件夹创建成功");
+    } else {
+        NSLog(@"文件夹创建失败，原因：%@",error);
+    }
+```
+
+* 复制文件
+
+```
+   NSString *filePath4 = @"/Users/geek/Desktop/动漫";
+
+    BOOL copyRes = [fileManager copyItemAtPath:filePath3 toPath:filePath4 error:nil];
+    if (copyRes) {
+        NSLog(@"文件复制成功");
+    } else {
+        NSLog(@"文件复制失败");
+    }
+```
+
+* 移动文件
+
+```
+  NSString *filePath5 = @"/Users/geek/Downloads/动漫";
+    BOOL moveRes = [fileManager moveItemAtPath:filePath3 toPath:filePath5 error:nil];
+    if (moveRes) {
+        NSLog(@"文件移动成功");
+    } else {
+        NSLog(@"文件移动失败");
+    }
+```
+
+* 可以给文件重命名
+
+```
+ //可以给文件重命名
+    NSString *filePath6 = @"/Users/geek/Downloads/卡通";
+    [fileManager moveItemAtPath:filePath5 toPath:filePath6 error:nil];
+```
+
+* 删除文件
+
+```
+    BOOL deleteRes = [fileManager removeItemAtPath:filePath6 error:nil];
+    if (deleteRes) {
+        NSLog(@"文件删除成功");
+    } else {
+        NSLog(@"文件删除失败");
     }
 ```
 
