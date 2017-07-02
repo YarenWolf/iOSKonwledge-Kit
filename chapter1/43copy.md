@@ -33,5 +33,29 @@ NSString *str = @"杭城小刘";
 
 # MutableCopy
 
+* NSString的NSMutableCopy过后是深拷贝，且产生的是NSMutableString
+
+```
+NSString *str = @"杭城小刘";
+    NSMutableString *str2 =  [str mutableCopy];
+    [str2 appendString:@"OC"];
+    NSLog(@"str-%@",str);       //杭城小刘
+    NSLog(@"str-%p",str);       //str-0x100002030
+    NSLog(@"str2-%@",str2);     //杭城小刘OC
+    NSLog(@"str-%p",str2);       //str-0x1003069b0
+```
+
+* NSMutableString的NSMutableCopy过后是深拷贝，且产生的是NSMutableString
+
+```
+ NSMutableString *str = [NSMutableString stringWithFormat:@"杭城小刘"];
+    NSMutableString *str2 =  [str mutableCopy];
+    [str2 appendString:@"OC"];
+    NSLog(@"str-%@",str);       //杭城小刘
+    NSLog(@"str-%p",str);       //str-0x100306920
+    NSLog(@"str2-%@",str2);     //杭城小刘OC
+    NSLog(@"str-%p",str2);       //str-0x100300220
+```
+
 
 
