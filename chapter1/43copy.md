@@ -59,3 +59,27 @@ NSString *str = @"杭城小刘";
 
 
 
+
+
+# 引用计数器
+
+  
+
+
+* 字符串存储在常量区，不允许被回收因此引用计数器是很大的值
+
+* 发送retain和release不影响引用计数器
+
+```
+NSString *str = @"杭城小刘";
+    NSLog(@"str-%lu",str.retainCount);       //18446744073709551615
+    [str retain];
+    NSLog(@"str-%lu",str.retainCount);       //18446744073709551615
+    
+    [str release];
+    NSLog(@"str-%lu",str.retainCount);       //18446744073709551615
+    
+```
+
+
+
