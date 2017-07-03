@@ -17,9 +17,13 @@
 Person *p1 = [Person new];
 Person *p2 = [Person new];
 Person *p3 = [Person new];
-
-
 ```
+
+![](/assets/4046AF17-101E-4828-A3E2-BC51D3B58E40.png)
+
+
+
+
 
 单例模式的写法规范
 
