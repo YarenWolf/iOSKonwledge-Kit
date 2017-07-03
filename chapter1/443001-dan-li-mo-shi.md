@@ -7,8 +7,6 @@
 * 在alloc方法的内部什么也没做，只是调用allocWithZone方法
 * 真正创建对象就是在allocWithZone方法中做的
 
-
-
 做个小实验
 
 ```
@@ -19,6 +17,7 @@
 Person *p1 = [Person new];
 Person *p2 = [Person new];
 Person *p3 = [Person new];
+
 
 ```
 
