@@ -76,8 +76,7 @@ NSString *filepath1 = @"/Users/geek/Desktop/data.plist";
 ```
 
 * 获取文件信息
-
-![](/assets/屏幕快照 2017-07-02 下午5.58.38.png)
+![文件删除](https://github.com/FantasticLBP/web/blob/master/assets/屏幕快照 2017-07-02 下午5.58.38.png "文件删除")
 
 ```
  NSError *error = nil;
@@ -124,9 +123,9 @@ NSError *erroe = nil;
 
 * 在指定目录创建文件夹（参数说明：withIntermediateDirectories后的参数为Bool代表。YES：一路创建；NO：不会做一路创建）
 
-![](/assets/屏幕快照 2017-07-02 下午7.02.53.png)正常创建文件夹成功
+![正常创建文件夹成功](https://github.com/FantasticLBP/web/blob/master/assets/屏幕快照 2017-07-02 下午7.02.53.png "正常创建文件夹成功")
+![创建文件夹失败](https://github.com/FantasticLBP/web/blob/master/assets/屏幕快照 2017-07-02 下午7.07.55.png "创建文件夹失败")
 
-![](/assets/屏幕快照 2017-07-02 下午7.07.55.png)
 
 设置一路创建为NO，如果文件夹不存在则停止创建文件
 
