@@ -76,7 +76,7 @@ NSString *filepath1 = @"/Users/geek/Desktop/data.plist";
 ```
 
 * 获取文件信息
-![文件删除](https://raw.githubusercontent.com/FantasticLBP/iOSKonwledge-Kit/master/assets/屏幕快照%202017-07-02%20下午5.58.38.png "文件删除")
+![文件信息](https://raw.githubusercontent.com/FantasticLBP/iOSKonwledge-Kit/master/assets/屏幕快照%202017-07-02%20下午5.58.38.png "文件信息")
 
 ```
  NSError *error = nil;
