@@ -55,6 +55,8 @@
     * [10、闭包捕获列表](swift/103001-bi-bao-bu-huo-lie-biao.md)
   * 第五章 玩转儿Swift3新特性
     * [1、swift3变化一览](swift/1swift3bian-hua-yi-lan.md)
+* [IPV6](ipv6.md)
+  * [1、初识IPV6](ipv6/13001-chu-shi-ipv6.md)
 * [Objective-C](Objective-C.md)
   * [1、OC内存对象管理](chapter1/1、OC对象内存管理.md)
   * [2、nil && NULL](chapter1/2、nil && null.md)
@@ -95,8 +97,6 @@
   * [42、NSDate、NSCalender](chapter1/42nsdatenscalender.md)
   * [43、Copy](chapter1/43copy.md)
   * [44、单例模式](chapter1/443001-dan-li-mo-shi.md)
-* [IPV6](ipv6.md)
-  * [1、初识IPV6](ipv6/13001-chu-shi-ipv6.md)
 * URL Schemes
   * [1、URL Schemes深度剖析（上）](1url-schemesshen-du-pou-xi-ff08-shang-ff09.md)
   * [2、URL Schemes深度剖析（下）](2url-schemesshen-du-pou-xi-ff08-xia-ff09.md)
@@ -147,6 +147,7 @@
   * [6、工程大小优化之图片资源](63001-gong-cheng-da-xiao-you-hua-zhi-tu-pian-zi-yuan.md)
   * [7、接口要怎么对？你知道正确的姿势吗](73001-jie-kou-yao-zen-yao-dui-ff1f-ni-zhi-dao-zheng-que-de-zi-shi-ma.md)
   * [8、ios URL](8ios-url.md)
+  * [9、微信支付总结](93001-wei-xin-zhi-fu-zong-jie.md)
 * Framework
   * [1、代码打包成.framework库\(上\)](13001-dai-ma-da-bao-6210-framework-5e9328-4e0a29.md)
   * [2、代码打包成.framework库\(下\)](23001-dai-ma-da-bao-6210-framework-5e9328-4e0b29.md)
