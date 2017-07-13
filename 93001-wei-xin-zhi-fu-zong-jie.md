@@ -259,8 +259,7 @@ typedef NS_ENUM(NSInteger,WXPay_State){
 * 调用支付
 
   * 让你的VC遵循WXApiManagerDelegate协议&lt;WXApiManagerDelegate&gt;
-
-* 调用支付方法
+  * 调用支付方法
 
 ```
 WXApiManager *manager = [WXApiManager sharedManager];
