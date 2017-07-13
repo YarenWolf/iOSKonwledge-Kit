@@ -151,7 +151,7 @@ typedef NS_ENUM(NSInteger,ALiPay_State){
 * 让你的VC遵循AliPayManagerDelegate协议
 * 调用支付方法
 
-* 实现
+* 实现代理方法，
 
 
 
