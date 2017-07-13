@@ -148,6 +148,7 @@ typedef NS_ENUM(NSInteger,ALiPay_State){
 ```
 
 * 8、如何使用？在需要使用支付的地方
+* 让你的VC遵循AliPayManagerDelegate协议
 
 ```
 
