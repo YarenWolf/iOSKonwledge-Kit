@@ -208,10 +208,34 @@ typedef NS_ENUM(NSInteger,ALiPay_State){
 ```
 
 * 8、如何使用？在需要使用支付的地方
+
   * 让你的VC遵循AliPayManagerDelegate协议
+
+  ```
+  <AliPayManagerDelegate>
+   [AliPayManager sharedManager].delegate = self;
+  ```
+
   * 调用支付方法
 
+  ```
+  AliPayManager *manager = [AliPayManager sharedManager];
+  [manager alipayWithBasicInfo:data];
+  ```
+
   * 实现代理方法，拿到支付状态，处理逻辑
+
+  ```
+  #pragma mark - AliPayManagerDelegate
+  -(void)aliApiManager:(AliPayManager *)aliApiManager didPayedWithState:(ALiPay_State)payState{
+      if (payState == ALiPay_State_Success) {
+        
+      }else if(payState == ALiPay_State_Fail){
+        
+      }
+  }
+
+  ```
 
 
 
