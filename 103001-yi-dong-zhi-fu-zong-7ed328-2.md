@@ -22,7 +22,7 @@
         [[AlipaySDK defaultService] processOrderWithPaymentResult:url standbyCallback:^(NSDictionary *resultDic) {
             NSLog(@"result = %@",resultDic);
         }];
-        
+
         // 授权跳转支付宝钱包进行支付，处理支付结果
         [[AlipaySDK defaultService] processAuth_V2Result:url standbyCallback:^(NSDictionary *resultDic) {
             NSLog(@"result = %@",resultDic);
@@ -50,7 +50,7 @@
         [[AlipaySDK defaultService] processOrderWithPaymentResult:url standbyCallback:^(NSDictionary *resultDic) {
             NSLog(@"result = %@",resultDic);
         }];
-        
+
         // 授权跳转支付宝钱包进行支付，处理支付结果
         [[AlipaySDK defaultService] processAuth_V2Result:url standbyCallback:^(NSDictionary *resultDic) {
             NSLog(@"result = %@",resultDic);
@@ -69,7 +69,7 @@
             NSLog(@"授权结果 authCode = %@", authCode?:@"");
         }];
     }
- 
+
 }
 ```
 
@@ -208,10 +208,10 @@ typedef NS_ENUM(NSInteger,ALiPay_State){
 ```
 
 * 8、如何使用？在需要使用支付的地方
-* 让你的VC遵循AliPayManagerDelegate协议
-* 调用支付方法
+  * 让你的VC遵循AliPayManagerDelegate协议
+  * 调用支付方法
 
-* 实现代理方法，拿到支付状态，处理逻辑
+  * 实现代理方法，拿到支付状态，处理逻辑
 
 
 
