@@ -42,6 +42,7 @@
   * CoreTelephony.framework
   * QuartzCore.framework
 * 设置URL Scheme
+
   * 在微信平台上注册App信息的时候会给我们的App分配一个唯一标识，然后将这个唯一标识填写在下图的这个地方![](/assets/QQ20170704-154424@2x.png)
 
 * 在AppDelegate,m中注册AppID
