@@ -259,24 +259,22 @@ typedef NS_ENUM(NSInteger,WXPay_State){
 * 调用支付
 
   * 让你的VC遵循WXApiManagerDelegate协议&lt;WXApiManagerDelegate&gt;
+
+  ```
+  [WXApiManager sharedManager].delegate =self;
+  ```
+
   * 调用支付方法
 
+  ```
+  WXApiManager *manager = [WXApiManager sharedManager];
+  [manager wechatpayWithBasicInfo:payInfo];
+  ```
+
+  * 实现协议方法，拿到支付状态去做，逻辑处理
+
 ```
-WXApiManager *manager = [WXApiManager sharedManager];
-[manager wechatpayWithBasicInfo:payInfo];
-```
 
-* 实现协议方法，拿到支付状态去做，逻辑处理
-
-```
-#pragma mark - WXApiManagerDelegate
--(void)wxApiManager:(WXApiManager *)wxApiManager didPayedWithState:(WXPay_State)payState{
-    if(payState == WXPay_State_Success) {
-
-    }elseif(payState == WXPay_State_Fail){
-
-    }
-}
 ```
 
 
