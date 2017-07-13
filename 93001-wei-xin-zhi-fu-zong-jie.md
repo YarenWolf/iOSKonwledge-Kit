@@ -254,8 +254,51 @@ typedef NS_ENUM(NSInteger,WXPay_State){
 }
 
 @end
-
 ```
 
+  
+p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px 'PingFang SC'; color: \#ffffff}  
+p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: \#ffffff}  
+p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: \#ffffff; min-height: 21.0px}  
+p.p4 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Menlo; color: \#d28f5a}  
+span.s1 {font-variant-ligatures: no-common-ligatures}  
+span.s2 {font: 18.0px 'PingFang SC'; font-variant-ligatures: no-common-ligatures}  
+span.s3 {font-variant-ligatures: no-common-ligatures; color: \#c2349b}  
 
+
+调用支付
+
+让你的VC遵循WXApiManagerDelegate协议&lt;WXApiManagerDelegate&gt;
+
+\[WXApiManager sharedManager\].delegate =self;
+
+  
+
+
+调用支付方法
+
+WXApiManager \*manager = \[WXApiManager sharedManager\];
+
+\[manager wechatpayWithBasicInfo:payInfo\];
+
+  
+
+
+实现协议方法，拿到支付状态去做，逻辑处理
+
+\#pragma mark - WXApiManagerDelegate
+
+-\(void\)wxApiManager:\(WXApiManager \*\)wxApiManager didPayedWithState:\(WXPay\_State\)payState{
+
+if\(payState == WXPay\_State\_Success\) {
+
+
+
+ }elseif\(payState == WXPay\_State\_Fail\){
+
+
+
+ }
+
+}
 
