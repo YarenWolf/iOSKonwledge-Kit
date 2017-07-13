@@ -64,9 +64,196 @@
 }
 ```
 
-* 在需要支付功能的VC中设置代码，并支付
+* 做进一步封装，达到解耦
 
 ```
+#import <Foundation/Foundation.h>
+#import "WXApi.h"
+
+//微信支付结果
+typedef NS_ENUM(NSInteger,WXPay_State){
+    WXPay_State_Fail = 0,
+    WXPay_State_Success = 1
+};
+
+@class WXApiManager;
+
+@protocol WXApiManagerDelegate <NSObject>
+
+@optional
+
+- (void)managerDidRecvGetMessageReq:(GetMessageFromWXReq *)request;
+
+- (void)managerDidRecvShowMessageReq:(ShowMessageFromWXReq *)request;
+
+- (void)managerDidRecvLaunchFromWXReq:(LaunchFromWXReq *)request;
+
+- (void)managerDidRecvMessageResponse:(SendMessageToWXResp *)response;
+
+- (void)managerDidRecvAuthResponse:(SendAuthResp *)response;
+
+- (void)managerDidRecvAddCardResponse:(AddCardToWXCardPackageResp *)response;
+
+
+-(void)wxApiManager:(WXApiManager *)wxApiManager didPayedWithState:(WXPay_State)payState;
+
+@end
+
+@interface WXApiManager : NSObject<WXApiDelegate>
+
+@property (nonatomic, assign) id<WXApiManagerDelegate> delegate;
+
++ (instancetype)sharedManager;
+
+/**
+ * 调起微信支付
+ *
+ * dic：字典 ，key的值应该和官方SDK文档的参数key一致
+ */
+-(void)wechatpayWithBasicInfo:(NSDictionary *)dic;
+
+@end
+
+#import <Foundation/Foundation.h>
+#import "WXApi.h"
+
+//微信支付结果
+typedef NS_ENUM(NSInteger,WXPay_State){
+    WXPay_State_Fail = 0,
+    WXPay_State_Success = 1
+};
+
+@class WXApiManager;
+
+@protocol WXApiManagerDelegate <NSObject>
+
+@optional
+
+- (void)managerDidRecvGetMessageReq:(GetMessageFromWXReq *)request;
+
+- (void)managerDidRecvShowMessageReq:(ShowMessageFromWXReq *)request;
+
+- (void)managerDidRecvLaunchFromWXReq:(LaunchFromWXReq *)request;
+
+- (void)managerDidRecvMessageResponse:(SendMessageToWXResp *)response;
+
+- (void)managerDidRecvAuthResponse:(SendAuthResp *)response;
+
+- (void)managerDidRecvAddCardResponse:(AddCardToWXCardPackageResp *)response;
+
+
+-(void)wxApiManager:(WXApiManager *)wxApiManager didPayedWithState:(WXPay_State)payState;
+
+@end
+
+@interface WXApiManager : NSObject<WXApiDelegate>
+
+@property (nonatomic, assign) id<WXApiManagerDelegate> delegate;
+
++ (instancetype)sharedManager;
+
+/**
+ * 调起微信支付
+ *
+ * dic：字典 ，key的值应该和官方SDK文档的参数key一致
+ */
+-(void)wechatpayWithBasicInfo:(NSDictionary *)dic;
+
+@end
+
+#import "WXApiManager.h"
+#import "WechatPayConstant.h"
+
+@implementation WXApiManager
+
+
++(instancetype)sharedManager {
+    static dispatch_once_t onceToken;
+    static WXApiManager *instance;
+    dispatch_once(&onceToken, ^{
+        instance = [[WXApiManager alloc] init];
+    });
+    return instance;
+}
+
+- (void)dealloc {
+    self.delegate = nil;
+}
+
+
+-(void)wechatpayWithBasicInfo:(NSDictionary *)dic{
+    PayReq* req             = [[PayReq alloc] init];
+    NSMutableString *stamp  = [dic objectForKey:@"timestamp"];
+    req.partnerId           = [dic objectForKey:@"partnerid"];
+    req.prepayId            = [dic objectForKey:@"prepayid"];
+    req.nonceStr            = [dic objectForKey:@"noncestr"];
+    req.timeStamp           = stamp.intValue;
+    req.package             = [dic objectForKey:@"package"];
+    req.sign                = [dic objectForKey:@"sign"];
+    [WXApi sendReq:req];
+}
+
+#pragma mark - WXApiDelegate
+- (void)onResp:(BaseResp *)resp {
+    if ([resp isKindOfClass:[SendMessageToWXResp class]]) {
+        if (_delegate
+            && [_delegate respondsToSelector:@selector(managerDidRecvMessageResponse:)]) {
+            SendMessageToWXResp *messageResp = (SendMessageToWXResp *)resp;
+            [_delegate managerDidRecvMessageResponse:messageResp];
+        }
+    } else if ([resp isKindOfClass:[SendAuthResp class]]) {
+        if (_delegate
+            && [_delegate respondsToSelector:@selector(managerDidRecvAuthResponse:)]) {
+            SendAuthResp *authResp = (SendAuthResp *)resp;
+            [_delegate managerDidRecvAuthResponse:authResp];
+        }
+    } else if ([resp isKindOfClass:[AddCardToWXCardPackageResp class]]) {
+        if (_delegate
+            && [_delegate respondsToSelector:@selector(managerDidRecvAddCardResponse:)]) {
+            AddCardToWXCardPackageResp *addCardResp = (AddCardToWXCardPackageResp *)resp;
+            [_delegate managerDidRecvAddCardResponse:addCardResp];
+        }
+    }else if([resp isKindOfClass:[PayResp class]]){
+        //支付返回结果，实际支付结果需要去微信服务器端查询
+        switch (resp.errCode) {
+            case WXSuccess:
+                if (self.delegate && [self.delegate respondsToSelector:@selector(wxApiManager:didPayedWithState:)]) {
+                    [self.delegate wxApiManager:self didPayedWithState:WXPay_State_Success];
+                }
+                break;
+            default:
+                if (self.delegate && [self.delegate respondsToSelector:@selector(wxApiManager:didPayedWithState:)]) {
+                    [self.delegate wxApiManager:self didPayedWithState:WXPay_State_Fail];
+                }
+                break;
+        }
+    }
+
+}
+
+- (void)onReq:(BaseReq *)req {
+    if ([req isKindOfClass:[GetMessageFromWXReq class]]) {
+        if (_delegate
+            && [_delegate respondsToSelector:@selector(managerDidRecvGetMessageReq:)]) {
+            GetMessageFromWXReq *getMessageReq = (GetMessageFromWXReq *)req;
+            [_delegate managerDidRecvGetMessageReq:getMessageReq];
+        }
+    } else if ([req isKindOfClass:[ShowMessageFromWXReq class]]) {
+        if (_delegate
+            && [_delegate respondsToSelector:@selector(managerDidRecvShowMessageReq:)]) {
+            ShowMessageFromWXReq *showMessageReq = (ShowMessageFromWXReq *)req;
+            [_delegate managerDidRecvShowMessageReq:showMessageReq];
+        }
+    } else if ([req isKindOfClass:[LaunchFromWXReq class]]) {
+        if (_delegate
+            && [_delegate respondsToSelector:@selector(managerDidRecvLaunchFromWXReq:)]) {
+            LaunchFromWXReq *launchReq = (LaunchFromWXReq *)req;
+            [_delegate managerDidRecvLaunchFromWXReq:launchReq];
+        }
+    }
+}
+
+@end
 
 ```
 
