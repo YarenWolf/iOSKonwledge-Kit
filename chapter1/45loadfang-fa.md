@@ -1,7 +1,5 @@
 # Load方法
 
-
-
 ```
 //Appdelegate
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
@@ -16,7 +14,7 @@
 }
 ```
 
-* load方法调用时机：
+* load方法调用时机：iOS工程先调用load方法再调用App的didFinishLaunchingWithOptions方法
 
 
 
