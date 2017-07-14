@@ -6,11 +6,9 @@
 
 * pch使用条件：
 
-* 先新建pch文件
+  * 先新建pch文件
 
-* 再将pch文件路径告诉工程。选中target，选择Build Settings选项，找到LLVM下的Prefix Header，将pch路径写进去（此时不需要写全路径，因为xcode默认会找到项目的路径。所以只需要写入pch文件在工程文件中的路径即可）
-
-
+  * 再将pch文件路径告诉工程。选中target，选择Build Settings选项，找到LLVM下的Prefix Header，将pch路径写进去（此时不需要写全路径，因为xcode默认会找到项目的路径。所以只需要写入pch文件在工程文件中的路径即可）
 
 * pch文件可以做些什么？
 
