@@ -24,10 +24,21 @@
   #import "Person.h"
   ```
 
-  * 自定义Log
+  * 自定义Log\(让Log在debug阶段运行，正式发布后不要打印log\)
+  * DEBUG是系统的宏，编译阶段有效
+  * ...：在宏参数中表示可变参数
+  * \_\_VA\__ARGS_\_\_:代表NSLog可变参数
 
   ```
+  #ifdef DEBUG
 
+  #define LBPLog(...) NSLog(__VA_ARGS__)
+
+  #else 
+
+  #define LBPLog(...)
+
+  #endif
   ```
 
 
