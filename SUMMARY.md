@@ -117,6 +117,7 @@
     * [2、各种编码单位](23001-ge-zhong-bian-ma-dan-wei.md)
     * [3、简短代码实现原生定位](33001-jian-duan-dai-ma-shi-xian-yuan-sheng-ding-wei.md)
   * [5、毛玻璃效果](uikit/53001-mao-bo-li-xiao-guo.md)
+  * [6、pch文件的作用](uikit/6pchwen-jian-de-zuo-yong.md)
   * [9、拨打电话](uikit/93001-bo-da-dian-hua.md)
   * 12、UIImageView
     * [1、根据图片url计算图片尺寸](uikit/13001-gen-ju-tu-pian-url-ji-suan-tu-pian-chi-cun.md)
@@ -124,7 +125,7 @@
     * [1、UIbutton文字右对齐](uikit/1uibuttonwen-zi-you-dui-qi.md)
   * 14、UISegmentedControl
     * [1、UISegmentedControl的使用](uikit/1uisegmentedcontrolde-shi-yong.md)
-  * [获取版本号](uikit/huo-qu-ban-ben-ha.md)
+  * 6、pch文件的作用
 * 杂谈
   * 1、正则表达式
   * [2、提高代码质量](23001-ti-gao-dai-ma-zhi-liang.md)
