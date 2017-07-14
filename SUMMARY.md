@@ -97,6 +97,7 @@
   * [42、NSDate、NSCalender](chapter1/42nsdatenscalender.md)
   * [43、Copy](chapter1/43copy.md)
   * [44、单例模式](chapter1/443001-dan-li-mo-shi.md)
+  * [45、load方法](chapter1/45loadfang-fa.md)
 * URL Schemes
   * [1、URL Schemes深度剖析（上）](1url-schemesshen-du-pou-xi-ff08-shang-ff09.md)
   * [2、URL Schemes深度剖析（下）](2url-schemesshen-du-pou-xi-ff08-xia-ff09.md)
@@ -135,6 +136,7 @@
   * [8、ios URL](8ios-url.md)
   * [9、移动支付总结\(1\)](93001-wei-xin-zhi-fu-zong-jie.md)
   * [10、移动支付总结\(2\)](103001-yi-dong-zhi-fu-zong-7ed328-2.md)
+  * [11、pch文件的作用](11pchwen-jian-de-zuo-yong.md)
 * Framework
   * [1、代码打包成.framework库\(上\)](13001-dai-ma-da-bao-6210-framework-5e9328-4e0a29.md)
   * [2、代码打包成.framework库\(下\)](23001-dai-ma-da-bao-6210-framework-5e9328-4e0b29.md)
