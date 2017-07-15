@@ -14,3 +14,13 @@
 
 UIWindowLevelAlert &gt; UIWindowLevelStatusBar &gt; UIWindowLevelNormal \(NSInteger\)
 
+# 模仿系统去创建VC
+
+加载MainStoryBoard的实现：
+
+* 1、创建窗口
+* 2、加载MainStoryBoard,并且加载MainStoryBoard所指定的控制器
+* 3、把加载出来的控制器作为窗口的控制器，并让窗口显示出来
+
+
+
