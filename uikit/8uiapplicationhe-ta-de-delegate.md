@@ -14,3 +14,31 @@
 
 
 
+# UIApplication何时创建
+
+> 我们都知道应用程序的主入口在main函数中，所以我们对main函数一探究竟
+
+```
+int main(int argc, char * argv[]) {
+    @autoreleasepool {
+        return UIApplicationMain(argc, argv, @"UIApplication",@"AppDelegate");
+    }
+}
+```
+
+* UIApplicationMain方法好像没见过哎。怎么办？查看Apple的官方文档：Help-&gt;Documentation and API Reference
+
+principalClassName:String?,\_ delegateClassName:String?\) -&gt; Int32
+
+| principalClassName | UIApplication类名或者子类的名称 nil  或者 @"UIApplication" |
+| :--- | :--- |
+| principalClassName | UIApplication的代理或者代理对象的名称 |
+
+官方解释
+
+This function instantiates the application object from the principal class and instantiates the delegate \(if any\) from the given class and sets the delegate for the application. It also sets up the main event loop, including the application’s run loop, and begins processing events. If the application’s`Info.plist`file specifies a main nib file to be loaded, by including the`NSMainNibFile`key and a valid nib file name for the value, this function loads that nib file.
+
+Despite the declared return type, this function never returns. For more information on how this function behaves, see “[Expected App Behaviors](https://developer.apple.com/library/etc/redirect/xcode/content/1189/documentation/iPhone/Conceptual/iPhoneOSProgrammingGuide/ExpectedAppBehaviors/ExpectedAppBehaviors.html#//apple_ref/doc/uid/TP40007072-CH3)” in[App Programming Guide for iOS](https://developer.apple.com/library/etc/redirect/xcode/content/1189/documentation/iPhone/Conceptual/iPhoneOSProgrammingGuide/Introduction/Introduction.html#//apple_ref/doc/uid/TP40007072).This function instantiates the application object from the principal class and instantiates the delegate \(if any\) from the given class and sets the delegate for the application. It also sets up the main event loop, including the application’s run loop, and begins processing events. If the application’s`Info.plist`file specifies a main nib file to be loaded, by including the`NSMainNibFile`key and a valid nib file name for the value, this function loads that nib file.
+
+Despite the declared return type, this function never returns. For more information on how this function behaves, see “[Expected App Behaviors](https://developer.apple.com/library/etc/redirect/xcode/content/1189/documentation/iPhone/Conceptual/iPhoneOSProgrammingGuide/ExpectedAppBehaviors/ExpectedAppBehaviors.html#//apple_ref/doc/uid/TP40007072-CH3)” in[App Programming Guide for iOS](https://developer.apple.com/library/etc/redirect/xcode/content/1189/documentation/iPhone/Conceptual/iPhoneOSProgrammingGuide/Introduction/Introduction.html#//apple_ref/doc/uid/TP40007072).
+
