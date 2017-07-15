@@ -12,9 +12,5 @@
 
 # UIWindow的层级
 
-UIWindowLevelAlert &gt; UIWindowLevelStatusBar &gt; UIWindowLevelNormal
-
-
-
-
+UIWindowLevelAlert &gt; UIWindowLevelStatusBar &gt; UIWindowLevelNormal \(NSInteger\)
 
