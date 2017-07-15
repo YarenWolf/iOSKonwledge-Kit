@@ -25,6 +25,7 @@ int main(int argc, char * argv[]) {
 * UIApplicationMain方法好像没见过哎。怎么办？查看Apple的官方文档：Help-&gt;Documentation and API Reference
 
 * 参数说明
+
 * principalClassName:String?,\_ delegateClassName:String?\) -&gt; Int32
 
 | principalClassName | UIApplication类名或者子类的名称 nil  或者 @"UIApplication" |
@@ -39,18 +40,16 @@ Despite the declared return type, this function never returns. For more informat
 
 Despite the declared return type, this function never returns. For more information on how this function behaves, see “[Expected App Behaviors](https://developer.apple.com/library/etc/redirect/xcode/content/1189/documentation/iPhone/Conceptual/iPhoneOSProgrammingGuide/ExpectedAppBehaviors/ExpectedAppBehaviors.html#//apple_ref/doc/uid/TP40007072-CH3)” in[App Programming Guide for iOS](https://developer.apple.com/library/etc/redirect/xcode/content/1189/documentation/iPhone/Conceptual/iPhoneOSProgrammingGuide/Introduction/Introduction.html#//apple_ref/doc/uid/TP40007072).、
 
-
-
 * NSStringFromClass:把类名转换为字符串
 * 好处：1、有提示功能；2、避免输入错误
-
-
 
 * 根据官方文档可以看出：UIApplicationMain的底层实现：
   * 1、根据principalClassName传递的类名创建UIApplication对象
   * 2、创建UIApplication代理对象，给第一步初始化好的UIApplication对象设置代理
   * 3、开启主运行事件循环，处理事件、保持程序一直运行
   * 4、加载Info,plist文件，判断是否指定了main Xib，如果指定了就去加载
+
+##### 因此 
 
 
 
