@@ -21,10 +21,6 @@ Person *p3 = [Person new];
 
 ![](/assets/4046AF17-101E-4828-A3E2-BC51D3B58E40.png)
 
-
-
-
-
 单例模式的写法规范
 
 * shared类名；default类名
@@ -46,6 +42,8 @@ Person *p3 = [Person new];
     return instance;
 }
 ```
+
+# 类似UIApplication一样创建单例
 
 
 
