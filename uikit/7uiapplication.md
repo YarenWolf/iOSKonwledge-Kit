@@ -23,6 +23,11 @@
 
 * 设置应用程序状态栏
 * 显示网络加载状态（某些App顶部会有转圈效果）
+
+```
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+```
+
 * 打开网页（打电话、发短信、邮件）
 
 
