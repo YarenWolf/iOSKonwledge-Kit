@@ -26,20 +26,20 @@ UIWindowLevelAlert &gt; UIWindowLevelStatusBar &gt; UIWindowLevelNormal \(NSInte
 
 ```
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    
+
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     self.window.backgroundColor = [UIColor yellowColor];
-    
+
     UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     UIViewController *vc =  [sb instantiateInitialViewController];
-    
+
     //instantiateInitialViewController ：默认加载storyboard中箭头所指向的控制器
     //instantiateViewControllerWithIdentifier:根据StoryBoardID 创建控制器
     self.window.rootViewController = vc;
-    
+
     [self.window makeKeyAndVisible];
-    
-    
+
+
     return YES;
 }
 ```
