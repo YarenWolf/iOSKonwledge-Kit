@@ -119,6 +119,7 @@
   * [5、毛玻璃效果](uikit/53001-mao-bo-li-xiao-guo.md)
   * [6、pch文件的作用](uikit/6pchwen-jian-de-zuo-yong.md)
   * [7、UIApplication](uikit/7uiapplication.md)
+  * [8、UIApplication和它的Delegate](uikit/8uiapplicationhe-ta-de-delegate.md)
   * [9、拨打电话](uikit/93001-bo-da-dian-hua.md)
   * 12、UIImageView
     * [1、根据图片url计算图片尺寸](uikit/13001-gen-ju-tu-pian-url-ji-suan-tu-pian-chi-cun.md)
@@ -126,7 +127,7 @@
     * [1、UIbutton文字右对齐](uikit/1uibuttonwen-zi-you-dui-qi.md)
   * 14、UISegmentedControl
     * [1、UISegmentedControl的使用](uikit/1uisegmentedcontrolde-shi-yong.md)
-  * 7、UIApplication
+  * 8、UIApplication和它的Delegate
 * 杂谈
   * 1、正则表达式
   * [2、提高代码质量](23001-ti-gao-dai-ma-zhi-liang.md)
