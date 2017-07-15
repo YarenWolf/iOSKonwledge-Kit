@@ -44,12 +44,27 @@ Despite the declared return type, this function never returns. For more informat
 * 好处：1、有提示功能；2、避免输入错误
 
 * 根据官方文档可以看出：UIApplicationMain的底层实现：
+
   * 1、根据principalClassName传递的类名创建UIApplication对象
   * 2、创建UIApplication代理对象，给第一步初始化好的UIApplication对象设置代理
   * 3、开启主运行事件循环，处理事件、保持程序一直运行
   * 4、加载Info,plist文件，判断是否指定了main Xib，如果指定了就去加载
 
-##### 因此 
+##### 因此我们知道UIApplication对象是在程序启动调用main函数的时候创建的，之后为UIApplication对象设了代理，应用程序启动好系统会让AppDelegate代理方法知道程序启动完毕
 
 
+
+小实验
+
+```
+int main(int argc, char * argv[]) {
+    @autoreleasepool {
+        return UIApplicationMain(argc, argv, @"UIApplication",@"AppDelegate");
+    }
+}
+```
+
+这样应用程序启动也是没问题的
+
+![](/assets/屏幕快照 2017-07-15 下午6.42.34.png)
 
