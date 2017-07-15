@@ -28,9 +28,9 @@ int main(int argc, char * argv[]) {
 
 * principalClassName:String?,\_ delegateClassName:String?\) -&gt; Int32
 
-| principalClassName | UIApplication类名或者子类的名称 nil  或者 @"UIApplication" |
+| principalClassName（程序的主要类） | UIApplication类名或者子类的名称。 nil  或者 @"UIApplication" |
 | :--- | :--- |
-| principalClassName | UIApplication的代理或者代理对象的名称 |
+| principalClassName（代理类） | UIApplication的代理或者代理对象的名称 |
 
 官方解释
 
@@ -51,8 +51,6 @@ Despite the declared return type, this function never returns. For more informat
   * 4、加载Info,plist文件，判断是否指定了main Xib，如果指定了就去加载
 
 ##### 因此我们知道UIApplication对象是在程序启动调用main函数的时候创建的，之后为UIApplication对象设了代理，应用程序启动好系统会让AppDelegate代理方法知道程序启动完毕
-
-
 
 小实验
 
