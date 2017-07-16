@@ -40,10 +40,6 @@ MyViewController加载view的处理
 * 判断有没有跟控制器类名同名的xib，有就去加载
 * 直接创建一个空的xib
 
-
-
-
-
 例子
 
 ```
@@ -70,9 +66,17 @@ self.window.rootViewController = vc;
     self.view = view;
 }
 
+-(void)viewDidload{
+    [super viewDidload];
+    self.view.backgroundColor = [UIColor brownColor];
+}
 ```
 
 请问此时界面颜色是什么？
 
-可能 
+可能很多人会回到绿色。其实答案是 红色
+
+why？在AppDelegate中vc.view.backgroundColor就是调用vc的view的getter方法，在getter方法内部判断\_view是否存在，不存在则新建一个UIView，新建view是通过\[self loadView\]方法创建，创建成功直接调用viewdidload方法；存在则直接返回，所以界面先是绿色，再是棕色最后是红色
+
+
 
