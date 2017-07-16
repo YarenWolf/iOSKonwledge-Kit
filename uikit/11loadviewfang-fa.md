@@ -6,8 +6,6 @@
 
 使用场景：只要想自定义控制器的view就调用此方法
 
-
-
 访问控制器的View就相当于调用控制器中的view get方法
 
 ```
@@ -19,8 +17,6 @@ if(_view == nil){
     return _view;
 }
 ```
-
-
 
 # 控制器加载view的流程![](/assets/2017-7-16-01.png)
 
@@ -37,10 +33,6 @@ MyViewController \*vc = \[\[MyViewController alloc\] init\];
   * 3、如果第二步没有指定，就判断有没有跟控制器类名同名的xib，如果有就去加载
   * 4、如果没有任何xib描述控制器的view，就不加载xib
 
-
-
-
-
 MyViewController加载view的处理
 
 * 判断有没有指定xibName，如果有就去加载指定的xib
@@ -52,5 +44,35 @@ MyViewController加载view的处理
 
 
 
+例子
 
+```
+//在Appdelegate中
+ViewController *vc = [[ViewController alloc] init];
+vc.view.backgroundColkor = [UIColor redColor];
+self.window.rootViewController = vc;
+[pself.window makeKeyAndVisable];
+
+
+//ViewController
+
+-(UIView *)view{
+    if(!_view){
+        [self loadView];
+        [self viewDidLoad];
+    }
+
+}
+
+-(void)loadView{
+    UIView*view = [[UIView alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    view.backgroundColor = [UIColor greenColor];
+    self.view = view;
+}
+
+```
+
+请问此时界面颜色是什么？
+
+可能 
 
