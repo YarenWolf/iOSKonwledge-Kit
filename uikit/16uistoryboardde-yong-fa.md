@@ -1,0 +1,13 @@
+# UIStoryBoard的用法
+
+* 新建1个storyboard
+* 在上面拖动一个UINavigationController\(默认会设置UINavigationController为UIWindow的rootViewController\)
+* 为了我们更加清楚的使用storyboard，我们去掉UINavigationController的根控制器。
+* 然后UINavigationController的默认的UIWindow的rootViewController也不见了，所以在右边可以设置Is Initial View Controller
+
+* 从Xcode的右下方拖动一个UIViewController出来，然后点击UINavigationController，右击鼠标，在弹出的menu上选择rootViewController拖动到右边的viewController上，这样子就完成了初步的UINavigationController
+
+* 如果需要多界面开发，所以在UINavigationController的rootViewController上需要跳转新的界面，所以可以再拖出一个ViewController，然后再从之前的一个ViewController上按住controller键拖动到新的ViewController上，选择push
+
+![](/assets/2017-07-27-02.png)
+
