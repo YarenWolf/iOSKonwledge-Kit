@@ -130,6 +130,7 @@
   * 14、UISegmentedControl
     * [1、UISegmentedControl的使用](uikit/1uisegmentedcontrolde-shi-yong.md)
   * [15、UIViewController的View的生命周期](uikit/15uiviewcontroller.md)
+  * [16、UIStoryBoard的用法](uikit/16uistoryboardde-yong-fa.md)
 * 杂谈
   * 1、正则表达式
   * [2、提高代码质量](23001-ti-gao-dai-ma-zhi-liang.md)
