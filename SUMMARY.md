@@ -144,7 +144,6 @@
   * [9、移动支付总结\(1\)](93001-wei-xin-zhi-fu-zong-jie.md)
   * [10、移动支付总结\(2\)](103001-yi-dong-zhi-fu-zong-7ed328-2.md)
   * [11、pch文件的作用](11pchwen-jian-de-zuo-yong.md)
-  * [12、Xcode快捷键](12xcodekuai-jie-jian.md)
 * Framework
   * [1、代码打包成.framework库\(上\)](13001-dai-ma-da-bao-6210-framework-5e9328-4e0a29.md)
   * [2、代码打包成.framework库\(下\)](23001-dai-ma-da-bao-6210-framework-5e9328-4e0b29.md)
