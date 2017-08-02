@@ -1,4 +1,4 @@
-# UIWebView上的内容长按保存到相册
+# 长按UIWebView上的图片保存到相册
 
 > 不知道各位对于这个需求要如何解决？
 >
@@ -33,7 +33,7 @@
 }
 ```
 
-附上关键的js官方文档：\[Document.elementFromPoint\(\)\]\([https://developer.mozilla.org/en-US/docs/Web/API/Document/elementFromPoint\](https://developer.mozilla.org/en-US/docs/Web/API/Document/elementFromPoint\)\)
+附上关键的js官方文档：\[Document.elementFromPoint\(\)\]\([https://developer.mozilla.org/en-US/docs/Web/API/Document/elementFromPoint\](https://developer.mozilla.org/en-US/docs/Web/API/Document/elementFromPoint%29\)
 
-如果需要下载Demo：\[Demo\]\(https://github.com/FantasticLBP/SaveImageToAlbumsFromUIWebView\)
+如果需要下载Demo：\[Demo\]\([https://github.com/FantasticLBP/SaveImageToAlbumsFromUIWebView\](https://github.com/FantasticLBP/SaveImageToAlbumsFromUIWebView\)\)
 
