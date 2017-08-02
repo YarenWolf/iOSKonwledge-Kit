@@ -33,7 +33,7 @@
 }
 ```
 
-附上关键的js官方文档：![Document.elementFromPoint()]([https://developer.mozilla.org/en-US/docs/Web/API/Document/elementFromPoint\](https://developer.mozilla.org/en-US/docs/Web/API/Document/elementFromPoint "Document.elementFromPoint()")
+附上关键的js官方文档：[Document.elementFromPoint()](https://developer.mozilla.org/en-US/docs/Web/API/Document/elementFromPoint)
 
-如果需要下载Demo：![Demo](https://github.com/FantasticLBP/SaveImageToAlbumsFromUIWebView "Demo")
+如果需要下载Demo：[Demo](https://github.com/FantasticLBP/SaveImageToAlbumsFromUIWebView)
 
