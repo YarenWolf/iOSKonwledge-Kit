@@ -37,8 +37,6 @@
 
 如果需要下载Demo：\[Demo\]\([https://github.com/FantasticLBP/SaveImageToAlbumsFromUIWebView\](https://github.com/FantasticLBP/SaveImageToAlbumsFromUIWebView%29\)
 
-
-
 ```
 //
 //  ViewController.m
@@ -60,7 +58,7 @@
 #pragma mark -- life cycle
 - (void)viewDidLoad{
     [super viewDidLoad];
-    
+
     NSString *htmlURL = [[NSBundle mainBundle] pathForResource:@"saveImage" ofType:@"html"];
     [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL fileURLWithPath:htmlURL]]];
     //给UIWebView添加手势
@@ -85,7 +83,7 @@
     if (urlToSave.length == 0) {
         return;
     }
-    
+
     UIAlertController *alertVC =  [UIAlertController alertControllerWithTitle:@"大宝贝儿" message:@"你真的要保存图片到相册吗？" preferredStyle:UIAlertControllerStyleAlert];
     UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"真的啊" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
             [self saveImageToDiskWithUrl:urlToSave];
@@ -99,20 +97,20 @@
 #pragma mark - private method
 - (void)saveImageToDiskWithUrl:(NSString *)imageUrl{
     NSURL *url = [NSURL URLWithString:imageUrl];
-    
+
     NSURLSessionConfiguration * configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
-    
+
     NSURLSession *session = [NSURLSession sessionWithConfiguration:configuration delegate:self delegateQueue:[NSOperationQueue new]];
-    
+
     NSURLRequest *imgRequest = [NSURLRequest requestWithURL:url cachePolicy:NSURLRequestReturnCacheDataElseLoad timeoutInterval:30.0];
-    
+
     NSURLSessionDownloadTask  *task = [session downloadTaskWithRequest:imgRequest completionHandler:^(NSURL * _Nullable location, NSURLResponse * _Nullable response, NSError * _Nullable error) {
         if (error) {
             return ;
         }
         NSData * imageData = [NSData dataWithContentsOfURL:location];
         dispatch_async(dispatch_get_main_queue(), ^{
-            
+
             UIImage * image = [UIImage imageWithData:imageData];
             UIImageWriteToSavedPhotosAlbum(image, self, @selector(imageSavedToPhotosAlbum:didFinishSavingWithError:contextInfo:), NULL);
         });
@@ -125,7 +123,7 @@
     NSString*message =@"嘿嘿";
     if(!error) {
         UIAlertController *alertControl = [UIAlertController alertControllerWithTitle:@"提示" message:@"成功保存到相册" preferredStyle:UIAlertControllerStyleAlert];
-        
+
         UIAlertAction *action = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDestructive handler:nil];
         [alertControl addAction:action];
         [self presentViewController:alertControl animated:YES completion:nil];
