@@ -2,7 +2,7 @@
 
 > 整体5张图片，整体思路利用手势事件监听位置，通过位置判断更换图片
 
-
+![](/assets/屏幕快照 2017-08-06 下午4.48.00.png)
 
 ```
 -(void)touchesMoved:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
