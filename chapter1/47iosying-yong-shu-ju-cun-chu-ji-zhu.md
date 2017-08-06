@@ -10,3 +10,13 @@
 
 
 
+#### 应用沙盒
+
+
+
+Documents
+
+Library:Preferences Caches
+
+Tmp
+
