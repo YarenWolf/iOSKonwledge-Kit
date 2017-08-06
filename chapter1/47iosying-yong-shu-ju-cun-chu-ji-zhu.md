@@ -22,10 +22,6 @@
 
 * Tmp：临时数据，系统会清楚该目录下的文件
 
-
-
-
-
 ### 1、XML属性列表归档
 
 存数据
@@ -55,21 +51,19 @@
 
 ##### 注意：plist存储数据，不能使用自定义对象
 
-
-
-
-
 ### 2、Preference（偏好设置）
+
+存数据
 
 ```
  NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
-    
+
     [userDefault setObject:@"lbp" forKey:@"name"];
     [userDefault setInteger:22 forKey:@"age"];
 }
 ```
 
-![](/assets/屏幕快照 2017-08-06 下午11.14.01.png)
+取数据：先得到NSUserDefaults对象，再取数据（什么数据类型存就用什么数据类型取）![](/assets/屏幕快照 2017-08-06 下午11.14.01.png)
 
 优点：1、可以快速进行键值对存储；2、不关心文件名
 
