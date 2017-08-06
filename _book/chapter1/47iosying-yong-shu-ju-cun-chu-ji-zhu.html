@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>16、动态类型检查 · GitBook</title>
+        <title>47、iOS应用数据存储技术 · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.2">
@@ -57,10 +57,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="173001-kan-tou-gou-zao-fang-fa.html" />
+    <link rel="next" href="../iosyu-javascript-tong-xin.html" />
     
     
-    <link rel="prev" href="15instancetype.html" />
+    <link rel="prev" href="46kvcdi-ceng-shi-xian.html" />
     
 
     </head>
@@ -1126,7 +1126,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.5.15" data-path="163001-dong-tai-lei-xing-jian-cha.html">
+        <li class="chapter " data-level="1.5.15" data-path="163001-dong-tai-lei-xing-jian-cha.html">
             
                 <a href="163001-dong-tai-lei-xing-jian-cha.html">
             
@@ -1477,7 +1477,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.42" data-path="47iosying-yong-shu-ju-cun-chu-ji-zhu.html">
+        <li class="chapter active" data-level="1.5.42" data-path="47iosying-yong-shu-ju-cun-chu-ji-zhu.html">
             
                 <a href="47iosying-yong-shu-ju-cun-chu-ji-zhu.html">
             
@@ -2241,7 +2241,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >16、动态类型检查</a>
+        <a href=".." >47、iOS应用数据存储技术</a>
     </h1>
 </div>
 
@@ -2256,146 +2256,61 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="&#x52A8;&#x6001;&#x7C7B;&#x578B;&#x68C0;&#x67E5;">&#x52A8;&#x6001;&#x7C7B;&#x578B;&#x68C0;&#x67E5;</h1>
-<h4 id="&#x524D;&#x8A00;">&#x524D;&#x8A00;</h4>
-<ol>
-<li>&#x82F9;&#x679C;Xcode&#x7684;&#x7F16;&#x8BD1;&#x5668;&#x53EB;&#x505A;LLVM&#xFF0C;&#x53EF;&#x4EE5;&#x7F16;&#x8BD1;C&#x3001;C++&#x3001;OC&#x3001;Swift&#x4EE3;&#x7801;&#x4E3A;&#x4E8C;&#x8FDB;&#x5236;&#x4EE3;&#x7801;</li>
-<li>&#x7F16;&#x8BD1;&#x5668;&#x5728;&#x7F16;&#x8BD1;&#x7684;&#x65F6;&#x5019;&#x53EF;&#x4EE5;&#x5224;&#x65AD;&#x6307;&#x9488;&#x662F;&#x5426;&#x53EF;&#x4EE5;&#x8C03;&#x7528;&#x6307;&#x9488;&#x6307;&#x5411;&#x5BF9;&#x8C61;&#x7684;&#x65B9;&#x6CD5;&#x3002;&#x7F16;&#x8BD1;&#x7684;&#x65F6;&#x5019;&#x5224;&#x65AD;&#x51C6;&#x5219;&#x5C31;&#x662F;&#x6307;&#x9488;&#x7C7B;&#x578B;</li>
-<li>&#x4E3A;&#x4E86;&#x9A97;&#x8FC7;&#x7F16;&#x8BD1;&#x5668;&#xFF0C;&#x7A0B;&#x5E8F;&#x5728;&#x8FD0;&#x884C;&#x7684;&#x65F6;&#x5019;&#x8FD8;&#x4F1A;&#x505A;&#x8FD0;&#x884C;&#x68C0;&#x67E5;&#x3002;&#x8FD0;&#x884C;&#x7684;&#x65F6;&#x5019;&#x7684;&#x5224;&#x65AD;&#x51C6;&#x5219;&#xFF1A;&#x901A;&#x8FC7;&#x6307;&#x9488;&#x6240;&#x6307;&#x5411;&#x7684;&#x5BF9;&#x8C61;&#x91CC;&#x9762;&#x7684;isa&#x627E;&#x5230;&#x4EE3;&#x7801;&#x6BB5;&#x4E2D;&#x7684;&#x7C7B;&#xFF0C;&#x5224;&#x65AD;&#x662F;&#x5426;&#x6709;&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#x53EF;&#x4EE5;&#x6267;&#x884C;</li>
-<li>&#x53EF;&#x4EE5;&#x5199;&#x4EE3;&#x7801;&#x5148;&#x5224;&#x65AD;&#x4E00;&#x4E0B;&#x5BF9;&#x8C61;&#x4E2D;&#x662F;&#x5426;&#x6709;&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#x518D;&#x53BB;&#x6267;&#x884C;</li>
-</ol>
-<hr>
+                                <h1 id="ios&#x5E94;&#x7528;&#x6570;&#x636E;&#x5B58;&#x50A8;&#x6280;&#x672F;">iOS&#x5E94;&#x7528;&#x6570;&#x636E;&#x5B58;&#x50A8;&#x6280;&#x672F;</h1>
+<blockquote>
 <ul>
-<li>&#x5224;&#x65AD;&#x6307;&#x5B9A;&#x5BF9;&#x8C61;&#x80FD;&#x5426;&#x54CD;&#x5E94;&#x6307;&#x5B9A;&#x7684;&#x65B9;&#x6CD5;<ul>
-<li>BOOL result = [p1 respondsToSelector:@selector(sayHi)];</li>
+<li>XML&#x5C5E;&#x6027;&#x5217;&#x8868;&#xFF08;plist&#xFF09;&#x5F52;&#x6863;</li>
+<li>Preference&#xFF08;&#x504F;&#x597D;&#x8BBE;&#x7F6E;&#xFF09;</li>
+<li>NSKeyedArchiver&#x5F52;&#x6863;&#xFF08;NSCoding)</li>
+<li>SQLite3</li>
+<li>Core Data</li>
 </ul>
-</li>
-<li>&#x5224;&#x65AD;&#x6307;&#x5B9A;&#x7684;&#x5BF9;&#x8C61;&#x662F;&#x5426;&#x4E3A;&#x6307;&#x5B9A;&#x7C7B;&#x7684;&#x5BF9;&#x8C61;&#x6216;&#x8005;&#x6307;&#x5B9A;&#x7C7B;&#x7684;&#x5B50;&#x7C7B;&#x5BF9;&#x8C61;<ul>
-<li>BOOL b2 = [p1 isKindOfClass:[Person class]];</li>
-</ul>
-</li>
-<li>&#x5224;&#x65AD;&#x5BF9;&#x8C61;&#x662F;&#x5426;&#x6307;&#x5B9A;&#x7C7B;&#x7684;&#x5BF9;&#x8C61;&#xFF0C;&#x4E0D;&#x5305;&#x62EC;&#x5B50;&#x7C7B;<ul>
-<li>BOOL b4 = [st isMemberOfClass:[Person class]];</li>
-</ul>
-</li>
-<li>&#x5224;&#x65AD;&#x7C7B;&#x662F;&#x5426;&#x4E3A;&#x53E6;&#x4E00;&#x4E2A;&#x7C7B;&#x7684;&#x5B50;&#x7C7B;<ul>
-<li>BOOL b5 = [Student isSubclassOfClass:[Person class]];</li>
-</ul>
-</li>
-<li>isSubclassOfClass&#x52A0;&#x4E0A;isMememberOfClass&#x7B49;&#x4E8E;isKindOfClass</li>
-</ul>
-<p><strong>&#x603B;&#x7ED3;&#xFF1A;</strong></p>
+</blockquote>
+<h4 id=""> </h4>
+<h4 id=""> </h4>
+<h4 id=""> </h4>
+<h4 id="&#x5E94;&#x7528;&#x6C99;&#x76D2;&#x5305;&#x62EC;4&#x90E8;&#x5206;">&#x5E94;&#x7528;&#x6C99;&#x76D2;&#x5305;&#x62EC;4&#x90E8;&#x5206;</h4>
 <ul>
-<li><p>[&#x6307;&#x9488;respondsToSelector&#xFF1A;@selector(&#x65B9;&#x6CD5;&#x540D;)]</p>
+<li><p>&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x5305;:MainBundle&#x3002;&#x4E0D;&#x662F;&#x6587;&#x4EF6;&#x5939;&#xFF0C;&#x800C;&#x662F;&#x4E00;&#x4E2A;&#x538B;&#x7F29;&#x5305;&#xFF0C;&#x5305;&#x542B;&#x6240;&#x6709;&#x7684;&#x8D44;&#x6E90;&#x6587;&#x4EF6;&#x548C;&#x53EF;&#x6267;&#x884C;&#x6587;&#x4EF6;</p>
 </li>
-<li><p>[&#x5BF9;&#x8C61;&#x540D;respondsToSelector&#xFF1A;@selector(&#x65B9;&#x6CD5;&#x540D;)]</p>
+<li><p>Documents&#xFF1A;&#x4FDD;&#x5B58;&#x5E94;&#x7528;&#x8FD0;&#x884C;&#x65F6;&#x751F;&#x6210;&#x7684;&#x9700;&#x8981;&#x6301;&#x4E45;&#x5316;&#x7684;&#x6570;&#x636E;&#x3002;</p>
 </li>
-<li><p>&#x7528;&#x6765;&#x5224;&#x65AD;&#x5BF9;&#x8C61;&#x80FD;&#x5426;&#x8C03;&#x7528;&#x5BF9;&#x8C61;&#x65B9;&#x6CD5;&#x6216;&#x8005;&#x7C7B;&#x80FD;&#x5426;&#x8C03;&#x7528;&#x7C7B;&#x65B9;&#x6CD5;&#x3002;</p>
+<li><p>Library:Preferences &#xFF1A;&#x4FDD;&#x5B58;&#x5E94;&#x7528;&#x7684;&#x504F;&#x597D;&#x8BBE;&#x7F6E;&#xFF0C;itunes&#x4F1A;&#x5907;&#x4EFD;&#xFF1B;Caches&#xFF1A;&#x4FDD;&#x5B58;&#x5E94;&#x7528;&#x8FD0;&#x884C;&#x65F6;&#x751F;&#x6210;&#x7684;&#x9700;&#x8981;&#x6301;&#x4E45;&#x5316;&#x7684;&#x6570;&#x636E;&#xFF0C;&#x4E00;&#x822C;&#x5B58;&#x50A8;&#x4F53;&#x79EF;&#x8F83;&#x5927;&#xFF0C;&#x4E0D;&#x9700;&#x8981;&#x5907;&#x4EFD;&#x7684;&#x975E;&#x91CD;&#x8981;&#x6570;&#x636E;</p>
 </li>
-<li><p>respondsToSelector&#xFF1A;&#x53EF;&#x4EE5;&#x8DDF;&#x5728;&#x5BF9;&#x8C61;&#x6216;&#x8005;&#x7C7B;&#x540D;&#x540E;&#x9762;&#xFF0C;&#x5206;&#x522B;&#x5224;&#x65AD;&#x7684;&#x662F;&#x5BF9;&#x8C61;&#x80FD;&#x5426;&#x8C03;&#x7528;&#x8BE5;&#x5BF9;&#x8C61;&#x65B9;&#x6CD5;&#x548C;&#x8BE5;&#x7C7B;&#x80FD;&#x5426;&#x8C03;&#x7528;&#x8BE5;&#x7C7B;&#x65B9;&#x6CD5;&#x3002;</p>
-</li>
-<li><p>instancesRespondToSelector&#xFF1A;&#x53EA;&#x80FD;&#x8DDF;&#x5728;&#x7C7B;&#x540D;&#x540E;&#x9762;&#xFF0C;&#x4F46;&#x662F;&#x540E;&#x9762;&#x65B9;&#x6CD5;&#x53EF;&#x4EE5;&#x8DDF;&#x5BF9;&#x8C61;&#x65B9;&#x6CD5;&#x548C;&#x7C7B;&#x65B9;&#x6CD5;&#xFF0C;&#x4F5C;&#x7528;&#x662F;&#x5224;&#x65AD;&#x8BE5;&#x7C7B;&#x7684;&#x5BF9;&#x8C61;&#x80FD;&#x5426;&#x8C03;&#x7528;&#x8BE5;&#x7C7B;&#x91CC;&#x9762;&#x7684;&#x5BF9;&#x8C61;&#x65B9;&#x6CD5;</p>
+<li><p>Tmp&#xFF1A;&#x4E34;&#x65F6;&#x6570;&#x636E;&#xFF0C;&#x7CFB;&#x7EDF;&#x4F1A;&#x6E05;&#x695A;&#x8BE5;&#x76EE;&#x5F55;&#x4E0B;&#x7684;&#x6587;&#x4EF6;</p>
 </li>
 </ul>
-<pre><code>//Person
-#import &lt;Foundation/Foundation.h&gt;
+<h3 id="1&#x3001;xml&#x5C5E;&#x6027;&#x5217;&#x8868;&#x5F52;&#x6863;">1&#x3001;XML&#x5C5E;&#x6027;&#x5217;&#x8868;&#x5F52;&#x6863;</h3>
+<p>&#x5B58;&#x6570;&#x636E;</p>
+<pre><code>    //1&#x3001;&#x5E94;&#x7528;&#x6C99;&#x76D2;
+    NSString *home = NSHomeDirectory();
+    //2&#x3001;&#x67E5;&#x627E;Caches&#x6587;&#x4EF6;&#x5939;&#x8DEF;&#x5F84;
+    NSFileManager *mager = [NSFileManager defaultManager];
+    NSArray *array =  [mager URLsForDirectory:NSCachesDirectory inDomains:NSUserDomainMask];
+    NSLog(@&quot;%@&quot;,home);
+    NSLog(@&quot;%@&quot;,array);
 
-@interface Person : NSObject
-@property NSString* name;
-@property int age;
+    //2&#x3001;&#x65B9;&#x6CD5;2:&#x7CFB;&#x7EDF;&#x65B9;&#x6CD5;&#x67E5;&#x627E;Caches&#x6587;&#x4EF6;&#x5939;
+    NSString *cachesPath = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES)[0];
 
--(void)sayHi;
+    NSArray *datas = @[@&quot;122&quot;,@&quot;happy&quot;,@(2)];
+    //3&#x3001;&#x62FC;&#x63A5;&#x8DEF;&#x5F84;
+    NSString *plistPath = [cachesPath stringByAppendingPathComponent:@&quot;datas.plist&quot;];
+    //4&#x3001;&#x5199;&#x5165;&#x6C99;&#x76D2;&#x4E2D;
+    [datas writeToFile:plistPath atomically:YES];
+</code></pre><p>&#x53D6;&#x6570;&#x636E;:&#x540C;&#x6837;&#x9053;&#x7406;&#xFF0C;&#x4EC0;&#x4E48;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x5B58;&#xFF0C;&#x4EC0;&#x4E48;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x53D6;</p>
+<p><img src="../assets/&#x5C4F;&#x5E55;&#x5FEB;&#x7167; 2017-08-06 &#x4E0B;&#x5348;11.13.49.png" alt=""></p>
+<h5 id="&#x6CE8;&#x610F;&#xFF1A;plist&#x5B58;&#x50A8;&#x6570;&#x636E;&#xFF0C;&#x4E0D;&#x80FD;&#x4F7F;&#x7528;&#x81EA;&#x5B9A;&#x4E49;&#x5BF9;&#x8C61;">&#x6CE8;&#x610F;&#xFF1A;plist&#x5B58;&#x50A8;&#x6570;&#x636E;&#xFF0C;&#x4E0D;&#x80FD;&#x4F7F;&#x7528;&#x81EA;&#x5B9A;&#x4E49;&#x5BF9;&#x8C61;</h5>
+<h3 id="2&#x3001;preference&#xFF08;&#x504F;&#x597D;&#x8BBE;&#x7F6E;&#xFF09;">2&#x3001;Preference&#xFF08;&#x504F;&#x597D;&#x8BBE;&#x7F6E;&#xFF09;</h3>
+<p>&#x5B58;&#x6570;&#x636E;</p>
+<pre><code> NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
 
-@end
-
-#import &quot;Person.h&quot;
-@implementation Person
-
--(void)sayHi{
-    NSLog(@&quot;Hi&quot;);
+    [userDefault setObject:@&quot;lbp&quot; forKey:@&quot;name&quot;];
+    [userDefault setInteger:22 forKey:@&quot;age&quot;];
 }
+</code></pre><p>&#x53D6;&#x6570;&#x636E;&#xFF1A;&#x5148;&#x5F97;&#x5230;NSUserDefaults&#x5BF9;&#x8C61;&#xFF0C;&#x518D;&#x53D6;&#x6570;&#x636E;&#xFF08;&#x4EC0;&#x4E48;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x5B58;&#x5C31;&#x7528;&#x4EC0;&#x4E48;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x53D6;&#xFF09;<img src="../assets/&#x5C4F;&#x5E55;&#x5FEB;&#x7167; 2017-08-06 &#x4E0B;&#x5348;11.14.01.png" alt=""></p>
+<p>&#x4F18;&#x70B9;&#xFF1A;1&#x3001;&#x53EF;&#x4EE5;&#x5FEB;&#x901F;&#x8FDB;&#x884C;&#x952E;&#x503C;&#x5BF9;&#x5B58;&#x50A8;&#xFF1B;2&#x3001;&#x4E0D;&#x5173;&#x5FC3;&#x6587;&#x4EF6;&#x540D;</p>
 
-@end
-
-
-//Student
-#import &quot;Person.h&quot;
-
-@interface Student : Person
--(void)eat;
-+(void)study;
-@end
-
-#import &quot;Student.h&quot;
-
-@implementation Student
--(void)eat{
-    NSLog(@&quot;&#x5403;&#x996D;&quot;);
-}
-
-+(void)study{
-    NSLog(@&quot;&#x5B66;&#x4E60;&quot;);
-}
-@end
-
-
-
-//&#x6D4B;&#x8BD5;
-    Person *p1 = [[Person alloc] init];
-
-
-    p1.name = @&quot;lbp&quot;;
-    p1.age = 20;
-
-    //&#x5224;&#x65AD;p1&#x5BF9;&#x8C61;&#x80FD;&#x5426;&#x54CD;&#x5E94;sayHi&#x65B9;&#x6CD5;
-    BOOL result = [p1 respondsToSelector:@selector(sayHi)];
-    if (result) {
-        [p1 sayHi];
-    } else {
-        NSLog(@&quot;&#x6CA1;&#x6709;sayHi&#x65B9;&#x6CD5;&quot;);
-    }
-
-    //&#x5224;&#x65AD;&#x6307;&#x5B9A;&#x7684;&#x5BF9;&#x8C61;&#x662F;&#x5426;&#x4E3A;&#x6307;&#x5B9A;&#x7C7B;&#x7684;&#x5BF9;&#x8C61;&#x6216;&#x8005;&#x6307;&#x5B9A;&#x7C7B;&#x7684;&#x5B50;&#x7C7B;&#x5BF9;&#x8C61;
-    BOOL b2 = [p1 isKindOfClass:[Person class]];
-    NSLog(@&quot;b2:%d&quot;,b2); //1
-
-
-    Student *st = [[Student alloc] init];
-     BOOL b3 = [st isKindOfClass:[Person class]];
-    NSLog(@&quot;b3:%d&quot;,b3); //1
-
-
-    //&#x5224;&#x65AD;&#x5BF9;&#x8C61;&#x662F;&#x5426;&#x6307;&#x5B9A;&#x7C7B;&#x7684;&#x5BF9;&#x8C61;&#xFF0C;&#x4E0D;&#x5305;&#x62EC;&#x5B50;&#x7C7B;
-    BOOL b4 = [st isMemberOfClass:[Person class]];
-    NSLog(@&quot;b4:%d&quot;,b4);//0
-
-   //&#x5224;&#x65AD;&#x7C7B;&#x662F;&#x5426;&#x4E3A;&#x53E6;&#x4E00;&#x4E2A;&#x7C7B;&#x7684;&#x5B50;&#x7C7B;
-    BOOL b5 = [Student isSubclassOfClass:[Person class]];
-    NSLog(@&quot;b5:%d&quot;,b5); //1
-
-    //[&#x6307;&#x9488; respondsToSelector&#xFF1A;@selector(&#x65B9;&#x6CD5;&#x540D;)]
-    //[&#x5BF9;&#x8C61;&#x540D; respondsToSelector&#xFF1A;@selector(&#x65B9;&#x6CD5;&#x540D;)]
-    //&#x7528;&#x6765;&#x5224;&#x65AD;&#x5BF9;&#x8C61;&#x80FD;&#x5426;&#x8C03;&#x7528;&#x5BF9;&#x8C61;&#x65B9;&#x6CD5;&#x6216;&#x8005;&#x7C7B;&#x80FD;&#x5426;&#x8C03;&#x7528;&#x7C7B;&#x65B9;&#x6CD5;&#x3002;
-
-
-   BOOL b6 = [Student respondsToSelector:@selector(study)];
-    NSLog(@&quot;b6:%d&quot;,b6);     //1
-
-    BOOL b8 = [Student respondsToSelector:@selector(eat)];
-    NSLog(@&quot;b8:%d&quot;,b8);   // 0
-
-
-    BOOL b7 = [st respondsToSelector:@selector(eat)];
-   NSLog(@&quot;b7:%d&quot;,b7);  //1
-
-
-
-    BOOL b9 = [Student instancesRespondToSelector:@selector(study)];
-    NSLog(@&quot;b9:%d&quot;,b9);  //0
-
-    BOOL b10 = [Student instancesRespondToSelector:@selector(eat)];
-    NSLog(@&quot;b10:%d&quot;,b10);  //1
-</code></pre>
                                 
                                 </section>
                             
@@ -2422,12 +2337,12 @@
 
             
                 
-                <a href="15instancetype.html" class="navigation navigation-prev " aria-label="Previous page: 15、instancetype">
+                <a href="46kvcdi-ceng-shi-xian.html" class="navigation navigation-prev " aria-label="Previous page: 46、KVC底层实现">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="173001-kan-tou-gou-zao-fang-fa.html" class="navigation navigation-next " aria-label="Next page: 17、看透构造方法">
+                <a href="../iosyu-javascript-tong-xin.html" class="navigation navigation-next " aria-label="Next page: iOS与JavaScript通信">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -2438,7 +2353,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"16、动态类型检查","level":"1.5.15","depth":2,"next":{"title":"17、看透构造方法","level":"1.5.16","depth":2,"path":"chapter1/173001-kan-tou-gou-zao-fang-fa.md","ref":"chapter1/173001-kan-tou-gou-zao-fang-fa.md","articles":[]},"previous":{"title":"15、instancetype","level":"1.5.14","depth":2,"path":"chapter1/15instancetype.md","ref":"chapter1/15instancetype.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"chapter1/163001-dong-tai-lei-xing-jian-cha.md","mtime":"2017-06-22T05:35:52.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-08-06T15:17:20.122Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"47、iOS应用数据存储技术","level":"1.5.42","depth":2,"next":{"title":"iOS与JavaScript通信","level":"1.6","depth":1,"path":"iosyu-javascript-tong-xin.md","ref":"iosyu-javascript-tong-xin.md","articles":[{"title":"1、JSBind&& WebViewJavascriptBridge","level":"1.6.1","depth":2,"path":"1jsbindandand-webviewjavascriptbridge.md","ref":"1jsbindandand-webviewjavascriptbridge.md","articles":[]},{"title":"2、UIWebView显示的网页点击图片保存图片到相册","level":"1.6.2","depth":2,"path":"2uiwebviewxian-shi-de-wang-ye-dian-ji-tu-pian-bao-cun-tu-pian-dao-xiang-ce.md","ref":"2uiwebviewxian-shi-de-wang-ye-dian-ji-tu-pian-bao-cun-tu-pian-dao-xiang-ce.md","articles":[]}]},"previous":{"title":"46、KVC底层实现","level":"1.5.41","depth":2,"path":"chapter1/46kvcdi-ceng-shi-xian.md","ref":"chapter1/46kvcdi-ceng-shi-xian.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"chapter1/47iosying-yong-shu-ju-cun-chu-ji-zhu.md","mtime":"2017-08-06T15:16:39.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-08-06T15:17:20.122Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
