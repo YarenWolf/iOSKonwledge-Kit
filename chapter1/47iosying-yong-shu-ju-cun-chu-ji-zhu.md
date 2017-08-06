@@ -26,7 +26,7 @@
 
 
 
-例子
+### 1、XML属性列表归档
 
 存数据
 
@@ -38,10 +38,10 @@
     NSArray *array =  [mager URLsForDirectory:NSCachesDirectory inDomains:NSUserDomainMask];
     NSLog(@"%@",home);
     NSLog(@"%@",array);
-    
+
     //2、方法2:系统方法查找Caches文件夹
     NSString *cachesPath = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES)[0];
-    
+
     NSArray *datas = @[@"122",@"happy",@(2)];
     //3、拼接路径
     NSString *plistPath = [cachesPath stringByAppendingPathComponent:@"datas.plist"];
@@ -49,15 +49,27 @@
     [datas writeToFile:plistPath atomically:YES];
 ```
 
-取数据
+取数据:同样道理，什么数据结构存，什么数据结构取
 
-同样道理，什么数据结构存，什么数据结构取
-
-
+![](/assets/屏幕快照 2017-08-06 下午11.13.49.png)
 
 ##### 注意：plist存储数据，不能使用自定义对象
 
 
 
 
+
+### 2、Preference（偏好设置）
+
+```
+ NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
+    
+    [userDefault setObject:@"lbp" forKey:@"name"];
+    [userDefault setInteger:22 forKey:@"age"];
+}
+```
+
+![](/assets/屏幕快照 2017-08-06 下午11.14.01.png)
+
+优点：1、可以快速进行键值对存储；2、不关心文件名
 
