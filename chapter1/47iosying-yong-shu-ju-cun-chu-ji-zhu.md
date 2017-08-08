@@ -135,11 +135,41 @@
 
 ![](/assets/屏幕快照 2017-08-09 上午12.38.53.png)
 
-
-
-
-
 注意：解档和归档的key必须和对象的属性名称一致，这样存值和取值才保证正确。
 
 
+
+### 4、initWithCoder何时调用
+
+* initWithCoder的作用：从文件中加载对象，就会调用对象的initWithCoder方法
+
+* 系统调用控件的initWithCoder方法用来解析xib今和storyboard
+
+实验
+
+```
+//TestView.h
+#import <UIKit/UIKit.h>
+
+@interface TestView : UIView
+
+@end
+
+#import "TestView.h"
+
+@implementation TestView
+
+-(instancetype)initWithCoder:(NSCoder *)aDecoder{
+    if (self = [super init] ) {
+        
+    }
+    return self;
+}
+
+@end
+```
+
+重写控件的initWIthCoder方法，应用启动后看不到红色的view
+
+![](/assets/QQ20170809-005519@2x.png)
 
