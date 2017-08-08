@@ -1,5 +1,9 @@
 # 广告倒计时
 
+
+
+
+
 ```
 //LBPCircleProgressButton.h
 
@@ -56,9 +60,9 @@ typedef void(^DrawCircleProgressBlock)(void);
 {
     if (self == [super initWithFrame:frame]) {
         self.backgroundColor = [UIColor clearColor];
-
+        
         [self.layer addSublayer:self.trackLayer];
-
+        
     }
     return self;
 }
@@ -66,12 +70,12 @@ typedef void(^DrawCircleProgressBlock)(void);
 - (UIBezierPath *)bezierPath
 {
     if (!_bezierPath) {
-
+        
         CGFloat width = CGRectGetWidth(self.frame)/2.0f;
         CGFloat height = CGRectGetHeight(self.frame)/2.0f;
         CGPoint centerPoint = CGPointMake(width, height);
         float radius = CGRectGetWidth(self.frame)/2;
-
+        
         _bezierPath = [UIBezierPath bezierPathWithArcCenter:centerPoint
                                                      radius:radius
                                                  startAngle:degreesToRadius(-90)
@@ -91,7 +95,7 @@ typedef void(^DrawCircleProgressBlock)(void);
         _trackLayer.strokeColor = self.trackColor.CGColor ? self.trackColor.CGColor : [UIColor redColor].CGColor ;
         _trackLayer.strokeStart = 0.f;
         _trackLayer.strokeEnd = 1.f;
-
+        
         _trackLayer.path = self.bezierPath.CGPath;
     }
     return _trackLayer;
@@ -107,7 +111,7 @@ typedef void(^DrawCircleProgressBlock)(void);
         _progressLayer.lineCap = kCALineCapRound;
         _progressLayer.strokeColor = self.progressColor.CGColor ? self.progressColor.CGColor  : [UIColor grayColor].CGColor;
         _progressLayer.strokeStart = 0.f;
-
+        
         CABasicAnimation *pathAnimation = [CABasicAnimation animationWithKeyPath:@"strokeEnd"];
         pathAnimation.duration = self.animationDuration;
         pathAnimation.fromValue = @(0.0);
@@ -115,7 +119,7 @@ typedef void(^DrawCircleProgressBlock)(void);
         pathAnimation.removedOnCompletion = YES;
         pathAnimation.delegate = self;
         [_progressLayer addAnimation:pathAnimation forKey:nil];
-
+        
         _progressLayer.path = _bezierPath.CGPath;
     }
     return _progressLayer;
@@ -137,6 +141,7 @@ typedef void(^DrawCircleProgressBlock)(void);
 
 
 @end
+
 ```
 
 
