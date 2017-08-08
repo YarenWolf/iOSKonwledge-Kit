@@ -67,11 +67,10 @@
 
 优点：1、可以快速进行键值对存储；2、不关心文件名
 
-
-
 ### 3、NSKeyedArchiver（归档）
 
 * 存数据
+
   * 找出存储的路径
   * 存储
 
@@ -81,19 +80,72 @@
       Person *p1 = [[Person alloc] init];
       p1.name = @"杭城小刘";
       p1.age = @"22";
-    
+
       [NSKeyedArchiver archiveRootObject:p1 toFile:url];
   ```
 
 ![](/assets/QQ20170808-171610@2x.png)
 
-
-
 注意：如果我们要将对象归档存储，那么需要将对象遵循NSCoding协议，实现encodeWithCoder方法
 
 ```
+    NSString *url = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES)[0];
+    NSString *filePath = [url stringByAppendingPathComponent:@"person.data"];
+    Person *p1 = [[Person alloc] init];
+    p1.name = @"杭城小刘";
+    p1.age = @"22";
+    
+    [NSKeyedArchiver archiveRootObject:p1 toFile:filePath];
+    
+//Person.m
+//什么时候调用：把一个自定义对象归档的时候调用(保持拓展性)
+//作用：告诉系统该对象的哪些属性需要归档
+-(void)encodeWithCoder:(NSCoder *)aCoder{
+    [aCoder encodeObject:_name forKey:@"name"];
+    [aCoder encodeObject:_age forKey:@"age"];
+}
 
 ```
+
+![](/assets/屏幕快照 2017-08-09 上午12.31.06.png)
+
+
+
+* 取数据
+* ```
+   NSString *url = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES)[0];
+      NSString *filePath = [url stringByAppendingPathComponent:@"person.data"];
+   
+    
+      Person *p = [NSKeyedUnarchiver unarchiveObjectWithFile:filePath];
+      NSLog(@"%@",p);
+  ```
+
+会报错，所以如果需要解档一个对象，那么这个对象必须遵循NSCoding协议，实现-\(instancetype\)initWithCoder:\(NSCoder\*\)aDecoder方法。![](/assets/屏幕快照 2017-08-09 上午12.33.22.png)
+
+
+
+
+
+```
+-(instancetype)initWithCoder:(NSCoder *)aDecoder{
+    if (self = [super init]) {
+        _name = [aDecoder decodeObjectForKey:@"name"];
+        _age = [aDecoder decodeObjectForKey:@"age"];
+    }
+    return self;
+}
+```
+
+![](/assets/屏幕快照 2017-08-09 上午12.38.53.png)
+
+
+
+
+
+
+
+
 
 
 
