@@ -67,3 +67,33 @@
 
 优点：1、可以快速进行键值对存储；2、不关心文件名
 
+
+
+### 3、NSKeyedArchiver（归档）
+
+* 存数据
+  * 找出存储的路径
+  * 存储
+
+  ```
+      NSString *url = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES)[0];
+      [url stringByAppendingPathComponent:@"person.data"];
+      Person *p1 = [[Person alloc] init];
+      p1.name = @"杭城小刘";
+      p1.age = @"22";
+    
+      [NSKeyedArchiver archiveRootObject:p1 toFile:url];
+  ```
+
+![](/assets/QQ20170808-171610@2x.png)
+
+
+
+注意：如果我们要将对象归档存储，那么需要将对象遵循NSCoding协议，实现encodeWithCoder方法
+
+```
+
+```
+
+
+
