@@ -94,9 +94,9 @@
     Person *p1 = [[Person alloc] init];
     p1.name = @"杭城小刘";
     p1.age = @"22";
-    
+
     [NSKeyedArchiver archiveRootObject:p1 toFile:filePath];
-    
+
 //Person.m
 //什么时候调用：把一个自定义对象归档的时候调用(保持拓展性)
 //作用：告诉系统该对象的哪些属性需要归档
@@ -104,38 +104,34 @@
     [aCoder encodeObject:_name forKey:@"name"];
     [aCoder encodeObject:_age forKey:@"age"];
 }
-
 ```
 
 ![](/assets/屏幕快照 2017-08-09 上午12.31.06.png)
 
-
-
 * 取数据
-* ```
-   NSString *url = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES)[0];
-      NSString *filePath = [url stringByAppendingPathComponent:@"person.data"];
-   
-    
-      Person *p = [NSKeyedUnarchiver unarchiveObjectWithFile:filePath];
-      NSLog(@"%@",p);
+* \`\`\`
+   NSString \*url = NSSearchPathForDirectoriesInDomains\(NSCachesDirectory, NSUserDomainMask, YES\)\[0\];
+  ```
+  NSString *filePath = [url stringByAppendingPathComponent:@"person.data"];
   ```
 
+```
+  Person *p = [NSKeyedUnarchiver unarchiveObjectWithFile:filePath];
+  NSLog(@"%@",p);
+```
+
+```
 会报错，所以如果需要解档一个对象，那么这个对象必须遵循NSCoding协议，实现-\(instancetype\)initWithCoder:\(NSCoder\*\)aDecoder方法。![](/assets/屏幕快照 2017-08-09 上午12.33.22.png)
-
-
-
-
-
 ```
--(instancetype)initWithCoder:(NSCoder *)aDecoder{
-    if (self = [super init]) {
-        _name = [aDecoder decodeObjectForKey:@"name"];
-        _age = [aDecoder decodeObjectForKey:@"age"];
-    }
-    return self;
-}
-```
+
+-\(instancetype\)initWithCoder:\(NSCoder \*\)aDecoder{  
+    if \(self = \[super init\]\) {  
+        \_name = \[aDecoder decodeObjectForKey:@"name"\];  
+        \_age = \[aDecoder decodeObjectForKey:@"age"\];  
+    }  
+    return self;  
+}  
+\`\`\`
 
 ![](/assets/屏幕快照 2017-08-09 上午12.38.53.png)
 
@@ -143,9 +139,7 @@
 
 
 
-
-
-
+注意：解档和归档的key必须和对象的属性名称一致，这样存值和取值才保证正确。
 
 
 
