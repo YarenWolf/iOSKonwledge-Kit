@@ -11,6 +11,7 @@
 ```
 
 * transform动画
+
   * 平移
 
   ```
@@ -30,7 +31,7 @@
           self.redView.transform = CGAffineTransformMakeRotation(M_2_PI);
           //CGAffineTransformRotate()：当前控件的当前位置上做旋转动画
           self.redView.transform = CGAffineTransformRotate(self.redView.transform, M_2_PI);
-      }];    
+      }];
   ```
 
   * 缩放
@@ -43,6 +44,10 @@
           self.redView.transform = CGAffineTransformScale(self.redView.transform, 0.9, 0.9);
     }];
   ```
+
+
+
+#### 注意：如果需要在控件最初始的位置坐动画，那么就用CGAffineTranformMake+动画类型\(Translation、Scale、Rotate\)
 
 
 
