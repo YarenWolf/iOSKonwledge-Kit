@@ -1,6 +1,6 @@
 # UISearchBar
 
-1、Xib拖出来的UISearchBar底部会有一个灰色，如果需要去掉则需要做一些代码设置
+1、Xib拖出来的UISearchBar底部会有一个灰色，设置去掉灰色则需要设置一个空的图片但是问题又出来了，会显示SearchBar的ScopeBar，代码中需要设置showScopeBar=NO,scopeButtonTitles=nil.，如果需要去掉则需要做一些代码设置
 
 ```
 self.searchBar.backgroundImage = [UIImage new];
