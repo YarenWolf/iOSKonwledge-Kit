@@ -57,6 +57,8 @@
     <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
 
     
+    <link rel="next" href="143001-guang-gao-dao-ji-shi.html" />
+    
     
     <link rel="prev" href="12xcodekuai-jie-jian.html" />
     
@@ -1926,6 +1928,32 @@
             
         </li>
     
+        <li class="chapter " data-level="1.7.18" data-path="uikit/183001-dong-hua.html">
+            
+                <a href="uikit/183001-dong-hua.html">
+            
+                    
+                    18、动画
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.19" data-path="uikit/19uisearchbar.html">
+            
+                <a href="uikit/19uisearchbar.html">
+            
+                    
+                    19、UISearchBar
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
@@ -2114,6 +2142,19 @@
             
         </li>
     
+        <li class="chapter " data-level="1.8.14" data-path="143001-guang-gao-dao-ji-shi.html">
+            
+                <a href="143001-guang-gao-dao-ji-shi.html">
+            
+                    
+                    14、广告倒计时
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
@@ -2259,7 +2300,51 @@
 <p>&#x6574;&#x4F53;5&#x5F20;&#x56FE;&#x7247;&#xFF0C;&#x6574;&#x4F53;&#x601D;&#x8DEF;&#x5229;&#x7528;&#x624B;&#x52BF;&#x4E8B;&#x4EF6;&#x76D1;&#x542C;&#x4F4D;&#x7F6E;&#xFF0C;&#x901A;&#x8FC7;&#x4F4D;&#x7F6E;&#x5224;&#x65AD;&#x66F4;&#x6362;&#x56FE;&#x7247;</p>
 </blockquote>
 <p><img src="assets/&#x5C4F;&#x5E55;&#x5FEB;&#x7167; 2017-08-06 &#x4E0B;&#x5348;4.48.00.png" alt=""></p>
-<pre><code>-(void)touchesMoved:(NSSet&lt;UITouch *&gt; *)touches withEvent:(UIEvent *)event{
+<pre><code>- (void)viewDidLoad {
+    [super viewDidLoad];
+    self.title = self.doctorName;
+    self.star = @&quot;5&quot;;
+
+    UITapGestureRecognizer *signaltap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(clickEvaluate:)];
+    signaltap.cancelsTouchesInView = YES;
+    [self.view addGestureRecognizer:signaltap];
+}
+
+
+-(void)clickEvaluate:(UITapGestureRecognizer *)tap{
+    CGPoint point = [tap locationInView:self.view];
+    CGFloat startX = BoundWidth/2 - 200/2;
+
+    struct StarSpan span1 = {startX,startX + 24};
+    struct StarSpan span2 = {startX + 24 + 20, startX + 20 + 24 + 24};
+    struct StarSpan span3 = {startX + 20 + 24 + 24 + 20, startX + 20 + 24 + 24 + 20 + 24};
+    struct StarSpan span4 = {startX + 20 + 24 + 24 + 20 + 24 + 20, startX + 20 + 24 + 24 + 20 + 24 + 20 + 24};
+    struct StarSpan span5 = {startX + 20 + 24 + 24 + 20 + 24 + 20 + 24 + 20, startX + 20 + 24 + 24 + 20 + 24 + 20 + 24 + 20 + 24};
+    if(point.x &gt; 0 &amp;&amp; point.x &lt; span1.start ){
+
+        self.starImageView.image = [UIImage imageNamed:@&quot;Consult_star0-1&quot;];
+        self.star = @&quot;0&quot;;
+    }else if (point.x &gt;= span1.start  &amp;&amp; point.x &lt; span2.start) {
+        self.starImageView.image = [UIImage imageNamed:@&quot;Consult_star1-1&quot;];
+        self.star = @&quot;1&quot;;
+    } else if(point.x &gt;= span2.start &amp;&amp; point.x &lt; span3.start){
+        self.starImageView.image = [UIImage imageNamed:@&quot;Consult_star2-1&quot;];
+        self.star = @&quot;2&quot;;
+    }else if(point.x &gt;= span3.start &amp;&amp; point.x &lt; span4.start){
+        self.starImageView.image = [UIImage imageNamed:@&quot;Consult_star3-1&quot;];
+        self.star = @&quot;3&quot;;
+    }else if(point.x &gt;= span4.start &amp;&amp; point.x &lt; span5.start){
+        self.starImageView.image = [UIImage imageNamed:@&quot;Consult_star4-1&quot;];
+        self.star = @&quot;4&quot;;
+    }else if(point.x &gt;= span5.start &amp;&amp; point.x &lt; BoundWidth){
+        self.starImageView.image = [UIImage imageNamed:@&quot;Consult_star5-1&quot;];
+        self.star = @&quot;5&quot;;
+    }
+}
+
+
+
+-(void)touchesMoved:(NSSet&lt;UITouch *&gt; *)touches withEvent:(UIEvent *)event{
     CGPoint point = [[touches anyObject] locationInView:self.view];    
     CGFloat startX = BoundWidth/2 - 200/2;
     CGFloat x = point.x;
@@ -2316,10 +2401,14 @@
 
             
                 
-                <a href="12xcodekuai-jie-jian.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: 12、Xcode快捷键">
+                <a href="12xcodekuai-jie-jian.html" class="navigation navigation-prev " aria-label="Previous page: 12、Xcode快捷键">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
+                
+                <a href="143001-guang-gao-dao-ji-shi.html" class="navigation navigation-next " aria-label="Next page: 14、广告倒计时">
+                    <i class="fa fa-angle-right"></i>
+                </a>
                 
             
         
@@ -2328,7 +2417,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"13、滑动星级评分","level":"1.8.13","depth":2,"next":{"title":"Framework","level":"1.9","depth":1,"ref":"","articles":[{"title":"1、代码打包成.framework库(上)","level":"1.9.1","depth":2,"path":"13001-dai-ma-da-bao-6210-framework-5e9328-4e0a29.md","ref":"13001-dai-ma-da-bao-6210-framework-5e9328-4e0a29.md","articles":[]},{"title":"2、代码打包成.framework库(下)","level":"1.9.2","depth":2,"path":"23001-dai-ma-da-bao-6210-framework-5e9328-4e0b29.md","ref":"23001-dai-ma-da-bao-6210-framework-5e9328-4e0b29.md","articles":[]}]},"previous":{"title":"12、Xcode快捷键","level":"1.8.12","depth":2,"path":"12xcodekuai-jie-jian.md","ref":"12xcodekuai-jie-jian.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"133001-hua-dong-xing-ji-ping-fen.md","mtime":"2017-08-06T08:48:18.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-08-06T15:17:20.122Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"13、滑动星级评分","level":"1.8.13","depth":2,"next":{"title":"14、广告倒计时","level":"1.8.14","depth":2,"path":"143001-guang-gao-dao-ji-shi.md","ref":"143001-guang-gao-dao-ji-shi.md","articles":[]},"previous":{"title":"12、Xcode快捷键","level":"1.8.12","depth":2,"path":"12xcodekuai-jie-jian.md","ref":"12xcodekuai-jie-jian.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"133001-hua-dong-xing-ji-ping-fen.md","mtime":"2017-08-07T12:11:26.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-08-16T06:39:11.512Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
