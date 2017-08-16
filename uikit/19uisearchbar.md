@@ -1,7 +1,5 @@
 # UISearchBar
 
-
-
 1、Xib拖出来的UISearchBar底部会有一个灰色，如果需要去掉则需要做一些代码设置
 
 ```
@@ -9,7 +7,7 @@ self.searchBar.backgroundImage = [UIImage new];
     self.searchBar.showsScopeBar = NO;
     self.searchBar.scopeBarBackgroundImage = [UIImage new];
     self.searchBar.scopeButtonTitles = nil;
-    
+
     switch (self.type) {
         case QuestionType_Science:
             self.searchBar.placeholder = @"输入搜索文章";
@@ -23,17 +21,13 @@ self.searchBar.backgroundImage = [UIImage new];
         default:
             break;
     }
-    
+
     UITextField *textField = [self.searchBar valueForKey:@"searchField"];
     if (textField) {
         textField.layer.cornerRadius = 14;
         textField.layer.masksToBounds = YES;
     }
 ```
-
-
-
-
 
 2、纯代码使用UISearchBar
 
@@ -47,7 +41,7 @@ self.searchBar.backgroundImage = [UIImage new];
         field.layer.cornerRadius = 13;
         field.layer.masksToBounds = YES;
     }
-    
+
     self.sixthSearchBar.selectedScopeButtonIndex = 1;
     [self.sixthSearchBar setImage:[UIImage new] forSearchBarIcon:UISearchBarIconResultsList state:UIControlStateNormal];
     self.sixthSearchBar.searchBarStyle = UISearchBarStyleDefault;
@@ -70,9 +64,7 @@ self.searchBar.backgroundImage = [UIImage new];
 }
 
 -(void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
-    
     NSLog(@"textDidChange->%@",searchText);
-    
     if (searchBar == self.sixthSearchBar) {
         searchBar.showsBookmarkButton = YES;
     }
