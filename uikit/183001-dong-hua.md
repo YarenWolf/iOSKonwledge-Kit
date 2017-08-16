@@ -49,8 +49,9 @@
 
 * #### 如果需要在控件最初始的位置坐动画，那么就用CGAffineTranformMake+动画类型\(Translation、Scale、Rotate\)
 * #### 如果需要在控件当前的位置基础上做动画效果，那么就用CGCGAffineTranform+动画类型\(Translation、Scale、Rotate\)
+* CGAffineTransformMakeTranslation\(0, 0\)简写方式CGAffineTransformIdentity
 
-  #### 
+#### 
 
 
 

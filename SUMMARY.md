@@ -135,6 +135,7 @@
   * [16、UIStoryBoard的用法](uikit/16uistoryboardde-yong-fa.md)
   * [17、UITableViewController ](uikit/17uitableviewcontroller.md)
   * [18、动画](uikit/183001-dong-hua.md)
+  * [19、UISearchBar](uikit/19uisearchbar.md)
 * 杂谈
   * 1、正则表达式
   * [2、提高代码质量](23001-ti-gao-dai-ma-zhi-liang.md)
