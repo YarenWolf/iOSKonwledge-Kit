@@ -104,6 +104,7 @@
   * [45、load方法](chapter1/45loadfang-fa.md)
   * [46、KVC底层实现](chapter1/46kvcdi-ceng-shi-xian.md)
   * [47、iOS应用数据存储技术](chapter1/47iosying-yong-shu-ju-cun-chu-ji-zhu.md)
+  * [48、NSClassFromString](chapter1/48nsclassfromstring.md)
 * [iOS与JavaScript通信](iosyu-javascript-tong-xin.md)
   * [1、JSBind&& WebViewJavascriptBridge](1jsbindandand-webviewjavascriptbridge.md)
   * [2、UIWebView显示的网页点击图片保存图片到相册](2uiwebviewxian-shi-de-wang-ye-dian-ji-tu-pian-bao-cun-tu-pian-dao-xiang-ce.md)
