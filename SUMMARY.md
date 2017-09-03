@@ -88,6 +88,7 @@
   * [25、Block作为参数（一）](chapter1/243001-lei-fang-fa-de-2-dian-gui-fan/25blockzuo-wei-can-shu.md)
   * [30、Block作为参数 （二）](chapter1/25blockzuo-wei-can-shu-de-an-li.md)
   * [31、Block作为参数 （三）](chapter1/31blockyu-han-shu-bi-jiao.md)
+  * [49、Block访问变量](chapter1/49blockfang-wen-bian-liang.md)
   * [32、protocol \(一\)](chapter1/32protocol-4e0029.md)
   * [33、protocol \(二\)](chapter1/33protocol-4e8c29.md)
   * [34、Protocol（三）](chapter1/34protocol.md)
