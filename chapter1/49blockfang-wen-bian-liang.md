@@ -1,10 +1,6 @@
 # Block访问变量
 
-
-
-#  1、Block不允许修改外部变量的值，但是可以访问
-
-
+# 1、Block不允许修改外部变量的值，但是可以访问
 
 这里需要注意一下。
 
@@ -20,29 +16,27 @@
 
 &gt;对于局部变量来说，打印地址：栈区-&gt;栈区-&gt;栈区
 
-
-
 * block与局部变量
 
 ```
 typedef  void (^TestBlock)();
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
-     
+
       //1、block与局部变量
         int a = 0;
-        
+
         NSLog(@"a->%p",&a);     //a->0x7fff5fbff6bc
-        
+
         TestBlock block = ^{
-        
+
             a = 1;        
             NSLog(@"a->%zd",a);     //a->0
             NSLog(@"a->%p",&a);     //a->0x100403650
         };
         block();
         NSLog(@"a->%p",&a);         //a->0x7fff5fbff6bc
-    
+
 
     }
     return 0;
@@ -58,9 +52,9 @@ int a = 0;
 typedef  void (^TestBlock)();
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
-     
-   
-        
+
+
+
         NSLog(@"a->%p",&a);     //a->0x1000010c8
 
         TestBlock block = ^{
@@ -70,7 +64,7 @@ int main(int argc, const char * argv[]) {
         };
         block();
         NSLog(@"a->%p",&a);         //a->0x1000010c8
-    
+
 
     }
     return 0;
@@ -81,7 +75,27 @@ int main(int argc, const char * argv[]) {
 
 
 
+# Block类型
 
 
 
+# 根据isa指针，block一共有3种类型的block
+
+* \_NSConcreteGlobalBlock 全局静态
+
+* \_NSConcreteStackBlock 保存在栈中，出函数作用域就销毁
+
+* \_NSConcreteMallocBlock 保存在堆中，retainCount == 0销毁
+
+> Block默认值是NSGlobalBlock，类似于函数，存放在代码段中，当block内部使用或者访问了外部局部变量的时候，block内存存放位置就从NSGlobalBlock变成了NSMallocBlock（堆），所以局部变量用\_\_block修饰后才可以在block内部被修改
+
+
+
+1、看看几个block位置![](/assets/屏幕快照 2017-09-03 下午8.44.53.png)不访问局部变量和全局变量，默认是NSGlobalBlock
+
+![](/assets/屏幕快照 2017-09-03 下午8.45.17.png)访问\_\_block修饰的局部变量，block类型为NSMallocBlock
+
+![](/assets/屏幕快照 2017-09-03 下午8.46.14.png)访问全局变量，block类型为NSGlobalBlock
+
+![](/assets/屏幕快照 2017-09-03 下午8.46.56.png)访问不带\_\_block修饰的局部变量，block类型为NSMallocBlock
 
