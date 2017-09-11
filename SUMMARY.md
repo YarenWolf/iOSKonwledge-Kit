@@ -159,4 +159,6 @@
 * 版本控制管理
   * [1、git常见使用](1gitchang-jian-shi-yong.md)
   * [2、创新新分支并提交代码到新分支](23001-chuang-xin-xin-fen-zhi-bing-ti-jiao-dai-ma-dao-xin-fen-zhi.md)
+* [面试知识总结](mian-shi-zhi-shi-zong-jie.md)
+  * [1、UIView CALayer](mian-shi-zhi-shi-zong-jie/1uiview-calayer.md)
 
