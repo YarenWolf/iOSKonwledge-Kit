@@ -42,9 +42,18 @@
 
 ![](/assets/屏幕快照 2017-07-27 上午9.14.43.png)
 
+# 导航栈
+
+```
+SeriesLessonVC *vc = [[SeriesLessonVC alloc] init];
+vc.seriesModel = model;
+                    
+NSArray *vcs = self.navigationController.viewControllers;
+NSMutableArray *currentControllers = [NSMutableArray arrayWithArray:vcs];
+[currentControllers removeLastObject];
+[currentControllers addObject:vc];
+[self.navigationController setViewControllers:currentControllers animated:YES];
+```
 
 
-
-
-#  导航栈
 
