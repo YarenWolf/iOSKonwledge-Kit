@@ -40,11 +40,12 @@
 
 为此，我做了进一步的实验，用谷歌浏览器分别请求本地局域网和公网ip查看资源加载的情况。
 
-1、公网IP![](/assets/屏幕快照 2017-09-15 下午5.56.28.png)
+1、公网IP
+![](https://raw.githubusercontent.com/FantasticLBP/iOSKonwledge-Kit/master/assets/屏幕快照%202017-09-15%20下午5.56.28.png)
 
 2、本地局域网
 
-![](/assets/屏幕快照 2017-09-15 下午6.27.16.png)
+![](https://raw.githubusercontent.com/FantasticLBP/iOSKonwledge-Kit/master/assets/屏幕快照%202017-09-15%20下午6.27.16.png)
 
 关键词Status Code
 
