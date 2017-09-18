@@ -2,8 +2,6 @@
 
 做过混合开发的很多人都知道Ionic和PhoneGap之类的框架，这些框架在web基础上包了一层Native，然后通过Bridge技术使得js可以调用视频、位置、音频等功能。本文就是介绍这层Bridge的交互原理，通过阅读本文你可以了解到js与ios及android底层的通讯原理及JSBridge的封装技术及调试方法。
 
-
-
 ## 一、原理篇 {#-}
 
 下面分别介绍IOS和Android与Javascript的底层交互原理
@@ -13,8 +11,6 @@
 在讲解原理之前，首先来了解下iOS的UIWebView组件，先来看一下苹果官方的介绍：
 
 > You can use the UIWebView class to embed web content in your application. To do so, you simply create a UIWebView object, attach it to a window, and send it a request to load web content. You can also use this class to move back and forward in the history of webpages, and you can even set some web content properties programmatically.
-
-
 
 上面的意思是说UIWebView是一个可加载网页的对象，它有浏览记录功能，且对加载的网页内容是可编程的。说白了UIWebView有类似浏览器的功能，我们使用可以它来打开页面，并做一些定制化的功能，如可以让js调某个方法可以取到手机的GPS信息。
 
@@ -134,5 +130,310 @@ func webView(webView: UIWebView, shouldStartLoadWithRequest request: NSURLReques
     }
 ```
 
+### Android {#android}
+
+在android中，native与js的通讯方式与ios类似，ios中的通过schema方式在android中也是支持的。
+
+#### javascript调用native方式 {#javascript-native-}
+
+目前在android中有三种调用native的方式：
+
+1.通过schema方式，使用`shouldOverrideUrlLoading`方法对url协议进行解析。这种js的调用方式与ios的一样，使用iframe来调用native代码。  
+2.通过在webview页面里直接注入原生js代码方式，使用`addJavascriptInterface`方法来实现。  
+在android里实现如下：
+
+```
+class JSInterface {
+    @JavascriptInterface //注意这个代码一定要加上
+    public String getUserData() {
+        return "UserData";
+    }
+}
+webView.addJavascriptInterface(new JSInterface(), "AndroidJS");
+```
+
+上面的代码就是在页面的window对象里注入了`AndroidJS`对象。在js里可以直接调用
+
+```
+alert(AndroidJS.getUserData()) //UserDate
+```
+
+3.使用prompt,console.log,alert方式，这三个方法对js里是属性原生的，在android webview这一层是可以重写这三个方法的。一般我们使用prompt，因为这个在js里使用的不多，用来和native通讯副作用比较少。
+
+```
+class YouzanWebChromeClient extends WebChromeClient {
+    @Override
+    public boolean onJsPrompt(WebView view, String url, String message, String defaultValue, JsPromptResult result) {
+        // 这里就可以对js的prompt进行处理，通过result返回结果
+    }
+    @Override
+    public boolean onConsoleMessage(ConsoleMessage consoleMessage) {
+
+    }
+    @Override
+    public boolean onJsAlert(WebView view, String url, String message, JsResult result) {
+
+    }
+
+}
+```
+
+#### Native调用javascript方式 {#native-javascript-}
+
+在android里是使用webview的`loadUrl`进行调用的，如：
+
+```
+// 调用js中的JSBridge.trigger方法
+
+webView.loadUrl(
+"javascript:JSBridge.trigger('webviewReady')"
+);
+```
+
+## 二、库的封装 {#-}
+
+### js调用native的封装 {#js-native-}
+
+上面我们了解了js与native通讯的底层原理，所以我们可以封装一个基础的通讯方法`doCall`来屏蔽android与ios的差异。
+
+```
+YouzanJsBridge = {
+    doCall: function(functionName, data, callback) {
+        var _this = this;
+        // 解决连续调用问题
+        if (this.lastCallTime && (Date.now() - this.lastCallTime) < 100) {
+            setTimeout(function() {
+                _this.doCall(functionName, data, callback);
+            }, 100);
+            return;
+        }
+        this.lastCallTime = Date.now();
+
+        data = data || {};
+        if (callback) {
+            $.extend(data, { callback: callback });
+        }
+
+        if (UA.isIOS()) {
+            $.each(data, function(key, value) {
+                if ($.isPlainObject(value) || $.isArray(value)) {
+                    data[key] = JSON.stringify(value);
+                }
+            });
+            var url = Args.addParameter('youzanjs://' + functionName, data);
+            var iframe = document.createElement('iframe');
+            iframe.style.width = '1px';
+            iframe.style.height = '1px';
+            iframe.style.display = 'none';
+            iframe.src = url;
+            document.body.appendChild(iframe);
+            setTimeout(function() {
+                iframe.remove();
+            }, 100);
+        } else if (UA.isAndroid()) {
+            window.androidJS && window.androidJS[functionName] && window.androidJS[functionName](JSON.stringify(data));
+        } else {
+            console.error('未获取platform信息，调取api失败');
+        }
+    }
+}
+```
+
+上面android端我们使用了addJavascriptInterface方法来注入一个AndroidJS对象。
+
+### 项目通用方法抽象 {#-}
+
+在项目的实践中，我们逐渐抽象出一些通用的方法，这些方法基本上都是可以满足项目的需求。如下所示：
+
+#### 1.getData\(datatype, callback, extra\) H5从Native APP获取数据 {#1-getdata-datatype-callback-extra-h5-native-app-}
+
+使用场景：H5需要从Native APP获取某些数据的时候，可以调用这个方法。
+
+| 参数 |
+| :--- |
+
+
+|  | 类型 | 是否必须 | 示例值 | 说明 |
+| :--- | :--- | :--- | :--- | :--- |
+| datatype | String | 是 | userInfo | 数据类型 |
+| callback | Function | 是 |  | 回调函数 |
+| extra | Object | 否 |  | 传递给Native APP的数据对象 |
+
+示例代码：
+
+```
+JSBridge.getData(
+'userInfo'
+,
+function
+(
+data
+) 
+{
+    
+console
+.log(data);
+});
+```
+
+#### 2.putData\(datatype, data\) H5告诉Native APP一些数据 {#2-putdata-datatype-data-h5-native-app-}
+
+使用场景：H5告诉Native APP一些数据，可以调用这个方法。
+
+| 参数 | 类型 | 是否必须 | 示例值 | 说明 |
+| :--- | :--- | :--- | :--- | :--- |
+| datatype | String | 是 | userInfo | 数据类型 |
+| data | Object | 是 | { username: 'zhangsan', age: 20 } | 传递给Native APP的数据对象 |
+
+示例代码：
+
+```
+JSBridge.putData(
+'userInfo'
+, {
+    
+username
+: 
+'zhangsan'
+,
+    
+age
+: 
+20
+
+});
+```
+
+#### 3.gotoWebview\(url, page, data\) Native APP新开一个Webview窗口，并打开相应网页 {#3-gotowebview-url-page-data-native-app-webview-}
+
+| 参数 | 类型 | 是否必须 | 示例值 | 说明 |
+| :--- | :--- | :--- | :--- | :--- |
+| url | String | 是 | [www.youzan.com](https://link.juejin.im/?target=http%3A%2F%2Fwww.youzan.com) | 网页链接地址，一般都只要传递URL参数就可以了 |
+| page | String | 否 | web | 网页page类型，默认为web |
+| data | Object | 否 |  | 额外参数对象 |
+
+示例代码：
+
+```
+// 示例1：打开一个网页
+
+JSBridge.gotoWebview(
+'http://www.youzan.com'
+);
+
+
+// 示例2：打开一个网页，并且传递额外的参数给Native APP
+
+JSBridge.gotoWebview(
+'http://www.youzan.com'
+, 
+'goodsDetail'
+, {
+    
+goods_id
+: 
+10000
+,
+    
+title
+: 
+'这是商品的标题'
+,
+    
+desc
+: 
+'这是商品的描述'
+
+});
+```
+
+#### 4.gotoNative\(page, data\) 从H5页面跳转到Native APP的某个原生界面 {#4-gotonative-page-data-h5-native-app-}
+
+| 参数 | 类型 | 是否必须 | 示例值 | 说明 |
+| :--- | :--- | :--- | :--- | :--- |
+| page | String | 是 | loginPage | Native页面标示符，例如loginPage |
+| data | Object | 否 | { username: 'zhangsan', age: 20 } | 额外参数对象 |
+
+示例代码：
+
+```
+// 示例1：打开Native APP登录页面
+
+JSBridge.gotoNative(
+'loginPage'
+);
+
+
+// 示例2：打开Native APP登录页面，并且传递用户名给Native APP
+
+JSBridge.gotoNative(
+'loginPage'
+, {
+    
+username
+: 
+'张三'
+
+});
+```
+
+#### 5.doAction\(action, data\) 功能上的一些操作 {#5-doaction-action-data-}
+
+| 参数 | 类型 | 是否必须 | 示例值 | 说明 |
+| :--- | :--- | :--- | :--- | :--- |
+| action | String | 是 | copy | 操作功能类型，例如分享、复制 |
+| data | Object | 否 | { content: '这是要复制的内容' } | 额外参数 |
+
+示例代码：
+
+```
+// 示例1：调用Native APP复制一段文本到剪切板
+
+JSBridge.doAction(
+'copy'
+, {
+    
+content
+: 
+'这是要复制的内容'
+
+});
+
+
+// 示例2：调用Native APP的分享组件，分享当前网页到微信
+
+JSBridge.doAction(
+'share'
+, {
+    
+title
+: 
+'分享标题'
+,
+    
+desc
+: 
+'分享描述'
+,
+    
+link
+: 
+'http://www.youzan.com'
+,
+    
+imgs_url
+: 
+'http://wap.koudaitong.com/v2/common/url/create?type=homepage
+&
+index%2Findex=
+&
+kdt_id=63077
+&
+alias=63077'
+
+});
+```
+
+  
 
 
