@@ -50,21 +50,17 @@
 
 结论：从图上可以看出本地局域网不管首次加载还是刷新都是直接请求；而通过局域网的方式请求：首次请求是从服务器上获取，在此刷新的时候是从（from memory cache）中获取的。
 
-
-
 #### 猜想
 
 局域网 的方式网速都比较快所以不会缓存；
 
 公网IP的方式可能由于网速问题会将首次请求到的资源缓存下来。
 
-
-
 所以确定缓存存在了，那么如何避免缓存？
 
 * App在启动后请求一个接口，这个接口的目的是获取当前H5资源的版本号
 * 将获得的版本号保存下来（App本地保存）
-* 由于UIWebView上加载网页，发起网络请求都可以通过一个代理方法所拦截，所以我们可以在这个代理方法中判断url的参数，可能是http://www.a.com/login、http://www.a.com/login.html、http://www.a.com/login.html?name=geek、http://www.a.com/login\#readme等等，所以我们判断过url后考虑如何将版本号加到url里面
+* 由于UIWebView上加载网页，发起网络请求都可以通过一个代理方法所拦截，所以我们可以在这个代理方法中判断url的参数，可能是[http://www.a.com/login、http://www.a.com/login.html、http://www.a.com/login.html?name=geek、http://www.a.com/login\#readme等等，所以我们判断过url后考虑如何将版本号加到url里面](http://www.a.com/login、http://www.a.com/login.html、http://www.a.com/login.html?name=geek、http://www.a.com/login#readme等等，所以我们判断过url后考虑如何将版本号加到url里面)
 * 由于我们的App使用了不同模块的UIWebView，但是都是在UIWebView上需要大量的JS交互，所以使用了WebViewJavascriptBridge这个库。UIWebView本身的代理方法不会执行，所以修改这个库里面的WebViewJavascriptBridge.m文件的代码，差不多是下面的方式
 
 ```
@@ -96,10 +92,13 @@
         return YES;
     }
 }
-
 ```
 
 
+
+总结：
+
+App的缓存问题暂时研究到这里，后期会继续研究其他方面的问题
 
 
 
