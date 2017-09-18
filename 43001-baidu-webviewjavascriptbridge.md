@@ -262,17 +262,8 @@ YouzanJsBridge = {
 示例代码：
 
 ```
-JSBridge.getData(
-'userInfo'
-,
-function
-(
-data
-) 
-{
-    
-console
-.log(data);
+JSBridge.getData('userInfo',function(data) {
+    console.log(data);
 });
 ```
 
@@ -288,19 +279,9 @@ console
 示例代码：
 
 ```
-JSBridge.putData(
-'userInfo'
-, {
-    
-username
-: 
-'zhangsan'
-,
-    
-age
-: 
-20
-
+JSBridge.putData('userInfo', {
+    username: 'zhangsan',
+    age: 20
 });
 ```
 
@@ -316,34 +297,13 @@ age
 
 ```
 // 示例1：打开一个网页
-
-JSBridge.gotoWebview(
-'http://www.youzan.com'
-);
-
+JSBridge.gotoWebview('http://www.youzan.com');
 
 // 示例2：打开一个网页，并且传递额外的参数给Native APP
-
-JSBridge.gotoWebview(
-'http://www.youzan.com'
-, 
-'goodsDetail'
-, {
-    
-goods_id
-: 
-10000
-,
-    
-title
-: 
-'这是商品的标题'
-,
-    
-desc
-: 
-'这是商品的描述'
-
+JSBridge.gotoWebview('http://www.youzan.com', 'goodsDetail', {
+    goods_id: 10000,
+    title: '这是商品的标题',
+    desc: '这是商品的描述'
 });
 ```
 
@@ -358,22 +318,11 @@ desc
 
 ```
 // 示例1：打开Native APP登录页面
-
-JSBridge.gotoNative(
-'loginPage'
-);
-
+JSBridge.gotoNative('loginPage');
 
 // 示例2：打开Native APP登录页面，并且传递用户名给Native APP
-
-JSBridge.gotoNative(
-'loginPage'
-, {
-    
-username
-: 
-'张三'
-
+JSBridge.gotoNative('loginPage', {
+    username: '张三'
 });
 ```
 
@@ -388,52 +337,18 @@ username
 
 ```
 // 示例1：调用Native APP复制一段文本到剪切板
-
-JSBridge.doAction(
-'copy'
-, {
-    
-content
-: 
-'这是要复制的内容'
-
+JSBridge.doAction('copy', {
+    content: '这是要复制的内容'
 });
 
-
 // 示例2：调用Native APP的分享组件，分享当前网页到微信
-
-JSBridge.doAction(
-'share'
-, {
-    
-title
-: 
-'分享标题'
-,
-    
-desc
-: 
-'分享描述'
-,
-    
-link
-: 
-'http://www.youzan.com'
-,
-    
-imgs_url
-: 
-'http://wap.koudaitong.com/v2/common/url/create?type=homepage
-&
-index%2Findex=
-&
-kdt_id=63077
-&
-alias=63077'
-
+JSBridge.doAction('share', {
+    title: '分享标题',
+    desc: '分享描述',
+    link: 'http://www.youzan.com',
+    imgs_url: 'http://wap.koudaitong.com/v2/common/url/create?type=homepage&index%2Findex=&kdt_id=63077&alias=63077'
 });
 ```
 
-  
 
 
