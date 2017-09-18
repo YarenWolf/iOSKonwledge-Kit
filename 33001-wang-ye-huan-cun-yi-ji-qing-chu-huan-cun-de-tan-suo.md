@@ -66,7 +66,7 @@
 ```
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType {
     if (webView != _webView) { return YES; }
-    NSURL *url = [request URL];
+    NSURL *url = [rntity Tag 的资源直接访问equest URL];
     if ([request.URL.absoluteString containsString:@"http"] || [request.URL.absoluteString containsString:@"https"]) {
         if ([request.URL.absoluteString containsString:@"?"]) {
             url = [NSURL URLWithString:[NSString stringWithFormat:@"%@&h5V=%@",request.URL.absoluteString,[ProjectUtil getH5VersionString]]];
@@ -98,19 +98,26 @@
 
 App的缓存问题暂时研究到这里，后期会继续研究其他方面的问题
 
-
-
-
-
 # 拓展
 
-通过浏览器我们知道有的缓存是200 OK（from cache ），有的缓存是304 Not found。如果运维移除了Entity Tag就一直是200（from cache）。
+通过浏览器我们知道有的缓存是200 OK（from cache ），有的缓存是304 Not modified。如果运维移除了Entity Tag就一直是200（from cache）。如果没有移除的话2者是交替出现的。
 
 
 
+为什么2者会有区别？
 
+* 200 OK（from cache）是直接点击链接或者在浏览器地址栏中输入网址敲回车键的结果
+* 而304 modified是我们刷新了浏览器页面时触发或者设置了长缓存、但Entity Tags没有移除时触发
 
+做了 实验得出结论：
 
+* 直接访问有缓存的网站都触发 200 OK \(from cache\)
+
+* 刷新浏览器则会触发304
+
+* 同一域名下，没有 Entity Tag 的资源直接访问，是 200 OK \(from cache\) 的结果
+
+* 同一域名下，有Entity Tag 的资源直接访问，是出现304 Not Modified
 
 
 
