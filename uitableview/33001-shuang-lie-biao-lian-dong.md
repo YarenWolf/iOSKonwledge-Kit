@@ -4,8 +4,6 @@
 >
 > 这次我也需要开发具有联动效果的双列表。也是首次开发这种类型的UI，记录下步骤与心得
 
-
-
 #### 一、关键思路
 
 * 懒加载左右2个UITableView
@@ -15,15 +13,69 @@
   * 左边的UITableView是只有1个section和n个row
   * 右边的UITableView具有n个section（这里的section 个数恰好是左边UITableView的row数量），且每个section下的row由对应的数据源控制
 
-
-
 二、第一版代码
 
 ```
+#pragma mark -- UITableViewDelegate
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    if (tableView == self.leftTablview) {
+        return 1;
+    }
+    return self.datas.count;
+}
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    if (tableView == self.leftTablview) {
+        return self.datas.count;
+    }
+    QuestionCollectionModel *model = self.datas[section];
+    NSArray *questions =model.questions;
+    return questions.count;
+}
+
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    if (tableView == self.leftTablview) {
+        return LeftCellHeight;
+    }
+    return RightCellHeight;
+}
+
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    if (tableView == self.leftTablview) {
+        PregnancyPeriodCell *cell = [tableView dequeueReusableCellWithIdentifier:PregnancyPeriodCellID forIndexPath:indexPath];
+        if (self.collectionType == CollectionType_Wrong || self.collectionType == CollectionType_Miss) {
+            QuestionCollectionModel *model = self.datas[indexPath.row];
+            cell.week = model.tag;
+        }
+        
+        return cell;
+    }
+    QuestionCell *cell = [tableView dequeueReusableCellWithIdentifier:QuestionCellID forIndexPath:indexPath];
+    QuestionCollectionModel *model = self.datas[indexPath.section];
+    NSArray *questions =model.questions;
+    QuestionModel *questionModel = questions[indexPath.row];
+    cell.model = questionModel;
+    return cell;
+}
+
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    if (tableView == self.leftTablview) {
+        NSIndexPath *indexpath = [NSIndexPath indexPathForRow:0 inSection:indexPath.row];
+        [self.rightTableview scrollToRowAtIndexPath:indexpath atScrollPosition:UITableViewScrollPositionTop animated:YES];
+    }
+}
+
+-(void)scrollViewDidScroll:(UIScrollView *)scrollView{
+    if (scrollView == self.rightTableview) {
+        NSIndexPath *indexpath = [self.rightTableview indexPathsForVisibleRows].firstObject;
+        NSIndexPath *leftScrollIndexpath = [NSIndexPath indexPathForRow:indexpath.section inSection:0];
+        [self.leftTablview selectRowAtIndexPath:leftScrollIndexpath animated:YES scrollPosition:UITableViewScrollPositionMiddle];
+       
+    }
+}
 
 ```
 
-
-
-
+缺陷
 
