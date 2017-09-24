@@ -47,7 +47,7 @@
             QuestionCollectionModel *model = self.datas[indexPath.row];
             cell.week = model.tag;
         }
-        
+
         return cell;
     }
     QuestionCell *cell = [tableView dequeueReusableCellWithIdentifier:QuestionCellID forIndexPath:indexPath];
@@ -71,11 +71,12 @@
         NSIndexPath *indexpath = [self.rightTableview indexPathsForVisibleRows].firstObject;
         NSIndexPath *leftScrollIndexpath = [NSIndexPath indexPathForRow:indexpath.section inSection:0];
         [self.leftTablview selectRowAtIndexPath:leftScrollIndexpath animated:YES scrollPosition:UITableViewScrollPositionMiddle];
-       
+
     }
 }
-
 ```
 
-缺陷
+缺陷：虽然实现了效果，但是有缺陷。点击左侧的UITableView，右侧的UITableViewe滚动到相应的位置，这是没问题的，但是滚动
+
+右边，需要根据右边indexPath.section将选中左侧相应的indexPath。这样左侧选中的时候，又会触发右边滚动的事件，
 
