@@ -1,4 +1,6 @@
-# 双列表联动
+```
+双列表联动
+```
 
 > 用过了那么多的外卖App，总结出一个规律，那就是“所有的外卖App都有双列表联动功能”。哈哈哈哈，这是一个玩笑。
 >
@@ -94,9 +96,49 @@
    ```
 2. 在willDisplayCell和didEndDisplayingCell代理方法中选中左侧UITableView相应的行。
 
+```
+-(void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    if (tableView == self.rightTableview  && !self.isScrollDown && self.rightTableview.isDragging ) {
+        [self.leftTablview selectRowAtIndexPath:[NSIndexPath indexPathForRow:indexPath.section inSection:0] animated:YES scrollPosition:UITableViewScrollPositionTop];
+    }
+}
 
 
 
+-(void)tableView:(UITableView *)tableView didEndDisplayingCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath{
+    if (tableView == self.rightTableview && self.isScrollDown && self.rightTableview.isDragging) {
+        [self.leftTablview selectRowAtIndexPath:[NSIndexPath indexPathForRow:indexPath.section+1 inSection:0] animated:YES scrollPosition:UITableViewScrollPositionTop];
+
+    }
+}
+
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(nonnull NSIndexPath *)indexPath
+{
+    if (self.leftTablview == tableView)
+    {
+        [self.rightTableview scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:indexPath.row] atScrollPosition:UITableViewScrollPositionTop animated:YES];
+    }else{
+        NSLog(@"嗡嗡嗡");
+    }
+}
+
+
+#pragma mark - UIScrollViewDelegate
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView{
+    
+    static CGFloat lastOffsetY = 0;
+    
+    UITableView *tableView = (UITableView *)scrollView;
+    if (self.rightTableview == tableView){
+        self.isScrollDown = (lastOffsetY < scrollView.contentOffset.y);
+        lastOffsetY = scrollView.contentOffset.y;
+    }
+    
+}
+```
 
 
 
