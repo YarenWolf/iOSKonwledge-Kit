@@ -13,7 +13,7 @@
   * 左边的UITableView是只有1个section和n个row
   * 右边的UITableView具有n个section（这里的section 个数恰好是左边UITableView的row数量），且每个section下的row由对应的数据源控制
 
-二、第一版代码
+#### 二、第一版代码
 
 ```
 #pragma mark -- UITableViewDelegate
@@ -78,5 +78,7 @@
 
 缺陷：虽然实现了效果，但是有缺陷。点击左侧的UITableView，右侧的UITableViewe滚动到相应的位置，这是没问题的，但是滚动
 
-右边，需要根据右边indexPath.section将选中左侧相应的indexPath。这样左侧选中的时候，又会触发右边滚动的事件，
+右边，需要根据右边indexPath.section将选中左侧相应的indexPath。这样左侧选中的时候，又会触发右边滚动的事件，整体看上去不是很流畅。
+
+
 
