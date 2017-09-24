@@ -98,7 +98,7 @@
 
 ```
 -(void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath{
-    
+
     if (tableView == self.rightTableview  && !self.isScrollDown && self.rightTableview.isDragging ) {
         [self.leftTablview selectRowAtIndexPath:[NSIndexPath indexPathForRow:indexPath.section inSection:0] animated:YES scrollPosition:UITableViewScrollPositionTop];
     }
@@ -128,17 +128,17 @@
 #pragma mark - UIScrollViewDelegate
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView{
-    
+
     static CGFloat lastOffsetY = 0;
-    
+
     UITableView *tableView = (UITableView *)scrollView;
     if (self.rightTableview == tableView){
         self.isScrollDown = (lastOffsetY < scrollView.contentOffset.y);
         lastOffsetY = scrollView.contentOffset.y;
     }
-    
+
 }
 ```
 
-
+效果图
 
