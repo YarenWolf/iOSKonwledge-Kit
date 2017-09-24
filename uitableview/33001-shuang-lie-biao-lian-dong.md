@@ -142,7 +142,8 @@
 
 ##### 效果图
 
-![](/assets/2017-09-24 15_35_52.gif)
+
+![效果图](https://github.com/FantasticLBP/iOSKonwledge-Kit/blob/master/assets/2017-09-24 15_35_52.gif "效果图")
 
 
 
