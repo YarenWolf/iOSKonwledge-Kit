@@ -82,3 +82,21 @@
 
 #### 三、解决方案
 
+观察了下，发现右侧滚动的时候左侧会上下选中，所以也就是只要让右侧滚动的时候，左侧的UITableView单方向选中，不要滚动就好，所以由于UITableView也是UIScrollview，所以在scrollViewDidScroll方法中判断右侧的UITableView是向上还是向下滚动，以此作为判断条件来让左侧的UITableView选中相应的行。
+
+且之前是在scrollview代理方法中让左侧的tableview选中，这样子又会触发左侧tableview的选中事件，从而导致右侧的tablview滚动，造成不严谨的联动逻辑
+
+改进后的方法：
+
+1. 点击左侧的UITableView，在代理方法didSelectRowAtIndexPath中拿到相应的indexPath.row，计算出右侧UITableView需要滚动的indexPath的位置。
+   ```
+    [self.rightTableview scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:indexPath.row] atScrollPosition:UITableViewScrollPositionTop animated:YES];
+   ```
+2. 在willDisplayCell和didEndDisplayingCell代理方法中选中左侧UITableView相应的行。
+
+
+
+
+
+
+
