@@ -274,7 +274,7 @@
 
 > @property \(nonatomic, readwrite, strong\) UIView \*headerView;  //注释
 
-**    
+**      
 **
 
 **3、方法声明注释：**
@@ -317,7 +317,7 @@
 >
 > @param section
 >
-> &lt;a href='[http://www.jobbole.com/members/wx1409399284'&gt;@return&lt;/a&gt](http://www.jobbole.com/members/wx1409399284'>@return</a&gt);
+> &lt;a href='\[[http://www.jobbole.com/members/wx1409399284'&gt;@return&lt;/a&gt\]\(http://www.jobbole.com/members/wx1409399284'&gt;@return](http://www.jobbole.com/members/wx1409399284'>@return</a&gt]%28http://www.jobbole.com/members/wx1409399284'>@return)&lt;/a&gt;\);
 >
 > \*/
 >
@@ -365,7 +365,7 @@
 
 > * \(void\)insertSubview:\(UIView \*\)view atIndex:\(NSInteger\)index;
 
-**    
+**      
 **
 
 **3、代码缩进**
@@ -800,7 +800,7 @@ while里的break：
 
 **4、函数**
 
-**    
+**      
 **
 
 ①、一个函数只做一件事（单一原则）
@@ -987,19 +987,19 @@ while里的break：
 
 **参考资料：**
 
-iOS 代码规范\(https://juejin.im/post/5940c8befe88c2006a468ea6\)
+iOS 代码规范\([https://juejin.im/post/5940c8befe88c2006a468ea6\](https://juejin.im/post/5940c8befe88c2006a468ea6\)\)
 
-iOS开发总结之代码规范
+iOS开发总结之代码规范\(http://www.jianshu.com/p/414bb5a53139\)
 
-iOS开发代码规范\(通用\)
+iOS开发代码规范\(通用\)\(http://www.cnblogs.com/gfxxbk/p/5469017.html\)
 
-Objective-C开发编码规范
+Objective-C开发编码规范\(http://www.cocoachina.com/ios/20150508/11780.html\)
 
-【iOS】命名规范
+【iOS】命名规范\(http://www.jianshu.com/p/1da38a6f3173\)
 
-Ios Code Specification
+Ios Code Specification\(https://github.com/roycms/IosCodeSpecification\)
 
-Apple Coding Guidelines for Cocoa
+Apple Coding Guidelines for Cocoa\(https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/CodingGuidelines/CodingGuidelines.html\)
 
-Google Objective-C Style Guide
+Google Objective-C Style Guide\(https://google-styleguide.googlecode.com/svn/trunk/objcguide.xml?showone=Line\_Length\#Line\_Length\)
 
