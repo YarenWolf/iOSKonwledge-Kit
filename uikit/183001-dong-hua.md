@@ -51,6 +51,20 @@
 * #### 如果需要在控件当前的位置基础上做动画效果，那么就用CGCGAffineTranform+动画类型\(Translation、Scale、Rotate\)
 * CGAffineTransformMakeTranslation\(0, 0\)简写方式CGAffineTransformIdentity
 
+
+
+# 动画里面修改约束
+
+```
+[UIView animateWithDuration:2 animations:^{
+            self.alterScoreLabel.alpha = 0.01;
+            self.alterMarginTop.constant = 0;
+            [self.view layoutIfNeeded];
+        }];
+```
+
+
+
 #### 
 
 
