@@ -109,7 +109,7 @@
   * [50、枚举](chapter1/503001-mei-ju.md)
 * [UIKit](uikit.md)
   * [1、富文本](uikit/13001-fu-wen-ben.md)
-    * [1、玩转UILabel富文本](uikit/13001-fu-wen-ben/13001-wan-zhuan-uilabel-fu-wen-ben.md)
+    * [1、玩转UILabel](uikit/13001-fu-wen-ben/13001-wan-zhuan-uilabel-fu-wen-ben.md)
   * [2、UISteper渐进条](uisteperjian-jin-tiao.md)
     * [1、UISteper渐进控件](uisteperjian-jin-tiao/1uisteperjian-jin-kong-jian.md)
   * [3、UITableView](uitableview.md)
