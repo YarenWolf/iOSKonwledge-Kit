@@ -81,3 +81,25 @@ self.searchBar.backgroundImage = [UIImage new];
 
 
 
+UISearchBar加到NavigationItem上不显示光标
+
+```
+ 
+    UIView *titleView = [[UIView alloc] initWithFrame:CGRectMake(0, 3, BoundWidth-64, 32)];
+    UISearchBar *searchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(-20, 0, titleView.frame.size.width-40, 32)];
+    searchBar.placeholder = @"搜索内容";
+    searchBar.tintColor = [UIColor colorFromHexCode:@"426bf2"];   //不加不显示光标
+    searchBar.delegate = self;
+    searchBar.backgroundColor = [UIColor whiteColor];
+    searchBar.layer.cornerRadius = 12;
+    searchBar.layer.masksToBounds = YES;
+    [searchBar.layer setBorderWidth:8];
+    [searchBar.layer setBorderColor:[UIColor whiteColor].CGColor];
+    self.searchBar = searchBar;
+
+    [titleView addSubview:searchBar];
+    self.navigationItem.titleView = titleView;
+```
+
+
+
