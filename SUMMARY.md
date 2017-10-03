@@ -138,11 +138,12 @@
   * [18、动画](uikit/183001-dong-hua.md)
   * [19、UISearchBar](uikit/19uisearchbar.md)
   * [20、UITextfield](uikit/20uitextfield.md)
-* [UIWebView && WKWebView探索](iosyu-javascript-tong-xin.md)
+* [Hybrid](iosyu-javascript-tong-xin.md)
   * [1、JSBind&& WebViewJavascriptBridge](1jsbindandand-webviewjavascriptbridge.md)
   * [2、UIWebView显示的网页点击图片保存图片到相册](2uiwebviewxian-shi-de-wang-ye-dian-ji-tu-pian-bao-cun-tu-pian-dao-xiang-ce.md)
   * [3、网页缓存以及清除缓存的探索](33001-wang-ye-huan-cun-yi-ji-qing-chu-huan-cun-de-tan-suo.md)
   * [4、拜读WebViewJavascriptBridge](43001-baidu-webviewjavascriptbridge.md)
+  * [5、Hybrid](5hybrid.md)
 * 杂谈
   * 1、正则表达式
   * [2、提高代码质量](23001-ti-gao-dai-ma-zhi-liang.md)
