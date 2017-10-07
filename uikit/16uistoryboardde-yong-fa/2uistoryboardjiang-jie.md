@@ -20,27 +20,17 @@ Segue 的类型
 [self performSegueWithIdentifier:@"login" sender:nil];
 ```
 
-
-
-
-
 ##### performIdentifier的底层实现
 
-
-
 * 根据标识符去storyboard中查找对应的线，创建UIStoryboardSegue对象
-* 根据storyboard中线的关系，创建segue的来源控制器 segue.sourceVC = self
-* 根据storyboard中线的关系，创建segue的的目的控制器 segue.destionVC = vc
+* 根据storyboard中线的关系，创建segue的来源控制器 segue.sourceViewController = self
+* 根据storyboard中线的关系，创建segue的的目的控制器 segue.destinationViewController = vc
 * 通知来源控制器，我的线准备好了，可以进行跳转了。怎么通知？？调用\[self prepareForSegue:segue sender:nil\]
 * \[segue perform\] 跳转
-
-
 
 ##### perform 方法的底层
 
 1、获取导航控制器，self.navigationController
 
 2、\[self.navigationController push:segue.destionVC animated:YES\]
-
-
 
