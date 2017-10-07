@@ -134,6 +134,7 @@
     * [1、UISegmentedControl的使用](uikit/1uisegmentedcontrolde-shi-yong.md)
   * [15、UIViewController的View的生命周期](uikit/15uiviewcontroller.md)
   * [16、UIStoryBoard的用法](uikit/16uistoryboardde-yong-fa.md)
+    * [2、UIStoryboard讲解](uikit/16uistoryboardde-yong-fa/2uistoryboardjiang-jie.md)
   * [17、UITableViewController ](uikit/17uitableviewcontroller.md)
   * [18、动画](uikit/183001-dong-hua.md)
   * [19、UISearchBar](uikit/19uisearchbar.md)
