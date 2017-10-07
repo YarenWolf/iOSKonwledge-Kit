@@ -1,0 +1,4 @@
+UIStoryboardSegue:
+
+UIStoryboard上每一根用来界面跳转的线，都是一个UIStoryboardSegue对象（简称Segue）
+
