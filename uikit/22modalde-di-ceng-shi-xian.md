@@ -6,7 +6,7 @@
 
 
 
-为了研究Modal的工作原理，我们打算手动开始模仿系统的Modal效果实现。
+### 为了研究Modal的工作原理，我们打算手动开始模仿系统的Modal效果实现。
 
 #### 实验1
 
@@ -15,7 +15,7 @@
 
     ViewController *vc = [ViewController new];
     vc.view.backgroundColor = [UIColor brownColor];
-    
+
     //模仿系统的modal
     [[UIApplication sharedApplication].keyWindow addSubview:vc.view];
     vc.view.transform = CGAffineTransformMakeTranslation(0, self.view.frame.size.height);
@@ -46,11 +46,10 @@
         [_button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         [_button addTarget:self action:@selector(dismiss) forControlEvents:UIControlEventTouchUpInside];
         _button.userInteractionEnabled = YES;
-        
+
     }
     return _button;
 }
-
 ```
 
 结果：
@@ -75,7 +74,7 @@
 - (IBAction)dismiss:(id)sender {
     self.vc = [ViewController new];
     self.vc.view.backgroundColor = [UIColor brownColor];
-    
+
     //模仿系统的modal
     [[UIApplication sharedApplication].keyWindow addSubview:self.vc.view];
     self.vc.view.transform = CGAffineTransformMakeTranslation(0, self.view.frame.size.height);
@@ -96,8 +95,6 @@
 
 * 但是在弹出的控制器的view上有一个按钮，点击按钮发现响应按钮的点击事件
 
-
-
 问题？那么被模打出的控制器系统肯定是强引用了，那么被谁强引用了？
 
 #### 实验3
@@ -110,16 +107,11 @@
     [self presentViewController:self.vc animated:YES completion:^{
         NSLog(@"%@",self.presentedViewController);    //<ViewController: 0x7face6811a20>
     }];
-
 ```
 
 结果：
 
 打印 出的self.presentedViewController就是ViewController。
-
-
-
-
 
 #### 结论：
 
