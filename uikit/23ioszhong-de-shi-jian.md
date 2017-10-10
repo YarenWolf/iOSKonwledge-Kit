@@ -7,11 +7,24 @@
 
 ## UIResponder
 
-* UIResponder内部提供了一些方法处理事件。touchBegan、touchMoved、touchEnded、touchCanceled等
+* UIResponder内部提供了一些方法处理事件
+
+```
+//触摸事件
+-(void)touchBegan:(NSSet *)touches withEvent:(UIEvent *)event;
+-(void)touchMoved:(NSSet *)touches withEvent:(UIEvent *)event;
+-(void)touchEnded:(NSSet *)touches withEvent:(UIEvent *)event;
+-(void)touchCanceled:(NSSet *)touches withEvent:(UIEvent *)event;
+
+//加速计事件
+-(void)motionBegan:(UIEventSubtype)motion withEvent:(UIEvent *)event;
+-(void)motionEnded:(UIEventSubtype)motion withEvent:(UIEvent *)event;
+-(void)motionCanceled:(UIEventSubtype)motion withEvent:(UIEvent *)event;
+
+//远程控制事件
+-(void)remoteControlReceivedWithEvent:(UIEvent *)event;
+```
+
 * 
-
-
-
-
 
 
