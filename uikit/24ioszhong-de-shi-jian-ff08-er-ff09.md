@@ -20,7 +20,23 @@
 
 结果：点击不同的View打印出不同的类名。
 
+结论：
 
+* 触摸事件是从父控件传递到子控件的。
+* 点击了绿色（图上的2级）的view：UIApplication-&gt; UIWindow -&gt; UIViewController的view -&gt; 绿色的view
+* 点击了蓝色（图上的3级）的view：UIApplication-&gt; UIWindow -&gt; UIViewController的view -&gt; 红棕色的view -&gt; 蓝色的view
+* 点击了黄色（图上的4级）的view：UIApplication -&gt; UIWindow -&gt; UIViewController的view -&gt; 红棕色的view -&gt; 蓝色的view -&gt; 黄色的view
+
+注意：如果父控件不能接收触摸事件，那么这个父控件的子控件也不能接收触摸事件
+
+
+
+#### 如何找到最合适的控件来接收触摸事件？
+
+* 自己能否接收触摸事件？
+* 触摸点是否在自己身上？
+* 从后往前遍历子控件，重复前面2个步骤
+* 如果没有符合条件的子控件，那么就自己最适合处理
 
 
 
