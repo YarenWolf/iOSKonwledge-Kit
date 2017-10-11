@@ -145,7 +145,7 @@
   * [22、modal的底层实现](uikit/22modalde-di-ceng-shi-xian.md)
   * [23、iOS中的事件 （一）](uikit/23ioszhong-de-shi-jian.md)
   * [24、iOS中的事件 （二）](uikit/24ioszhong-de-shi-jian-ff08-er-ff09.md)
-  * [25、iOS中的事件 （三）](uikit/25ioszhong-de-shi-jian-ff08-san-ff09.md)
+  * [25、hittest和pointinside方法](uikit/25ioszhong-de-shi-jian-ff08-san-ff09.md)
 * [Hybrid](iosyu-javascript-tong-xin.md)
   * [1、JSBind&& WebViewJavascriptBridge](1jsbindandand-webviewjavascriptbridge.md)
   * [2、UIWebView显示的网页点击图片保存图片到相册](2uiwebviewxian-shi-de-wang-ye-dian-ji-tu-pian-bao-cun-tu-pian-dao-xiang-ce.md)

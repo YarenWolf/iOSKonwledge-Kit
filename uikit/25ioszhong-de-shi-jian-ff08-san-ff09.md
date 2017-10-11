@@ -1,2 +1,8 @@
-# 如何寻找最合适处理触摸的view
+# hittest和pointinside方法
+
+
+
+
+
+
 
