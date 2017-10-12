@@ -121,15 +121,11 @@
 
 给出 一个Demo地址：
 
-
-
-
-
 实验：
 
 在控制器（ViewController）的view上先添加一个UIButton，再添加一个自定义的UIView\(ShelterView\),盖在button的上面。
 
-需求
+需求：点击ShelterView上的点，如果点也在UIButton范围上则交给UIButton处理事件，如果不在UIButton上则交给ShelterView处理，如果点击屏幕上除了ShelterView之外的点则交给控制器的view处理。
 
 
 
