@@ -77,17 +77,11 @@
 
 因为事件的响应者链条就是当用户操作屏幕会产生一个事件，该事件被系统加入到事件队列中去，UIApplication对象会将事件队列中最早加入进去的事件传递给window，然后window找到最合适的view去处理事件。因此任何事件都会先通过KeyWindow对象去判断并找到最合适的view
 
-
-
 ## 2个重要的方法
 
 * -\(BOOL\)pointInside:\(CGPoint\)point withEvent:\(UIEvent \*\)event： 用来判断触摸点是否在控件上
 
 * -\(UIView \*\)hitTest:\(CGPoint\)point withEvent:\(UIEvent \*\)event： 用来判断控件是否接受事件以及找到最合适的view
-
-
-
-
 
 ## 模仿系统实现找出最合适的view
 
@@ -100,7 +94,7 @@
  2、触摸点在自己身上
  3、从后往前遍历子控件，重复前面2个步骤
  4、如果没有符合条件的子控件，那么就自己最合适
- 
+
  */
 
 -(UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event{
@@ -111,7 +105,7 @@
     if (![self pointInside:point withEvent:event]) {
         return nil;
     }
-    
+
     for (NSUInteger index = self.subviews.count - 1; index >= 0; index--) {
         CGPoint childViewPoint = [self convertPoint:point toView:self.subviews[index]];
         UIView *fitestView = [self.subviews[index] hitTest:childViewPoint withEvent:event];
@@ -120,7 +114,7 @@
         }
         return nil;
     }
-    
+
     return self;
 }
 ```
