@@ -121,7 +121,7 @@ hittest和pointinside方法
 }
 ```
 
-给出 一个Demo地址：
+给出 一个Demo地址：[https://github.com/FantasticLBP/BlogDemos/tree/master/模仿系统找出事件的最佳响应者](https://github.com/FantasticLBP/BlogDemos/tree/master/模仿系统找出事件的最佳响应者 "模仿系统找出事件的最佳响应者")
 
 实验：
 
@@ -176,10 +176,6 @@ hittest和pointinside方法
 
 @end
 ```
-
-  
-  
-
 
 要看完整Demo，地址为：[https://github.com/FantasticLBP/BlogDemos/tree/master/hitTest的神奇效果（一）](https://github.com/FantasticLBP/BlogDemos/tree/master/hitTest的神奇效果（一） "hitTest的神奇效果")
 
