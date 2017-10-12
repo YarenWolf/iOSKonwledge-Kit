@@ -119,5 +119,17 @@
 }
 ```
 
+给出 一个Demo地址：
+
+
+
+
+
+实验：
+
+在控制器（ViewController）的view上先添加一个UIButton，再添加一个自定义的UIView\(ShelterView\),盖在button的上面。
+
+需求
+
 
 
