@@ -14,7 +14,8 @@
 
 在控制器的界面上加5个颜色不同的view，每个view自定义view去实现，因此在不同的view上的手势就可以由不同的view拦截到。
 
-![](https://raw.githubusercontent.com/FantasticLBP/iOSKonwledge-Kit/master/assets/Simulator%20Screen%20Shot%20-%20iPhone%206s%20Plus%20-%202017-10-11%20at%2010.14.37.png)
+![UI效果图](https://raw.githubusercontent.com/FantasticLBP/iOSKonwledge-Kit/master/assets/Simulator%20Screen%20Shot%20-%20iPhone%206s%20Plus%20-%202017-10-11%20at%2010.14.37.png)
+
 
 ```
 //KeyWindow
