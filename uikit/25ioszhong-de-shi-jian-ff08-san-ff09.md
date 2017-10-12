@@ -152,17 +152,17 @@ hittest和pointinside方法
     思路：在view的hitTest方法中寻找最合适的view，那么返回nil告诉系统view不是最合适的view，那么系统则认为按钮是最合适的view
     return nil;
      */
-    
+
     //需求，在view上点击，如果点击范围在button上则由button进行处理事件；否则交给view处理事件
-    
+
     UIView *button = nil;
     for (UIView *subView in self.superview.subviews) {
         //判断事件的点是否在按钮上
         if ([subView isKindOfClass:[UIButton class]]) {
             button =subView;
         }
-        
-        
+
+
         CGPoint btnPoint = [self convertPoint:point toView:button];
         if ([button pointInside:btnPoint withEvent:event]) {
             return button;
@@ -177,5 +177,9 @@ hittest和pointinside方法
 @end
 ```
 
+  
+  
 
+
+要看完整Demo，地址为：[https://github.com/FantasticLBP/BlogDemos/tree/master/hitTest的神奇效果（一）](https://github.com/FantasticLBP/BlogDemos/tree/master/hitTest的神奇效果（一） "hitTest的神奇效果")
 
