@@ -1,6 +1,4 @@
-```
-hittest和pointinside方法
-```
+# hitTest和pointInside方法
 
 ### hittest方法
 
