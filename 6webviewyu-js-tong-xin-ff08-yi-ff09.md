@@ -28,7 +28,12 @@ Native调用JS是通过UIWebView的stringByEvaluatingJavaScriptFromString 方法
 
 问题来了？？
 
-发起这样1个网络请求有2种方式。1:location.href .2：iframe。通过location.href有个问题，就是如果js多次调用原生的方法也就是location.href的值多次变化，Native端只能接受到最后一次请求，前面的请求会被忽略掉。
+发起这样1个网络请求有2种方式。1:location.href .2：iframe。那么选用哪种方式？
+
+
+
+* 通过location.href有个问题，就是如果js多次调用原生的方法也就是location.href的值多次变化，Native端只能接受到最后一次请求，前面的请求会被忽略掉。
+* 很多主流框架都适用iframe的方式。比如WebViewJavascriptBridge框架。
 
 使用ifrmae方式，以调用Native端的方法。
 
@@ -45,11 +50,15 @@ Native调用JS是通过UIWebView的stringByEvaluatingJavaScriptFromString 方法
  },100);
 ```
 
-举个🌰：
+举个🌰：（[https://github.com/FantasticLBP/BlogDemos/tree/master/UIWebView迁移到WKWebView](https://github.com/FantasticLBP/BlogDemos/tree/master/UIWebView迁移到WKWebView "Demo地址")）
 
 需求：
 
 原生端提供一个UIWebView，加载一个网页内容。还有1个按钮，按钮点击一下网页增加一段段落文本。网页上有2个输入框，用户输入数字，点击按钮，js将用户输入的参数告诉native端，native去执行加法，计算完成后将结果返回给js
+
+
+
+实现关键代码
 
 ```
 //index.html
@@ -118,17 +127,16 @@ Native调用JS是通过UIWebView的stringByEvaluatingJavaScriptFromString 方法
     NSInteger par2 = [[pars[1] substringFromIndex:5] integerValue];
     if ([scheme isEqualToString:@"jsbridge"]) {
         //发现scheme是JSBridge，那么就是自定义的URLscheme，不去加载网页内容而拦截去处理事件。
-        
+
         if ([method isEqualToString:@"plus"]) {
            NSInteger result = [self plusparm:par1 parm2:par2];
             [self.webView stringByEvaluatingJavaScriptFromString:[NSString stringWithFormat:@"receiveValue(%@);",@(result)]];
         }
-        
+
         return NO;
     }
     return YES;
 }
-
 ```
 
 
