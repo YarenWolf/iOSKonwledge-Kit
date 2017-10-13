@@ -1,13 +1,13 @@
-# WebView与JS通信探索（一）
+
 
 #### UIWebView加载网页内容
 
 可以通过本地文件、url等方式。
 
 ```
- NSString *htmlPath = [[NSBundle mainBundle] pathForResource:@"index" ofType:@"html"];   
- NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL fileURLWithPath:htmlPath]];
- [self.webView loadRequest:request];
+NSString *htmlPath = [[NSBundle mainBundle] pathForResource:@"index" ofType:@"html"];
+NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL fileURLWithPath:htmlPath]];
+[self.webView loadRequest:request];
 ```
 
 #### Native调用JavaScript
@@ -33,16 +33,16 @@ Native调用JS是通过UIWebView的stringByEvaluatingJavaScriptFromString 方法
 使用ifrmae方式，以调用Native端的方法。
 
 ```
- var iFrame;
- iFrame = document.createElement("iframe");
- iFrame.style.height = "1px";
- iFrame.style.width = "1px";
- iFrame.style.display = "none";
- iFrame.src = url;
- document.body.appendChild(iFrame);
- setTimeout(function(){
-    iFrame.remove();
- },100);
+var iFrame;
+iFrame = document.createElement("iframe");
+iFrame.style.height = "1px";
+iFrame.style.width = "1px";
+iFrame.style.display = "none";
+iFrame.src = url;
+document.body.appendChild(iFrame);
+setTimeout(function(){
+iFrame.remove();
+},100);
 ```
 
 举个🌰：
@@ -56,40 +56,40 @@ Native调用JS是通过UIWebView的stringByEvaluatingJavaScriptFromString 方法
 
 
 <html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=utf8">
-            <script language="javascript">
-                function loadURL(url){
-                    var iFrame;
-                    iFrame = document.createElement("iframe");
-                    iFrame.style.height = "1px";
-                    iFrame.style.width = "1px";
-                    iFrame.style.display = "none";
-                    iFrame.src = url;
-                    document.body.appendChild(iFrame);
-                    setTimeout(function(){
-                        iFrame.remove();
-                    },100);
-                }
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf8">
+<script language="javascript">
+function loadURL(url){
+var iFrame;
+iFrame = document.createElement("iframe");
+iFrame.style.height = "1px";
+iFrame.style.width = "1px";
+iFrame.style.display = "none";
+iFrame.src = url;
+document.body.appendChild(iFrame);
+setTimeout(function(){
+iFrame.remove();
+},100);
+}
 
 
-                function receiveValue(value){
-                    alert("从原生拿到加法结果为："+value);
-                }
+function receiveValue(value){
+alert("从原生拿到加法结果为："+value);
+}
 
-                function check() {
-                    var par1 = document.getElementById("par1").value;
-                    var par2 = document.getElementById("par2").value;
-                    loadURL("JSBridge://plus?par1=" + par1 +"&par2=" + par2);
-                }
+function check() {
+var par1 = document.getElementById("par1").value;
+var par2 = document.getElementById("par2").value;
+loadURL("JSBridge://plus?par1=" + par1 +"&par2=" + par2);
+}
 
-            </script>
-            </head>
+</script>
+</head>
 
-    <body>
-        <input type="text" placeholder="请输入数字"  id="par1"／> + <input type="text" placeholder="请输入数字"  id="par2"／> 
-        <input type="button" value="=" onclick="check()" />
-    </body>
+<body>
+<input type="text" placeholder="请输入数字"  id="par1"／> + <input type="text" placeholder="请输入数字"  id="par2"／>
+<input type="button" value="=" onclick="check()" />
+</body>
 </html>
 
 
@@ -97,39 +97,42 @@ Native调用JS是通过UIWebView的stringByEvaluatingJavaScriptFromString 方法
 //ViewController.m
 
 -(void)addContentToWebView{
-    NSString *jsString = @" var pNode = document.createElement(\"p\"); pNode.innerText = \"我是由原生代码调用js后将一段文件添加到html上，也就是注入\";document.body.appendChild(pNode);";
-    [self.webView stringByEvaluatingJavaScriptFromString:jsString];
+NSString *jsString = @" var pNode = document.createElement(\"p\"); pNode.innerText = \"我是由原生代码调用js后将一段文件添加到html上，也就是注入\";document.body.appendChild(pNode);";
+[self.webView stringByEvaluatingJavaScriptFromString:jsString];
 }
 
 
 -(NSInteger)plusparm:(NSInteger)par1 parm2:(NSInteger)par2{
-    return par1 + par2;
+return par1 + par2;
 }
 
 
 #pragma mark -- UIWebViewDelegate
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType{
-    NSURL *url = request.URL;
-    NSString *scheme = url.scheme;
-    NSString *method = url.host;
-    NSString *parms =  url.query;
-    NSArray *pars = [parms componentsSeparatedByString:@"&"];
-    NSInteger par1 = [[pars[0] substringFromIndex:5] integerValue];
-    NSInteger par2 = [[pars[1] substringFromIndex:5] integerValue];
-    if ([scheme isEqualToString:@"jsbridge"]) {
-        //发现scheme是JSBridge，那么就是自定义的URLscheme，不去加载网页内容而拦截去处理事件。
-        
-        if ([method isEqualToString:@"plus"]) {
-           NSInteger result = [self plusparm:par1 parm2:par2];
-            [self.webView stringByEvaluatingJavaScriptFromString:[NSString stringWithFormat:@"receiveValue(%@);",@(result)]];
-        }
-        
-        return NO;
-    }
-    return YES;
+NSURL *url = request.URL;
+NSString *scheme = url.scheme;
+NSString *method = url.host;
+NSString *parms =  url.query;
+NSArray *pars = [parms componentsSeparatedByString:@"&"];
+NSInteger par1 = [[pars[0] substringFromIndex:5] integerValue];
+NSInteger par2 = [[pars[1] substringFromIndex:5] integerValue];
+if ([scheme isEqualToString:@"jsbridge"]) {
+//发现scheme是JSBridge，那么就是自定义的URLscheme，不去加载网页内容而拦截去处理事件。
+
+if ([method isEqualToString:@"plus"]) {
+NSInteger result = [self plusparm:par1 parm2:par2];
+[self.webView stringByEvaluatingJavaScriptFromString:[NSString stringWithFormat:@"receiveValue(%@);",@(result)]];
+}
+
+return NO;
+}
+return YES;
 }
 
 ```
 
+#### 同步和异步问题
 
+js调用native是通过在一个网页上插入一个iframe，这个iframe插入完了就完了，执行的结果需要native另外调用stringByEvaluatingJavaScriptString 方法通知js。这明显是1个异步的调用。而stringByEvaluatingJavaScriptString方法会返回执行js脚本的结果。本质上是一个同步调用
 
+所以js call native是异步，native call js是同步。
