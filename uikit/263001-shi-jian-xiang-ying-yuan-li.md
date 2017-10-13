@@ -4,7 +4,7 @@
 
 #### 响应者链条
 
-![](/assets/响应者链条.png)
+![响应者链条](https://raw.githubusercontent.com/FantasticLBP/iOSKonwledge-Kit/master/assets/响应者链条.png)
 
 #### 事件传递的完整过程
 
