@@ -45,19 +45,11 @@ Native调用JS是通过UIWebView的stringByEvaluatingJavaScriptFromString 方法
  },100);
 ```
 
-
-
-
-
-
-
 举个🌰：
 
 需求：
 
 原生端提供一个UIWebView，加载一个网页内容。还有1个按钮，按钮点击一下网页增加一段段落文本。网页上有2个输入框，用户输入数字，点击按钮，js将用户输入的参数告诉native端，native去执行加法，计算完成后将结果返回给js
-
-
 
 ```
 //index.html
@@ -77,23 +69,23 @@ Native调用JS是通过UIWebView的stringByEvaluatingJavaScriptFromString 方法
                     document.body.appendChild(iFrame);
                     setTimeout(function(){
                         iFrame.remove();
-            	    },100);
+                    },100);
                 }
-            	
 
-            	function receiveValue(value){
-            		alert("从原生拿到加法结果为："+value);
-            	}
-            
-            	function check() {
-            		var par1 = document.getElementById("par1").value;
-            		var par2 = document.getElementById("par2").value;
-                	loadURL("JSBridge://plus?par1=" + par1 +"&par2=" + par2);
-            	}
+
+                function receiveValue(value){
+                    alert("从原生拿到加法结果为："+value);
+                }
+
+                function check() {
+                    var par1 = document.getElementById("par1").value;
+                    var par2 = document.getElementById("par2").value;
+                    loadURL("JSBridge://plus?par1=" + par1 +"&par2=" + par2);
+                }
 
             </script>
             </head>
-    
+
     <body>
         <input type="text" placeholder="请输入数字"  id="par1"／> + <input type="text" placeholder="请输入数字"  id="par2"／> 
         <input type="button" value="=" onclick="check()" />
@@ -113,11 +105,31 @@ Native调用JS是通过UIWebView的stringByEvaluatingJavaScriptFromString 方法
 -(NSInteger)plusparm:(NSInteger)par1 parm2:(NSInteger)par2{
     return par1 + par2;
 }
+
+
+#pragma mark -- UIWebViewDelegate
+- (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType{
+    NSURL *url = request.URL;
+    NSString *scheme = url.scheme;
+    NSString *method = url.host;
+    NSString *parms =  url.query;
+    NSArray *pars = [parms componentsSeparatedByString:@"&"];
+    NSInteger par1 = [[pars[0] substringFromIndex:5] integerValue];
+    NSInteger par2 = [[pars[1] substringFromIndex:5] integerValue];
+    if ([scheme isEqualToString:@"jsbridge"]) {
+        //发现scheme是JSBridge，那么就是自定义的URLscheme，不去加载网页内容而拦截去处理事件。
+        
+        if ([method isEqualToString:@"plus"]) {
+           NSInteger result = [self plusparm:par1 parm2:par2];
+            [self.webView stringByEvaluatingJavaScriptFromString:[NSString stringWithFormat:@"receiveValue(%@);",@(result)]];
+        }
+        
+        return NO;
+    }
+    return YES;
+}
+
 ```
-
-
-
-
 
 
 
