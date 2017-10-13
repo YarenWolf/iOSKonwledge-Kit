@@ -30,8 +30,6 @@ Native调用JS是通过UIWebView的stringByEvaluatingJavaScriptFromString 方法
 
 发起这样1个网络请求有2种方式。1:location.href .2：iframe。那么选用哪种方式？
 
-
-
 * 通过location.href有个问题，就是如果js多次调用原生的方法也就是location.href的值多次变化，Native端只能接受到最后一次请求，前面的请求会被忽略掉。
 * 很多主流框架都适用iframe的方式。比如WebViewJavascriptBridge框架。
 
@@ -55,8 +53,6 @@ Native调用JS是通过UIWebView的stringByEvaluatingJavaScriptFromString 方法
 需求：
 
 原生端提供一个UIWebView，加载一个网页内容。还有1个按钮，按钮点击一下网页增加一段段落文本。网页上有2个输入框，用户输入数字，点击按钮，js将用户输入的参数告诉native端，native去执行加法，计算完成后将结果返回给js
-
-
 
 实现关键代码
 
@@ -140,4 +136,10 @@ Native调用JS是通过UIWebView的stringByEvaluatingJavaScriptFromString 方法
 ```
 
 
+
+#### 同步和异步问题
+
+js调用native是通过在一个网页上插入一个iframe，这个iframe插入完了就完了，执行的结果需要native另外调用stringByEvaluatingJavaScriptString 方法通知js。这明显是1个异步的调用。而stringByEvaluatingJavaScriptString方法会返回执行js脚本的结果。本质上是一个同步调用
+
+所以js call native是异步，native call js是同步。
 
