@@ -1,16 +1,17 @@
 # 基本图形绘制
 
-
-
-
-
 #### 图形上下文
 
-Graphics Context：是一个CGContextRef类型的数据
+1. Graphics Context：是一个**CGContextRef**类型的数据
+2. 作用：
+   1. 保存绘图信息、绘图状态
+   2. 决定绘制的输出目标（绘制到什么地方去？）输出目标可以是PDF文件、Bitmap、打印机、显示器窗口、Layer、
 
 
 
 
 
+绘制好的图形-&gt;保存到上下文-&gt;渲染出来。
 
+相同的一套绘图序列，制定不同的CGContextRef，就会可以将相同的图像绘制到不同的目标上。
 
