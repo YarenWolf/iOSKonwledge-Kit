@@ -1,7 +1,5 @@
 # 绘图的一些tips
 
-
-
 1. 在绘图时一般要在控件的drawRect方法内部获取上下文，所以有些情况如果给一个控件赋值后再去根据值绘制图形，就要调用 setNeedsDisplay方法，这个方法的底层会调用控件的drawRect方法。如果手动调用drawRect方法是拿不到上下文的
 
 下载进度条Demo
@@ -9,7 +7,6 @@
 ![](/assets/Simulator Screen Shot - iPhone 6s Plus - 2017-10-15 at 21.49.58.png)
 
 ```
-
 //VC
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -36,7 +33,7 @@
     CGFloat startA = -M_PI/2;
     CGFloat endA = -M_PI/2 + self.progress*2*M_PI;
     UIBezierPath *path = [UIBezierPath bezierPathWithArcCenter:center radius:radius startAngle:startA endAngle:endA clockwise:YES];
-    
+
     [path stroke];
 }
 
@@ -50,10 +47,6 @@
 
 @end
 ```
-
-
-
-
 
 
 
