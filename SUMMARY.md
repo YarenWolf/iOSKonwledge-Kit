@@ -151,6 +151,7 @@
     * [01-基本图形绘制](uikit/01ji-ben-tu-xing-hui-zhi.md)
     * [02-绘图的一些Demo](uikit/02hui-tu-de-yi-xie-demo.md)
     * [03-绘制文字](uikit/03hui-zhi-wen-zi.md)
+    * [04-绘制图片以及矩形](uikit/04hui-zhi-tu-pian-yi-ji-ju-xing.md)
 * [Hybrid](iosyu-javascript-tong-xin.md)
   * [1、JSBind&& WebViewJavascriptBridge](1jsbindandand-webviewjavascriptbridge.md)
   * [2、UIWebView显示的网页点击图片保存图片到相册](2uiwebviewxian-shi-de-wang-ye-dian-ji-tu-pian-bao-cun-tu-pian-dao-xiang-ce.md)
