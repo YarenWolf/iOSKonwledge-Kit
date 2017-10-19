@@ -156,6 +156,7 @@
     * [06-图形上下文状态栈](uikit/06tu-xing-shang-xia-wen-zhuang-tai-zhan.md)
     * [07-上下文的矩阵操作](uikit/07shang-xia-wen-de-ju-zhen-cao-zuo.md)
     * [08-给图片添加水印](uikit/08gei-tu-pian-tian-jia-shui-yin.md)
+    * [09-圆形图片裁剪](uikit/09tu-pian-yuan-jiao-ju-xing.md)
 * [Hybrid](iosyu-javascript-tong-xin.md)
   * [1、JSBind&& WebViewJavascriptBridge](1jsbindandand-webviewjavascriptbridge.md)
   * [2、UIWebView显示的网页点击图片保存图片到相册](2uiwebviewxian-shi-de-wang-ye-dian-ji-tu-pian-bao-cun-tu-pian-dao-xiang-ce.md)
