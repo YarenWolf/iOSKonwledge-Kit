@@ -16,11 +16,7 @@
 >
 > 7、关闭之前开始的图形上下文
 
-
-
 ![](/assets/tupiancaijian)
-
-
 
 写个裁剪带有边框的图片分类，只需要传递一些参数就好
 
@@ -49,16 +45,16 @@
 
 @implementation UIImage (ClipBorderColor)
 +(UIImage *)imageWithBorderWidth:(CGFloat)borderWidth borderColor:(UIColor *)borderColor image:(UIImage *)image{
-    
+
     //3、开启图片上下文
     CGRect imageSize = CGRectMake(0, 0, image.size.width + 2*borderWidth, image.size.height + 2*borderWidth);
     UIGraphicsBeginImageContextWithOptions(CGSizeMake(image.size.width + 2*borderWidth, image.size.height + 2*borderWidth), NO, 0);
-    
+
     //4、绘制大圆（带有背景颜色的底层大圆）
     UIBezierPath *path = [UIBezierPath bezierPathWithOvalInRect:imageSize];
     [borderColor set];
     [path fill];
-    
+
     //5、绘制小圆
     path = [UIBezierPath bezierPathWithOvalInRect:CGRectMake(borderWidth, borderWidth, image.size.width , image.size.height)];
     //设置裁剪
@@ -67,21 +63,13 @@
     [image drawInRect:CGRectMake(borderWidth, borderWidth, image.size.width , image.size.height)];
     //6、从当前上下文得到一张新的图片
     UIImage *gotImage = UIGraphicsGetImageFromCurrentImageContext();
-    
+
     //7、关闭上下文
     UIGraphicsEndImageContext();
     return gotImage;
 }
 @end
 ```
-
-
-
-
-
-
-
-
 
 
 
