@@ -159,6 +159,7 @@
     * [09-圆形图片裁剪](uikit/09tu-pian-yuan-jiao-ju-xing.md)
     * [10-裁剪带圆形边框的图片](uikit/10cai-jian-dai-yuan-xing-bian-kuang-de-tu-pian.md)
     * [11-模仿系统截图](uikit/11mo-fang-xi-tong-jie-tu.md)
+    * [12-选定区域截图](uikit/12xuan-ding-qu-yu-jie-tu.md)
 * [Hybrid](iosyu-javascript-tong-xin.md)
   * [1、JSBind&& WebViewJavascriptBridge](1jsbindandand-webviewjavascriptbridge.md)
   * [2、UIWebView显示的网页点击图片保存图片到相册](2uiwebviewxian-shi-de-wang-ye-dian-ji-tu-pian-bao-cun-tu-pian-dao-xiang-ce.md)
