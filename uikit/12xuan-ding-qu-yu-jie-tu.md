@@ -6,17 +6,17 @@
 
 * 手势滑动过程中计算现在雨刚开始的位置的差，就是需要裁剪的宽、高
 
-*  设置一个半透明的view，手势移动改变view的frame
+* 设置一个半透明的view，手势移动改变view的frame
 
-*  开始图片上下文
-
-* 上下文大小就是手势滑动所形成的区域
+* 开始图片上下文。上下文大小就是手势滑动所形成的区域
 
 * 设置上下文裁剪区域
 
-*  将图片的layer绘制到上下文中
+* 将图片的layer绘制到上下文中
 
+* 关闭图片上下文
 
+* 将半透明的view移除掉。
 
 Demo
 
@@ -35,7 +35,7 @@ Demo
     CGFloat offsetWidth = currentLoaction.x - self.startPoint.x;
     CGFloat offsetHeight = currentLoaction.y - self.startPoint.y;
     CGRect rect = CGRectMake(self.startPoint.x, self.startPoint.y, offsetWidth, offsetHeight);
-    
+
     if (pan.state == UIGestureRecognizerStateBegan) {
         self.startPoint = [pan locationInView:self.view];
     }else if(pan.state == UIGestureRecognizerStateChanged){
@@ -50,16 +50,16 @@ Demo
         CGContextRef ctx = UIGraphicsGetCurrentContext();
         UIBezierPath *path = [UIBezierPath bezierPathWithRect:rect];
         [path addClip];
-        
+
         CGContextAddPath(ctx, path.CGPath);
         [self.imageView.layer renderInContext:ctx];
-        
-        
+
+
         UIImage *imageGot = UIGraphicsGetImageFromCurrentImageContext();
-        
+
         self.imageView.image = imageGot;
         UIGraphicsEndImageContext();
-        
+
          [self.coverView removeFromSuperview];
     }
 }
