@@ -13,8 +13,6 @@
 * 将图片显示出来
 * 关闭上下文
 
-
-
 Demo
 
 ```
@@ -27,9 +25,9 @@ Demo
 
 
 -(void)panGestureChange:(UIPanGestureRecognizer *)pan{
-    
+
     //图片区域擦除效果
-    
+
     //1、获取手势所在的点
     CGPoint position = [pan locationInView:self.imageView];
     //2、开启图片上下文，确定上下文所在的rect
@@ -38,10 +36,10 @@ Demo
     UIGraphicsBeginImageContextWithOptions(self.imageView.bounds.size, NO, 0);
     CGContextRef ctx = UIGraphicsGetCurrentContext();
 
-    
+
     //3、将图片绘制到上下文中
     [self.imageView.layer renderInContext:ctx];
-    
+
     //4、将手势所在的区域裁剪掉
     CGContextClearRect(ctx, rect);
     //5、从当前上下文中得到图片
