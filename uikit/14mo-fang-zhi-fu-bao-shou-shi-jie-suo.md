@@ -1,8 +1,8 @@
 # 模仿支付宝手势解锁
 
 > 支付宝的手势解锁主要利用图形绘制和手势2个知识点即可完成
-
-
+>
+> c语言声明的枚举值是以k开头的
 
 主要思路：
 
@@ -100,8 +100,8 @@
     CGFloat btnWH = 80;
     int columns = 3;
     int rows = 3;
-    
-    
+
+
     for (int i=0; i<9; i++) {
         UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
         CGFloat x = (i%3)*btnWH +  (i%3)*((BGViewWidth- columns * btnWH)/2) ;
@@ -114,8 +114,8 @@
         [self
          addSubview:button];
     }
-    
-    
+
+
 }
 
 
@@ -126,7 +126,7 @@
 
 -(void)drawRect:(CGRect)rect{
     UIBezierPath *path = [UIBezierPath bezierPath];
-    
+
     if (self.selectedButttons.count <= 0) {
         return ;
     }
@@ -139,7 +139,7 @@
         }
     }
     [path addLineToPoint:self.freePoint];
-    
+
     [[UIColor greenColor] set];
     [path setLineWidth:10];
     [path setLineJoinStyle:kCGLineJoinRound];
@@ -211,8 +211,6 @@
 
 @end
 ```
-
-
 
 
 
