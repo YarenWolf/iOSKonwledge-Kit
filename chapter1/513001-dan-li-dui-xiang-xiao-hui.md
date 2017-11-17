@@ -18,11 +18,6 @@
 
 @class XLRobotImageView;
 
-@protocol XLRobotImageViewDelegate<NSObject>
-
--(void)xlRobotImageView:(XLRobotImageView *)xlRobotImageView didClickToConsult:(UITapGestureRecognizer *)gesture;
-
-@end
 
 @interface XLRobotImageView : UIImageView
 
@@ -51,12 +46,15 @@
  */
 -(void)stopAnimation;
 
-@property (nonatomic, weak) id<XLRobotImageViewDelegate> delegate;
 
 @end
 
 
+
+
 #import "XLRobotImageView.h"
+#import "MainViewController.h"
+#import "XLRobotViewController.h"
 
 @interface XLRobotImageView()
 
@@ -74,7 +72,7 @@ static XLRobotImageView *instance = nil;
 static dispatch_once_t onceToken;
 
 +(XLRobotImageView *)sharedInstance{
-
+    
     dispatch_once(&onceToken, ^{
         instance = [[self alloc] init];
         [instance initate];
@@ -86,13 +84,13 @@ static dispatch_once_t onceToken;
 
 
 +(void)tearDown{
-
+    
     instance = nil;
     onceToken = 0l;
 }
 
 -(void)initate{
-
+    
     UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(showAnimation:)];
     self.userInteractionEnabled = YES;
     [self addGestureRecognizer:tapGesture];
@@ -100,58 +98,71 @@ static dispatch_once_t onceToken;
 }
 
 -(void)showAnimation:(UITapGestureRecognizer *)gesture{
-
+    
     CGRect rect = self.frame;
-
+    
     if (rect.origin.x == 20) {
-
-        if (self.delegate && [self.delegate respondsToSelector:@selector(xlRobotImageView:didClickToConsult:)]) {
-            [self.delegate xlRobotImageView:self didClickToConsult:gesture];
+        //1、先让小乐机器人回到边上
+        [self stopAnimation];
+        //2、找到当前window的根控制器
+        MainViewController *rootVC = [UIApplication sharedApplication].keyWindow.rootViewController;
+        //3、当前的根控制器应该是MainViewController，且找到当前选中的index
+        NSUInteger selectedIndex = rootVC.selectedIndex;
+        NSArray *vcs = rootVC.viewControllers;
+        
+        UINavigationController *navi = nil;
+        //4、根据index找到当前的UITabBarController的根控制器
+        if (vcs.count > 0 ) {
+            navi = [vcs objectAtIndex:selectedIndex];
         }
+        //5、将目的控制器压入栈中
+        XLRobotViewController *vc = [[XLRobotViewController alloc] init];
+        [navi pushViewController:vc animated:YES];
+
     }else{
         [self startAnimationWithDuration:self.duration];
     }
 }
 
 -(void)initiateAnimationWithDuration:(NSTimeInterval)duration{
-
+    
     self.duration = duration>0?duration:XLRobotAnimationDuration;
-
+    
     self.frame = CGRectMake(20, BoundHeight/2 - 115/4, 36, 115/2);
-
+    
     [self showRobotWithDuration:self.duration];
 }
 
 
 -(void)startAnimationWithDuration:(NSTimeInterval)duration{
-
+    
     [UIView animateWithDuration:1 animations:^{
         self.transform = CGAffineTransformIdentity;
     }];
-
+    
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         if (!self.cancelAnimation) {
              [self showRobotWithDuration:duration];
         }
     });
-
+    
 }
 
 
 -(void)showRobotWithDuration:(NSTimeInterval)duration{
-
+    
     //1、先播放眨眼睛、摆手动画
     NSMutableArray *images = [NSMutableArray array];
     for (NSUInteger index = 1; index < 10; index++) {
         NSString *imagename = [NSString stringWithFormat:@"XLRobot_%zd",index];
         [images addObject:[UIImage imageNamed:imagename]];
     }
-
+    
     self.animationImages = images;
     self.animationRepeatCount = 0;
     self.animationDuration = 2;
     [self startAnimating];
-
+    
     //2、暂停眨眼睛、摆手动画
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         if (!self.cancelAnimation) {
@@ -159,8 +170,8 @@ static dispatch_once_t onceToken;
             self.image = [UIImage imageNamed:@"XLRobot_9"];
         }
     });
-
-
+    
+    
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)( duration   * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         if (!self.cancelAnimation) {
             [UIView animateWithDuration:1 animations:^{
@@ -169,7 +180,7 @@ static dispatch_once_t onceToken;
             }];
         }
     });
-
+    
 }
 
 -(void)stopAnimation{
@@ -183,6 +194,7 @@ static dispatch_once_t onceToken;
 
 
 @end
+
 ```
 
 用法
@@ -192,10 +204,7 @@ static dispatch_once_t onceToken;
 @property (nonatomic, strong) XLRobotImageView *robotView;
 
 
--(void)viewWillDisappear:(BOOL)animated{
-    [super viewWillDisappear:animated];
-    [self.robotView stopAnimation];
-}
+
 
 -(void)showXLRobot{
     [[UIApplication sharedApplication].keyWindow addSubview:self.robotView];
