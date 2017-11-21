@@ -47,13 +47,15 @@
 ```
 SeriesLessonVC *vc = [[SeriesLessonVC alloc] init];
 vc.seriesModel = model;
-                    
+
 NSArray *vcs = self.navigationController.viewControllers;
 NSMutableArray *currentControllers = [NSMutableArray arrayWithArray:vcs];
 [currentControllers removeLastObject];
 [currentControllers addObject:vc];
 [self.navigationController setViewControllers:currentControllers animated:YES];
 ```
+
+
 
 
 
