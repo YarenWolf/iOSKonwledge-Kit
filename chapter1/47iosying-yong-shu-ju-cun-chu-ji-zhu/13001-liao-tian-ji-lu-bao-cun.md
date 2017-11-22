@@ -6,13 +6,15 @@
 
 地址：[https://github.com/nicklockwood/FastCoding](https://github.com/nicklockwood/FastCoding "A faster and more flexible binary file format replacement for NSCoding, Property Lists and JSON")
 
+
+
 用法：
 
 * 导入FastCoder.h文件
+
 * 使用我封装好的下面的办法
 
 ```
-
 #import <Foundation/Foundation.h>
 #import "FastCoder.h"
 
@@ -38,12 +40,12 @@
     if (data.count > 30) {
         needsData = [data subarrayWithRange:NSMakeRange(0, 30)];
     }
-    
+
     NSString *path = [[[self class] documentsDirectory] stringByAppendingPathComponent:@"XLRobotChat.fast"];
     NSData *encodedData = [FastCoder dataWithRootObject:needsData];
     [encodedData writeToFile:path atomically:YES];
-    
-    
+
+
 }
 
 
@@ -58,8 +60,6 @@
 }
 
 @end
-
-
 ```
 
 
