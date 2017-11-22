@@ -2,11 +2,7 @@
 
 > 有个需求就是在App的Tab的首页需要显示浮动着的交互动画的机器人，该机器人具有机器学习的特点，因此可以不断的与用户交互，怎么样实现只浮动在App的5个tab首页，当点击跳转不是首页的时候不需要显示
 
-
-
 因为5个tab上是5个自定义的导航控制器，所以我们可以监听导航控制器的push和pop事件，并且在push和pop的事件中判断当前控制器的字控制器的数量来判断窗口上的机器人是否需要显示，其实这里要说的就是如何监听push和pop事件。
-
-
 
 ```
 /**
@@ -18,7 +14,7 @@
 {
     //    if (viewController != 栈底控制器) {
     if (self.viewControllers.count > 0) {
-        
+
         for (UIView *view in [UIApplication sharedApplication].keyWindow.subviews) {
             if ([view isKindOfClass:[XLRobotImageView class]]) {
                 if (self.viewControllers.count > 0) {
@@ -27,40 +23,48 @@
                 }
             }
         }
-        
-        
+
+
         // 当push这个子控制器时, 隐藏底部的工具条
         viewController.hidesBottomBarWhenPushed = YES;
-        
+
         UIButton *backButton = [UIButton buttonWithType:UIButtonTypeCustom];
         backButton.frame = CGRectMake(0, 0, 44, 44);
         [backButton setImage:[UIImage imageNamed:@"backArror"] forState:UIControlStateNormal];
         [backButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-        
+
         backButton.adjustsImageWhenHighlighted = NO;
         backButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
-        
+
         backButton.titleLabel.font = [UIFont systemFontOfSize:16];
-        
+
         [backButton addTarget:self action:@selector(back) forControlEvents:UIControlEventTouchUpInside];
         [backButton setImageEdgeInsets:UIEdgeInsetsMake(0, 5 * BoundWidth/375, 0, 0)];
         viewController.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:backButton];
     }
-    
+
     // 将viewController压入栈中
     [super pushViewController:viewController animated:animated];
 }
 
 
 -(UIViewController *)popViewControllerAnimated:(BOOL)animated{
-    if (self.viewControllers.count == 2) {
-        [[UIApplication sharedApplication].keyWindow addSubview:self.robotView];
+    //在5个tab的首页需要显示
+    NSArray *vcs = self.viewControllers;
+    UIViewController *topVC = vcs[vcs.count - 2];
+    if (self.viewControllers.count >= 2) {
+        if ([topVC isKindOfClass:[MZPregnancyHomeController class]] ||
+            [topVC isKindOfClass:[HLSettingViewController class]] ||
+            [topVC isKindOfClass:[BBXEditViewController class]] ||
+            [topVC isKindOfClass:[HLFriendTopicController class]] ||
+            [topVC isKindOfClass:[MZBookViewController class]]
+            ) {
+            [[UIApplication sharedApplication].keyWindow addSubview:self.robotView];
+        }
     }
     return [super popViewControllerAnimated:animated];
 }
 ```
-
-
 
 
 
