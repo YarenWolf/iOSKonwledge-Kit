@@ -208,4 +208,6 @@
   * [1、LLDB基本骚操作](1lldbji-ben-sao-cao-zuo.md)
 * [iOS升级、设备适配](iossheng-ji-3001-she-bei-shi-pei.md)
   * [iOS11适配](iossheng-ji-3001-she-bei-shi-pei/ios11shi-pei.md)
+* 工具技巧
+  * [1、CocoaPods安装](1cocoapodsan-zhuang.md)
 
