@@ -51,25 +51,86 @@ RubyGems system software updated
 
 `*** CURRENT SOURCES ***https://gems.ruby-china.org/`
 
+### 3、安装Cocopods
+
+输入
+
+```
+终端输入：$ sudo gem install cocoapods
+```
+
+在我的MBP上出现了提示说权限不足，接下来再次输入
+
+```
+终端输入：$ sudo gem install -n /usr/local/bin cocoapods
+```
+
+安装成功
+
+```
+终端显示 21 gems installed
+```
+
+继续
+
+```
+pod setup
+```
+
+这个过程比较长
 
 
 
+## 三、Cocopods的使用
+
+### 1、查找
+
+```
+终端输入:pod search ReactiveObjc
+```
+
+会显示找到的最新库及其历史版本![](/assets/屏幕快照 2017-11-24 上午10.49.35.png)
 
 
 
+### 2、用法
 
+* 新建工程
+* 命令行切换到工程目录下
+* 新建一个Podfile
 
+```
+终端：touch Podfile
+```
 
+* 编辑Podfile
 
+```
+终端：vim Podfile
+```
 
+输入以下内容
 
+```
+target 'RAC' do
 
+pod 'ReactiveObjC', '~> 3.0.0'
 
+end 
+```
 
+* 终端安装库
 
+```
+终端：pod install
+```
 
+* 完成之后会看到一个在项目目录下多出一个RAC.xcworkspace文件
+* 终端输入
 
-
+```
+终端：open RAC.xcworkspace
+```
 
 
 
