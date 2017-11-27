@@ -6,11 +6,5 @@
 * canvasAPI： toDataUrl\(\)将canvas转为base64格式
 * 图片下载
 
-
-
-
-
-
-
-
+具体描述：https://juejin.im/post/5a17c5e26fb9a04527254689
 
