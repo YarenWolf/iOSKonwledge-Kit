@@ -17,6 +17,19 @@
 
     现在在reloadData视图漂移或者闪动就没有了
 
-* 
+* iOS11 的时候你的页面如果是 UIWebview，那么可能在页面的顶部出现一段距离。也就是顶部白屏。这是由于 iOS11 的 SafeArea 引起的。可能引起的原因是设置了 UIWebview 的高度。有2种解决办法
+
+  * 设置 webview 的高度为 ScreenHeight -  BarHeight - 34。 34 为底部安全距离
+
+  * 添加如下代码
+
+    ```
+    if (@available(iOS 11.0, *)) {
+        webView.scrollView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+    }
+    ```
+
+
+
 
 
