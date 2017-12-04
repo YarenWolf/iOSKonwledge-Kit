@@ -1,7 +1,5 @@
 # 点击按钮给按钮底部出现阴影效果
 
-
-
 ```
 #import <UIKit/UIKit.h>
 
@@ -16,7 +14,7 @@
 
 
 -(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
-    
+
     self.layer.shadowColor = [UIColor blackColor].CGColor;
     self.layer.shadowOpacity = 0.8f;
     self.layer.shadowRadius = 4.f;
@@ -25,7 +23,7 @@
 }
 
 -(void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
-    
+
     self.layer.shadowRadius = 0;
     self.layer.shadowColor = [UIColor clearColor].CGColor;
     self.layer.shadowOpacity = 0;
