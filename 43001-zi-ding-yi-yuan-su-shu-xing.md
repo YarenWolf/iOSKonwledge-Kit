@@ -58,10 +58,6 @@ delete myDiv.dataset.share
 myDiv.dataset.happy="ok"
 ```
 
-
-
-
-
 # 四、dataset兼容性处理
 
 如果不支持dataset，有必要做一下兼容性处理
@@ -77,4 +73,31 @@ if(myDiv.dataset){
 ```
 
 
+
+
+
+做一个实验：
+
+```
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<title>我的标题</title>
+		<meta charset="utf-8" />
+	</head>
+
+	<body>
+		<h1 data-share="true">杭城小刘</h1>
+	</body>
+	<script>
+		console.log(document.getElementsByTagName("h1")[0].getAttribute("user-defined-attribute"));
+	</script>
+
+</html>
+```
+
+然后利用chrome调试，在console命令行分别输入3条指令，结果如下图
+
+![](/assets/屏幕快照 2017-12-05 下午10.19.04.png)可以看出来，dataset后跟的属性是驼峰命名原则，如果多个单词第二个单词首字母需要大写，检查元素可以看到神奇的变化。
 
