@@ -44,10 +44,6 @@ document.getElementsByTagName("h1")[0].getAttribute("data-share")
 
 `DOMStringMap`是HTML5一种新的含有多个名-值对的交互变量
 
-
-
-
-
 # 三、H5 dataset的操作
 
 删掉一个data属性
@@ -66,7 +62,19 @@ myDiv.dataset.happy="ok"
 
 
 
+# 四、dataset兼容性处理
 
+如果不支持dataset，有必要做一下兼容性处理
+
+```
+if(myDiv.dataset){
+    myDiv.dataset.sad = "false";
+    var thevalue = myDiv.dataset.sad;
+}else{
+    myDiv.setAttribute("data-attribute","sad");
+    var theValue = myDiv.getAttribute("data-attribute"); // 获取自定义属性  
+}
+```
 
 
 
