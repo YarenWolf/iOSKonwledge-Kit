@@ -32,7 +32,7 @@ document.getElementsByTagName("h1")[0].getAttribute("user-defined-attribute")
 
 ```
 var myDiv = document.getElementsByTagName("h1")[0];
-var theValue = myDiv.dataset;    //DOMStringMap 
+var theValue = myDiv.dataset;    //DOMStringMap对象
 
 document.getElementsByTagName("h1")[0].dataset.share
 document.getElementsByTagName("h1")[0].dataset["share"]
@@ -42,5 +42,5 @@ document.getElementsByTagName("h1")[0].dataset["share"]
 document.getElementsByTagName("h1")[0].getAttribute("data-share")
 ```
 
-
+`DOMStringMap`是HTML5一种新的含有多个名-值对的交互变量
 
