@@ -16,11 +16,7 @@
 document.getElementsByTagName("h1")[0].getAttribute("user-defined-attribute")
 ```
 
-
-
 # 二、方式二
-
-
 
 现在H5为我们提供了一个data属性  **"data-" **作为前缀，可以让所有的HTML元素都支持自定义的属性，只要在标签里面以 **"data-"**
 
@@ -32,7 +28,12 @@ document.getElementsByTagName("h1")[0].getAttribute("user-defined-attribute")
 <h1 data-share="true">杭城小刘</h1>
 ```
 
-获取自定义属性
+获取自定义属性（使用H5自定义属性对象Dataset来获取）
+
+```
+var myDiv = document.getElementsByTagName("h1")[0];
+var theValue = myDiv.dataset.attribute;
+```
 
 ```
 document.getElementsByTagName("h1")[0].getAttribute("data-share")
