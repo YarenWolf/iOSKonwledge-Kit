@@ -32,7 +32,10 @@ document.getElementsByTagName("h1")[0].getAttribute("user-defined-attribute")
 
 ```
 var myDiv = document.getElementsByTagName("h1")[0];
-var theValue = myDiv.dataset.attribute;
+var theValue = myDiv.dataset;    //DOMStringMap 
+
+document.getElementsByTagName("h1")[0].dataset.share
+document.getElementsByTagName("h1")[0].dataset["share"]
 ```
 
 ```
