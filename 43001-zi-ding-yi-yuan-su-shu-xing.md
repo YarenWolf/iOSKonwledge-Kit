@@ -98,6 +98,6 @@ if(myDiv.dataset){
 ```
 
 然后利用chrome调试，在console命令行分别输入3条指令，结果如下图
-
-![](/assets/屏幕快照 2017-12-05 下午10.19.04.png)可以看出来，dataset后跟的属性是驼峰命名原则，如果多个单词第二个单词首字母需要大写，检查元素可以看到神奇的变化。
+png
+![实验结果](https://raw.githubusercontent.com/FantasticLBP/iOSKonwledge-Kit/master/assets/屏幕快照%202017-12-05%20下午10.19.04.png)可以看出来，dataset后跟的属性是驼峰命名原则，如果多个单词第二个单词首字母需要大写，检查元素可以看到神奇的变化。
 
