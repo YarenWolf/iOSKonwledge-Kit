@@ -66,5 +66,27 @@
 }
 ```
 
+**敲黑板，注意啦**
 
+因为我做的一个全局的机器人只需要浮动在App的5个模块的首页，所以当页面进入第二层的时候就需要隐藏机器人，当App的顶层控制器是最外层的首页的时候再显示机器人，用导航控制器的push和pop监听就可以实现这个需求，但是遇到的一个问题就是当App从首页进入到第二层页面，用于手动右滑且滑到一半停止，这样子页面还是停留在第二层但是此时也会触发pop方法上面的代码就有点问题
+
+因此想办法需要监听导航控制器里面每个控制器的出现事件，找到一个方法 ` - (void)navigationController:(UINavigationController *)navigationController didShowViewController:(UIViewController *)viewController animated:(BOOL)animated;`恰好满足需求，以前没用过记录下来
+
+```
+- (void)navigationController:(UINavigationController *)navigationController didShowViewController:(UIViewController *)viewController animated:(BOOL)animated{
+    self.interactivePopGestureRecognizer.enabled = [self.viewControllers count] > 1 ;
+
+    if ([viewController isKindOfClass:[MZPregnancyHomeController class]] ||
+        [viewController isKindOfClass:[HLSettingViewController class]] ||
+        [viewController isKindOfClass:[BBXEditViewController class]] ||
+        [viewController isKindOfClass:[HLFriendTopicController class]] ||
+        [viewController isKindOfClass:[MZBookViewController class]]
+        ) {
+        [[UIApplication sharedApplication].keyWindow addSubview:self.robotView];
+    }
+}
+
+```
+
+ 
 
