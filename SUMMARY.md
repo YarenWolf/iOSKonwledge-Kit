@@ -215,4 +215,6 @@
   * [iOS11适配](iossheng-ji-3001-she-bei-shi-pei/ios11shi-pei.md)
 * 工具技巧
   * [1、CocoaPods安装](1cocoapodsan-zhuang.md)
+* [iOS系统知识](iosxi-tong-zhi-shi.md)
+  * 1、系统音频标号
 
