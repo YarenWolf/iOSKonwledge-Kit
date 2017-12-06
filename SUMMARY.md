@@ -216,5 +216,5 @@
 * 工具技巧
   * [1、CocoaPods安装](1cocoapodsan-zhuang.md)
 * [iOS系统知识](iosxi-tong-zhi-shi.md)
-  * 1、系统音频标号
+  * [1、系统音频标号](iosxi-tong-zhi-shi/13001-xi-tong-yin-pin-biao-hao.md)
 
