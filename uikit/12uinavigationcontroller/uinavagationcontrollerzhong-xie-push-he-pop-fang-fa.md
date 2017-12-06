@@ -87,10 +87,6 @@
 }
 ```
 
-
-
-
-
 ```
 //
 //  HLNavigationController.m
@@ -122,35 +118,35 @@
 {
     [[UINavigationBar appearance] setTitleTextAttributes:
      [NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor], NSForegroundColorAttributeName, [UIFont fontWithName:@"Lato-Regular" size:18], NSFontAttributeName, nil]];
-    
+
     [[UINavigationBar appearance] setTranslucent:NO];
-    
+
     NSMutableDictionary *testAttr = [NSMutableDictionary dictionary];
     testAttr[NSForegroundColorAttributeName] = [UIColor whiteColor];
     testAttr[NSFontAttributeName] = [UIFont systemFontOfSize:18];
-    
+
     [[UINavigationBar appearance] setTitleTextAttributes:testAttr];
-    
+
     testAttr = [NSMutableDictionary dictionary];
     testAttr[NSForegroundColorAttributeName] = [UIColor whiteColor];
-    
+
     [[UIBarButtonItem appearance] setTitleTextAttributes:testAttr forState:UIControlStateNormal];
- 
-    
+
+
     [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
-    
+
     [[UINavigationBar appearance] setBarStyle:UIBarStyleBlack];
-    
+
     [[UINavigationBar appearance] setBackgroundImage:[[UIImage alloc] init] forBarMetrics:UIBarMetricsDefault];
     [[UINavigationBar appearance] setShadowImage:[[UIImage alloc] init]];
-    
+
 }
 
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     [[UINavigationBar appearance] setBarTintColor:GlobalMainColor];
-    
+
     // 设置pop手势的代理
     self.interactivePopGestureRecognizer.delegate = self;
     self.delegate = self;
@@ -165,7 +161,7 @@
 {
     //    if (viewController != 栈底控制器) {
     if (self.viewControllers.count > 0) {
-        
+
         for (UIView *view in [UIApplication sharedApplication].keyWindow.subviews) {
             if ([view isKindOfClass:[XLRobotImageView class]]) {
                 if (self.viewControllers.count > 0) {
@@ -174,26 +170,26 @@
                 }
             }
         }
-        
-        
+
+
         // 当push这个子控制器时, 隐藏底部的工具条
         viewController.hidesBottomBarWhenPushed = YES;
-        
+
         UIButton *backButton = [UIButton buttonWithType:UIButtonTypeCustom];
         backButton.frame = CGRectMake(0, 0, 44, 44);
         [backButton setImage:[UIImage imageNamed:@"backArror"] forState:UIControlStateNormal];
         [backButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-        
+
         backButton.adjustsImageWhenHighlighted = NO;
         backButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
-        
+
         backButton.titleLabel.font = [UIFont systemFontOfSize:16];
-        
+
         [backButton addTarget:self action:@selector(back) forControlEvents:UIControlEventTouchUpInside];
         [backButton setImageEdgeInsets:UIEdgeInsetsMake(0, 5 * BoundWidth/375, 0, 0)];
         viewController.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:backButton];
     }
-    
+
     // 将viewController压入栈中
     [super pushViewController:viewController animated:animated];
 }
@@ -211,9 +207,9 @@
  */
 - (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer
 {
-	if (self.disableGesture) {
-		return NO;
-	}
+    if (self.disableGesture) {
+        return NO;
+    }
     return self.viewControllers.count > 1;
 }
 
@@ -233,7 +229,6 @@
 
 
 @end
-
 ```
 
 

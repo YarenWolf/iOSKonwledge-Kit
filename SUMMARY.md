@@ -168,6 +168,7 @@
     * [12-选定区域截图](uikit/12xuan-ding-qu-yu-jie-tu.md)
     * [13-图片擦除效果](uikit/13tu-pian-ca-chu-xiao-guo.md)
     * [14-模仿支付宝手势解锁](uikit/14mo-fang-zhi-fu-bao-shou-shi-jie-suo.md)
+  * [28、UIImageview的裁剪](uikit/28uiimageviewde-cai-jian.md)
 * [Hybrid](iosyu-javascript-tong-xin.md)
   * [1、JSBind&& WebViewJavascriptBridge](1jsbindandand-webviewjavascriptbridge.md)
   * [2、UIWebView显示的网页点击图片保存图片到相册](2uiwebviewxian-shi-de-wang-ye-dian-ji-tu-pian-bao-cun-tu-pian-dao-xiang-ce.md)
