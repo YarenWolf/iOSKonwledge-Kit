@@ -62,9 +62,27 @@
 
 ![](/assets/屏幕快照 2017-12-11 上午10.23.33.png)结论：正常发生的error信息是可以在window.onerror方法里面捕捉到。
 
-
-
 ### 实验2
+
+```
+    <script>
+        window.onerror = function(errorMessage, ScriptURI, lineNumber, colunmNumber, errorObj) {
+            console.log("错误信息:" + errorMessage);
+            console.log("错误文件:" + ScriptURI);
+            console.log("错误行号:" + lineNumber);
+            console.log("错误列号:" + colunmNumber);
+            console.log("错误对象:" + errorObj);
+        };
+
+    </script>
+    <script src="error.js"></script>
+```
+
+结论：自定义的异常也是可以捕捉到的
+
+
+
+### 实验3
 
 ```
 	<script>
@@ -77,7 +95,7 @@
 		};
 		
 	</script>
-	<script src="error.js"></script>
+	<script src="https://cn.bing.com/rms/rms%20answers%20Homepage%20ZhCn$Mobile$MobileRichHomepageV2/cj,nj/0b7b8145/637a1b58.js"></script>
 ```
 
 
