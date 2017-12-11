@@ -80,23 +80,50 @@
 
 结论：自定义的异常也是可以捕捉到的
 
-
-
 ### 实验3
 
 ```
-	<script>
-		window.onerror = function(errorMessage, ScriptURI, lineNumber, colunmNumber, errorObj) {
-			console.log("错误信息:" + errorMessage);
-			console.log("错误文件:" + ScriptURI);
-			console.log("错误行号:" + lineNumber);
-			console.log("错误列号:" + colunmNumber);
-			console.log("错误对象:" + errorObj);
-		};
-		
-	</script>
-	<script src="https://cn.bing.com/rms/rms%20answers%20Homepage%20ZhCn$Mobile$MobileRichHomepageV2/cj,nj/0b7b8145/637a1b58.js"></script>
+    <script>
+        window.onerror = function(errorMessage, ScriptURI, lineNumber, colunmNumber, errorObj) {
+            console.log("错误信息:" + errorMessage);
+            console.log("错误文件:" + ScriptURI);
+            console.log("错误行号:" + lineNumber);
+            console.log("错误列号:" + colunmNumber);
+            console.log("错误对象:" + errorObj);
+        };
+
+    </script>
+    <script src="https://cn.bing.com/rms/rms%20answers%20Homepage%20ZhCn$Mobile$MobileRichHomepageV2/cj,nj/0b7b8145/637a1b58.js"></script>
 ```
 
+![](/assets/屏幕快照 2017-12-11 上午10.28.53.png)结论：如果是引入不同源的js文件，报错信息必为“Script error”。
+
+查找后：相当于window.onerror方法只捕获到了一个errorMessage，而且是固定字符串，毫无参考价值。查了点资料（[Webkit源码](http://trac.webkit.org/browser/branches/chromium/648/Source/WebCore/dom/ScriptExecutionContext.cpp?rev=77122#L301)），发现在浏览器实现script资源加载的地方，是进行了同源策略判断的，如果是非同源资源，errorMessage就被写死为“Script error”了：
+
+查找 **MDN **文档后发现可以使用 “**crossorigin**” 属性来覆盖浏览器的行为。
+
+
+
+
+
+# 总结
+
+
+
+try...catch...
+
+* 无法捕捉语法错误。只能捕捉运行时错误
+* 可以拿到出错的信息，堆栈，出错的文件、行号、列号
+* 需要借助工具将所有的function块以及文件加入try...catch...中
+
+
+
+window.onerror
+
+* 可以捕捉语法错误、运行时错误
+* 可以拿到出错的信息，堆栈，出错的文件、行号、列号
+* 在当前页面出错的js都会捕捉到，包括浏览器插件的js、flash抛出的异常信息
+* 跨域的js文件资源，需要加特殊的处理
+* 
 
 
