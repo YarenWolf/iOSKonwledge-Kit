@@ -15,8 +15,8 @@
 > * `lineno`: Line number where error was raised \(number\)
 > * `colno`: Column number for the line where the error occurred \(number\)
 > * `error`:[Error Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error)\(object\)
-
-
+>
+> 当函数返回true，它会阻止事件
 
 知道系统有一个window.onerror方法，在此方法里面可以捕获系统的错误信息。下面
 
