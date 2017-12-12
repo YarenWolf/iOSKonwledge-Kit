@@ -113,6 +113,7 @@
   * [1、富文本](uikit/13001-fu-wen-ben.md)
     * [1、玩转UILabel](uikit/13001-fu-wen-ben/13001-wan-zhuan-uilabel-fu-wen-ben.md)
     * [2、显示html内容](uikit/13001-fu-wen-ben/23001-xian-shi-html-nei-rong.md)
+    * [3、常用的富文本操作](uikit/13001-fu-wen-ben/33001-chang-yong-de-fu-wen-ben-cao-zuo.md)
   * [2、UISteper渐进条](uisteperjian-jin-tiao.md)
     * [1、UISteper渐进控件](uisteperjian-jin-tiao/1uisteperjian-jin-kong-jian.md)
   * [3、UITableView](uitableview.md)
