@@ -10,17 +10,89 @@
 
 因此，网景公司需要一种网页脚本语言，使得浏览器可以与网页互动，工程师 Brendan Eich 负责开发这种新语言。他觉得没有必要设计的很复杂，这种语言只要能够完成一些简单的操作就足够了，比如判断用户有没有填写表单。
 
-
-
 1994年正是面向对象编程（OOP）最兴盛的时期，C++是当时最流行的语言，Java语言的1.0版即将在第二年推出，Sun 公司正在大肆造势。
 
 Brendan  Eich 无疑收到了影响，JS里面所有的数据类型都是对象，这一点与Java非常相似，但是他随即遇到一个问题，到底要不要设计继承机制？
-
-
 
 ## 二、Brendan Eich的选择
 
 如果 真的是一种简易的脚本语言，其实不需要有“继承”机制，但是JS里面都是对象，必须有一种机制，将所有的对象都联系起来，所以他最后还是设计了“继承”。
 
 但是他没有引入“类”的概念，因为一旦有了“类”，JS就是一门完全面向对象的语言了，增加了初学者的难度，他考虑到 C++ 和 Java 都使用 new 命令，生成实例。
+
+C++ 写法
+
+```
+ClassName *object = new ClassName(param);
+```
+
+Java 写法
+
+```
+Foo foo = new Foo();
+```
+
+因此引入了 new 命令，用来从原型对象生成一个实例对象，但是JS没有“类”的概念，怎么表示原型对象？
+
+这时他想到 C++ 和 Java 都是使用 new 命令，会调用类的构造函数（constructor）。他就设计了一个简化版，在 JS 语言中，new 命令后跟的不是类，而是构造函数。
+
+举例来说，用狗的构造函数表示狗对象的原型。
+
+```
+function Dog(name){
+    this.name = name;
+}
+```
+
+对这个构造函数使用 new， 就会生成一个狗对象的实例。
+
+```
+var dog1 = new Dog("阿拉斯加");
+console.log(dog1.name);    //阿拉斯加
+```
+
+注意：构造函数中的 this 关键字，指向了新构建的实例对象。
+
+
+
+## 三、new 运算符的缺点
+
+
+
+用构造函数生成的实例对象，有一个缺点就是无法共享属性和方法。
+
+比如，在Dog对象的构造函数中，设置一个实例对象的共有属性category
+
+```
+function Dog(name){
+         this.name = name;
+	 this.categey = "dog";
+}
+
+var dog1 = new Dog("阿拉斯加");
+var dog2 = new Dog("萨摩");
+
+console.log(dog1.category);         //dog
+console.log(dog2.category);         //dog
+
+dog1.category = "阿拉斯加";
+console.log(dog1.category);         //阿拉斯加
+console.log(dog2.category);         //dog
+
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
