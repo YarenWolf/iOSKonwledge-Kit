@@ -28,8 +28,6 @@ function Cat(name, color) {
 
 ## 二、prototype 模式
 
-
-
 ```
 function Animal(name, color) {
     this.name = name;
@@ -48,5 +46,9 @@ var cat = new Cat("大毛", "黄色");
 Animal.prototype.isPrototypeOf(cat)            //true
 ```
 
+何为继承,在 JS 里面继承就是子对象的 prototype 属性所指向的对象 指向 父对象的 构造函数，
 
+这个步骤可以通过 Cat.prototype = new Animal\(\); 实现 但是此句代码执行后 Cat对象的 prototype 的 costructor 指向的
+
+确实 Animal 的构造函数，这样会破坏原型链， 因此还必须为 Cat 对象的 prototype 所指向的对象的 constructor 设置为 Cat本身的构造函数 Cat.prototype.constructor = Cat;
 
