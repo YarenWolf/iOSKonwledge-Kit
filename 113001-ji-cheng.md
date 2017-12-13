@@ -91,9 +91,12 @@ console.log(Animal.prototype.constructor);
 ƒ Cat(name,color){
       Animal.call(this,name,color);
 }
-)
 
 ```
+
+## 四、利用空对象作为中介
+
+
 
 
 
