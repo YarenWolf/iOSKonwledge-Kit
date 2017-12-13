@@ -24,6 +24,8 @@ function Cat(name, color) {
     Animal.call(this, name, color);
     this.catrgory = "cat";
 }
+
+Animal.isPrototypeOf(cat1)            //false
 ```
 
 ## 二、prototype 模式
