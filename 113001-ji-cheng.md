@@ -91,12 +91,11 @@ console.log(Animal.prototype.constructor);
 ƒ Cat(name,color){
       Animal.call(this,name,color);
 }
-
 ```
 
 ## 四、利用空对象作为中介
 
-
+由于直接继承原型 prototype 存在上述缺点，所以存在第四办法，利用一个空对象作为中介。
 
 
 
