@@ -157,12 +157,12 @@ Animal.prototype.isPrototypeOf(cat1)
 true
 Cat.prototype.constructor
 ƒ Cat(name, color) {
-			Animal.call(this, name, color);
-		}
+            Animal.call(this, name, color);
+        }
 Animal.prototype.constructor
 ƒ Animal() {
 
-		}
+        }
 ```
 
 
