@@ -116,3 +116,54 @@ var cat1 = new Cat("小花猫", "彩色");
 
 F 是空对象，几乎不占内存，这时修改 Cat 的 prototype 对象，就不会影响 Animal 的 prototype 对象
 
+将上面的方法封装成一个函数
+
+```
+function extend(child, parent) {
+    var F = function() {}
+    F.prototype = parent.prototype;
+    child.prototype = new F();
+    child.prototype.constructor = child;
+}
+```
+
+用法
+
+```
+function Animal() {
+
+}
+Animal.prototype.category = "动物";
+
+function Cat(name, color) {
+    Animal.call(this, name, color);
+}
+
+
+function extend(child, parent) {
+    var F = function() {}
+    F.prototype = parent.prototype;
+    child.prototype = new F();
+    child.prototype.constructor = child;
+}
+
+extend(Cat, Animal);
+var cat1 = new Cat("大毛", "黄色");
+
+-------
+Cat.prototype.isPrototypeOf(cat1)
+true
+Animal.prototype.isPrototypeOf(cat1)
+true
+Cat.prototype.constructor
+ƒ Cat(name, color) {
+			Animal.call(this, name, color);
+		}
+Animal.prototype.constructor
+ƒ Animal() {
+
+		}
+```
+
+
+
