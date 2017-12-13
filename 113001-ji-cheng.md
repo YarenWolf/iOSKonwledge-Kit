@@ -97,5 +97,22 @@ console.log(Animal.prototype.constructor);
 
 由于直接继承原型 prototype 存在上述缺点，所以存在第四办法，利用一个空对象作为中介。
 
+```
+function Animal() {
 
+}
+Animal.prototype.category = "动物";
+
+function Cat(name, color) {
+    Animal.call(this, name, color);
+}
+var F = function() {};
+F.prototype = Animal.prototype;
+Cat.prototype = new F();
+Cat.prototype.constructor = Cat;
+
+var cat1 = new Cat("小花猫", "彩色");
+```
+
+F 是空对象，几乎不占内存，这时修改 Cat 的 prototype 对象，就不会影响 Animal 的 prototype 对象
 
