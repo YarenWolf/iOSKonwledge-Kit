@@ -76,3 +76,33 @@ JS规定，每个构造函数都有 prototype 属性，指向另一个对象，�
 
 这样我们可以把共享的属性和方法直接定义在 prototype 对象上。
 
+```
+function Cat(name, color) {
+    this.name = name;
+    this.color = color;
+}
+
+Cat.prototype.category = "猫科动物";
+Cat.prototype.say = function() {
+    console.log(this.name + "在叫。");
+}
+
+var cat1 = new Cat("大猫", "黄色");
+var cat2 = new Cat("二猫", "黑色");
+cat1.say();
+cat1.say();
+
+console.log(cat1.category);
+console.log(cat2.category);
+console.log(cat1.say === cat2.say);
+
+-------
+大猫在叫。
+index.html?__hbt=1513127720695:114 大猫在叫。
+index.html?__hbt=1513127720695:122 猫科动物
+index.html?__hbt=1513127720695:123 猫科动物
+index.html?__hbt=1513127720695:125 true
+```
+
+
+
