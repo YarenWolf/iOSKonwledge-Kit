@@ -53,11 +53,7 @@ console.log(dog1.name);    //阿拉斯加
 
 注意：构造函数中的 this 关键字，指向了新构建的实例对象。
 
-
-
 ## 三、new 运算符的缺点
-
-
 
 用构造函数生成的实例对象，有一个缺点就是无法共享属性和方法。
 
@@ -66,7 +62,7 @@ console.log(dog1.name);    //阿拉斯加
 ```
 function Dog(name){
          this.name = name;
-	 this.categey = "dog";
+     this.categey = "dog";
 }
 
 var dog1 = new Dog("阿拉斯加");
@@ -75,14 +71,44 @@ var dog2 = new Dog("萨摩");
 console.log(dog1.category);         //dog
 console.log(dog2.category);         //dog
 
-dog1.category = "阿拉斯加";
+dog1.category = "阿拉斯加";                  
 console.log(dog1.category);         //阿拉斯加
 console.log(dog2.category);         //dog
-
-
 ```
 
+这时候2个对象的category属性是独立的，修改其中一个，不会影响另一个。
 
+这样 的弊端就是每一个实例对象，都有自己的属性和方法的副本，无法做到数据的共享，对内存的极大浪费。
+
+
+
+## 四、prototype 属性的引入
+
+
+
+考虑到这一点，Brendan Eich 决定为构造函数设置一个 prototype 属性。
+
+这个属性包含一个对象，所有的实例对象需要共享的属性和方法都保存在这个对象里面，那些不需要共享的属性和方法就放在构造函数里面。
+
+实例对象一旦创建，将自动引用 prototype 对象的属性和方法， 也就是说实例对象的属性和方法，分成两种，一种是自己（子类）的属性和方法，另一种是引用的（父类）。
+
+```
+function Dog(name) {
+    this.name = name;
+}
+
+Dog.prototype.category = "dog";
+var dog1 = new Dog("阿拉斯加");
+var dog2 = new Dog("萨摩");
+console.log(dog1.category); //dog
+console.log(dog2.category); //dog
+dog1.category = "啸天犬";
+console.log(dog1.category); //啸天犬
+console.log(dog2.category); //dog
+dog1.__proto__.category = "啸天犬";
+console.log(dog1.category); //啸天犬
+console.log(dog2.category); //啸天犬	
+```
 
 
 
