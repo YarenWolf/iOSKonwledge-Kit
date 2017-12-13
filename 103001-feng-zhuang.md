@@ -2,9 +2,7 @@
 
 > 接上一篇 “原型protype”接着讲封装。
 
-
-
-一、
+## 一、简单封装
 
 ```
 function Cat(name, color) {
@@ -37,6 +35,56 @@ true
 cat2 instanceof Cat
 true
 ```
+
+## 二、构造函数模式问题
+
+上面的构造函数很好用，但是存在一个内存浪费的问题。对于每一个实例对象，category 属性和 say\(\) 方法都是一模一样的内容，重复复制同样的内容。
+
+```
+function Cat(name, color) {
+    this.name = name;
+    this.color = color;
+
+    this.category = "猫科动物";
+    this.say = function() {
+        console.log("猫在叫");
+    }
+}
+
+var cat1 = new Cat("大猫", "黄色");
+var cat2 = new Cat("二猫", "黑色");
+cat1.say();
+cat1.say();
+
+console.log(cat1.category);
+console.log(cat2.category);
+
+console.log(cat1.say === cat2.say);
+
+
+---------
+猫在叫
+index.html?__hbt=1513127720695:113 猫在叫
+index.html?__hbt=1513127720695:122 猫科动物
+index.html?__hbt=1513127720695:123 猫科动物
+index.html?__hbt=1513127720695:125 false
+```
+
+
+
+## 三、prototype 闪亮登场
+
+JS规定，每个构造函数都有 prototype 属性，指向另一个对象，这个对象的属性和方法都会被构造函数的实例继承。
+
+
+
+
+
+
+
+
+
+
 
 
 
