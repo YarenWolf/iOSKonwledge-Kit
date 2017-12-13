@@ -115,11 +115,15 @@ console.log(dog2.category); //啸天犬
 2、Dog.prototype.category = "啸天犬";
 ```
 
-
-
 ## 五、总结
 
 由于所有的实例对象共享同一个 prototype 对象，那么外界看起来就是 prototype 对象就像是实例对象的原型， 而实例对象就好像继承了 prototype 对象一样。
+
+
+
+
+
+
 
 
 
