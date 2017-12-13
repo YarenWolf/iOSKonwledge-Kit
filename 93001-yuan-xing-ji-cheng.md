@@ -80,11 +80,7 @@ console.log(dog2.category);         //dog
 
 这样 的弊端就是每一个实例对象，都有自己的属性和方法的副本，无法做到数据的共享，对内存的极大浪费。
 
-
-
 ## 四、prototype 属性的引入
-
-
 
 考虑到这一点，Brendan Eich 决定为构造函数设置一个 prototype 属性。
 
@@ -107,18 +103,17 @@ console.log(dog1.category); //啸天犬
 console.log(dog2.category); //dog
 dog1.__proto__.category = "啸天犬";
 console.log(dog1.category); //啸天犬
-console.log(dog2.category); //啸天犬	
+console.log(dog2.category); //啸天犬
 ```
 
+现在 category 属性存放在 prototype 对象里面，被子类共享，只要修改 prototype 对象里面的 category 值，子类都会被改变。
 
+修改可以通过2种方法修改
 
-
-
-
-
-
-
-
+```
+1、dog1.__proto__.category = "啸天犬";
+2、Dog.prototype.category = "啸天犬";
+```
 
 
 
