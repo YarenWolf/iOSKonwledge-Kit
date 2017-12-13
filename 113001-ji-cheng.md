@@ -85,7 +85,15 @@ Cat.prototype.constructor
 
 缺点：Cat.prototype 和 Animal.prototype 都指向了一块内存空间，都是同一个对象，那么对任意一端的  prototype 修改都会影响到另一端。
 
+```
+Cat.prototype.constructor  = Cat;
+console.log(Animal.prototype.constructor);
+ƒ Cat(name,color){
+      Animal.call(this,name,color);
+}
+)
 
+```
 
 
 
