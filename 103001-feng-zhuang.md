@@ -104,5 +104,76 @@ index.html?__hbt=1513127720695:123 猫科动物
 index.html?__hbt=1513127720695:125 true
 ```
 
+## 四、prrototype 模式验证
+
+为了配合 prototype 属性，Javascript定义了一些辅助方法，帮助我们使用它：
+
+* isPropertyOf\(\)：用来判断，某个 prototype 对象和某个实例之间的关系。
+* hasOwnProperty\(\)：用来判断一个属性是自己本地属性（子类的属性），还是继承自 prototype 对象的属性（父类属性）
+* in 运算符： 用来判断某个实例是否含有某个属性，不管是不是本地属性
+
+```
+function Cat(name, color) {
+    this.name = name;
+    this.color = color;
+}
+
+Cat.prototype.category = "猫科动物";
+Cat.prototype.say = function() {
+    console.log(this.name + "在叫。");
+}
+
+var cat1 = new Cat("大猫", "黄色");
+var cat2 = new Cat("二猫", "黑色");
+cat1.say();
+cat1.say();
+-------------
+
+
+Cat.prototype.isPrototypeOf(cat1)
+true
+Cat.prototype.isPrototypeOf(cat2)
+true
+cat1.hasOwnProperty("name")
+true
+cat1.hasOwnProperty("category")
+false
+name in cat1
+false
+"name" in cat1
+true
+"category" in cat1
+true
+"category" in Cat
+false
+for (var prop in cat1){  console.log("cat1['" + prop + "']= " + cat1[prop]); }
+VM1076:1 cat1['name']= 大猫
+VM1076:1 cat1['color']= 黄色
+VM1076:1 cat1['category']= 猫科动物
+VM1076:1 cat1['say']= function (){
+			console.log(this.name + "在叫。");
+		}
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
