@@ -151,29 +151,9 @@ VM1076:1 cat1['name']= 大猫
 VM1076:1 cat1['color']= 黄色
 VM1076:1 cat1['category']= 猫科动物
 VM1076:1 cat1['say']= function (){
-			console.log(this.name + "在叫。");
-		}
+     console.log(this.name + "在叫。");
+}
 ```
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
