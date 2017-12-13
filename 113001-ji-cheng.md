@@ -28,6 +28,8 @@ function Cat(name, color) {
 
 ## 二、prototype 模式
 
+
+
 ```
 function Animal(name, color) {
     this.name = name;
