@@ -54,3 +54,34 @@ Animal.prototype.isPrototypeOf(cat)            //true
 
 确实 Animal 的构造函数，这样会破坏原型链， 因此还必须为 Cat 对象的 prototype 所指向的对象的 constructor 设置为 Cat本身的构造函数 Cat.prototype.constructor = Cat;
 
+
+
+## 三、直接继承 prototype
+
+```
+function Animal() {
+
+}
+Animal.prototype.category = "动物";
+
+function Cat(name, color) {
+    Animal.call(this, name, color);
+}
+
+Cat.prototype = Animal.prototype;
+Cat.prototype.constructor = Cat;
+console.log(Cat.prototype.constructor);
+console.log(Animal.prototype.constructor);
+----
+Animal.prototype.constructor
+ƒ Cat(name,color){
+      Animal.call(this,name,color);
+}
+Cat.prototype.constructor
+ƒ Cat(name,color){
+	Animal.call(this,name,color);
+}
+```
+
+
+
