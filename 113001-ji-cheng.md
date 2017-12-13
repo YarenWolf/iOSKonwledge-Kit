@@ -54,8 +54,6 @@ Animal.prototype.isPrototypeOf(cat)            //true
 
 确实 Animal 的构造函数，这样会破坏原型链， 因此还必须为 Cat 对象的 prototype 所指向的对象的 constructor 设置为 Cat本身的构造函数 Cat.prototype.constructor = Cat;
 
-
-
 ## 三、直接继承 prototype
 
 ```
@@ -79,9 +77,15 @@ Animal.prototype.constructor
 }
 Cat.prototype.constructor
 ƒ Cat(name,color){
-	Animal.call(this,name,color);
+    Animal.call(this,name,color);
 }
 ```
+
+优点：比方法2优点是效率高，不用执行和建立 Animal 的实例了，比较省内存。
+
+缺点：Cat.prototype 和 Animal.prototype 都指向了一块内存空间，都是同一个对象，那么对任意一端的  prototype 修改都会影响到另一端。
+
+
 
 
 
