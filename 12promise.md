@@ -1,4 +1,4 @@
-# Promise
+## Promise
 
 ## 一、基础使用
 
@@ -142,23 +142,23 @@ the result is 6400000000
 ## 三、并行执行
 
 ```
-	var p1 = new Promise(function(resolve, reject) {
-	    setTimeout(resolve, 500, "p1 success");
-	});
+    var p1 = new Promise(function(resolve, reject) {
+        setTimeout(resolve, 500, "p1 success");
+    });
 
-	var p2 = new Promise(function(resolve, reject) {
-	    setTimeout(resolve, 500, "p2 success");
-	});
-	Promise.all([p1, p2]).then(function(results) {
-	    console.log(results)
-	});
+    var p2 = new Promise(function(resolve, reject) {
+        setTimeout(resolve, 500, "p2 success");
+    });
+    Promise.all([p1, p2]).then(function(results) {
+        console.log(results)
+    });
 ```
 
 多个 任务需要同时进行也就是并行执行，那么就可以使用 Promise.all\(\) 实现
 
 
 
-四、容错处理，只需要拿到先返回的结果。
+## 四、容错处理，只需要拿到先返回的结果。
 
 ```
 var p1 = new Promise(function(resolve, reject) {
@@ -175,8 +175,6 @@ Promise.race([p1, p2]).then(function(result) {
     console.log("结果是： " + result);
 });
 ```
-
-
 
 
 
