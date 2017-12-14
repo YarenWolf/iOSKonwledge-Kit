@@ -41,7 +41,7 @@ new Promise(test).then(function(result) {
 
 //方式三
 <div id="test-promise-log">
-			
+
 </div>
 
 
@@ -90,19 +90,5 @@ Failed: timeout in 1.6579586637257697sconds.
 
 ```
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+可见 Promise 的最大好处就是在异步执行的流程中，将执行代码和处理结果的代码清晰地分离了。
 
