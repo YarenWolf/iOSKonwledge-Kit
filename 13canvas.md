@@ -6,3 +6,45 @@
 
 
 
+## 一、基础使用
+
+使用 Canvas 前，用 canvas.getContext 来判断浏览器是否支持 Canvas
+
+```
+var canvas = document.getElementById("test-canvas");
+if (canvas.getContext) {
+    console.log("你的浏览器支持canvas");
+} else {
+    console.log("你的浏览器不支持canvas");
+}
+```
+
+getContext\('2d'\) 方法拿到一个 CanvasRenderingContext2D 对象，所有的绘图操作都需要通过这个对象完成。
+
+```
+var ctx = canvas.getContext("2d");
+```
+
+如果需要绘制 3D图形，我们可以通过
+
+```
+var gl = canvas.getContext("webgl");
+```
+
+
+
+
+
+### 1、绘制形状
+
+```
+var ctx = canvas.getContext("2d");
+ctx.fillStyle = "rgb(200,0,0)";
+ctx.fillRect(10,10,50,50);
+		
+ctx.fillStyle = "rgba(0,0,200,0.5)";
+ctx.fillRect(30,30,50,50);
+```
+
+
+
