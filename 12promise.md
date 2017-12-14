@@ -1,7 +1,5 @@
 # Promise
 
-
-
 ## 一、基础使用
 
 举个例子：
@@ -95,8 +93,6 @@ Failed: timeout in 1.6579586637257697sconds.
 
 可见 Promise 的最大好处就是在异步执行的流程中，将执行代码和处理结果的代码清晰地分离了。
 
-
-
 ## 二、串行执行
 
 比如有若干个异步任务，需要先做任务1，如果任务1成功后执行任务2...，任何一个环节中的任务失败则不再继续执行错误处理函数。
@@ -142,6 +138,45 @@ new Promise(function(resolve, reject) {
 
 the result is 6400000000
 ```
+
+## 三、并行执行
+
+```
+	var p1 = new Promise(function(resolve, reject) {
+	    setTimeout(resolve, 500, "p1 success");
+	});
+
+	var p2 = new Promise(function(resolve, reject) {
+	    setTimeout(resolve, 500, "p2 success");
+	});
+	Promise.all([p1, p2]).then(function(results) {
+	    console.log(results)
+	});
+```
+
+多个 任务需要同时进行也就是并行执行，那么就可以使用 Promise.all\(\) 实现
+
+
+
+四、容错处理，只需要拿到先返回的结果。
+
+```
+var p1 = new Promise(function(resolve, reject) {
+    setTimeout(resolve, 500, "p1 success");
+});
+
+var p2 = new Promise(function(resolve, reject) {
+    setTimeout(resolve, 500, "p2 success");
+});
+
+
+//使用第一个返回的结果
+Promise.race([p1, p2]).then(function(result) {
+    console.log("结果是： " + result);
+});
+```
+
+
 
 
 
