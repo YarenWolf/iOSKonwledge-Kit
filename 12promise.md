@@ -1,5 +1,9 @@
 # Promise
 
+
+
+## 一、基础使用
+
 举个例子：
 
 ```
@@ -87,8 +91,57 @@ set timeout to: 1.6579586637257697seconds.
 call reject()...
 
 Failed: timeout in 1.6579586637257697sconds.
-
 ```
 
 可见 Promise 的最大好处就是在异步执行的流程中，将执行代码和处理结果的代码清晰地分离了。
+
+
+
+## 二、串行执行
+
+比如有若干个异步任务，需要先做任务1，如果任务1成功后执行任务2...，任何一个环节中的任务失败则不再继续执行错误处理函数。
+
+要完成这个需求，传统写法需要一层一层的嵌套代码有了 Promise ，就可以
+
+```
+task1.then(task2).then(task3).catch(erroeHandler);
+```
+
+举个例子
+
+```
+function add(num) {
+    return new Promise(function(resolve, reject) {
+        log(num + " + " + num + "...");
+        setTimeout(resolve, 500, num + num);
+    });
+}
+
+function mul(num) {
+    return new Promise(function(resolve, reject) {
+        log(num + " x " + num + "...");
+        setTimeout(resolve, 500, num * num);
+    });
+}
+
+new Promise(function(resolve, reject) {
+    resolve(100);
+}).then(add).then(mul).then(add).then(mul).then(function(result) {
+    log("the result is " + result);
+});
+
+
+---------------------
+100 + 100...
+
+200 x 200...
+
+40000 + 40000...
+
+80000 x 80000...
+
+the result is 6400000000
+```
+
+
 
