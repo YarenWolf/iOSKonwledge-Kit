@@ -48,11 +48,9 @@ index.html:23 end main()...
 content.js:390 undefined
 ```
 
-我们可以看出在函数调用的时候顺序为: main\(\) -&gt; bar\(\) -&gt; show\(\) 
+我们可以看出在函数调用的时候顺序为: main\(\) -&gt; bar\(\) -&gt; show\(\)
 
 但是在 show\(\) 函数内部发生了错误，函数内部抛出错误，错误传递顺序为: show\(\) -&gt; bar\(\) -&gt; main\(\)
-
-
 
 ## 实验二
 
@@ -93,7 +91,7 @@ function show(s) {
 }
 
 main(null);
-</script> 
+</script>
 ```
 
 结果是
@@ -112,10 +110,6 @@ content.js:390 undefined
 结论
 
 和实验一唯一不同的是在 show\(\) 函数内部加了异常捕获，看到 console 中异常是在 show\(\) 函数内部被捕获了。
-
-
-
-
 
 ## 实验三
 
@@ -162,23 +156,11 @@ index.html:23 end main()...
 content.js:390 undefined
 ```
 
-
-
-
-
 ### 敲黑板
-
-
 
 如果在一个函数内部发生了错误，它自身没有捕获，错误就会被跑道外层调用函数，如果外层调用函数也没有捕获，该错误会一直沿着调用链向上抛出，直到被 Javascript 引擎捕获，代码终止执行
 
-
-
-
-
 # 异步错误处理
-
-
 
 ```
 <script>
@@ -197,5 +179,33 @@ try {
 </script>
 ```
 
-异步错误必须在函数内部处理错误外，外层代码无法捕获。
+此时无法捕获异常，因为调用 setTimeout\(\) 函数时， 传入的 printError\(\) 函数并未马上执行，紧接着先执行 console.log\("done"\); 再过1秒钟，执行 printError\(\) 函数才发生错误，但是此时除了在 printError\(\) 函数内部捕获异常，外层代码无法捕获
+
+异步错误必须在函数内部处理错误外，外层代码无法捕获。看下面
+
+```
+<script>
+'use strict';
+
+function printError() {
+    try {
+        throw new Error();
+    } catch (e) {
+        console.log("error-> " + e);
+    }
+
+}
+
+setTimeout(printError, 1000);
+console.log("done");
+</script>
+```
+
+
+
+
+
+
+
+
 
