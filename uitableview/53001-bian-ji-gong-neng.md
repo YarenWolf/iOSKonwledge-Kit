@@ -5,15 +5,13 @@
 ```
 //删除UITableview的Section
 
-
-
     NSIndexSet *indexSet = [NSIndexSet indexSetWithIndex:5];
     [self.tableview beginUpdates];
     [self.tableview deleteSections:indexSet withRowAnimation:UITableViewRowAnimationTop];
     self.liveTimeLabel.text = @"请选择直播时间";
     [self.tableview endUpdates];
-    
-    
+
+
 //增加Section
 
     NSIndexSet *indexSet = [NSIndexSet indexSetWithIndex:5];
