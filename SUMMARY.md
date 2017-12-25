@@ -121,6 +121,7 @@
     * [2、基本设置与性能优化](uitableview/23001-ji-ben-she-zhi-yu-xing-neng-you-hua.md)
     * [3、双列表联动](uitableview/33001-shuang-lie-biao-lian-dong.md)
     * [4、一些API](uitableview/43001-yi-xie-api.md)
+    * [5、编辑功能](uitableview/53001-bian-ji-gong-neng.md)
   * [4、地图](di-tu.md)
     * [1、地图显示、路径规划导航](13001-di-tu-xian-shi-3001-lu-jing-gui-hua-dao-hang.md)
     * [2、各种编码单位](23001-ge-zhong-bian-ma-dan-wei.md)
@@ -150,8 +151,8 @@
   * [21、UITabBarController](uikit/21uitabbarcontroller.md)
     * [1、基本结构](uikit/1.md)
   * [22、modal的底层实现](uikit/22modalde-di-ceng-shi-xian.md)
-  * [23、iOS中的事件](uikit/23ioszhong-de-shi-jian.md)
   * [24、事件响应原理](uikit/24ioszhong-de-shi-jian-ff08-er-ff09.md)
+  * [23、iOS中的事件](uikit/23ioszhong-de-shi-jian.md)
   * [25、hittest和pointinside方法](uikit/25ioszhong-de-shi-jian-ff08-san-ff09.md)
   * [26、手势的基本使用](uikit/273001-shou-shi-de-ji-ben-shi-yong.md)
   * 27、图形绘制
