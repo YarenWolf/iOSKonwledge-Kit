@@ -107,6 +107,20 @@ find . -type f -size +100M
 find . -type f -mtime -1
 ```
 
+找出最近1周内被访问过的文件
+
+```
+find . -type f -atime -7
+```
+
+
+
+
+
+
+
+
+
 
 
 
