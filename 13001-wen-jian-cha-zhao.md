@@ -113,6 +113,36 @@ find . -type f -mtime -1
 find . -type f -atime -7
 ```
 
+12、根据权限
+
+通过 -perm 来实现
+
+找出当前目录下权限为777的文件
+
+```
+find . -type f -perm 777
+```
+
+找出当前目录下权限不是644的php文件
+
+```
+find . -type f -name "*.php" ! -perm 644
+```
+
+13、根据文件拥有者
+
+找出文件拥有者为 root 的文件
+
+```
+find . -type f -user root
+```
+
+找出文件所在群组为 root 的文件
+
+```
+find . -type f -group root
+```
+
 
 
 
