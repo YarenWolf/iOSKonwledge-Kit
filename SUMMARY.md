@@ -234,4 +234,6 @@
   * [1、系统音频标号](iosxi-tong-zhi-shi/13001-xi-tong-yin-pin-biao-hao.md)
 * [重构优化总结](zhong-gou-you-hua-zong-jie.md)
   * [1、优化总结](zhong-gou-you-hua-zong-jie/13001-you-hua-zong-jie.md)
+* 终端命令总结
+  * [1、文件查找](13001-wen-jian-cha-zhao.md)
 
