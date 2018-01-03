@@ -93,11 +93,18 @@ KVC 的使用场景？
     UIView 可以显示图形，可以接收手势交互  （性能会差一点）
 ```
 
+* CALayer 还有关于位置显示的2个属性，**position** 和 **anchorPoint**
+
+  * position 默认的值 为 （0,0）：当前 layer 在父 layer 上的位置。距离父 layer 原点（左上角）的距离
+  * anchorPoint 默认值为 \(0.5,0.5\) ：决定着 layer 的左上角顶点距离 position 点的距离。
+    * $$（position.x - realPoint.x) = layer.bounds.width*anchorPoint.x$$
+    * $$（position.y - realPoint.y) = layer.bounds.height*anchorPoint.y$$
+  * * 当为0的时候代表 ：子 layer 的左上角顶点距 position 距离为 \(0,0\)
+    * 当 1则代表子 layer 的右下角的顶点距离 position 距离为 \(0,0\)。
+  * 根据我推导出的公式，如果知道一个 **layer** 的 **position** 和 **bounds** 就可以知道一个控件的精确位置
 
 
-* CALayer 还有关于位置显示的2个属性，**position** 和 **anchorPoint** 
-  * position 默认的值 为 （0,0）
-  * anchorPoint 默认值为 \(0.5,0.5\)
+
 
   2者需要结合使用才可以控制 layer 的位置。
 
@@ -105,9 +112,9 @@ KVC 的使用场景？
 
 ```
  layer.position = CGPointMake(self.view.bounds.size.width/2, self.view.bounds.size.height/2);
-    
+
  layer.anchorPoint = CGPointMake(0.5, 0.5);
-    
+
  [self.view.layer addSublayer:layer];
 ```
 
@@ -120,10 +127,6 @@ KVC 的使用场景？
 * CGColorRef CGImageRef CoreGraphics框架 - 可以跨平台 （iOS 、Mac OS）
 
 * UIColor UIImage UIKit框架
-
-
-
-
 
 
 
