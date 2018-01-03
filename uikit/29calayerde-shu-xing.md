@@ -99,8 +99,6 @@ CALayer 可以直接显示图片，负责的是 contents 属性。
 
 * CGColorRef CGImageRef CoreGraphics框架 - 可以跨平台 （iOS 、Mac OS）
 
-  * 
-
 * UIColor UIImage UIKit框架
 
 
