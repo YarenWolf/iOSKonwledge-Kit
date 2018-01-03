@@ -103,7 +103,7 @@ KVC 的使用场景？
     * 当 1则代表子 layer 的右下角的顶点距离 position 距离为 \(0,0\)。
   * 根据我推导出的公式，如果知道一个 **layer** 的 **position** 和 **bounds** 就可以知道一个控件的精确位置
     * $$realPoint.x = position.x -  layer.bounds.width*anchorPoint.x$$
-    * $$x = y$$
+    * $$realPoint.y = position.y -  layer.bounds.height*anchorPoint.y$$
 
 2者需要结合使用才可以控制 layer 的位置。
 
