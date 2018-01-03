@@ -76,3 +76,38 @@ KVC 的使用场景？
 
 
 
+
+
+#### 四、CALayer 的常见问题
+
+CALayer 可以直接显示图片，负责的是 contents 属性。
+
+```
+    CALayer *layer = [CALayer layer];
+    layer.frame = CGRectMake(50, 50, 100, 100);
+    layer.backgroundColor = [UIColor redColor].CGColor;
+    [self.view.layer addSublayer:layer];
+    
+    //用layer显示图片
+    UIImage *image = [UIImage imageNamed:@"temp"];
+    layer.contents = (id)image.CGImage;
+    
+    //同样能显示图片，选择标准？
+    CALayer 可以显示图形，但是不可以接受手势交互
+    UIView 可以显示图形，可以接收手势交互  （性能会差一点）
+```
+
+
+
+#### 五、杂谈
+
+
+
+* CALayer QuartzCore框架
+
+*  CGColorRef CGImageRef CoreGraphics框架
+
+*  UIColor UIImage UIKit框架
+
+
+
