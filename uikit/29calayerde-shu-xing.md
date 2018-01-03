@@ -74,9 +74,9 @@ KVC 的使用场景？
 [self.operateView.layer setValue:@(M_PI) forKeyPath:@"transform.rotation.x"];
 ```
 
-#### 四、CALayer 的常见问题
+#### 四、CALayer 的常见属性
 
-CALayer 可以直接显示图片，负责的是 contents 属性。
+* CALayer 可以直接显示图片，负责的是 contents 属性。
 
 ```
     CALayer *layer = [CALayer layer];
@@ -93,6 +93,26 @@ CALayer 可以直接显示图片，负责的是 contents 属性。
     UIView 可以显示图形，可以接收手势交互  （性能会差一点）
 ```
 
+
+
+* CALayer 还有关于位置显示的2个属性，**position** 和 **anchorPoint** 
+  * position 默认的值 为 （0,0）
+  * anchorPoint 默认值为 \(0.5,0.5\)
+
+  2者需要结合使用才可以控制 layer 的位置。
+
+例如需要让一个 layer 显示在屏幕中间
+
+```
+ layer.position = CGPointMake(self.view.bounds.size.width/2, self.view.bounds.size.height/2);
+    
+ layer.anchorPoint = CGPointMake(0.5, 0.5);
+    
+ [self.view.layer addSublayer:layer];
+```
+
+#### 
+
 #### 五、杂谈
 
 * CALayer QuartzCore框架 - 可以跨平台 （iOS 、Mac OS）
@@ -100,6 +120,10 @@ CALayer 可以直接显示图片，负责的是 contents 属性。
 * CGColorRef CGImageRef CoreGraphics框架 - 可以跨平台 （iOS 、Mac OS）
 
 * UIColor UIImage UIKit框架
+
+
+
+
 
 
 
