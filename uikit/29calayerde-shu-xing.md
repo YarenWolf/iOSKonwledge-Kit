@@ -53,3 +53,36 @@ self.operateView.layer.transform = CATransform3DMakeScale(0.5, 0.5, 0.5);
 
 
 
+#### 三、CALayer的一些快速动画设置
+
+**KVC** 可以给属性赋值，同样可以给 layer 的transform 属性赋值，像下面的样子
+
+```
+[self.operateView.layer setValue:[NSValue valueWithCATransform3D:CATransform3DMakeScale(0.5, 0.5, 0.5)] forKey:@"transform"];
+```
+
+但是很多人觉得直接给 layer 的 transform 属性赋值更快，为什么此处还要介绍 KVC？
+
+
+
+KVC 的使用场景？
+
+利用 layer 的 transform 属性 结合 KVC 做一些快速动画
+
+```
+[self.operateView.layer setValue:[NSValue valueWithCATransform3D:CATransform3DMakeScale(0.5, 0.5, 0.5)] forKey:@"transform"];
+```
+
+
+
+```
+//缩放
+[self.operateView.layer setValue:@0.5 forKeyPath:@"transform.scale.x"];
+//平移
+[self.operateView.layer setValue:@20 forKeyPath:@"transform.translation.x"];
+//旋转
+[self.operateView.layer setValue:@(M_PI) forKeyPath:@"transform.rotation.x"];
+```
+
+
+
