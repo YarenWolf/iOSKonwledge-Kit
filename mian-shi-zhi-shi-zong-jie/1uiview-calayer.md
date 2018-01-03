@@ -1,7 +1,5 @@
 # CALayer 和 UIView
 
-
-
 区别： 1.UIView可以响应事件，CALayer不可以响应事件；CALayer继承的是NSObject,UIView继承自UIResponder
 
 2.UIView着重于内容管理，CALayer着重于内容绘制.
@@ -29,6 +27,18 @@ anchorPoint
 什么是anchorPoint?
 
 好吧，它就是一颗图钉，按住layer，让layer围着它转。这里需要说一点的是，这可图钉直接影响着view的位置。所以一般来说，都是先设置anchorePoint之后再设置frame.从而可以简单的让它不变形。
+
+
+
+
+
+2、  timer的invalidate到底该在什么地方调用，因为有退出vc再回来的场景
+
+
+
+3、gcd往一个队列里面插入一个任务 比如说已经插入了三个 现在想把新任务放在第一个后面执行
+
+
 
 
 
