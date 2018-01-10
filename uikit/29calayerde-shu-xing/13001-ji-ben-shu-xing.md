@@ -4,11 +4,15 @@
 
 1、所有写在 **layer** 对象后的属性都只作用在根层上
 
+```
 self.operateView.layer.cornerRadius =5;
+```
 
 2、超过根层以外的东西都会被裁减掉
 
+```
 self.operateView.layer.masksToBounds = YES;
+```
 
 3、层级结构：
 

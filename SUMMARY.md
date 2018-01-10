@@ -55,8 +55,6 @@
     * [10、闭包捕获列表](swift/103001-bi-bao-bu-huo-lie-biao.md)
   * 第五章 玩转儿Swift3新特性
     * [1、swift3变化一览](swift/1swift3bian-hua-yi-lan.md)
-* [IPV6](ipv6.md)
-  * [1、初识IPV6](ipv6/13001-chu-shi-ipv6.md)
 * URL Schemes
   * [1、URL Schemes深度剖析（上）](1url-schemesshen-du-pou-xi-ff08-shang-ff09.md)
   * [2、URL Schemes深度剖析（下）](2url-schemesshen-du-pou-xi-ff08-xia-ff09.md)
