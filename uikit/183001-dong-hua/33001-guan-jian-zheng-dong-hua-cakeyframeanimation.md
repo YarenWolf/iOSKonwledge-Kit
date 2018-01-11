@@ -6,7 +6,21 @@
 
 需要模仿系统长按App实现抖动效果，尝试几种实现办法
 
-![](/_book/assets/2018-01-11 23_41_53.gif)
+![抖动效果图](/assets/2018-01-11 23_41_53.gif)
+
+
+<h3>方法1</h3>
+
+```objective-c
+CABasicAnimation * animation = [CABasicAnimation animation];
+animation.keyPath = @ "transform.rotation.z";
+animation.duration = 0.2;
+animation.fromValue = @(angle2Rad(5));
+animation.toValue = @(angle2Rad(-5));
+animation.repeatCount = HUGE_VALF;
+animation.autoreverses = YES;
+[self.imageView.layer addAnimation: animation forKey: nil];
+```
 
 
 
