@@ -13,7 +13,7 @@
 
 <p>需要模仿系统长按App实现抖动效果，尝试几种实现办法</p>
 
-
+![抖动效果图](/assets/2018-01-11 23_41_53.gif)
 <p>方法1:（CABasciAnimation）</p>
 
 ```objective-c
