@@ -149,6 +149,7 @@
     * [3、关键帧动画 （CAKeyframeAnimation）](uikit/183001-dong-hua/33001-guan-jian-zheng-dong-hua-cakeyframeanimation.md)
     * [4、转场动画](uikit/183001-dong-hua/43001-zhuan-chang-dong-hua.md)
     * [5、动画组](uikit/183001-dong-hua/53001-dong-hua-zu.md)
+    * [6、核心动画（Core Animation） 与 UIView 动画区别](uikit/183001-dong-hua/63001-he-xin-dong-hua-ff08-core-animation-yu-uiview-dong-hua-qu-bie.md)
   * [19、UISearchBar](uikit/19uisearchbar.md)
   * [20、UITextfield](uikit/20uitextfield.md)
   * [21、UITabBarController](uikit/21uitabbarcontroller.md)
