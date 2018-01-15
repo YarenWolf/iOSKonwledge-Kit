@@ -210,6 +210,7 @@
   * [2、创新新分支并提交代码到新分支](23001-chuang-xin-xin-fen-zhi-bing-ti-jiao-dai-ma-dao-xin-fen-zhi.md)
 * [面试知识总结](mian-shi-zhi-shi-zong-jie.md)
   * [1、UIView CALayer](mian-shi-zhi-shi-zong-jie/1uiview-calayer.md)
+  * [2、web端遇到的坑](mian-shi-zhi-shi-zong-jie/2webduan-yu-dao-de-keng.md)
 * [iOS编码规范](iosbian-ma-gui-fan.md)
   * [1、规范一](iosbian-ma-gui-fan/13001-gui-fan-yi.md)
 * Web
