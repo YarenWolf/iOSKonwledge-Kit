@@ -234,6 +234,7 @@
   * [1、LLDB基本骚操作](1lldbji-ben-sao-cao-zuo.md)
   * [2、常见Bug整理](23001-chang-jian-bug-zheng-li.md)
   * [3、图片编码导致的Bug](33001-tu-pian-bian-ma-dao-zhi-de-bug.md)
+  * [4、UITabBarController 控制器导致的 Bug](4uitabbarcontroller-kong-zhi-qi-dao-zhi-de-bug.md)
 * [iOS升级、设备适配](iossheng-ji-3001-she-bei-shi-pei.md)
   * [iOS11适配](iossheng-ji-3001-she-bei-shi-pei/ios11shi-pei.md)
 * 工具&&技巧
