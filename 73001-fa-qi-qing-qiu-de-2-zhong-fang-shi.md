@@ -20,5 +20,9 @@ setTimeout(function() {
 }, 0);
 ```
 
+相同点：都可以发起网络请求。
 
+不同点：window.location.href 发起多次请求后原生的 webviewdelegate 回调只会拿到最后一次的请求
+
+iframe 会拦截到每一次。
 
