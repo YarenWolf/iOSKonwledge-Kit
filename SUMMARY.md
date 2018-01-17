@@ -185,6 +185,7 @@
   * [4、拜读WebViewJavascriptBridge](43001-baidu-webviewjavascriptbridge.md)
   * [5、Hybrid](5hybrid.md)
   * [6、WebView与JS通信（一）](6webviewyu-js-tong-xin-ff08-yi-ff09.md)
+  * [7、发起请求的2种方式](73001-fa-qi-qing-qiu-de-2-zhong-fang-shi.md)
 * 杂谈
   * 1、正则表达式
   * [2、提高代码质量](23001-ti-gao-dai-ma-zhi-liang.md)
@@ -213,6 +214,11 @@
   * [2、web端遇到的坑](mian-shi-zhi-shi-zong-jie/2webduan-yu-dao-de-keng.md)
 * [iOS编码规范](iosbian-ma-gui-fan.md)
   * [1、规范一](iosbian-ma-gui-fan/13001-gui-fan-yi.md)
+* [调试技巧与常见Bug整理](diao-shi-ji-qiao.md)
+  * [1、LLDB基本骚操作](1lldbji-ben-sao-cao-zuo.md)
+  * [2、常见Bug整理](23001-chang-jian-bug-zheng-li.md)
+  * [3、图片编码导致的Bug](33001-tu-pian-bian-ma-dao-zhi-de-bug.md)
+  * [4、UITabBarController 控制器导致的 Bug](4uitabbarcontroller-kong-zhi-qi-dao-zhi-de-bug.md)
 * Web
   * [1、3种web会话管理的方式](13zhong-web-hui-hua-guan-li-de-fang-shi.md)
   * [2、web代码规范](2webdai-ma-gui-fan.md)
@@ -230,11 +236,6 @@
   * [14、错误处理](143001-cuo-wu-chu-li.md)
   * [15、underscore](15underscore.md)
     * [1、Collections](15underscore/1collections.md)
-* [调试技巧与常见Bug整理](diao-shi-ji-qiao.md)
-  * [1、LLDB基本骚操作](1lldbji-ben-sao-cao-zuo.md)
-  * [2、常见Bug整理](23001-chang-jian-bug-zheng-li.md)
-  * [3、图片编码导致的Bug](33001-tu-pian-bian-ma-dao-zhi-de-bug.md)
-  * [4、UITabBarController 控制器导致的 Bug](4uitabbarcontroller-kong-zhi-qi-dao-zhi-de-bug.md)
 * [iOS升级、设备适配](iossheng-ji-3001-she-bei-shi-pei.md)
   * [iOS11适配](iossheng-ji-3001-she-bei-shi-pei/ios11shi-pei.md)
 * 工具&&技巧
