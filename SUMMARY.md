@@ -220,7 +220,7 @@
   * [2、常见Bug整理](23001-chang-jian-bug-zheng-li.md)
   * [3、图片编码导致的Bug](33001-tu-pian-bian-ma-dao-zhi-de-bug.md)
   * [4、UITabBarController 控制器导致的 Bug](4uitabbarcontroller-kong-zhi-qi-dao-zhi-de-bug.md)
-* Web
+* [Web](web.md)
   * [1、3种web会话管理的方式](13zhong-web-hui-hua-guan-li-de-fang-shi.md)
   * [2、web代码规范](2webdai-ma-gui-fan.md)
   * [3、iOS和H5交互骚操作](3ioshe-h5-jiao-hu-sao-cao-zuo.md)
@@ -237,6 +237,7 @@
   * [14、错误处理](143001-cuo-wu-chu-li.md)
   * [15、underscore](15underscore.md)
     * [1、Collections](15underscore/1collections.md)
+  * [16、CSS埋点统计](16cssmai-dian-tong-ji.md)
 * [iOS升级、设备适配](iossheng-ji-3001-she-bei-shi-pei.md)
   * [iOS11适配](iossheng-ji-3001-she-bei-shi-pei/ios11shi-pei.md)
 * 工具&&技巧
