@@ -186,7 +186,7 @@
   * [5、Hybrid](5hybrid.md)
   * [6、WebView与JS通信（一）](6webviewyu-js-tong-xin-ff08-yi-ff09.md)
   * [7、发起请求的2种方式](73001-fa-qi-qing-qiu-de-2-zhong-fang-shi.md)
-* 杂谈
+* [杂谈](za-tan.md)
   * 1、正则表达式
   * [2、提高代码质量](23001-ti-gao-dai-ma-zhi-liang.md)
   * [3、PrefixHeader.pch文件](3prefixheaderpchwen-jian.md)
@@ -203,6 +203,7 @@
   * [14、广告倒计时](143001-guang-gao-dao-ji-shi.md)
   * [15、git拉取xcode项目，无法运行](15gitla-qu-xcode-xiang-mu-ff0c-wu-fa-yun-xing.md)
   * [16、在线客服SDK](163001-zai-xian-ke-fu-sdk.md)
+  * [17、较好体验获取权限的方式](173001-jiao-hao-ti-yan-huo-qu-quan-xian-de-fang-shi.md)
 * Framework
   * [1、代码打包成.framework库\(上\)](13001-dai-ma-da-bao-6210-framework-5e9328-4e0a29.md)
   * [2、代码打包成.framework库\(下\)](23001-dai-ma-da-bao-6210-framework-5e9328-4e0b29.md)
