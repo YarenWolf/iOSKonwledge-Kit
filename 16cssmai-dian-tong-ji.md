@@ -117,6 +117,12 @@
 ```
 //count.php
 <?php
+/**
+ * Created by PhpStorm.
+ * User: geek
+ * Date: 2018/1/18
+ * Time: 上午9:56
+ */
 
     $actionName =  $_REQUEST["action"];
 
@@ -127,6 +133,10 @@
     echo "访问动作->" .$actionName. " 访问时间->" . $time;
 ?>
 ```
+
+![](/assets/QQ20180118-095837@2x.png)
+
+![](/assets/屏幕快照 2018-01-18 上午9.58.10.png)
 
 **说明**
 
