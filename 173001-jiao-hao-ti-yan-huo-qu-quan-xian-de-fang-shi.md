@@ -8,7 +8,6 @@
 
 
 
-![](/assets/6707f65fgy1fnim1n0a4mj20qo1lrtat.jpg)
-
+![](/assets/6707f65fgy1fnim1n0a4mj20qo1lrtat.jpg)  
 ![](/assets/6707f65fgy1fnim1m4o7jj20qo1lrach.jpg)
 
