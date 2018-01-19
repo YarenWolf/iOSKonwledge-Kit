@@ -107,6 +107,7 @@
   * [48、NSClassFromString](chapter1/48nsclassfromstring.md)
   * [50、枚举](chapter1/503001-mei-ju.md)
   * [51、单例对象销毁](chapter1/513001-dan-li-dui-xiang-xiao-hui.md)
+  * [52、书写一个严谨的单例](chapter1/523001-shu-xie-yi-ge-yan-jin-de-dan-li.md)
 * [UIKit](uikit.md)
   * [1、富文本](uikit/13001-fu-wen-ben.md)
     * [1、玩转UILabel](uikit/13001-fu-wen-ben/13001-wan-zhuan-uilabel-fu-wen-ben.md)
