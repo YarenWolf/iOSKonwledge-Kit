@@ -159,7 +159,7 @@
   * [23、iOS中的事件](uikit/23ioszhong-de-shi-jian.md)
   * [25、hittest和pointinside方法](uikit/25ioszhong-de-shi-jian-ff08-san-ff09.md)
   * [26、手势的基本使用](uikit/273001-shou-shi-de-ji-ben-shi-yong.md)
-  * 27、图形绘制
+  * [27、图形绘制](uikit/273001-tu-xing-hui-zhi.md)
     * [01-基本图形绘制](uikit/01ji-ben-tu-xing-hui-zhi.md)
     * [02-绘图的一些Demo](uikit/02hui-tu-de-yi-xie-demo.md)
     * [03-绘制文字](uikit/03hui-zhi-wen-zi.md)
@@ -174,6 +174,7 @@
     * [12-选定区域截图](uikit/12xuan-ding-qu-yu-jie-tu.md)
     * [13-图片擦除效果](uikit/13tu-pian-ca-chu-xiao-guo.md)
     * [14-模仿支付宝手势解锁](uikit/14mo-fang-zhi-fu-bao-shou-shi-jie-suo.md)
+    * [15-从一个 UIImage 的基础上截取指定位置的图片为 UIImage](uikit/153001-cong-yi-ge-uiimage-de-ji-chu-shang-jie-qu-zhi-ding-wei-zhi-de-tu-pian-wei-uiimage.md)
   * [28、UIImageview的裁剪](uikit/28uiimageviewde-cai-jian.md)
   * [29、CALayer的属性](uikit/29calayerde-shu-xing.md)
     * [1、基本属性](uikit/29calayerde-shu-xing/13001-ji-ben-shu-xing.md)
