@@ -20,9 +20,7 @@
 * 动画执行运行在后台，不会阻塞主线程
 * 可以运用在 Mac OS X 和 iOS 平台
 
-注意
-
-核心动画如果需要延迟执行，则可以利用 beginTime。比如想延迟2秒则可以设置为 CACurrentMediaTime\(\)+2
+**注意:核心动画如果需要延迟执行，则可以利用 beginTime。比如想延迟2秒则可以设置为 CACurrentMediaTime\(\)+2**
 
 ![](/assets/屏幕快照 2018-01-16 上午9.42.49.png)
 
