@@ -31,6 +31,13 @@ app.listen(3000,function(){
 
 * 在终端运行 npm install koa@2.0.0
 
+![](/assets/屏幕快照 2018-01-28 下午10.26.21.png)
+
+#### 运行
+
+* 终端执行 node app.js 然后在浏览器访问 http://127.0.0.1:3000
+* 终端执行 npm start ，然后在浏览器访问 http://127.0.0.1:3000（此命令运行依赖  package.json 中的 “script” 的内容）
+
 
 
 
