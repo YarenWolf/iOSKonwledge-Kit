@@ -35,10 +35,14 @@ app.listen(3000,function(){
 
 #### 运行
 
-* 终端执行 node app.js 然后在浏览器访问 http://127.0.0.1:3000
-* 终端执行 npm start ，然后在浏览器访问 http://127.0.0.1:3000（此命令运行依赖  package.json 中的 “script” 的内容）
+* 终端执行 node app.js 然后在浏览器访问 [http://127.0.0.1:3000](http://127.0.0.1:3000)
+* 终端执行 npm start ，然后在浏览器访问 [http://127.0.0.1:3000（此命令运行依赖](http://127.0.0.1:3000（此命令运行依赖)  package.json 中的 “script” 的内容）
 
-
+```
+"scripts": {
+    "start": "node app.js"
+}
+```
 
 
 
