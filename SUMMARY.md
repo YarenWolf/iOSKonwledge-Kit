@@ -209,9 +209,10 @@
 * Framework
   * [1、代码打包成.framework库\(上\)](13001-dai-ma-da-bao-6210-framework-5e9328-4e0a29.md)
   * [2、代码打包成.framework库\(下\)](23001-dai-ma-da-bao-6210-framework-5e9328-4e0b29.md)
-* 版本控制管理
+* [版本控制管理](ban-ben-kong-zhi-guan-li.md)
   * [1、git常见使用](1gitchang-jian-shi-yong.md)
   * [2、创新新分支并提交代码到新分支](23001-chuang-xin-xin-fen-zhi-bing-ti-jiao-dai-ma-dao-xin-fen-zhi.md)
+  * [3、Git 命令总结](3git-ming-ling-zong-jie.md)
 * [面试知识总结](mian-shi-zhi-shi-zong-jie.md)
   * [1、UIView CALayer](mian-shi-zhi-shi-zong-jie/1uiview-calayer.md)
   * [2、web端遇到的坑](mian-shi-zhi-shi-zong-jie/2webduan-yu-dao-de-keng.md)
