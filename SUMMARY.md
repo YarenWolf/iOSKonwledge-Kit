@@ -223,6 +223,7 @@
   * [2、常见Bug整理](23001-chang-jian-bug-zheng-li.md)
   * [3、图片编码导致的Bug](33001-tu-pian-bian-ma-dao-zhi-de-bug.md)
   * [4、UITabBarController 控制器导致的 Bug](4uitabbarcontroller-kong-zhi-qi-dao-zhi-de-bug.md)
+  * [5、断点调试](53001-duan-dian-diao-shi.md)
 * [Web](web.md)
   * [1、3种web会话管理的方式](13zhong-web-hui-hua-guan-li-de-fang-shi.md)
   * [2、web代码规范](2webdai-ma-gui-fan.md)
