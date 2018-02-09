@@ -1,6 +1,4 @@
-# 创建与合并分支
-
-
+## 一、创建与合并分支
 
 * 每次提交 Git 都把它们串成一条时间线，这条时间线是一个分支，主分支叫做 master 分支，HEAD 指向 master 分支， master 指向提交的，所以 HEAD 就是当前分支
 
@@ -44,6 +42,28 @@ Fast-forward
 $ git branch -d dev
 Deleted branch dev (was 1126c69).
 ```
+
+
+
+
+
+## 二、解决冲突 
+
+* 新建 feature1 分支，在上面做修改然后 add-&gt; commit。 然后切换到 master 分支，然后在 master 分支上修改然后 add -&gt; commit 。最后整个情况就是如下图所示，此时合并会到造成自动合并失败，产生冲突，需要手动合并。
+
+![](/assets/0-6.png)
+
+* 查看分支合并图
+
+```
+git log --graph
+```
+
+
+
+
+
+
 
 
 
