@@ -1,3 +1,7 @@
+# 创建与合并分支
+
+
+
 * 每次提交 Git 都把它们串成一条时间线，这条时间线是一个分支，主分支叫做 master 分支，HEAD 指向 master 分支， master 指向提交的，所以 HEAD 就是当前分支
 
 ![](/assets/0.png)
@@ -32,41 +36,14 @@ Fast-forward
  1 file changed, 1 insertion(+)
 ```
 
+注意 Fast-forward 是 快进模式的意思，也就是直接把 master 指向 dev 的当前提交。
 
+* 删除分支
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+```
+$ git branch -d dev
+Deleted branch dev (was 1126c69).
+```
 
 
 
