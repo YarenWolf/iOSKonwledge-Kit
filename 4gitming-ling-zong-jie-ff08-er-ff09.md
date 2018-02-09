@@ -22,6 +22,46 @@ git checkout dev
 // git checkout -b dev(创建并切换)
 ```
 
+* 在当前 master 分支，将 dev 分支的内容合并在一起
+
+```
+$ git merge dev
+Updating 170a795..1126c69
+Fast-forward
+ readme.txt | 1 +
+ 1 file changed, 1 insertion(+)
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
