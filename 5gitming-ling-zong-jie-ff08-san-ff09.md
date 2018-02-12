@@ -4,3 +4,29 @@
 
 
 
+
+
+# 一、删除远端分支
+
+```
+hangcheliudeMBP:pendi geek$ git branch -a
+  daief
+* master
+  remotes/origin/HEAD -> origin/master
+  remotes/origin/daief
+  remotes/origin/master
+  remotes/origin/pad_up_only
+hangcheliudeMBP:pendi geek$ git branch -d daief
+Deleted branch daief (was 18c3110).
+hangcheliudeMBP:pendi geek$ git push origin :daief
+To heletech.cn:august/pendi.git
+ - [deleted]         daief
+hangcheliudeMBP:pendi geek$ git branch -a
+* master
+  remotes/origin/HEAD -> origin/master
+  remotes/origin/master
+  remotes/origin/pad_up_only
+```
+
+
+
