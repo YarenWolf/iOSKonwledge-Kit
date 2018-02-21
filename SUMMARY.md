@@ -247,6 +247,7 @@
   * [17、Node.js 学习](17nodejs-xue-xi.md)
   * [18、使用 Nunjucks 模版](183001-shi-yong-nunjucks-mo-ban.md)
   * [19、ORM](19orm.md)
+  * [20、模块](203001-mo-kuai.md)
 * [iOS升级、设备适配](iossheng-ji-3001-she-bei-shi-pei.md)
   * [iOS11适配](iossheng-ji-3001-she-bei-shi-pei/ios11shi-pei.md)
 * 工具&&技巧
