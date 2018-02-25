@@ -218,6 +218,7 @@
 * [面试知识总结](mian-shi-zhi-shi-zong-jie.md)
   * [1、UIView CALayer](mian-shi-zhi-shi-zong-jie/1uiview-calayer.md)
   * [2、web端遇到的坑](mian-shi-zhi-shi-zong-jie/2webduan-yu-dao-de-keng.md)
+  * [3、简历](mian-shi-zhi-shi-zong-jie/jian-li.md)
 * [iOS编码规范](iosbian-ma-gui-fan.md)
   * [1、规范一](iosbian-ma-gui-fan/13001-gui-fan-yi.md)
 * [调试技巧与常见Bug整理](diao-shi-ji-qiao.md)
