@@ -1,14 +1,6 @@
 
 ---
 
-title: Vue-devtools  
-date: 2018-02-25 09:59:34  
-tags: main
-
----
-
-> Vue-devtools 是一款基于 Chrome 浏览器的插件，用来调试 Vue 应用，可以极大的提高调试效率，第一次使用，记录下来。
-
 ## 安装方式一
 
 Vue-devtools 可以从 Chrome 商店直接下载安装，前提需要翻墙。
@@ -40,8 +32,6 @@ npm install chromedriver --chromedriver_cdnurl=http://cdn.npm.taobao.org/dist/ch
 ![](/assets/Chrome-Vue-tools3.png)
 
 继续  npm install
-
-
 
 * 第三步：编译项目文件
 
