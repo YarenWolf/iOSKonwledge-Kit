@@ -6,8 +6,8 @@
 ## 个人信息
 
 + 职位 : iOS 工程师 (杭州)
-+ 年限 : 2年 | 1995-02| 2年从事 iOS 开发和移动端H5开发
-+ 联系方式 : 手机 17704051924 | 微信704568245 | 邮箱 704568245@qq.com
++ 年限 : 2年 | 1995-02| 2年从事 iOS 开发和移动端 H5 开发
++ 联系方式 : 手机 15757118174 | 微信 704568245 | 邮箱 704568245@qq.com
 + 博客 : https://fantasticlbp.github.io
 + GitHub : https://github.com/FantasticLBP （活跃，多个 repositories 获得破百 star，众多 fork）
 
