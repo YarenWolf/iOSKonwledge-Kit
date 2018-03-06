@@ -6,7 +6,7 @@
 
 但是使用 Mui 原生提供的这2个库会在移动端造成一些 “缺陷”。 具体表现当一个页面上面既有 时间选择控件 和 一个input 输入框，你先选择了日期，再输入内容当你滚动屏幕的时候会发现 之前弹出的时间选择 picker 还在。
 
-![](/assets/Mui_picker_bug_screenshots.png)
+![Bug](https://github.com/FantasticLBP/iOSKonwledge-Kit/blob/master/assets/Mui_picker_bug_screenshots.png?raw=true)
 
 
 
