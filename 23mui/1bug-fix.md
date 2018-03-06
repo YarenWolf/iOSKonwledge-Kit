@@ -19,8 +19,8 @@
 /**
  * 选择列表插件
  * varstion 2.0.0
- * by Houfeng
- * Houfeng@DCloud.io
+ * by @杭城小刘
+ * https://github.com/FantasticLBP/Mui-picker
  */
 
 (function($, window, document, undefined) {
@@ -543,6 +543,7 @@
 		},
 		dispose: function() {
 			var self = this;
+			self.disposed = true;
 			self.hide();
 			setTimeout(function() {
 				self.panel.parentNode.removeChild(self.panel);
@@ -550,7 +551,6 @@
 					self[name] = null;
 					delete self[name];
 				};
-				self.disposed = true;
 			}, 300);
 		}
 	});
