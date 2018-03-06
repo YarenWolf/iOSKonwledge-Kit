@@ -141,7 +141,7 @@ a {
 
 效果图
 
-![](/assets/Vue-20180225-1.png)
+![基本效果图](https://github.com/FantasticLBP/iOSKonwledge-Kit/blob/master/assets/Vue-20180225-1.png?raw=true)
 
 ## 实验
 
@@ -231,5 +231,5 @@ a {
 
 效果图
 
-![](/assets/Vue-20180225-2.png)
+![添加了Hobby组件](https://github.com/FantasticLBP/iOSKonwledge-Kit/blob/master/assets/Vue-20180225-2.png?raw=true)
 
