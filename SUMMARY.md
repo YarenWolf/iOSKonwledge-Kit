@@ -256,6 +256,8 @@
     * 3、webpack-dev-server
   * [23、MUI](23mui.md)
     * [1、Bug fix](23mui/1bug-fix.md)
+  * [24、布局技巧](243001-bu-ju-ji-qiao.md)
+    * [1、垂直居中](243001-bu-ju-ji-qiao/13001-chui-zhi-ju-zhong.md)
 * [iOS升级、设备适配](iossheng-ji-3001-she-bei-shi-pei.md)
   * [iOS11适配](iossheng-ji-3001-she-bei-shi-pei/ios11shi-pei.md)
 * 工具&&技巧
