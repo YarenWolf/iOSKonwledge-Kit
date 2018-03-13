@@ -26,6 +26,10 @@
 
 `+(BOOL)automaticallyNotifiesObserversForKey:(NSString *)key`
 
+但是当关闭掉对监听的属性的自动通知，那么就无法实现 KVO，所以你得在属性的值改变前后手动触发 KVO 也就是2个方法
+
+`willChangeValueForKey:`和 `didChangeValueForKey:`
+
 ```
 //Person.h
 @property (nonatomic, strong) NSString *name;
