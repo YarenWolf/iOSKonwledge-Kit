@@ -26,10 +26,6 @@
 
 `+(BOOL)automaticallyNotifiesObserversForKey:(NSString *)key`
 
-
-
-
-
 ```
 //Person.h
 @property (nonatomic, strong) NSString *name;
@@ -57,5 +53,5 @@
 }
 ```
 
-
+2、
 
